@@ -57,7 +57,7 @@ luego una historia con el teléfono fijo y un anillo de 24 horas que se completa
 /* 3 Historia con teléfono fijo */
 .historia{padding-top:0}
 .hist-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(30px,6vw,90px)}
-.hist-fija{position:sticky;top:110px;height:max-content;display:flex;gap:22px;align-items:center}
+.hist-fija{position:sticky;top:max(96px,calc(50vh - 260px));height:max-content;display:flex;gap:22px;align-items:center}
 .telefono.chico{height:520px;border-radius:40px;border:8px solid #2A2725;padding-top:30px;box-shadow:0 40px 80px -40px rgba(122,9,16,.7)}
 .hist-prog{display:flex;flex-direction:column;gap:8px}
 .hist-prog i{width:6px;height:36px;border-radius:6px;background:var(--linea);transition:background .4s,height .4s}
