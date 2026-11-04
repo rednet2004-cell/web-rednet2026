@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Gestor Documental Rednet · Rednet</title>
+<meta name="description" content="Gestor Documental Rednet: tus documentos ordenados y accesibles desde cualquier lugar, con control real sobre dónde viven, sin depender del Drive de otro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500;112,700;112,800;100,400;100,600&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="../base.css">
+<link rel="stylesheet" href="pagina.css">
+</head>
+<body class="pg-doc">
+<header id="hdr" class="sobre-oscuro">
+<div class="wrap">
+<a href="../../v4/" class="logo" aria-label="Rednet, volver al inicio"><img src="../logo-rednet-header.png" alt="Rednet"></a>
+<nav aria-label="Principal"><a href="../../v4/">Inicio</a><a href="#incluye">Qué incluye</a><a href="#funciona">Cómo funciona</a><a href="#planes">Planes</a><a href="#faq">Preguntas</a></nav>
+<a class="btn btn-rojo" href="#contacto">Ordena tus documentos</a>
+</div>
+</header>
+<main id="top">
+<!-- 1 HERO café tostado: archivos desordenados que se ordenan solos en carpetas -->
+<section class="p-hero" aria-label="Gestor Documental Rednet">
+<div class="wrap hero-grid">
+<div class="hero-txt" id="heroTxt">
+<div class="miga"><a href="../../v4/">Inicio</a><i>/</i><a href="../../v4/#servicios">Infraestructura</a><i>/</i><span>Gestor documental</span></div>
+<span class="etq">Gestor Documental Rednet</span>
+<h1>Todo en su <em>lugar</em></h1>
+<p>Tus documentos ordenados y a mano desde cualquier lugar, con control real sobre dónde viven. Sin depender del Drive de otro.</p>
+<div class="hero-ctas">
+<a class="btn btn-ocre" href="#contacto">Ordena tus documentos</a>
+<a class="btn btn-claro" href="#busca">Busca un archivo <i>↓</i></a>
+</div>
+</div>
+<div class="archivo" id="archivo" aria-hidden="true">
+<div class="carpetas"><span>Clientes</span><span>Contratos</span><span>Facturas</span><span>Proyectos</span></div>
+<div class="fichas" id="fichas"></div>
+<button class="desordenar" id="desordenar" type="button">Desordenar ↺</button>
+</div>
+</div>
+</section>
+
+<!-- 2 MARQUEE -->
+<div class="marquee" aria-label="Qué incluye">
+<div class="pista"><span>Desde el computador</span><span>Desde el celular</span><span>Permisos</span><span>Versiones</span><span>Enlaces para compartir</span><span>Servidor propio</span><span>Desde el computador</span><span>Desde el celular</span><span>Permisos</span><span>Versiones</span><span>Enlaces para compartir</span><span>Servidor propio</span></div>
+</div>
+
+<!-- 3 BUSCA: buscador real sobre archivos de ejemplo -->
+<section class="busca-sec" id="busca">
+<div class="wrap busca-grid">
+<div>
+<span class="etq">Encuéntralo en segundos</span>
+<h2>Escribe una palabra. <span class="g">Ahí está.</span></h2>
+<p class="busca-p">Busca por nombre, cliente o fecha, también dentro de los PDF. Pruébalo con "contrato", "marzo" o "factura".</p>
+<div class="sugeridas" id="sugeridas"><button>contrato</button><button>marzo</button><button>factura</button><button>proyecto</button></div>
+</div>
+<div class="buscador">
+<label class="bq"><span class="lupa"></span><input id="bqIn" type="search" placeholder="Buscar en tus documentos" autocomplete="off" aria-label="Buscar en documentos de ejemplo"></label>
+<div class="bq-meta"><span id="bqN">14 archivos</span><span>Archivos de ejemplo</span></div>
+<ul class="lista" id="lista"></ul>
+</div>
+</div>
+</section>
+
+<!-- 4 DÓNDE VIVEN TUS ARCHIVOS -->
+<section class="llave-sec" id="incluye">
+<div class="wrap llave-grid">
+<div class="llave-vis" id="llaveVis" data-m="con" aria-hidden="true">
+<div class="nube"><i></i><i></i><i></i><span>Servidor de otra empresa</span></div>
+<div class="caja"><div class="docs"><i></i><i></i><i></i><i></i></div><div class="candado"><span class="arco"></span><span class="cuerpo"></span></div><span>Tu servidor</span></div>
+</div>
+<div>
+<span class="etq">Bajo tu llave</span>
+<h2>Tus archivos, <span class="g">donde tú decides</span></h2>
+<div class="toggle" id="tgLlave" data-m="con" data-met="met" role="group" aria-label="Comparar dónde viven tus archivos"><button data-m="antes" aria-pressed="false">Drive de otro</button><button data-m="con" class="on" aria-pressed="true">Con Rednet</button></div>
+<div class="met" id="met">
+<div data-wa="30%" data-wc="100%"><span>Dónde están tus archivos</span><b data-a="Servidores de otra empresa" data-c="Tu servidor">Tu servidor</b><div class="barra"><i style="width:100%"></i></div></div>
+<div data-wa="35%" data-wc="100%"><span>Quién decide quién entra</span><b data-a="Sus condiciones" data-c="Tú">Tú</b><div class="barra"><i style="width:100%"></i></div></div>
+<div data-wa="100%" data-wc="20%"><span>Costo al sumar personas</span><b data-a="Licencia por usuario" data-c="[Por confirmar]">[Por confirmar]</b><div class="barra"><i style="width:20%"></i></div></div>
+</div>
+<p class="aviso">Comparación de ejemplo · condiciones a confirmar</p>
+</div>
+</div>
+</section>
+
+<!-- 5 VERSIONES Y TRABAJO EN EQUIPO (abanico con el scroll) -->
+<section class="ver-sec" id="funciona">
+<div class="wrap ver-grid">
+<div>
+<span class="etq">Trabajo en equipo</span>
+<h2>Editan juntos. <span class="g">Nada se pierde.</span></h2>
+<ul class="ver-lista" data-rv>
+<li><b>Varias personas en el mismo documento</b><span>Cada uno ve los cambios del otro al momento.</span></li>
+<li><b>Todas las versiones guardadas</b><span>¿Alguien borró algo? Vuelves a la versión de ayer.</span></li>
+<li><b>Comentarios en el archivo</b><span>Sin cadenas de correos con "final_v3_ahora_sí.docx".</span></li>
+</ul>
+</div>
+<div class="abanico" id="abanico" aria-hidden="true">
+<div class="hoja v1"><small>v1 · lunes</small><b>Propuesta [Cliente]</b><i></i><i></i><i></i></div>
+<div class="hoja v2"><small>v2 · martes</small><b>Propuesta [Cliente]</b><i></i><i></i><i></i><span class="rest">Restaurar</span></div>
+<div class="hoja v3"><small>v3 · miércoles</small><b>Propuesta [Cliente]</b><i></i><i></i><i></i></div>
+<div class="hoja v4"><small>v4 · hoy</small><b>Propuesta [Cliente]</b><i></i><i class="ed"></i><i></i>
+<span class="cur c1">Contabilidad</span><span class="cur c2">Ventas</span><span class="coment">¿Revisamos el plazo? 💬</span></div>
+</div>
+</div>
+</section>
+
+<!-- 6 COMPARTE CON PERMISOS (interactivo) -->
+<section class="comp-sec" style="padding-top:0">
+<div class="wrap comp-grid">
+<div class="enlace" aria-live="polite">
+<div class="en-top"><span class="en-ic">📄</span><div><b>Contrato arriendo local 2026.pdf</b><small>Contratos · 1,2 MB</small></div></div>
+<div class="switches">
+<label><span>Puede editar</span><input type="checkbox" id="swEd"><i></i></label>
+<label><span>Vence en 7 días</span><input type="checkbox" id="swVe" checked><i></i></label>
+<label><span>Con contraseña</span><input type="checkbox" id="swPw" checked><i></i></label>
+<label><span>Permitir descarga</span><input type="checkbox" id="swDe"><i></i></label>
+</div>
+<div class="url"><code id="url">docs.tuempresa.cl/s/k7Q2</code><button type="button" id="copiar">Copiar</button></div>
+<p class="resumen-en" id="resEn"></p>
+</div>
+<div>
+<span class="etq">Comparte sin miedo</span>
+<h2>Un enlace, <span class="g">con tus reglas</span></h2>
+<p class="comp-p">Mandas un archivo a un cliente o proveedor y decides si puede editar, descargar o por cuánto tiempo lo ve. Prueba los interruptores.</p>
+<div class="dispos" aria-hidden="true">
+<div class="dv lap"><i></i><span>Computador</span></div>
+<div class="dv tab"><i></i><span>Tablet</span></div>
+<div class="dv cel"><i></i><span>Celular</span></div>
+</div>
+<p class="sync">✓ Sincronizado en todos tus equipos</p>
+</div>
+</div>
+</section>
+
+<!-- 7 DOLORES -->
+<section style="padding-top:0">
+<div class="wrap dolores" data-rv>
+<a class="dolor d-cafe" href="#contacto"><small>Si te pasa esto</small><b>¿No encuentras un documento cuando lo necesitas?</b><span class="ir">Ordena tus documentos</span></a>
+<a class="dolor d-ocre" href="#contacto"><small>Lo que buscas</small><b>Tus archivos, bajo tu control, no el de un tercero.</b><span class="ir">Quiero mi gestor</span></a>
+</div>
+</section>
+
+<!-- 8 PLANES -->
+<section id="planes" style="padding-top:0">
+<div class="wrap">
+<div class="cab">
+<div><span class="etq">Planes</span><h2>Tu archivo ordenado, <span class="g">sin letra chica</span></h2></div>
+<div class="periodo" role="group" aria-label="Período"><button class="on" data-p="mes">MENSUAL</button><button data-p="anio">ANUAL</button></div>
+</div>
+<div class="planes" data-rv>
+<div class="plan"><small>Equipo pequeño</small><div class="precio">$[—]<span class="per">/mes</span></div><p class="pd">Para ordenar una oficina.</p><ul><li>[N] GB de espacio</li><li>Hasta [N] personas</li><li>Permisos y enlaces</li><li>Copia diaria</li></ul><a class="btn" href="#contacto">Empezar</a></div>
+<div class="plan dest"><small>Empresa <em>Más elegido</em></small><div class="precio">$[—]<span class="per">/mes</span></div><p class="pd">Servidor propio para tu empresa.</p><ul><li>[N] GB de espacio</li><li>Personas según tu equipo</li><li>Edición en conjunto</li><li>Migración de tus archivos</li></ul><a class="btn" href="#contacto">Ordena tus documentos</a></div>
+<div class="plan med"><small>A medida</small><div class="precio">Hablemos</div><p class="pd">Para varias sedes o mucho volumen.</p><ul><li>Espacio a medida</li><li>Varias sedes</li><li>Conexión con tus sistemas</li><li>Capacitación al equipo</li></ul><a class="btn" href="#contacto">Hablar con Rednet</a></div>
+</div>
+<p class="letra">Precios en pesos chilenos por confirmar.</p>
+</div>
+</section>
+
+<!-- 9 FAQ -->
+<section id="faq" style="padding-top:0">
+<div class="wrap faq">
+<div><span class="etq">Preguntas</span><h2>Preguntas <span class="g">sobre tus documentos</span></h2></div>
+<div>
+<details open><summary>¿Pueden traer lo que ya tengo en otra nube? <i>+</i></summary><div class="resp"><p>Sí. Migramos tus archivos y los dejamos ordenados en carpetas antes de que empieces.</p></div></details>
+<details><summary>¿Lo puedo usar desde el celular? <i>+</i></summary><div class="resp"><p>Sí, desde el navegador o con la app, en el computador, la tablet y el celular.</p></div></details>
+<details><summary>¿Qué pasa si se borra algo? <i>+</i></summary><div class="resp"><p>Hay papelera y versiones anteriores, y además una copia diaria en otro lugar.</p></div></details>
+<details><summary>¿Dónde queda el servidor? <i>+</i></summary><div class="resp"><p>[Ubicación por confirmar]. Lo importante: es tuyo y tú decides quién entra.</p></div></details>
+</div>
+</div>
+</section>
+
+<!-- 10 CTA -->
+<section class="cierre" id="contacto">
+<div class="wrap">
+<div class="cta" id="cta">
+<div class="niebla" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+<div class="grano" aria-hidden="true"></div>
+<h2>Encuentra cualquier archivo <span class="g">en segundos</span></h2>
+<p>Te mostramos cómo quedarían tus carpetas y tus permisos.</p>
+<div class="hero-ctas"><a class="btn btn-ocre" href="#contacto">Ordena tus documentos</a><a class="btn btn-borde" href="#contacto">Escríbenos por WhatsApp</a></div>
+</div>
+</div>
+</section>
+<section class="otros-sec" style="padding-top:0">
+<div class="wrap">
+<span class="etq">Otras soluciones Rednet</span>
+<div class="otros"><a class="otro" href="../apps/"><small>Apps a medida</small><b>Apps Móviles Rednet</b></a><a class="otro aqui" href="../documentos/"><small>Estás aquí</small><b>Gestor Documental Rednet</b></a><a class="otro" href="../mantencion/"><small>Sitios web</small><b>Mantención Web Rednet</b></a></div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="pie">
+<div><a href="../../v4/" class="logo" style="display:inline-flex" aria-label="Rednet"><img src="../logo-rednet.png" alt="Rednet"></a><p style="margin-top:16px;max-width:30ch">Servicios digitales para pymes: web, hosting, seguridad, IA y automatización.</p></div>
+<div><h4>Servicios</h4><ul><li><a href="../diseno-web/">Sitios web</a></li><li><a href="../tienda-online/">Ventas online</a></li><li><a href="../hosting/">Infraestructura</a></li><li><a href="../webguardian/">Seguridad y soporte</a></li><li><a href="../seo-geo/">Marketing y visibilidad</a></li><li><a href="../asistente-virtual/">IA y automatización</a></li><li><a href="../../v4/#servicios">Video</a></li></ul></div>
+<div><h4>Empresa</h4><ul><li><a href="../../v4/#proceso">Cómo trabajamos</a></li><li><a href="../../v4/#caso">Casos</a></li><li><a href="../../v4/#proyectos">Proyectos</a></li><li><a href="../../v4/#planes">Planes</a></li></ul></div>
+<div><h4>Contacto</h4><ul><li>soporte@rednet.cl</li><li>WhatsApp [número]</li><li>www.rednetspa.cl</li></ul></div>
+</div>
+<div class="legal"><span>© 2026 Rednet SpA</span><span>Borrador de página de producto · contenido entre [ ] por confirmar</span></div>
+</div>
+</footer>
+<div class="borradores" aria-label="Cambiar de borrador">Borrador <a href="../apps/" class="" aria-label="Borrador M: Apps Móviles Rednet">M</a><a href="../documentos/" class="on" aria-label="Borrador N: Gestor Documental Rednet" aria-current=page>N</a><a href="../mantencion/" class="" aria-label="Borrador O: Mantención Web Rednet">O</a></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+<script src="../base.js"></script>
+<script src="pagina.js"></script>
+</body>
+</html>
