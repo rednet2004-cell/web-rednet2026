@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Mantención Web Rednet · Rednet</title>
+<meta name="description" content="Mantención Web Rednet: tu sitio se mantiene actualizado y funcionando solo, sin que tengas que pensarlo. Cuidado continuo, no una reparación de emergencia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500;112,700;112,800;100,400;100,600&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="../base.css">
+<link rel="stylesheet" href="pagina.css">
+</head>
+<body class="pg-man">
+<header id="hdr" class="sobre-oscuro">
+<div class="wrap">
+<a href="../../v4/" class="logo" aria-label="Rednet, volver al inicio"><img src="../logo-rednet-header.png" alt="Rednet"></a>
+<nav aria-label="Principal"><a href="../../v4/">Inicio</a><a href="#incluye">Qué incluye</a><a href="#funciona">Cómo funciona</a><a href="#planes">Planes</a><a href="#faq">Preguntas</a></nav>
+<a class="btn btn-rojo" href="#contacto">Cuida tu sitio</a>
+</div>
+</header>
+<main id="top">
+<!-- 1 HERO negro + verde: chequeo continuo del sitio -->
+<section class="p-hero" aria-label="Mantención Web Rednet">
+<div class="wrap hero-grid">
+<div class="hero-txt" id="heroTxt">
+<div class="miga"><a href="../../v4/">Inicio</a><i>/</i><a href="../../v4/#servicios">Sitios web</a><i>/</i><span>Mantención web</span></div>
+<span class="etq">Mantención Web Rednet</span>
+<h1>Tu sitio, siempre <em>al día</em></h1>
+<p>Se mantiene actualizado y funcionando solo, sin que tengas que pensarlo. Cuidado continuo, no una reparación de emergencia.</p>
+<div class="hero-ctas">
+<a class="btn btn-verde" href="#contacto">Cuida tu sitio</a>
+<a class="btn btn-claro" href="#tiempo">Gira el tiempo <i>↓</i></a>
+</div>
+</div>
+<div class="chequeo" aria-hidden="true">
+<div class="ch-top"><span></span><span></span><span></span><b>tunegocio.cl</b><em id="chEst">Revisando…</em></div>
+<svg class="pulso" viewBox="0 0 400 60" preserveAspectRatio="none"><path id="pulso" d="M0 30 H120 L135 30 L145 8 L158 52 L170 30 H250 L262 30 L272 14 L282 46 L292 30 H400" fill="none" stroke="#7fe0a5" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+<ul class="ch-lista" id="chLista">
+<li><b>Actualizaciones</b><span>Sistema y plugins al día</span></li>
+<li><b>Copia de seguridad</b><span>Hecha a las 03:00</span></li>
+<li><b>Formularios</b><span>Probados, llegan bien</span></li>
+<li><b>Enlaces</b><span>0 rotos</span></li>
+<li><b>Velocidad</b><span>Carga rápida en celular</span></li>
+<li><b>Seguridad</b><span>Sin alertas</span></li>
+</ul>
+<div class="ch-pie"><span>Última revisión: hoy 03:00</span><span>Próxima: mañana 03:00</span></div>
+</div>
+</div>
+</section>
+
+<!-- 2 MARQUEE -->
+<div class="marquee" aria-label="Qué cuidamos">
+<div class="pista"><span>Actualizaciones</span><span>Copias</span><span>Enlaces</span><span>Formularios</span><span>Velocidad</span><span>Seguridad</span><span>Cambios pequeños</span><span>Actualizaciones</span><span>Copias</span><span>Enlaces</span><span>Formularios</span><span>Velocidad</span><span>Seguridad</span><span>Cambios pequeños</span></div>
+</div>
+
+<!-- 3 GIRA EL TIEMPO: perilla de 12 meses, sitio sin y con mantención -->
+<section class="tiempo-sec" id="tiempo">
+<div class="wrap">
+<div class="cab"><div><span class="etq">Gira el tiempo</span><h2>Un sitio sin cuidado <span class="g">se va rompiendo solo</span></h2></div><p class="nota">Gira la perilla y mira qué pasa en 12 meses.</p></div>
+<div class="tiempo-grid">
+<div class="sitio-m sin" id="sitioSin" aria-hidden="true">
+<div class="sm-top"><span class="sm-et">Sin mantención</span><span class="sm-alerta" id="alertaSin">Sitio no seguro</span></div>
+<div class="sm-cuerpo"><div class="sm-hero"><b>[Tu negocio]</b><i></i></div><div class="sm-fila"><i></i><i></i><i></i></div><div class="sm-form"><i></i><i></i><span class="sm-err">Error al enviar</span></div></div>
+</div>
+<div class="perilla-box">
+<div class="perilla" id="perilla" role="slider" tabindex="0" aria-label="Meses sin mantención" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0">
+<div class="marcas" id="marcas"></div>
+<div class="pomo" id="pomo"><span class="aguja"></span></div>
+<div class="p-centro"><b id="pMes">0</b><small id="pMesTxt">meses</small></div>
+</div>
+<div class="stats">
+<div><span>Actualizaciones pendientes</span><b id="sAct">0</b><b class="ok">0</b></div>
+<div><span>Enlaces rotos</span><b id="sEnl">0</b><b class="ok">0</b></div>
+<div><span>Carga en celular</span><b id="sVel">1,8 s</b><b class="ok">1,8 s</b></div>
+<div><span>Alertas de seguridad</span><b id="sSeg">0</b><b class="ok">0</b></div>
+<p class="stats-cab"><span>Sin</span><span>Con Rednet</span></p>
+</div>
+<p class="aviso">Simulación de ejemplo</p>
+</div>
+<div class="sitio-m con" aria-hidden="true">
+<div class="sm-top"><span class="sm-et">Con Rednet</span><span class="sm-ok">✓ Al día</span></div>
+<div class="sm-cuerpo"><div class="sm-hero"><b>[Tu negocio]</b><i></i></div><div class="sm-fila"><i></i><i></i><i></i></div><div class="sm-form"><i></i><i></i></div></div>
+<div class="tareas-n"><b id="tN">0</b> tareas hechas</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 4 CADA MES (checklist que se completa con el scroll) -->
+<section class="mes-sec" id="incluye" style="padding-top:0">
+<div class="wrap">
+<div class="cab"><div><span class="etq">Qué hacemos</span><h2>Tu mes, <span class="g">revisado punto por punto</span></h2></div><p class="nota">Todos los días: copia de seguridad y monitoreo.</p></div>
+<div class="semanas" id="semanas">
+<div class="sem"><small>Semana 1</small><ul><li>Actualizamos sistema y plugins</li><li>Revisamos las copias</li></ul></div>
+<div class="sem"><small>Semana 2</small><ul><li>Probamos formularios y enlaces</li><li>Revisamos en celulares</li></ul></div>
+<div class="sem"><small>Semana 3</small><ul><li>Ajustamos velocidad e imágenes</li><li>Revisión de seguridad</li></ul></div>
+<div class="sem"><small>Semana 4</small><ul><li>Hacemos tus cambios pedidos</li><li>Te enviamos el informe</li></ul></div>
+</div>
+</div>
+</section>
+
+<!-- 5 PÍDELO Y ESTÁ HECHO -->
+<section class="pide-sec" style="padding-top:0">
+<div class="wrap pide-grid">
+<div>
+<span class="etq">Cambios pequeños incluidos</span>
+<h2>Lo pides <span class="g">y está hecho</span></h2>
+<p class="pide-p">¿Cambió un precio o un horario? Escríbenos y lo actualizamos, sin cotizaciones por cada detalle.</p>
+<div class="pedidos" id="pedidos"><button class="on">Cambiar un precio</button><button>Subir fotos nuevas</button><button>Nuevo horario</button><button>Agregar un banner</button></div>
+</div>
+<div class="ticket" id="ticket" aria-live="polite">
+<div class="tk-top"><small>Pedido #[0000]</small><span id="tkHora">Respuesta en [24] h</span></div>
+<b id="tkTit">Cambiar un precio</b>
+<p id="tkDet">"El menú del día ahora cuesta $[—]."</p>
+<ol class="tk-estados" id="tkEst"><li>Recibido</li><li>En curso</li><li>Hecho ✓</li></ol>
+</div>
+</div>
+</section>
+
+<!-- 6 ANTES DEL PROBLEMA -->
+<section id="funciona" style="padding-top:0">
+<div class="wrap antes-grid">
+<div>
+<span class="etq">Cómo funciona</span>
+<h2>Antes del problema, <span class="g">no después</span></h2>
+<div class="toggle" data-m="con" data-met="met" role="group" aria-label="Comparar"><button data-m="antes" aria-pressed="false">Apagar incendios</button><button data-m="con" class="on" aria-pressed="true">Mantención</button></div>
+<div class="met" id="met">
+<div data-wa="100%" data-wc="12%"><span>Cuándo te enteras de una falla</span><b data-a="Cuando un cliente te avisa" data-c="No te enteras: ya está arreglada">No te enteras: ya está arreglada</b><div class="barra"><i style="width:12%"></i></div></div>
+<div data-wa="100%" data-wc="40%"><span>Cuánto cuesta</span><b data-a="Urgencia, impredecible" data-c="Fijo cada mes">Fijo cada mes</b><div class="barra"><i style="width:40%"></i></div></div>
+<div data-wa="100%" data-wc="5%"><span>Tu tiempo</span><b data-a="Horas buscando a alguien" data-c="Cero">Cero</b><div class="barra"><i style="width:5%"></i></div></div>
+</div>
+</div>
+<ol class="pasos-m" data-rv>
+<li><b>Revisamos tu sitio</b><span>Vemos cómo está hoy y qué hay que poner al día.</span></li>
+<li><b>Lo dejamos al día</b><span>Actualizamos, limpiamos y aseguramos lo pendiente.</span></li>
+<li><b>Lo cuidamos cada mes</b><span>Con el plan de arriba, sin que tengas que pedirlo.</span></li>
+<li><b>Te contamos en simple</b><span>Un informe corto: qué hicimos y cómo está.</span></li>
+</ol>
+</div>
+</section>
+
+<!-- 7 DOLORES -->
+<section style="padding-top:0">
+<div class="wrap dolores" data-rv>
+<a class="dolor d-negro" href="#contacto"><small>Si te pasa esto</small><b>¿Hace cuánto no revisas tu sitio? Puede estar roto.</b><span class="ir">Revisemos tu sitio</span></a>
+<a class="dolor d-verde" href="#contacto"><small>Lo que buscas</small><b>Mantenimiento antes del problema, no después.</b><span class="ir">Cuida tu sitio</span></a>
+</div>
+</section>
+
+<!-- 8 PLANES -->
+<section id="planes" style="padding-top:0">
+<div class="wrap">
+<div class="cab">
+<div><span class="etq">Planes</span><h2>Cuidado mensual, <span class="g">sin letra chica</span></h2></div>
+<div class="periodo" role="group" aria-label="Período"><button class="on" data-p="mes">MENSUAL</button><button data-p="anio">ANUAL</button></div>
+</div>
+<div class="planes" data-rv>
+<div class="plan"><small>Básico</small><div class="precio">$[—]<span class="per">/mes</span></div><p class="pd">Para que nada se rompa.</p><ul><li>Actualizaciones</li><li>Copia diaria</li><li>Monitoreo</li><li>Informe mensual</li></ul><a class="btn" href="#contacto">Empezar</a></div>
+<div class="plan dest"><small>Completo <em>Más elegido</em></small><div class="precio">$[—]<span class="per">/mes</span></div><p class="pd">Al día y con cambios incluidos.</p><ul><li>Todo lo de Básico</li><li>[N] cambios pequeños al mes</li><li>Revisión de velocidad</li><li>Revisión de seguridad</li></ul><a class="btn" href="#contacto">Cuida tu sitio</a></div>
+<div class="plan med"><small>Tienda online</small><div class="precio">Hablemos</div><p class="pd">Para sitios que venden.</p><ul><li>Pagos y stock revisados</li><li>Más cambios al mes</li><li>Respuesta prioritaria</li><li>WebGuardian incluido</li></ul><a class="btn" href="#contacto">Hablar con Rednet</a></div>
+</div>
+<p class="letra">Precios en pesos chilenos por confirmar.</p>
+</div>
+</section>
+
+<!-- 9 FAQ -->
+<section id="faq" style="padding-top:0">
+<div class="wrap faq">
+<div><span class="etq">Preguntas</span><h2>Preguntas <span class="g">sobre la mantención</span></h2></div>
+<div>
+<details open><summary>¿Mantienen sitios que no hizo Rednet? <i>+</i></summary><div class="resp"><p>Sí. Primero lo revisamos y te decimos en qué estado está y qué hay que poner al día.</p></div></details>
+<details><summary>¿Qué cuenta como cambio pequeño? <i>+</i></summary><div class="resp"><p>Precios, textos, fotos, horarios o un banner. Si es algo más grande, te lo cotizamos aparte antes de hacerlo.</p></div></details>
+<details><summary>¿Y si el sitio se cae igual? <i>+</i></summary><div class="resp"><p>Lo vemos de inmediato y lo levantamos desde la última copia. Está incluido en el plan.</p></div></details>
+<details><summary>¿En qué se diferencia de WebGuardian? <i>+</i></summary><div class="resp"><p>WebGuardian vigila la seguridad todo el tiempo; la mantención cuida que todo funcione y esté al día. Se complementan.</p></div></details>
+</div>
+</div>
+</section>
+
+<!-- 10 CTA -->
+<section class="cierre" id="contacto">
+<div class="wrap">
+<div class="cta" id="cta">
+<div class="niebla" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+<div class="grano" aria-hidden="true"></div>
+<h2>Olvídate de tu sitio. <span class="g">Nosotros no.</span></h2>
+<p>Te hacemos una revisión y te contamos cómo está hoy.</p>
+<div class="hero-ctas"><a class="btn btn-verde" href="#contacto">Revisemos tu sitio</a><a class="btn btn-borde" href="#contacto">Escríbenos por WhatsApp</a></div>
+</div>
+</div>
+</section>
+<section class="otros-sec" style="padding-top:0">
+<div class="wrap">
+<span class="etq">Otras soluciones Rednet</span>
+<div class="otros"><a class="otro" href="../apps/"><small>Apps a medida</small><b>Apps Móviles Rednet</b></a><a class="otro" href="../documentos/"><small>Infraestructura</small><b>Gestor Documental Rednet</b></a><a class="otro aqui" href="../mantencion/"><small>Estás aquí</small><b>Mantención Web Rednet</b></a></div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="pie">
+<div><a href="../../v4/" class="logo" style="display:inline-flex" aria-label="Rednet"><img src="../logo-rednet.png" alt="Rednet"></a><p style="margin-top:16px;max-width:30ch">Servicios digitales para pymes: web, hosting, seguridad, IA y automatización.</p></div>
+<div><h4>Servicios</h4><ul><li><a href="../diseno-web/">Sitios web</a></li><li><a href="../tienda-online/">Ventas online</a></li><li><a href="../hosting/">Infraestructura</a></li><li><a href="../webguardian/">Seguridad y soporte</a></li><li><a href="../seo-geo/">Marketing y visibilidad</a></li><li><a href="../asistente-virtual/">IA y automatización</a></li><li><a href="../../v4/#servicios">Video</a></li></ul></div>
+<div><h4>Empresa</h4><ul><li><a href="../../v4/#proceso">Cómo trabajamos</a></li><li><a href="../../v4/#caso">Casos</a></li><li><a href="../../v4/#proyectos">Proyectos</a></li><li><a href="../../v4/#planes">Planes</a></li></ul></div>
+<div><h4>Contacto</h4><ul><li>soporte@rednet.cl</li><li>WhatsApp [número]</li><li>www.rednetspa.cl</li></ul></div>
+</div>
+<div class="legal"><span>© 2026 Rednet SpA</span><span>Borrador de página de producto · contenido entre [ ] por confirmar</span></div>
+</div>
+</footer>
+<div class="borradores" aria-label="Cambiar de borrador">Borrador <a href="../apps/" class="" aria-label="Borrador M: Apps Móviles Rednet">M</a><a href="../documentos/" class="" aria-label="Borrador N: Gestor Documental Rednet">N</a><a href="../mantencion/" class="on" aria-label="Borrador O: Mantención Web Rednet" aria-current=page>O</a></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+<script src="../base.js"></script>
+<script src="pagina.js"></script>
+</body>
+</html>
