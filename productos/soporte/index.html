@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Soporte Rednet · Rednet</title>
+<meta name="description" content="Soporte Rednet: hay una persona real del otro lado, y responde. Soporte técnico humano para cuando algo no funciona.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500;112,700;112,800;100,400;100,600&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="../base.css">
+<link rel="stylesheet" href="pagina.css">
+</head>
+<body class="pg-sop">
+<header id="hdr" class="sobre-oscuro">
+<div class="wrap">
+<a href="../../v4/" class="logo" aria-label="Rednet, volver al inicio"><img src="../logo-rednet-header.png" alt="Rednet"></a>
+<nav aria-label="Principal"><a href="../../v4/">Inicio</a><a href="#incluye">Qué incluye</a><a href="#funciona">Cómo funciona</a><a href="#planes">Planes</a><a href="#faq">Preguntas</a></nav>
+<a class="btn btn-rojo" href="#contacto">Pide tu presupuesto</a>
+</div>
+</header>
+<main id="top">
+<!-- 1 HERO grafito: "del otro lado hay alguien" + hilo rojo que une tu lado con el de Rednet -->
+<section class="p-hero" aria-label="Soporte Rednet">
+<div class="niebla" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+<div class="grano" aria-hidden="true"></div>
+<div class="wrap hero-txt" id="heroTxt">
+<div class="miga"><a href="../../v4/">Inicio</a><i>/</i><a href="../../v4/#servicios">Seguridad y soporte</a><i>/</i><span>Soporte técnico</span></div>
+<span class="etq">Soporte Rednet</span>
+<h1>Del otro lado <em>hay alguien</em></h1>
+<p>Hay una persona real del otro lado, y responde. Soporte técnico humano para cuando algo no funciona.</p>
+<div class="hero-ctas">
+<a class="btn btn-rojo" href="#contacto">Habla con una persona</a>
+<a class="btn btn-claro" href="#problema">¿Qué te pasa? <i>↓</i></a>
+</div>
+</div>
+<div class="wrap lados" aria-hidden="true">
+<div class="lado tu"><small>Tu lado</small><div class="burbuja b-tu">Mi sitio no carga y tengo clientes esperando 😟</div><span class="persona p-tu">Tú</span></div>
+<svg class="hilo" viewBox="0 0 400 120" preserveAspectRatio="none"><path id="hilo" d="M0 60 C 120 -10, 280 130, 400 60" fill="none" stroke="#E30613" stroke-width="3" stroke-linecap="round"/><circle id="chispa" r="6" fill="#E30613"/></svg>
+<div class="lado rn"><small>Lado Rednet</small><div class="burbuja b-rn">Hola, soy [Nombre] de Rednet. Ya lo estoy revisando, te aviso en minutos.</div><span class="persona p-rn">[Nombre]</span></div>
+</div>
+</section>
+
+<!-- 2 MARQUEE de canales -->
+<div class="marquee" aria-label="Canales de soporte">
+<div class="pista"><span>WhatsApp</span><span>Llamada</span><span>Correo</span><span>Acceso remoto</span><span>Personas reales</span><span>Sin bots</span><span>WhatsApp</span><span>Llamada</span><span>Correo</span><span>Acceso remoto</span><span>Personas reales</span><span>Sin bots</span></div>
+</div>
+
+<!-- 3 ¿QUÉ TE PASA?: el visitante elige un problema y ve cómo se resuelve -->
+<section class="prob-sec" id="problema">
+<div class="wrap">
+<div class="cab"><div><span class="etq">¿Qué te pasa?</span><h2>Elige tu problema <span class="g">y mira cómo lo resolvemos</span></h2></div><p class="nota">Tiempos de ejemplo.</p></div>
+<div class="prob-grid">
+<div class="chips-p" role="tablist" aria-label="Problema">
+<button role="tab" class="on" aria-selected="true" data-k="0">Mi sitio no carga</button>
+<button role="tab" aria-selected="false" data-k="1">No me llegan los correos</button>
+<button role="tab" aria-selected="false" data-k="2">Olvidé mi contraseña</button>
+<button role="tab" aria-selected="false" data-k="3">Algo se ve raro en el celular</button>
+<button role="tab" aria-selected="false" data-k="4">Otra cosa</button>
+</div>
+<div class="resol" id="resol" aria-live="polite">
+<div class="rs-top"><span class="rs-av">[N]</span><div><b>[Nombre] · Soporte Rednet</b><small id="rsCanal">Te responde por WhatsApp</small></div><span class="rs-t" id="rsT">[3] min</span></div>
+<p class="rs-msg" id="rsMsg"></p>
+<ol class="rs-pasos" id="rsPasos"></ol>
+<div class="rs-fin"><span id="rsFin"></span></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 4 RECORRIDO DE UN TICKET: línea vertical que se llena con el scroll -->
+<section class="ticket-sec" id="funciona">
+<div class="wrap ticket-grid">
+<div class="ticket-fijo">
+<span class="etq">Cómo funciona</span>
+<h2>Tu pedido, <span class="g">de principio a fin</span></h2>
+<div class="tk-card" id="tkCard"><small>Ticket #[0000]</small><b id="tkEstado">Recibido</b><div class="tk-barra"><i id="tkBarra"></i></div></div>
+</div>
+<ol class="recorrido-v" id="recV">
+<li><span class="rv-n">1</span><div><small>Nos escribes</small><b>Por donde te acomode</b><p>WhatsApp, correo o llamada. Cuéntanos con tus palabras, sin tecnicismos.</p></div></li>
+<li><span class="rv-n">2</span><div><small>Te toma una persona</small><b>Con nombre y apellido</b><p>Alguien del equipo se hace cargo y te avisa que lo está viendo.</p></div></li>
+<li><span class="rv-n">3</span><div><small>Lo resolvemos</small><b>Entramos y lo arreglamos</b><p>Si hace falta, con acceso remoto. Tú no tienes que hacer nada técnico.</p></div></li>
+<li><span class="rv-n">4</span><div><small>Te contamos</small><b>Qué pasó y qué hicimos</b><p>Te explicamos en simple y te decimos cómo evitar que vuelva a pasar.</p></div></li>
+</ol>
+</div>
+</section>
+
+<!-- 5 BOT VS PERSONA (toggle del home) -->
+<section class="bot-sec" style="padding-top:0">
+<div class="wrap bot-grid">
+<div>
+<span class="etq">Persona, no bot</span>
+<h2>La diferencia <span class="g">se nota al primer mensaje</span></h2>
+<div class="toggle" data-m="con" data-met="met" role="group" aria-label="Comparar un bot y Rednet"><button data-m="antes" aria-pressed="false">Un bot</button><button data-m="con" class="on" aria-pressed="true">Rednet</button></div>
+<div class="met" id="met">
+<div data-wa="100%" data-wc="8%"><span>Respuestas automáticas antes de hablar con alguien</span><b data-a="[5+]" data-c="0">0</b><div class="barra"><i style="width:8%"></i></div></div>
+<div data-wa="20%" data-wc="90%"><span>Problemas resueltos en la primera conversación</span><b data-a="[—]" data-c="[—]%">[—]%</b><div class="barra"><i style="width:90%"></i></div></div>
+<div data-wa="10%" data-wc="100%"><span>Te explican qué pasó</span><b data-a="Rara vez" data-c="Siempre">Siempre</b><div class="barra"><i style="width:100%"></i></div></div>
+</div>
+<p class="aviso">Valores de ejemplo · dato a confirmar</p>
+</div>
+<div class="chat-cmp" id="chatCmp" data-m="con" aria-hidden="true">
+<div class="cc bot"><div class="m r">Hola, ¿en qué te puedo ayudar? Elige una opción: 1) Ventas 2) Facturación 3) Otro</div><div class="m y">Mi sitio no carga</div><div class="m r">No entendí tu respuesta. Elige una opción: 1) Ventas 2) Facturación 3) Otro</div></div>
+<div class="cc per"><div class="m y">Mi sitio no carga</div><div class="m r"><b>[Nombre] · Rednet</b>Hola, ya lo veo: el certificado venció anoche. Lo renuevo ahora y te aviso.</div><div class="m r"><b>[Nombre] · Rednet</b>Listo, tu sitio ya carga. Dejé la renovación automática activada.</div></div>
+</div>
+</div>
+</section>
+
+<!-- 6 DOLORES -->
+<section style="padding-top:0">
+<div class="wrap dolores" data-rv>
+<a class="dolor d-rojo" href="#contacto"><small>Si te pasa esto</small><b>No estés solo cuando algo falla.</b><span class="ir">Escríbenos ahora</span></a>
+<a class="dolor d-grafito" href="#contacto"><small>Lo que buscas</small><b>Habla con alguien que realmente resuelve, no un bot.</b><span class="ir">Habla con una persona</span></a>
+</div>
+</section>
+
+<!-- 7 PLANES -->
+<section id="planes" style="padding-top:0">
+<div class="wrap">
+<div class="cab">
+<div><span class="etq">Planes</span><h2>Soporte cuando lo necesitas, <span class="g">sin letra chica</span></h2></div>
+<div class="periodo" role="group" aria-label="Período"><button class="on" data-p="mes">MENSUAL</button><button data-p="anio">ANUAL</button></div>
+</div>
+<div class="planes" data-rv>
+<div class="plan"><small>Por evento</small><div class="precio">$[—]</div><p class="pd">Para cuando algo falla de vez en cuando.</p><ul><li>Atención por WhatsApp o correo</li><li>Acceso remoto</li><li>Informe de lo que se hizo</li><li>Sin contrato</li></ul><a class="btn" href="#contacto">Pedir ayuda</a></div>
+<div class="plan dest"><small>Mensual <em>Más elegido</em></small><div class="precio">$[—]<span class="per">/mes</span></div><p class="pd">Para tener a alguien siempre a mano.</p><ul><li>[N] horas de soporte al mes</li><li>Respuesta prioritaria</li><li>Llamada incluida</li><li>Revisión mensual</li></ul><a class="btn" href="#contacto">Lo quiero</a></div>
+<div class="plan med"><small>Empresa</small><div class="precio">Hablemos</div><p class="pd">Para equipos con varios sitios o usuarios.</p><ul><li>Soporte a tu equipo</li><li>Varios sitios</li><li>WebGuardian</li><li>Respaldo Automático</li></ul><a class="btn" href="#contacto">Hablar con Rednet</a></div>
+</div>
+<p class="letra">Precios en pesos chilenos por confirmar.</p>
+</div>
+</section>
+
+<!-- 8 FAQ -->
+<section id="faq" style="padding-top:0">
+<div class="wrap faq">
+<div><span class="etq">Preguntas</span><h2>Preguntas <span class="g">sobre soporte</span></h2></div>
+<div>
+<details open><summary>¿En qué horario responden? <i>+</i></summary><div class="resp"><p>[Horario por confirmar]. Para caídas del sitio hay atención de urgencia.</p></div></details>
+<details><summary>¿Tengo que saber explicar el problema técnico? <i>+</i></summary><div class="resp"><p>No. Cuéntalo como te salga; una captura o un audio también sirven.</p></div></details>
+<details><summary>¿Atienden sitios que no hizo Rednet? <i>+</i></summary><div class="resp"><p>Sí. Lo revisamos primero y te decimos qué podemos hacer.</p></div></details>
+<details><summary>¿Cómo entran a mi sitio o computador? <i>+</i></summary><div class="resp"><p>Solo con tu permiso, con acceso remoto seguro, y te avisamos cuando terminamos.</p></div></details>
+</div>
+</div>
+</section>
+
+<!-- 9 CTA -->
+<section class="cierre" id="contacto">
+<div class="wrap">
+<div class="cta" id="cta">
+<div class="niebla" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+<div class="grano" aria-hidden="true"></div>
+<h2>No estés solo <span class="g">cuando algo falla</span></h2>
+<p>Escríbenos y te responde una persona del equipo Rednet.</p>
+<div class="hero-ctas"><a class="btn btn-blanco" href="#contacto">Habla con Soporte Rednet</a><a class="btn btn-borde" href="#contacto">Escríbenos por WhatsApp</a></div>
+</div>
+</div>
+</section>
+<section class="otros-sec" style="padding-top:0">
+<div class="wrap">
+<span class="etq">Otras soluciones Rednet</span>
+<div class="otros"><a class="otro" href="../webguardian/"><small>Seguridad</small><b>WebGuardian</b></a><a class="otro" href="../respaldo/"><small>Infraestructura</small><b>Respaldo Automático Rednet</b></a><a class="otro aqui" href="../soporte/"><small>Estás aquí</small><b>Soporte Rednet</b></a></div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="pie">
+<div><a href="../../v4/" class="logo" style="display:inline-flex" aria-label="Rednet"><img src="../logo-rednet.png" alt="Rednet"></a><p style="margin-top:16px;max-width:30ch">Servicios digitales para pymes: web, hosting, seguridad, IA y automatización.</p></div>
+<div><h4>Servicios</h4><ul><li><a href="../diseno-web/">Sitios web</a></li><li><a href="../tienda-online/">Ventas online</a></li><li><a href="../hosting/">Infraestructura</a></li><li><a href="../webguardian/">Seguridad y soporte</a></li><li><a href="../../v4/#servicios">Marketing y visibilidad</a></li><li><a href="../asistente-virtual/">IA y automatización</a></li><li><a href="../../v4/#servicios">Video</a></li></ul></div>
+<div><h4>Empresa</h4><ul><li><a href="../../v4/#proceso">Cómo trabajamos</a></li><li><a href="../../v4/#caso">Casos</a></li><li><a href="../../v4/#proyectos">Proyectos</a></li><li><a href="../../v4/#planes">Planes</a></li></ul></div>
+<div><h4>Contacto</h4><ul><li>soporte@rednet.cl</li><li>WhatsApp [número]</li><li>www.rednetspa.cl</li></ul></div>
+</div>
+<div class="legal"><span>© 2026 Rednet SpA</span><span>Borrador de página de producto · contenido entre [ ] por confirmar</span></div>
+</div>
+</footer>
+<div class="borradores" aria-label="Cambiar de borrador">Borrador <a href="../webguardian/" class="" aria-label="Borrador G: WebGuardian">G</a><a href="../respaldo/" class="" aria-label="Borrador H: Respaldo Automático Rednet">H</a><a href="../soporte/" class="on" aria-label="Borrador I: Soporte Rednet" aria-current=page>I</a></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+<script src="../base.js"></script>
+<script src="pagina.js"></script>
+</body>
+</html>
