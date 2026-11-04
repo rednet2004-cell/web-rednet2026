@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Respaldo Automático Rednet · Rednet</title>
+<meta name="description" content="Respaldo Automático Rednet: existe una copia. Si algo falla, se puede volver atrás sin perder nada, sin que tengas que acordarte de hacerlo tú.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500;112,700;112,800;100,400;100,600&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="../base.css">
+<link rel="stylesheet" href="pagina.css">
+</head>
+<body class="pg-resp">
+<header id="hdr" class="sobre-claro">
+<div class="wrap">
+<a href="../../v4/" class="logo" aria-label="Rednet, volver al inicio"><img src="../logo-rednet-header.png" alt="Rednet"></a>
+<nav aria-label="Principal"><a href="../../v4/">Inicio</a><a href="#incluye">Qué incluye</a><a href="#funciona">Cómo funciona</a><a href="#planes">Planes</a><a href="#faq">Preguntas</a></nav>
+<a class="btn btn-rojo" href="#contacto">Pide tu presupuesto</a>
+</div>
+</header>
+<main id="top">
+<!-- 1 HERO crema: titular grande + mazo de copias que se abre con el mouse -->
+<section class="p-hero" aria-label="Respaldo Automático Rednet">
+<div class="sol" aria-hidden="true"></div>
+<div class="grano" aria-hidden="true"></div>
+<div class="wrap hero-grid">
+<div class="hero-txt" id="heroTxt">
+<div class="miga"><a href="../../v4/">Inicio</a><i>/</i><a href="../../v4/#servicios">Infraestructura</a><i>/</i><span>Respaldo Automático</span></div>
+<span class="etq">Respaldo Automático Rednet</span>
+<h1>Existe <em>una copia</em></h1>
+<p>Si algo falla, se puede volver atrás sin perder nada. Todos los días, solo, sin que tengas que acordarte de hacerlo tú.</p>
+<div class="hero-ctas">
+<a class="btn btn-rojo" href="#contacto">Activa tu respaldo</a>
+<a class="btn btn-tinta" href="#prueba">Rómpelo y vuelve atrás <i>↓</i></a>
+</div>
+</div>
+<div class="mazo" id="mazo" aria-hidden="true">
+<div class="copia"><small>Copia</small><b>Hace 4 días</b><span>02:00 · 1.248 archivos</span></div>
+<div class="copia"><small>Copia</small><b>Hace 3 días</b><span>02:00 · 1.251 archivos</span></div>
+<div class="copia"><small>Copia</small><b>Antes de ayer</b><span>02:00 · 1.252 archivos</span></div>
+<div class="copia"><small>Copia</small><b>Ayer</b><span>02:00 · 1.255 archivos</span></div>
+<div class="copia hoy"><small>Copia de hoy</small><b>02:00</b><span>Guardada ✓ · 1.258 archivos</span></div>
+</div>
+</div>
+<p class="wrap nota-ej">Fechas y cantidades de ejemplo</p>
+</section>
+
+<!-- 2 FRASE -->
+<section class="manifiesto">
+<div class="wrap">
+<span class="etq">La pregunta</span>
+<p data-palabras>¿Qué pasa si pierdes todo hoy? <span class="ico r"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M12 8v5M12 16v.5"/><circle cx="12" cy="12" r="9"/></svg></span> Con Respaldo Automático, la respuesta es simple: vuelves a la copia <span class="ico o"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5"/></svg></span> de anoche.</p>
+</div>
+</section>
+
+<!-- 3 PRUEBA: el visitante rompe el sitio y lo vuelve atrás con la línea de tiempo -->
+<section class="prueba-sec" id="prueba">
+<div class="wrap prueba-grid">
+<div>
+<span class="etq">Pruébalo</span>
+<h2>Rómpelo <span class="g">y vuelve atrás</span></h2>
+<ol class="pasos-p">
+<li><span>1</span>Aprieta <b>Simular un error</b>.</li>
+<li><span>2</span>Arrastra la línea de tiempo hasta la copia de anoche.</li>
+<li><span>3</span>Tu sitio vuelve tal como estaba.</li>
+</ol>
+<button class="btn btn-rojo" id="romper" type="button">Simular un error</button>
+</div>
+<div class="sitio-p" id="sitioP" data-e="ok">
+<div class="sp-barra"><i></i><i></i><i></i><span>Mi negocio · archivos</span><em class="sp-estado" id="spEstado">En línea</em></div>
+<ul class="sp-arch">
+<li><span class="ic"></span><b data-r="índ#x.p%p">index.php</b><small>12 KB</small></li>
+<li><span class="ic f"></span><b data-r="pr0d¿ct#s/">productos/</b><small>284 archivos</small></li>
+<li><span class="ic f"></span><b data-r="f%t$s/">fotos/</b><small>812 archivos</small></li>
+<li><span class="ic"></span><b data-r="cl!3nt#s.d?">clientes.db</b><small>2,1 MB</small></li>
+<li><span class="ic"></span><b data-r="c%nf!g.#">config.php</b><small>4 KB</small></li>
+</ul>
+<div class="sp-grietas" aria-hidden="true"></div>
+<div class="linea-t">
+<div class="lt-cab"><small>Línea de tiempo</small><b id="ltSel">Ahora</b></div>
+<input type="range" id="lt" min="0" max="4" step="1" value="4" aria-label="Elegir copia para restaurar" disabled>
+<div class="lt-marcas"><span>Hace 4 días</span><span>Antes de ayer</span><span>Ayer</span><span>Anoche 02:00</span><span>Ahora</span></div>
+</div>
+<div class="sp-ok" id="spOk">✓ Restaurado desde la copia de anoche · sin perder nada</div>
+</div>
+</div>
+</section>
+
+<!-- 4 CALENDARIO: 30 copias que se llenan con el scroll -->
+<section class="cal-sec" id="incluye">
+<div class="wrap cal-grid">
+<div class="cal" id="cal" aria-label="Treinta días de copias (ejemplo)"></div>
+<div>
+<span class="etq">Todos los días</span>
+<h2>30 versiones guardadas, <span class="g">una por noche</span></h2>
+<p class="cal-p">Cada noche se guarda una copia completa de tu sitio, tus fotos y tu base de datos. Puedes volver a cualquiera de los últimos [30] días.</p>
+<div class="cal-num"><b id="calN">0</b><span>copias guardadas este mes · ejemplo</span></div>
+</div>
+</div>
+</section>
+
+<!-- 5 DOLORES -->
+<section style="padding-top:0">
+<div class="wrap dolores" data-rv>
+<a class="dolor d-ocre" href="#contacto"><small>La pregunta</small><b>¿Qué pasa si pierdes todo hoy? Asegúrate de que no.</b><span class="ir">Activa tu respaldo</span></a>
+<a class="dolor d-tinta" href="#contacto"><small>Lo que buscas</small><b>Deja de depender de acordarte de respaldar.</b><span class="ir">Hazlo automático</span></a>
+</div>
+</section>
+
+<!-- 6 DÓNDE VIVEN LAS COPIAS -->
+<section class="lugares-sec" style="padding-top:0">
+<div class="wrap">
+<div class="cab"><div><span class="etq">Dónde viven tus copias</span><h2>Nunca en un solo lugar, <span class="g">por si acaso</span></h2></div></div>
+<div class="lugares" data-rv>
+<article class="lug l1"><span class="lug-ic" aria-hidden="true"><i></i><i></i><i></i></span><small>01</small><b>En tu servidor</b><p>Para volver atrás en minutos.</p></article>
+<article class="lug l2"><span class="lug-ic nube" aria-hidden="true"></span><small>02</small><b>En la nube Rednet</b><p>Separada de tu sitio, por si el servidor falla.</p></article>
+<article class="lug l3"><span class="lug-ic cand" aria-hidden="true"></span><small>03</small><b>Cifrada</b><p>Solo tú y Rednet pueden abrirla [por confirmar].</p></article>
+</div>
+</div>
+</section>
+
+<!-- 7 PLANES -->
+<section id="planes" style="padding-top:0">
+<div class="wrap">
+<div class="cab">
+<div><span class="etq">Planes</span><h2>Respaldo según tu sitio, <span class="g">sin letra chica</span></h2></div>
+<div class="periodo" role="group" aria-label="Período"><button class="on" data-p="mes">MENSUAL</button><button data-p="anio">ANUAL</button></div>
+</div>
+<div class="planes" data-rv>
+<div class="plan"><small>Básico</small><div class="precio">$[—]<span class="per">/mes</span></div><p class="pd">Para sitios corporativos.</p><ul><li>Copia diaria</li><li>[7] días de historial</li><li>Restauración incluida</li><li>Soporte humano</li></ul><a class="btn" href="#contacto">Empezar</a></div>
+<div class="plan dest"><small>Completo <em>Más elegido</em></small><div class="precio">$[—]<span class="per">/mes</span></div><p class="pd">Para sitios que cambian seguido.</p><ul><li>Copia diaria</li><li>[30] días de historial</li><li>Copia en la nube Rednet</li><li>Restauraciones ilimitadas</li></ul><a class="btn" href="#contacto">Lo quiero</a></div>
+<div class="plan med"><small>Tienda</small><div class="precio">Hablemos</div><p class="pd">Para tiendas con pedidos todo el día.</p><ul><li>Copias varias veces al día</li><li>Base de datos aparte</li><li>WebGuardian</li><li>Prioridad en restauración</li></ul><a class="btn" href="#contacto">Hablar con Rednet</a></div>
+</div>
+<p class="letra">Sin permanencia. Precios en pesos chilenos por confirmar.</p>
+</div>
+</section>
+
+<!-- 8 FAQ -->
+<section id="faq" style="padding-top:0">
+<div class="wrap faq">
+<div><span class="etq">Preguntas</span><h2>Preguntas <span class="g">sobre respaldos</span></h2></div>
+<div>
+<details open><summary>¿Tengo que hacer algo yo? <i>+</i></summary><div class="resp"><p>No. Las copias se hacen solas cada noche. Tú solo nos escribes si necesitas volver atrás.</p></div></details>
+<details><summary>¿Cuánto se demora en restaurar? <i>+</i></summary><div class="resp"><p>[Tiempo a confirmar], según el tamaño de tu sitio. Te avisamos cuando está listo.</p></div></details>
+<details><summary>¿Se respaldan también mis correos? <i>+</i></summary><div class="resp"><p>[Por confirmar según tu plan de hosting].</p></div></details>
+<details><summary>¿Puedo recuperar un solo archivo? <i>+</i></summary><div class="resp"><p>Sí. No hace falta volver atrás todo el sitio para recuperar una foto o una página.</p></div></details>
+</div>
+</div>
+</section>
+
+<!-- 9 CTA -->
+<section class="cierre" id="contacto">
+<div class="wrap">
+<div class="cta" id="cta">
+<div class="niebla" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+<div class="grano" aria-hidden="true"></div>
+<h2>Que siempre exista <span class="g">una copia</span></h2>
+<p>Activa el respaldo de tu sitio esta semana y olvídate de acordarte.</p>
+<div class="hero-ctas"><a class="btn btn-blanco" href="#contacto">Pide tu presupuesto</a><a class="btn btn-borde" href="#contacto">Escríbenos por WhatsApp</a></div>
+</div>
+</div>
+</section>
+<section class="otros-sec" style="padding-top:0">
+<div class="wrap">
+<span class="etq">Otras soluciones Rednet</span>
+<div class="otros"><a class="otro" href="../webguardian/"><small>Seguridad</small><b>WebGuardian</b></a><a class="otro aqui" href="../respaldo/"><small>Estás aquí</small><b>Respaldo Automático Rednet</b></a><a class="otro" href="../soporte/"><small>Seguridad y soporte</small><b>Soporte Rednet</b></a></div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="pie">
+<div><a href="../../v4/" class="logo" style="display:inline-flex" aria-label="Rednet"><img src="../logo-rednet.png" alt="Rednet"></a><p style="margin-top:16px;max-width:30ch">Servicios digitales para pymes: web, hosting, seguridad, IA y automatización.</p></div>
+<div><h4>Servicios</h4><ul><li><a href="../diseno-web/">Sitios web</a></li><li><a href="../tienda-online/">Ventas online</a></li><li><a href="../hosting/">Infraestructura</a></li><li><a href="../webguardian/">Seguridad y soporte</a></li><li><a href="../../v4/#servicios">Marketing y visibilidad</a></li><li><a href="../asistente-virtual/">IA y automatización</a></li><li><a href="../../v4/#servicios">Video</a></li></ul></div>
+<div><h4>Empresa</h4><ul><li><a href="../../v4/#proceso">Cómo trabajamos</a></li><li><a href="../../v4/#caso">Casos</a></li><li><a href="../../v4/#proyectos">Proyectos</a></li><li><a href="../../v4/#planes">Planes</a></li></ul></div>
+<div><h4>Contacto</h4><ul><li>soporte@rednet.cl</li><li>WhatsApp [número]</li><li>www.rednetspa.cl</li></ul></div>
+</div>
+<div class="legal"><span>© 2026 Rednet SpA</span><span>Borrador de página de producto · contenido entre [ ] por confirmar</span></div>
+</div>
+</footer>
+<div class="borradores" aria-label="Cambiar de borrador">Borrador <a href="../webguardian/" class="" aria-label="Borrador G: WebGuardian">G</a><a href="../respaldo/" class="on" aria-label="Borrador H: Respaldo Automático Rednet" aria-current=page>H</a><a href="../soporte/" class="" aria-label="Borrador I: Soporte Rednet">I</a></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+<script src="../base.js"></script>
+<script src="pagina.js"></script>
+</body>
+</html>
