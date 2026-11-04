@@ -130,6 +130,9 @@ footer{background:var(--negro);color:#c9c2bb;margin-top:-36px;padding-top:110px;
 .marca-ph{background:rgba(200,137,43,.18);border-radius:4px;padding:0 4px}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 /* ===== Añadidos para páginas de producto ===== */
+.cab{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:40px;flex-wrap:wrap}
+.cab h2{max-width:780px}
+.cab .nota{font-size:13px;color:var(--gris);max-width:220px}
 .miga{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:22px;opacity:.8}
 .miga a{text-decoration:none;opacity:.7}.miga a:hover{opacity:1}
 .miga i{font-style:normal;opacity:.4}

@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>WordPress a tu Medida · Rednet</title>
+<meta name="description" content="WordPress a tu Medida: edita tu propio sitio cuando quieras, sin depender de nadie ni saber programar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500;112,700;112,800;100,400;100,600&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="../base.css">
+<link rel="stylesheet" href="pagina.css">
+</head>
+<body class="pg-wp">
+<header id="hdr" class="sobre-oscuro">
+<div class="wrap">
+<a href="../../v4/" class="logo" aria-label="Rednet, volver al inicio"><img src="../logo-rednet-header.png" alt="Rednet"></a>
+<nav aria-label="Principal"><a href="../../v4/">Inicio</a><a href="#incluye">Qué incluye</a><a href="#funciona">Cómo funciona</a><a href="#planes">Planes</a><a href="#faq">Preguntas</a></nav>
+<a class="btn btn-rojo" href="#contacto">Pide tu presupuesto</a>
+</div>
+</header>
+<main id="top">
+<!-- 1 HERO rojo profundo: editor de ejemplo que el visitante puede usar -->
+<section class="p-hero" aria-label="WordPress a tu Medida">
+<div class="niebla" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+<div class="grano" aria-hidden="true"></div>
+<div class="wrap hero-grid">
+<div class="hero-txt" id="heroTxt">
+<div class="miga"><a href="../../v4/">Inicio</a><i>/</i><a href="../../v4/#servicios">Sitios web</a><i>/</i><span>Sitios administrables</span></div>
+<span class="etq">WordPress a tu Medida</span>
+<h1>Edita tu sitio<br><em>sin llamar a nadie</em></h1>
+<p>Cambia textos, fotos y precios cuando quieras, sin depender de nadie ni saber programar. Simple, rápido y pensado para que lo manejes tú.</p>
+<div class="hero-ctas">
+<a class="btn btn-ocre" href="#contacto">Quiero mi sitio editable</a>
+<a class="btn btn-claro" href="#editor">Pruébalo aquí <i>→</i></a>
+</div>
+</div>
+<div class="editor" id="editor">
+<div class="ed-barra"><span class="ed-logo">W</span><span>Editar página · Inicio</span><span class="ed-guardado" id="guardado">Guardado</span></div>
+<div class="ed-cuerpo">
+<form class="ed-campos" onsubmit="return false" aria-label="Editor de ejemplo: cambia los campos y mira la vista previa">
+<label>Título<input id="inTitulo" value="Pan amasado recién salido del horno" maxlength="60"></label>
+<label>Precio destacado<input id="inPrecio" value="$[—] la docena" maxlength="24"></label>
+<label>Horario<input id="inHorario" value="Lunes a sábado · 7:00 a 20:00" maxlength="40"></label>
+<div class="ed-color" role="group" aria-label="Color del botón"><span>Botón</span><button type="button" class="on" data-c="#E30613" style="--c:#E30613" aria-label="Rojo"></button><button type="button" data-c="#C8892B" style="--c:#C8892B" aria-label="Ocre"></button><button type="button" data-c="#0E0D0C" style="--c:#0E0D0C" aria-label="Negro"></button></div>
+</form>
+<div class="ed-vista" aria-live="polite">
+<small>Vista previa · [Tu negocio]</small>
+<b id="outTitulo">Pan amasado recién salido del horno</b>
+<span class="ed-precio" id="outPrecio">$[—] la docena</span>
+<span class="ed-hor" id="outHorario">Lunes a sábado · 7:00 a 20:00</span>
+<span class="ed-btn" id="outBtn">Haz tu pedido</span>
+</div>
+</div>
+<p class="ed-nota">Escribe en los campos: así de simple es editar tu sitio.</p>
+</div>
+</div>
+</section>
+
+<!-- 2 FRASE -->
+<section class="manifiesto">
+<div class="wrap">
+<span class="etq">La idea</span>
+<p data-palabras>Cambiar un precio <span class="ico r"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M4 20h4L19 9l-4-4L4 16v4Z"/></svg></span> no debería tomar tres días ni un correo al proveedor. Lo haces tú <span class="ico o"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="m5 12 5 5 9-10"/></svg></span> en dos minutos.</p>
+</div>
+</section>
+
+<!-- 3 CARRERA: esperar al proveedor vs hacerlo tú -->
+<section class="carrera-sec" id="funciona">
+<div class="wrap">
+<div class="cab"><div><span class="etq">Un cambio simple</span><h2>Cambiar el horario de tu local, <span class="g">antes y ahora</span></h2></div><p class="nota">Tiempos de ejemplo.</p></div>
+<div class="carrera" id="carrera">
+<div class="carril antes">
+<div class="cr-cab"><b>Antes</b><span>Escribirle al proveedor y esperar</span></div>
+<div class="cr-pista"><div class="cr-barra" id="barAntes"><i></i></div><div class="cr-hitos"><span>Correo</span><span>Espera</span><span>Cotización</span><span>Espera</span><span>Cambio</span></div></div>
+<div class="cr-tiempo" id="tAntes">0 días</div>
+</div>
+<div class="carril ahora">
+<div class="cr-cab"><b>Con Rednet</b><span>Entras, cambias, guardas</span></div>
+<div class="cr-pista"><div class="cr-barra" id="barAhora"><i></i></div><div class="cr-hitos"><span>Entras</span><span>Editas</span><span>Guardas ✓</span></div></div>
+<div class="cr-tiempo" id="tAhora">0 min</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 4 ACORDEÓN (mismo componente del home): lo que puedes editar tú -->
+<section id="incluye" style="padding-top:0">
+<div class="wrap">
+<div class="cab"><div><span class="etq">Lo que editas tú</span><h2>Todo lo que cambia seguido, <span class="g">en tus manos</span></h2></div><p class="nota">Pasa el cursor o toca cada panel.</p></div>
+<div class="acordeon" id="acordeon">
+<button class="pan k1 on" aria-expanded="true"><span class="n">01</span><span class="vert">Textos</span><span class="flecha"></span><div class="cont"><div class="grande">Escribe</div><h3>Textos y títulos</h3><p>Corrige una frase, cambia una promoción o actualiza tu horario como si escribieras un correo.</p><div class="chips"><span>Sin código</span><span>Vista previa</span></div></div></button>
+<button class="pan k2" aria-expanded="false"><span class="n">02</span><span class="vert">Fotos</span><span class="flecha"></span><div class="cont"><div class="grande">Arrastra</div><h3>Fotos y galerías</h3><p>Sube fotos desde el celular. El sitio las ajusta solo para que carguen rápido.</p><div class="chips"><span>Desde el celular</span><span>Optimizadas</span></div></div></button>
+<button class="pan k3" aria-expanded="false"><span class="n">03</span><span class="vert">Precios</span><span class="flecha"></span><div class="cont"><div class="grande">$[—]</div><h3>Precios y servicios</h3><p>Actualiza tu carta, tu lista de servicios o tus tarifas en minutos.</p><div class="chips"><span>Listas</span><span>Tablas</span></div></div></button>
+<button class="pan k4" aria-expanded="false"><span class="n">04</span><span class="vert">Blog y noticias</span><span class="flecha"></span><div class="cont"><div class="grande">Publica</div><h3>Blog y noticias</h3><p>Cuenta novedades y ayuda a que Google te encuentre con contenido fresco.</p><div class="chips"><span>SEO</span><span>Programar</span></div></div></button>
+<button class="pan k5" aria-expanded="false"><span class="n">05</span><span class="vert">Páginas nuevas</span><span class="flecha"></span><div class="cont"><div class="grande">Bloques</div><h3>Páginas nuevas</h3><p>Arma una página con bloques ya diseñados con tu marca, sin romper nada.</p><div class="chips"><span>Plantillas propias</span><span>Tu marca</span></div></div></button>
+</div>
+</div>
+</section>
+
+<!-- 5 BLOQUES que caen dentro de la página -->
+<section class="bloques-sec">
+<div class="wrap bloques-grid">
+<div>
+<span class="etq">Con bloques</span>
+<h2>Armas una página <span class="g">como quien ordena piezas</span></h2>
+<p class="bl-p">Dejamos bloques diseñados con tu marca: portada, servicios, galería, testimonios, contacto. Tú eliges cuáles usar y en qué orden. Arrastra las piezas para probar.</p>
+<div class="dolores-v" data-rv>
+<a class="dolor d-ocre" href="#contacto"><small>Si te pasa esto</small><b>Deja de esperar días por un cambio simple en tu sitio.</b><span class="ir">Quiero editar yo</span></a>
+</div>
+</div>
+<div class="pagina-b" id="paginaB" aria-label="Página de ejemplo hecha con bloques (puedes arrastrarlos)">
+<div class="blq b1"><small>Portada</small><span class="bl-l"></span><span class="bl-l c"></span></div>
+<div class="blq b2"><small>Servicios</small><span class="bl-tri"><i></i><i></i><i></i></span></div>
+<div class="blq b3"><small>Galería</small><span class="bl-gal"><i></i><i></i><i></i><i></i></span></div>
+<div class="blq b4"><small>Testimonios</small><span class="bl-l"></span></div>
+<div class="blq b5"><small>Contacto</small><span class="bl-btn"></span></div>
+</div>
+</div>
+</section>
+
+<!-- 6 DOLOR 2 + CAPACITACIÓN -->
+<section style="padding-top:0">
+<div class="wrap dolores" data-rv>
+<a class="dolor d-rojo" href="#contacto"><small>Lo que buscas</small><b>Edita tu propio sitio, sin llamar a nadie.</b><span class="ir">Empieza hoy</span></a>
+<div class="dolor d-papel"><small>Incluido</small><b>Te enseñamos a usarlo en una sesión</b><span class="ir-txt">Capacitación + guía en video [por confirmar]</span></div>
+</div>
+</section>
+
+<!-- 7 PLANES -->
+<section id="planes">
+<div class="wrap">
+<div class="cab">
+<div><span class="etq">Planes</span><h2>Tu sitio editable, <span class="g">listo para crecer</span></h2></div>
+</div>
+<div class="planes" data-rv>
+<div class="plan"><small>Esencial</small><div class="precio">$[—]</div><p class="pd">Sitio WordPress con lo justo para partir.</p><ul><li>Hasta [N] páginas</li><li>Bloques con tu marca</li><li>Capacitación</li><li>Soporte humano</li></ul><a class="btn" href="#contacto">Empezar</a></div>
+<div class="plan dest"><small>Completo <em>Más elegido</em></small><div class="precio">$[—]</div><p class="pd">Para empresas que publican seguido.</p><ul><li>Todo lo de Esencial</li><li>Blog y noticias</li><li>SEO base</li><li>Mantención Web 3 meses [por confirmar]</li></ul><a class="btn" href="#contacto">Lo quiero</a></div>
+<div class="plan med"><small>Migración</small><div class="precio">Hablemos</div><p class="pd">Ya tienes WordPress y quieres ordenarlo.</p><ul><li>Revisión de tu sitio</li><li>Limpieza de plugins</li><li>Bloques nuevos</li><li>WebGuardian</li></ul><a class="btn" href="#contacto">Hablar con Rednet</a></div>
+</div>
+<p class="letra">Pago único por el sitio. Precios en pesos chilenos por confirmar.</p>
+</div>
+</section>
+
+<!-- 8 FAQ -->
+<section id="faq" style="padding-top:0">
+<div class="wrap faq">
+<div><span class="etq">Preguntas</span><h2>Preguntas <span class="g">sobre WordPress</span></h2></div>
+<div>
+<details open><summary>¿Es difícil de usar? <i>+</i></summary><div class="resp"><p>No. Si sabes escribir un correo, sabes editar tu sitio. Igual te enseñamos paso a paso.</p></div></details>
+<details><summary>¿Puedo romper el diseño si cambio algo? <i>+</i></summary><div class="resp"><p>Los bloques vienen protegidos: cambias el contenido, no la estructura. Y si algo sale mal, hay respaldo.</p></div></details>
+<details><summary>¿Quién actualiza WordPress y los plugins? <i>+</i></summary><div class="resp"><p>Con Mantención Web lo hacemos nosotros, para que tu sitio siga seguro y al día.</p></div></details>
+<details><summary>¿Ya tengo WordPress, me sirve igual? <i>+</i></summary><div class="resp"><p>Sí. Lo revisamos, lo ordenamos y te dejamos bloques nuevos con tu marca.</p></div></details>
+</div>
+</div>
+</section>
+
+<!-- 9 CTA -->
+<section class="cierre" id="contacto">
+<div class="wrap">
+<div class="cta" id="cta">
+<div class="niebla" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+<div class="grano" aria-hidden="true"></div>
+<h2>Tu sitio, <span class="g">en tus manos</span></h2>
+<p>Cuéntanos qué cambias más seguido y te mostramos cómo lo harías tú.</p>
+<div class="hero-ctas"><a class="btn btn-blanco" href="#contacto">Pide tu presupuesto</a><a class="btn btn-borde" href="#contacto">Escríbenos por WhatsApp</a></div>
+</div>
+</div>
+</section>
+<section class="otros-sec" style="padding-top:0">
+<div class="wrap">
+<span class="etq">Otras soluciones Rednet</span>
+<div class="otros"><a class="otro" href="../hosting-web/"><small>Infraestructura</small><b>Hosting Rednet</b></a><a class="otro" href="../diseno-web/"><small>Sitios web</small><b>Diseño Web Rednet</b></a><a class="otro aqui" href="../wordpress/"><small>Estás aquí</small><b>WordPress a tu Medida</b></a></div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="pie">
+<div><a href="../../v4/" class="logo" style="display:inline-flex" aria-label="Rednet"><img src="../logo-rednet.png" alt="Rednet"></a><p style="margin-top:16px;max-width:30ch">Servicios digitales para pymes: web, hosting, seguridad, IA y automatización.</p></div>
+<div><h4>Servicios</h4><ul><li><a href="../diseno-web/">Sitios web</a></li><li><a href="../tienda-online/">Ventas online</a></li><li><a href="../hosting/">Infraestructura</a></li><li><a href="../../v4/#servicios">Seguridad y soporte</a></li><li><a href="../../v4/#servicios">Marketing y visibilidad</a></li><li><a href="../asistente-virtual/">IA y automatización</a></li><li><a href="../../v4/#servicios">Video</a></li></ul></div>
+<div><h4>Empresa</h4><ul><li><a href="../../v4/#proceso">Cómo trabajamos</a></li><li><a href="../../v4/#caso">Casos</a></li><li><a href="../../v4/#proyectos">Proyectos</a></li><li><a href="../../v4/#planes">Planes</a></li></ul></div>
+<div><h4>Contacto</h4><ul><li>soporte@rednet.cl</li><li>WhatsApp [número]</li><li>www.rednetspa.cl</li></ul></div>
+</div>
+<div class="legal"><span>© 2026 Rednet SpA</span><span>Borrador de página de producto · contenido entre [ ] por confirmar</span></div>
+</div>
+</footer>
+<div class="borradores" aria-label="Cambiar de borrador">Borrador <a href="../hosting-web/" class="" aria-label="Borrador D: Hosting Rednet">D</a><a href="../diseno-web/" class="" aria-label="Borrador E: Diseño Web Rednet">E</a><a href="../wordpress/" class="on" aria-label="Borrador F: WordPress a tu Medida" aria-current=page>F</a></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+<script src="../base.js"></script>
+<script src="pagina.js"></script>
+</body>
+</html>
