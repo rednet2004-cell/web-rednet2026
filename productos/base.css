@@ -177,3 +177,4 @@ footer{background:var(--negro);color:#c9c2bb;margin-top:-36px;padding-top:110px;
 .barra i{display:block;height:100%;background:var(--rojo);border-radius:4px;transition:width .9s cubic-bezier(.7,0,.2,1)}
 .aviso{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;color:var(--ocre);margin-top:18px;text-transform:uppercase}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+@media (max-width:520px){header .btn{white-space:nowrap;font-size:10.5px;letter-spacing:.06em;padding:12px 14px}}

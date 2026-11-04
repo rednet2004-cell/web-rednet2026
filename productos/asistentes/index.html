@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Asistentes Virtuales Rednet · Rednet</title>
+<meta name="description" content="Asistentes Virtuales Rednet: atiende por WhatsApp, Telegram o llamada, en tu tono, sin descanso. Respuestas al instante, aunque estés cerrado.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500;112,700;112,800;100,400;100,600&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="../base.css">
+<link rel="stylesheet" href="pagina.css">
+</head>
+<body class="pg-asis">
+<header id="hdr" class="sobre-claro">
+<div class="wrap">
+<a href="../../v4/" class="logo" aria-label="Rednet, volver al inicio"><img src="../logo-rednet-header.png" alt="Rednet"></a>
+<nav aria-label="Principal"><a href="../../v4/">Inicio</a><a href="#incluye">Qué incluye</a><a href="#funciona">Cómo funciona</a><a href="#planes">Planes</a><a href="#faq">Preguntas</a></nav>
+<a class="btn btn-rojo" href="#contacto">Quiero mi asistente</a>
+</div>
+</header>
+<main id="top">
+<!-- 1 HERO ocre: vitrina del local que pasa de abierto a cerrado mientras el asistente sigue respondiendo -->
+<section class="p-hero" aria-label="Asistentes Virtuales Rednet">
+<div class="wrap hero-grid">
+<div class="hero-txt" id="heroTxt">
+<div class="miga"><a href="../../v4/">Inicio</a><i>/</i><a href="../../v4/#servicios">IA y automatización</a><i>/</i><span>Asistentes virtuales</span></div>
+<span class="etq">Asistentes Virtuales Rednet</span>
+<h1>Responde al instante, <em>aunque estés cerrado</em></h1>
+<p>Atiende por WhatsApp, Telegram o llamada, en tu tono, sin descanso.</p>
+<div class="hero-ctas">
+<a class="btn btn-negro" href="#prueba">Pruébalo con tu rubro</a>
+<a class="btn btn-linea" href="#contacto">Quiero mi asistente <i>→</i></a>
+</div>
+</div>
+<div class="vitrina" id="vitrina" aria-hidden="true">
+<div class="cielo" id="cielo"><span class="astro"></span><span class="estrellas"></span>
+<div class="letrero" id="letrero"><span class="ab">Abierto</span><span class="ce">Cerrado</span></div>
+<div class="reloj" id="reloj">18:00</div>
+</div>
+<div class="toldo"></div>
+<div class="flujo" id="flujo"></div>
+</div>
+</div>
+</section>
+
+<!-- 2 MARQUEE de canales -->
+<div class="marquee" aria-label="Canales">
+<div class="pista"><span>WhatsApp</span><span>Telegram</span><span>Llamadas</span><span>En tu tono</span><span>Sin descanso</span><span>Fines de semana</span><span>Feriados</span><span>WhatsApp</span><span>Telegram</span><span>Llamadas</span><span>En tu tono</span><span>Sin descanso</span><span>Fines de semana</span><span>Feriados</span></div>
+</div>
+
+<!-- 3 PRUÉBALO: rubro × tono × canal -->
+<section class="prueba-sec" id="prueba">
+<div class="wrap">
+<div class="cab"><div><span class="etq">Pruébalo</span><h2>Elige tu rubro y tu tono, <span class="g">y mira cómo responde</span></h2></div><p class="nota">Respuestas de ejemplo. El tuyo aprende tus precios, horarios y forma de hablar.</p></div>
+<div class="prueba-grid">
+<div class="controles">
+<div class="grupo"><small>Tu rubro</small><div class="chips" id="cRubro" role="tablist" aria-label="Rubro"><button class="on" role="tab" aria-selected="true">Clínica dental</button><button role="tab" aria-selected="false">Restaurante</button><button role="tab" aria-selected="false">Ferretería</button><button role="tab" aria-selected="false">Inmobiliaria</button></div></div>
+<div class="grupo"><small>Tu tono</small><div class="chips" id="cTono" role="tablist" aria-label="Tono"><button class="on" role="tab" aria-selected="true">Cercano</button><button role="tab" aria-selected="false">Formal</button><button role="tab" aria-selected="false">Con humor</button></div></div>
+<div class="grupo"><small>Por dónde te escriben</small><div class="chips canal" id="cCanal" role="tablist" aria-label="Canal"><button class="on" role="tab" aria-selected="true" data-c="wa">WhatsApp</button><button role="tab" aria-selected="false" data-c="tg">Telegram</button><button role="tab" aria-selected="false" data-c="ll">Llamada</button></div></div>
+</div>
+<div class="tel" id="tel" data-c="wa" aria-live="polite">
+<div class="tel-top"><span class="tel-av"></span><div><b id="telNom">[Tu negocio]</b><small id="telEst">en línea · 23:41</small></div><span class="tel-cerrado">Local cerrado</span></div>
+<div class="tel-chat" id="telChat"></div>
+<div class="tel-llamada" id="telLl"><div class="onda" id="onda"></div><div class="trans" id="trans"></div></div>
+<div class="tel-pie" id="telPie">✓ Respondido en [2] s</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 4 LA CARRERA DE LA RESPUESTA (sticky + scroll) -->
+<section class="carrera-sec">
+<div class="carrera" id="carrera">
+<div class="carrera-fijo">
+<div class="wrap">
+<div class="cab"><div><span class="etq">Un mensaje a las 23:14</span><h2>Quien responde primero, <span class="g">se queda con el cliente</span></h2></div><div class="hora-grande" id="horaG">23:14</div></div>
+<div class="pistas">
+<div class="carril sin"><span class="rot">Sin asistente</span><div class="linea"><i class="ev" data-t="0"><b>Cliente</b>¿Tienen hora mañana?</i><i class="ev" data-t=".18"><b>Cliente</b>¿Hola? 😕</i><i class="ev mal" data-t=".72"><b>Cliente</b>Ya reservé en otro lado, gracias</i><i class="ev tarde" data-t=".9"><b>Tú · 09:30</b>¡Hola! Sí, tenemos…</i></div></div>
+<div class="carril con"><span class="rot">Con tu asistente</span><div class="linea"><i class="ev" data-t="0"><b>Cliente</b>¿Tienen hora mañana?</i><i class="ev ok" data-t=".03"><b>Asistente · 23:14</b>¡Sí! 10:00 u 16:30. ¿Cuál te guardo?</i><i class="ev ok" data-t=".1"><b>✓ Reservado</b>Mañana 10:00</i><i class="ev resumen" data-t=".62"><b>08:00 · Para ti</b>Resumen: 1 reserva nueva anoche</i></div></div>
+<div class="cabezal" id="cabezal"></div>
+<div class="horas"><span>23:14</span><span>01:00</span><span>03:00</span><span>05:00</span><span>07:00</span><span>09:30</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 5 CÓMO FUNCIONA: tarjetas que se arrastran -->
+<section class="pasos-sec" id="funciona" style="padding-top:0">
+<div class="wrap">
+<div class="cab"><div><span class="etq">Cómo funciona</span><h2>Listo en días, <span class="g">no en meses</span></h2></div><p class="nota">Arrastra las tarjetas →</p></div>
+</div>
+<div class="pasos-vp"><div class="pasos" id="pasos">
+<div class="pa"><small>01</small><b>Nos cuentas tu negocio</b><p>Horarios, precios, servicios y las preguntas que más te hacen.</p></div>
+<div class="pa pa-ocre"><small>02</small><b>Le enseñamos tu tono</b><p>Formal, cercano o con humor. Habla como hablas tú.</p></div>
+<div class="pa pa-negro"><small>03</small><b>Lo conectamos</b><p>A tu WhatsApp, Telegram o número de teléfono.</p></div>
+<div class="pa"><small>04</small><b>Lo cuidamos cada mes</b><p>Revisamos conversaciones y mejoramos sus respuestas.</p></div>
+<div class="pa pa-rojo"><small>Y si no sabe</small><b>Te pasa la conversación</b><p>Te avisa al tiro y tú sigues desde ahí, sin perder al cliente.</p></div>
+</div></div>
+</section>
+
+<!-- 6 QUÉ INCLUYE + comparación -->
+<section id="incluye" style="padding-top:0">
+<div class="wrap inc-grid">
+<div>
+<span class="etq">Qué cambia</span>
+<h2>Tu negocio, <span class="g">atendiendo de noche</span></h2>
+<div class="toggle" data-m="con" data-met="met" role="group" aria-label="Comparar"><button data-m="antes" aria-pressed="false">Sin asistente</button><button data-m="con" class="on" aria-pressed="true">Con Rednet</button></div>
+<div class="met" id="met">
+<div data-wa="100%" data-wc="6%"><span>Tiempo para responder</span><b data-a="[Horas]" data-c="[Segundos]">[Segundos]</b><div class="barra"><i style="width:6%"></i></div></div>
+<div data-wa="0%" data-wc="100%"><span>Mensajes atendidos fuera de horario</span><b data-a="0%" data-c="100%">100%</b><div class="barra"><i style="width:100%"></i></div></div>
+<div data-wa="38%" data-wc="100%"><span>Horario de atención</span><b data-a="9 a 18 h" data-c="24/7">24/7</b><div class="barra"><i style="width:100%"></i></div></div>
+</div>
+<p class="aviso">Valores de ejemplo · dato a confirmar</p>
+</div>
+<div class="inc-lista" data-rv>
+<div><b>WhatsApp, Telegram y llamadas</b><p>Un solo asistente en todos tus canales.</p></div>
+<div><b>Agenda y reservas</b><p>Toma horas y las deja en tu calendario.</p></div>
+<div><b>Tus precios y stock</b><p>Responde con tu información, no inventa.</p></div>
+<div><b>Resumen diario</b><p>Cada mañana sabes qué pasó mientras dormías.</p></div>
+</div>
+</div>
+</section>
+
+<!-- 7 DOLORES -->
+<section style="padding-top:0">
+<div class="wrap dolores" data-rv>
+<a class="dolor d-ocre" href="#contacto"><small>Si te pasa esto</small><b>¿Pierdes clientes por no responder a tiempo?</b><span class="ir">Responde al instante</span></a>
+<a class="dolor d-noche" href="#contacto"><small>Lo que buscas</small><b>Atiende 24/7 sin contratar a nadie más.</b><span class="ir">Quiero mi asistente</span></a>
+</div>
+</section>
+
+<!-- 8 PLANES -->
+<section id="planes" style="padding-top:0">
+<div class="wrap">
+<div class="cab">
+<div><span class="etq">Planes</span><h2>Un asistente a tu medida, <span class="g">sin letra chica</span></h2></div>
+<div class="periodo" role="group" aria-label="Período"><button class="on" data-p="mes">MENSUAL</button><button data-p="anio">ANUAL</button></div>
+</div>
+<div class="planes" data-rv>
+<div class="plan"><small>Un canal</small><div class="precio">$[—]<span class="per">/mes</span></div><p class="pd">Para empezar por WhatsApp.</p><ul><li>WhatsApp o Telegram</li><li>Preguntas frecuentes</li><li>Tu tono</li><li>Resumen diario</li></ul><a class="btn" href="#contacto">Empezar</a></div>
+<div class="plan dest"><small>Todo el día <em>Más elegido</em></small><div class="precio">$[—]<span class="per">/mes</span></div><p class="pd">Atiende y agenda sin descanso.</p><ul><li>WhatsApp y Telegram</li><li>Agenda y reservas</li><li>Paso a una persona</li><li>Mejora mensual</li></ul><a class="btn" href="#contacto">Quiero mi asistente</a></div>
+<div class="plan med"><small>Con llamadas</small><div class="precio">Hablemos</div><p class="pd">Para negocios que reciben llamadas.</p><ul><li>Atención por voz</li><li>Todos los canales</li><li>Conexión con tus sistemas</li><li>Reunión mensual</li></ul><a class="btn" href="#contacto">Hablar con Rednet</a></div>
+</div>
+<p class="letra">Precios en pesos chilenos por confirmar.</p>
+</div>
+</section>
+
+<!-- 9 FAQ -->
+<section id="faq" style="padding-top:0">
+<div class="wrap faq">
+<div><span class="etq">Preguntas</span><h2>Preguntas <span class="g">sobre el asistente</span></h2></div>
+<div>
+<details open><summary>¿Mis clientes se van a dar cuenta de que es un asistente? <i>+</i></summary><div class="resp"><p>Se presenta como el asistente de tu negocio. Habla en tu tono y, cuando hace falta, te pasa la conversación.</p></div></details>
+<details><summary>¿Qué pasa si no sabe la respuesta? <i>+</i></summary><div class="resp"><p>No inventa. Le dice al cliente que te consulta y te avisa al tiro para que sigas tú.</p></div></details>
+<details><summary>¿Puedo usar mi mismo número de WhatsApp? <i>+</i></summary><div class="resp"><p>Sí, en la mayoría de los casos. Lo revisamos contigo antes de conectarlo.</p></div></details>
+<details><summary>¿Cuánto se demora en estar listo? <i>+</i></summary><div class="resp"><p>[N] días desde que nos pasas la información de tu negocio.</p></div></details>
+</div>
+</div>
+</section>
+
+<!-- 10 CTA -->
+<section class="cierre" id="contacto">
+<div class="wrap">
+<div class="cta" id="cta">
+<div class="niebla" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+<div class="grano" aria-hidden="true"></div>
+<h2>Cierra tranquilo. <span class="g">Tu negocio sigue respondiendo.</span></h2>
+<p>Cuéntanos tu rubro y te mostramos tu asistente funcionando.</p>
+<div class="hero-ctas"><a class="btn btn-ocre" href="#contacto">Quiero mi asistente</a><a class="btn btn-borde" href="#prueba">Probar otra vez</a></div>
+</div>
+</div>
+</section>
+<section class="otros-sec" style="padding-top:0">
+<div class="wrap">
+<span class="etq">Otras soluciones Rednet</span>
+<div class="otros"><a class="otro" href="../seo-geo/"><small>Marketing y visibilidad</small><b>SEO y GEO Rednet</b></a><a class="otro aqui" href="../asistentes/"><small>Estás aquí</small><b>Asistentes Virtuales Rednet</b></a><a class="otro" href="../rrss/"><small>Marketing y visibilidad</small><b>Publicador RRSS Rednet</b></a></div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="pie">
+<div><a href="../../v4/" class="logo" style="display:inline-flex" aria-label="Rednet"><img src="../logo-rednet.png" alt="Rednet"></a><p style="margin-top:16px;max-width:30ch">Servicios digitales para pymes: web, hosting, seguridad, IA y automatización.</p></div>
+<div><h4>Servicios</h4><ul><li><a href="../diseno-web/">Sitios web</a></li><li><a href="../tienda-online/">Ventas online</a></li><li><a href="../hosting/">Infraestructura</a></li><li><a href="../webguardian/">Seguridad y soporte</a></li><li><a href="../seo-geo/">Marketing y visibilidad</a></li><li><a href="../asistente-virtual/">IA y automatización</a></li><li><a href="../../v4/#servicios">Video</a></li></ul></div>
+<div><h4>Empresa</h4><ul><li><a href="../../v4/#proceso">Cómo trabajamos</a></li><li><a href="../../v4/#caso">Casos</a></li><li><a href="../../v4/#proyectos">Proyectos</a></li><li><a href="../../v4/#planes">Planes</a></li></ul></div>
+<div><h4>Contacto</h4><ul><li>soporte@rednet.cl</li><li>WhatsApp [número]</li><li>www.rednetspa.cl</li></ul></div>
+</div>
+<div class="legal"><span>© 2026 Rednet SpA</span><span>Borrador de página de producto · contenido entre [ ] por confirmar</span></div>
+</div>
+</footer>
+<div class="borradores" aria-label="Cambiar de borrador">Borrador <a href="../seo-geo/" class="" aria-label="Borrador J: SEO y GEO Rednet">J</a><a href="../asistentes/" class="on" aria-label="Borrador K: Asistentes Virtuales Rednet" aria-current=page>K</a><a href="../rrss/" class="" aria-label="Borrador L: Publicador RRSS Rednet">L</a></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+<script src="../base.js"></script>
+<script src="pagina.js"></script>
+</body>
+</html>
