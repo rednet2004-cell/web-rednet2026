@@ -136,6 +136,7 @@ body.pg-hosting .faq details{border-color:#2c2826}
 body.pg-hosting .faq summary i{background:#2A2725}
 body.pg-hosting .faq .resp p{color:#a39c96}
 body.pg-hosting .cta{background:var(--grafito)}
+body.pg-hosting .cta h2 .g{color:var(--ocre-claro)}
 body.pg-hosting footer{background:#070606}
 body.pg-hosting .otro{background:var(--grafito);color:#fff;box-shadow:inset 0 0 0 1px #2c2826}
 body.pg-hosting .otro:hover{box-shadow:inset 0 0 0 1px var(--ocre)}
