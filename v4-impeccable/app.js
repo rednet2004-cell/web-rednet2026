@@ -127,6 +127,9 @@ requestAnimationFrame(() => { vIntro.style.transition = 'none'; vIntro.classList
 vIntro.play().then(() => { vIntro.classList.add('on'); vActivo = vIntro; }).catch(mostrarLoop);
 new IntersectionObserver(([en]) => { if (vActivo) en.isIntersecting ? vActivo.play().catch(() => {}) : vActivo.pause(); }).observe(heroEl);
 }
+/* 11 Video de fondo del cierre: solo se reproduce en pantalla, en escritorio y con movimiento permitido */
+const vCta = document.getElementById('vCta');
+if (!sinVideo) new IntersectionObserver(([en]) => { if (en.isIntersecting){ vCta.preload = 'auto'; vCta.play().catch(() => {}); } else vCta.pause(); }, {rootMargin:'200px'}).observe(vCta);
 /* 4 Acordeón */
 const pans = [...document.querySelectorAll('.pan')];
 const abrir = p => pans.forEach(x => { const on = x === p; x.classList.toggle('on', on); x.querySelector('.pan-t button').setAttribute('aria-expanded', on); x.querySelector('.cont').inert = !on; });
