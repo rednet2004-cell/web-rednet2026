@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Rednet Home · v4-gpt-taste</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+
+<!-- NAV: píldora flotante de vidrio -->
+<header class="nav" id="nav">
+<div class="nav-pill">
+<a href="#top" class="logo" aria-label="Rednet, inicio"><img src="../v4/logo-rednet-header.png" alt="Rednet"></a>
+<nav id="navLinks" aria-label="Principal">
+<a href="#servicios">Servicios</a><a href="#proceso">Cómo trabajamos</a><a href="#caso">Casos</a><a href="#planes">Planes</a><a href="#faq">Preguntas</a><a href="#contacto" class="nav-movil">Contacto</a>
+</nav>
+<a class="btn btn-rojo nav-cta" href="#contacto">Pide tu presupuesto</a>
+<button class="menu" id="menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span class="sr">Menú</span></button>
+</div>
+</header>
+
+<main id="top" class="pagina">
+<span id="contenido"></span>
+
+<!-- ATTENTION: hero cinematográfico centrado -->
+<section class="hero" aria-label="Inicio">
+<div class="hero-media" aria-hidden="true">
+<video id="vLoop" muted playsinline loop preload="none" poster="../v4/video/hero-poster.jpg"><source src="../v4/video/hero-loop.webm" type="video/webm"><source src="../v4/video/hero-loop.mp4" type="video/mp4"></video>
+<div class="hero-lavado"></div>
+<div class="grano"></div>
+</div>
+<div class="hero-txt">
+<h1 class="hero-h1"><span class="linea">Tu negocio digital,</span> <span class="linea"><em>funcionando solo.</em></span></h1>
+<p>Diseñamos tu sitio, lo mantenemos seguro y lo hacemos trabajar por ti. Web, hosting, SEO, asistentes con IA y automatizaciones para pymes en Chile, con una persona real del otro lado.</p>
+<div class="ctas">
+<a class="btn btn-rojo btn-xl" href="#contacto">Pide tu presupuesto</a>
+<a class="btn btn-vidrio btn-xl" href="#servicios">Ver servicios</a>
+</div>
+</div>
+<button class="pausa" id="pausa" aria-pressed="false"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-p" d="M5 3v10M11 3v10"/><path class="i-r" d="M5 3l8 5-8 5z"/></svg><span>Pausar video</span></button>
+</section>
+
+<!-- INTEREST: manifiesto con imágenes en línea + bento sin huecos -->
+<section class="capitulo manifiesto">
+<div class="wrap">
+<p class="manif" id="manif">Convertimos tareas repetitivas <span class="pildora" style="background-image:url(../v4/img/hero-hosting.webp)" aria-hidden="true"></span> en tiempo para tu negocio y en <span class="pildora" style="background-image:url(../v4/img/hero-ecommerce.webp)" aria-hidden="true"></span> clientes mejor atendidos.</p>
+</div>
+<div class="wrap bento">
+<a class="cel cel-a" href="#servicios">
+<div class="cel-img"><img src="../v4/img/hero-hosting.webp" alt="Pasillo de servidores" loading="lazy"></div>
+<div class="cel-pie"><b>Hosting Rednet</b><span>Siempre disponible, rápido y estable. 99,9 % de disponibilidad [dato de ejemplo].</span></div>
+</a>
+<a class="cel cel-b" href="#servicios">
+<div class="cel-img"><img src="../v4/img/hero-ecommerce.webp" alt="Bodega con un notebook mostrando una tienda online" loading="lazy"></div>
+<div class="cel-pie"><b>Tienda Online Rednet</b><span>Vende también mientras duermes.</span></div>
+</a>
+<div class="cel cel-c"><div class="num">24/7</div><p>Soporte humano: hay una persona real del otro lado, y responde.</p></div>
+<div class="cel cel-d"><div class="num">19</div><p>Soluciones digitales para tu pyme con un solo proveedor.</p></div>
+</div>
+</section>
+
+<!-- DESIRE 1: servicios en acordeón horizontal -->
+<section class="capitulo" id="servicios">
+<div class="wrap">
+<h2 class="titulo">Siete líneas de trabajo. <span class="g">Un objetivo: que tú te ocupes de tu negocio.</span></h2>
+<div class="acordeon" id="acordeon">
+<div class="pan on" style="--c:var(--negro);--t:#fff"><h3><button aria-expanded="true" aria-controls="p1" id="b1"><span class="vert">Sitios web</span></button></h3><div class="cont" id="p1" role="region" aria-labelledby="b1"><div class="grande" aria-hidden="true">A medida</div><p class="tit">Sitios web</p><p>Sitios que se ven serios, cargan rápido y que puedes editar sin llamar a nadie.</p><ul class="chips"><li>Diseño Web</li><li>WordPress a tu Medida</li></ul></div></div>
+<div class="pan" style="--c:var(--rojo);--t:#fff"><h3><button aria-expanded="false" aria-controls="p2" id="b2"><span class="vert">Ventas online</span></button></h3><div class="cont" id="p2" role="region" aria-labelledby="b2"><div class="grande" aria-hidden="true">Abierta 24/7</div><p class="tit">Ventas online</p><p>Tu tienda y tu app vendiendo a cualquier hora, desde el computador o el celular.</p><ul class="chips"><li>Tienda Online</li><li>Apps Móviles</li></ul></div></div>
+<div class="pan" style="--c:var(--ocre-claro);--t:var(--tinta)"><h3><button aria-expanded="false" aria-controls="p3" id="b3"><span class="vert">Infraestructura</span></button></h3><div class="cont" id="p3" role="region" aria-labelledby="b3"><div class="grande" aria-hidden="true">Siempre arriba</div><p class="tit">Infraestructura</p><p>Hosting rápido, respaldos automáticos y tus documentos ordenados en un solo lugar.</p><ul class="chips"><li>Hosting</li><li>Respaldo Automático</li><li>Gestor Documental</li></ul></div></div>
+<div class="pan" style="--c:var(--grafito-2);--t:#fff"><h3><button aria-expanded="false" aria-controls="p4" id="b4"><span class="vert">Seguridad y soporte</span></button></h3><div class="cont" id="p4" role="region" aria-labelledby="b4"><div class="grande" aria-hidden="true">Personas reales</div><p class="tit">Seguridad y soporte</p><p>Vigilamos tu sitio, lo mantenemos al día y, si algo pasa, te responde alguien del equipo.</p><ul class="chips"><li>WebGuardian</li><li>Mantención Web</li><li>Soporte</li></ul></div></div>
+<div class="pan" style="--c:var(--rojo-profundo);--t:#fff"><h3><button aria-expanded="false" aria-controls="p5" id="b5"><span class="vert">Marketing y visibilidad</span></button></h3><div class="cont" id="p5" role="region" aria-labelledby="b5"><div class="grande" aria-hidden="true">Google + IA</div><p class="tit">Marketing y visibilidad</p><p>Que te encuentren primero y que tus redes y correos sigan activos sin que tengas que hacerlo tú.</p><ul class="chips"><li>SEO / GEO</li><li>Mailing</li><li>Publicador RRSS</li><li>Mantención RRSS</li></ul></div></div>
+<div class="pan" style="--c:var(--ocre);--t:var(--tinta)"><h3><button aria-expanded="false" aria-controls="p6" id="b6"><span class="vert">IA y automatización</span></button></h3><div class="cont" id="p6" role="region" aria-labelledby="b6"><div class="grande" aria-hidden="true">Sin descanso</div><p class="tit">IA y automatización</p><p>Asistentes que responden al instante, contenido que se publica solo y procesos que se hacen de punta a punta.</p><ul class="chips"><li>Asistente Virtual</li><li>Automatizaciones n8n</li><li>Publicador IA</li></ul></div></div>
+<div class="pan" style="--c:var(--papel);--t:var(--tinta)"><h3><button aria-expanded="false" aria-controls="p7" id="b7"><span class="vert">Video</span></button></h3><div class="cont" id="p7" role="region" aria-labelledby="b7"><div class="grande" aria-hidden="true">Sin grabar</div><p class="tit">Video</p><p>Tu web convertida en videos de marca, reels y tutoriales listos para publicar.</p><ul class="chips"><li>Rednet WebMotion</li><li>Rednet Tutoriales</li></ul></div></div>
+</div>
+</div>
+</section>
+
+<!-- DESIRE 2: título fijo a la izquierda, pasos que se apilan a la derecha -->
+<section class="capitulo oscuro" id="proceso">
+<div class="wrap split">
+<div class="split-izq" id="splitIzq">
+<h2 class="titulo">Empieza con uno. <span class="g">Suma más cuando quieras.</span></h2>
+<p>Cuatro pasos, sin tecnicismos, y después seguimos contigo.</p>
+</div>
+<div class="pila" id="pila">
+<article class="carta" style="--c:var(--ocre-claro);--t:var(--tinta)"><span class="carta-n" aria-hidden="true">1</span><b>Conversamos</b><p>Nos cuentas qué necesita tu negocio, sin tecnicismos.</p></article>
+<article class="carta" style="--c:var(--ocre);--t:var(--tinta)"><span class="carta-n" aria-hidden="true">2</span><b>Diseñamos</b><p>Te proponemos la solución y la armamos a tu medida.</p></article>
+<article class="carta" style="--c:var(--rojo-profundo);--t:#fff"><span class="carta-n" aria-hidden="true">3</span><b>Lo ponemos en marcha</b><p>Publicamos, conectamos tus canales y te enseñamos a usarlo.</p></article>
+<article class="carta" style="--c:var(--rojo);--t:#fff"><span class="carta-n" aria-hidden="true">4</span><b>Lo cuidamos, siempre</b><p>Mantención, seguridad y soporte continuo.</p></article>
+</div>
+</div>
+</section>
+
+<!-- DESIRE 3: el caso del chat (el momento más convincente) -->
+<section class="capitulo" id="caso">
+<div class="wrap caso">
+<div class="chat" aria-label="Ejemplo de conversación del Asistente Virtual">
+<div class="chat-top"><i>R</i><div>Asistente Rednet<small>Agente IA · WhatsApp</small></div><span class="vivo">En vivo</span></div>
+<div class="msgs" id="msgs" aria-live="polite"></div>
+<button class="repetir" id="repetir">Repetir conversación</button>
+</div>
+<div class="caso-txt">
+<h2 class="titulo">Atención automática por WhatsApp, <span class="g">lista en una semana.</span></h2>
+<p class="sub">Ejemplo de un Asistente Virtual atendiendo a un restaurante.</p>
+<div class="toggle" id="toggle" data-m="con" role="group" aria-label="Comparar antes y con Rednet"><button data-m="antes" aria-pressed="false">Antes</button><button data-m="con" class="on" aria-pressed="true">Con Rednet</button></div>
+<div class="met" id="met">
+<div><span>Primera respuesta (minutos)</span><b data-a="45" data-c="1">1</b><div class="barra"><i style="width:4%"></i></div></div>
+<div><span>Consultas resueltas sin intervención</span><b data-a="0%" data-c="70%">70%</b><div class="barra"><i style="width:70%"></i></div></div>
+<div><span>Horas de atención por semana</span><b data-a="40 h" data-c="168 h">168 h</b><div class="barra"><i style="width:100%"></i></div></div>
+</div>
+<p class="aviso">Valores de ejemplo, por confirmar con un cliente real.</p>
+</div>
+</div>
+</section>
+
+<!-- Proyectos: galería con escala y fundido al hacer scroll -->
+<section class="capitulo" id="proyectos">
+<div class="wrap">
+<h2 class="titulo">Hecho por Rednet, <span class="g">en distintas áreas.</span></h2>
+<div class="proyectos">
+<article class="pro pro-1"><div class="pro-img"><img src="../v4/img/hero-diseno-web.webp" alt="" loading="lazy"></div><div class="pro-pie"><small>Sitio web</small><b>[Nombre del proyecto]</b><span>[Cliente · rubro]</span></div></article>
+<article class="pro pro-2"><div class="pro-img"><img src="../v4/img/hero-ecommerce.webp" alt="" loading="lazy"></div><div class="pro-pie"><small>Tienda online</small><b>[Nombre del proyecto]</b><span>[Cliente · rubro]</span></div></article>
+<article class="pro pro-3"><div class="pro-img"><img src="../v4/img/hero-hosting.webp" alt="" loading="lazy"></div><div class="pro-pie"><small>Hosting y seguridad</small><b>[Nombre del proyecto]</b><span>[Cliente · rubro]</span></div></article>
+<article class="pro pro-4 sin-foto"><div class="pro-img"><span>[Foto del proyecto]</span></div><div class="pro-pie"><small>Asistente IA</small><b>[Nombre del proyecto]</b><span>[Cliente · rubro]</span></div></article>
+</div>
+<p class="nota">Fotos de muestra: se reemplazan por capturas reales de cada proyecto.</p>
+</div>
+</section>
+
+<!-- Reseñas: carrusel con flechas -->
+<section class="capitulo" id="resenas">
+<div class="wrap">
+<div class="res-cab">
+<h2 class="titulo">Lo que dicen quienes <span class="g">ya trabajan con nosotros.</span></h2>
+<div class="nota-g"><b>[4,9]</b><span>Reseñas de Google, dato a confirmar</span></div>
+</div>
+<div class="carrusel" id="carrusel" role="region" aria-roledescription="carrusel" aria-label="Reseñas">
+<div class="pista-res" id="pistaRes">
+<figure class="res" role="group" aria-label="Reseña 1 de 4"><div class="caras" aria-hidden="true"><i></i></div><blockquote>[Reseña real de Google sobre el soporte.]</blockquote><figcaption><b>[Nombre]</b><span>[Empresa]</span></figcaption></figure>
+<figure class="res" role="group" aria-label="Reseña 2 de 4"><div class="caras" aria-hidden="true"><i></i></div><blockquote>[Reseña real sobre el sitio web nuevo.]</blockquote><figcaption><b>[Nombre]</b><span>[Empresa]</span></figcaption></figure>
+<figure class="res" role="group" aria-label="Reseña 3 de 4"><div class="caras" aria-hidden="true"><i></i></div><blockquote>[Reseña real sobre el asistente por WhatsApp.]</blockquote><figcaption><b>[Nombre]</b><span>[Empresa]</span></figcaption></figure>
+<figure class="res" role="group" aria-label="Reseña 4 de 4"><div class="caras" aria-hidden="true"><i></i></div><blockquote>[Reseña real sobre automatizaciones.]</blockquote><figcaption><b>[Nombre]</b><span>[Empresa]</span></figcaption></figure>
+</div>
+<div class="res-ctrl"><button id="resPrev" aria-label="Reseña anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><span id="resCont">1 / 4</span><button id="resNext" aria-label="Reseña siguiente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button></div>
+</div>
+</div>
+</section>
+
+<!-- ACTION: planes -->
+<section class="capitulo" id="planes">
+<div class="wrap">
+<h2 class="titulo">Planes claros, <span class="g">sin letra chica.</span></h2>
+<div class="planes">
+<div class="plan"><p class="plan-n">Esencial</p><div class="precio">$[—]<span>/mes</span></div><p class="plan-d">Para tener tu sitio arriba y respaldado.</p><ul><li>Hosting Rednet</li><li>Respaldo Automático</li><li>Soporte humano</li><li>Certificado SSL</li></ul><a class="btn btn-borde-osc" href="#contacto" data-plan="Plan Esencial">Empezar con Esencial</a></div>
+<div class="plan dest"><p class="plan-n">Tranquilidad</p><div class="precio">$[—]<span>/mes</span></div><p class="plan-d">Para olvidarte de la parte técnica.</p><ul><li>Todo lo de Esencial</li><li>WebGuardian</li><li>Mantención Web mensual</li><li>Informe de estado</li></ul><a class="btn btn-rojo" href="#contacto" data-plan="Plan Tranquilidad">Quiero Tranquilidad</a></div>
+<div class="plan med"><p class="plan-n">A medida</p><div class="precio">Hablemos</div><p class="plan-d">Proyectos web, tienda, asistentes y automatizaciones.</p><ul><li>Diseño a medida</li><li>Integraciones</li><li>Asistente Virtual</li><li>Video WebMotion</li></ul><a class="btn btn-borde-osc" href="#contacto" data-plan="Proyecto a medida">Cotizar a medida</a></div>
+</div>
+<p class="nota">Sin permanencia. Precios en pesos chilenos por confirmar.</p>
+</div>
+</section>
+
+<section class="capitulo" id="faq">
+<div class="wrap faq">
+<h2 class="titulo">Preguntas <span class="g">frecuentes.</span></h2>
+<div>
+<details open><summary>¿Necesito saber de tecnología?</summary><p>No. Nosotros nos encargamos y te enseñamos lo justo para que edites lo que quieras.</p></details>
+<details><summary>¿Puedo traer mi sitio actual?</summary><p>Sí. Lo migramos a nuestro hosting y lo dejamos protegido y respaldado.</p></details>
+<details><summary>¿Qué pasa si algo falla?</summary><p>Hablas con una persona real del equipo, que lo resuelve.</p></details>
+<details><summary>¿Cuánto se demora un sitio nuevo?</summary><p>[Plazo a confirmar], según el alcance del proyecto.</p></details>
+<details><summary>¿El asistente por WhatsApp suena a robot?</summary><p>No. Lo entrenamos con la información de tu negocio y en tu tono.</p></details>
+</div>
+</div>
+</section>
+
+<!-- CTA masivo + formulario -->
+<section class="cierre" id="contacto">
+<div class="cta">
+<div class="cta-fondo" aria-hidden="true"><span></span><span></span></div>
+<div class="wrap cta-grid">
+<div>
+<h2 class="cta-h">Tu negocio digital, <em>en marcha hoy.</em></h2>
+<p>Cuéntanos qué necesitas y te respondemos el mismo día hábil.</p>
+<a class="btn btn-blanco btn-xl" href="https://wa.me/?text=Hola%20Rednet%2C%20quiero%20cotizar" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+<p class="cta-nota">[Número de WhatsApp por confirmar: hoy el botón abre WhatsApp sin destinatario.]</p>
+</div>
+<form class="form" id="form" novalidate>
+<label>Tu nombre<input name="nombre" autocomplete="name" required></label>
+<label>WhatsApp o correo<input name="contacto" autocomplete="tel" required placeholder="+56 9 1234 5678"></label>
+<label>¿Qué necesitas?<select id="fQue" name="que"><option>Aún no sé, quiero orientación</option><option>Sitios web</option><option>Ventas online</option><option>Infraestructura</option><option>Seguridad y soporte</option><option>Marketing y visibilidad</option><option>IA y automatización</option><option>Video</option><option>Plan Esencial</option><option>Plan Tranquilidad</option><option>Proyecto a medida</option></select></label>
+<p class="error" id="fErr" role="alert" hidden>Falta tu nombre y un WhatsApp o correo para responderte.</p>
+<button class="btn btn-rojo btn-xl" type="submit">Pide tu presupuesto</button>
+<p class="ok" id="fOk" role="status" hidden>Listo, recibimos tu mensaje. Te escribimos hoy mismo. (Maqueta: todavía no envía datos.)</p>
+</form>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="pie">
+<div class="wrap pie-grid">
+<div><img class="pie-logo" src="../v4/logo-rednet-header.png" alt="Rednet"><p>Servicios digitales para pymes: web, hosting, seguridad, IA y automatización.</p></div>
+<div><p class="pie-t">Servicios</p><ul><li><a href="#servicios">Sitios web</a></li><li><a href="#servicios">Ventas online</a></li><li><a href="#servicios">Infraestructura</a></li><li><a href="#servicios">Seguridad y soporte</a></li><li><a href="#servicios">Marketing y visibilidad</a></li><li><a href="#servicios">IA y automatización</a></li><li><a href="#servicios">Video</a></li></ul></div>
+<div><p class="pie-t">Empresa</p><ul><li><a href="#proceso">Cómo trabajamos</a></li><li><a href="#caso">Casos</a></li><li><a href="#proyectos">Proyectos</a></li><li><a href="#planes">Planes</a></li><li><a href="#faq">Preguntas</a></li></ul></div>
+<div><p class="pie-t">Contacto</p><ul><li>soporte@rednet.cl</li><li>WhatsApp [número]</li><li>www.rednetspa.cl</li></ul></div>
+</div>
+<div class="wrap legal"><span>© 2026 Rednet SpA</span><span>Maqueta v4-gpt-taste · contenido entre [ ] por confirmar</span></div>
+</footer>
+
+<div class="barra-movil" id="barraMovil"><a class="btn btn-rojo" href="#contacto">Presupuesto</a><a class="btn btn-blanco" href="https://wa.me/?text=Hola%20Rednet%2C%20quiero%20cotizar" target="_blank" rel="noopener">WhatsApp</a></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
