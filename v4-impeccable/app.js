@@ -135,6 +135,10 @@ const pans = [...document.querySelectorAll('.pan')];
 const abrir = p => pans.forEach(x => { const on = x === p; x.classList.toggle('on', on); x.querySelector('.pan-t button').setAttribute('aria-expanded', on); x.querySelector('.cont').inert = !on; });
 pans.forEach(p => { p.addEventListener('mouseenter', () => matchMedia('(hover:hover)').matches && abrir(p)); p.querySelector('.pan-t button').addEventListener('click', () => abrir(p)); });
 abrir(pans[0]);
+/* Ancho final del panel abierto: flex-grow 6.2 frente a 1 de los otros seis, con 8 px entre paneles */
+const acord = document.getElementById('acordeon');
+const medirAcordeon = () => { const W = acord.clientWidth, g = 8 * (pans.length - 1), fOn = parseFloat(getComputedStyle(document.querySelector('.pan.on')).flexGrow) || 6.2; acord.style.setProperty('--ancho-abierto', ((W - g) * fOn / (fOn + pans.length - 1)) + 'px'); };
+addEventListener('resize', medirAcordeon); medirAcordeon();
 /* 6 Chat */
 const guion = [['cli','Hola, ¿hacen sitios para restaurantes? ¿Cuánto cuesta?'],['bot','¡Hola! Sí, hacemos sitios a medida con carta y reservas. ¿Quieres que te agendemos una llamada de 15 minutos para cotizar?'],['cli','Dale, mañana en la tarde.'],['bot','Listo. Te agendé mañana a las 16:00 y te llegó la confirmación por correo.'],['ok','✓ Reunión agendada en el calendario · 4 s']];
 const msgs = document.getElementById('msgs'); let corrida = 0;

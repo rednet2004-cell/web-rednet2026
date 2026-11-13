@@ -486,3 +486,6 @@ nav.abierto{transform:none;transition:opacity .2s var(--ease-out),transform .3s 
 *,*::before,*::after{animation:none!important;transition-property:opacity,color,background-color!important;transition-duration:.2s!important}
 .btn:active{transform:none}
 }
+
+/* Acordeón: el contenido usa desde el inicio el ancho del panel ya abierto, así el texto no se reacomoda ("cae") mientras el panel crece */
+@media (min-width:861px){.pan .cont{right:auto;width:calc(var(--ancho-abierto,600px) - 56px);min-width:0}}
