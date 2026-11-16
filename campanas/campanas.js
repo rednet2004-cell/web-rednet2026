@@ -11,6 +11,15 @@ if (barra) barra.classList.toggle('on', scrollY > innerHeight * .7 && contacto.g
 };
 addEventListener('scroll', onScroll, {passive:true}); onScroll();
 
+/* Video de fondo del hero: se carga solo si no hay ahorro de datos ni movimiento reducido; si no, queda la imagen fija */
+document.querySelectorAll('.hero-bg video').forEach(v => {
+const ahorro = navigator.connection && navigator.connection.saveData;
+if (reduce || ahorro) return;
+[['webm','video/webm'],['mp4','video/mp4']].forEach(([k, t]) => { if (v.dataset[k]){ const s = document.createElement('source'); s.src = v.dataset[k]; s.type = t; v.appendChild(s); } });
+v.load(); v.play().catch(() => {});
+new IntersectionObserver(en => en.forEach(e => e.isIntersecting ? v.play().catch(() => {}) : v.pause())).observe(v);
+});
+
 /* Aparición al entrar en pantalla (y la conversación dibujada, burbuja por burbuja) */
 const io = new IntersectionObserver(en => en.forEach(e => { if (e.isIntersecting){ e.target.classList.add('visto'); io.unobserve(e.target); } }), {rootMargin:'0px 0px -12% 0px'});
 document.querySelectorAll('[data-rv], .chat.anim').forEach(el => io.observe(el));
