@@ -399,3 +399,42 @@ section{position:relative}
 .apps{padding:0;margin:56px max(var(--gut),calc((100vw - 1388px)/2)) 0;max-width:none}
 .model-imgs img{object-position:25% 50%}
 .reel-sound{font-size:12px;padding:10px 14px;bottom:16px;right:16px}
+
+/* ---- Ajustes 24-11: header claro fijo, botones blancos cuadrados, CTA azul del logo ---- */
+:root{--logo:#01284F;--logo-2:#0B3A6E}
+.nav,.nav.is-solid{background:#FBF9F5;box-shadow:0 1px 0 var(--line);padding-top:16px;padding-bottom:16px}
+.nav .logo-w{opacity:0}.nav .logo-n{opacity:1}
+.nav-links{gap:30px}
+.nav-links a,.nav.is-solid .nav-links a{color:var(--logo);font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.nav-links a::after{background:var(--signal);height:2px;bottom:-4px}
+.nav-cta{display:inline-flex;align-items:center;gap:10px;background:var(--logo);color:#fff;text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:13px 20px;border-radius:0;transition:background .3s}
+.nav-cta:hover{background:var(--logo-2);color:#fff}
+.nav-cta i{font-style:normal;transition:transform .3s var(--ease)}
+.nav-cta:hover i{transform:translate(2px,-2px)}
+.nav-burger{border-color:var(--line)}.nav-burger span{background:var(--logo)}
+body.menu-open .nav{background:var(--navy-deep)}
+body.menu-open .nav .logo-w{opacity:1}body.menu-open .nav .logo-n{opacity:0}
+.mobile-menu .nav-cta{margin-top:24px;justify-content:center;font-size:16px;font-variation-settings:"wdth" 100;padding:18px;border:0}
+.hero-grid{padding-top:120px}
+
+/* Botones: cuadrados, fondo blanco; al pasar el mouse se llenan con el azul del logo */
+.btn{border-radius:0}
+.btn-signal{--bg:#fff;color:var(--logo);border:1px solid #fff}
+.btn-signal::before{background:var(--logo);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease)}
+.btn-signal:hover::before{transform:scaleX(1)}
+.btn-signal:hover{color:#fff;border-color:var(--logo)}
+.btn-ghost{border-radius:0}
+.btn-ghost:hover{background:var(--logo);border-color:var(--logo)}
+.form .btn{border:1px solid #fff}
+.f-chips span{border-radius:0}
+@media (max-width:760px){.nav,.nav.is-solid{padding-top:10px;padding-bottom:10px}.nav .nav-cta{display:none}.mobile-menu .nav-cta{display:flex}}
+/* Hero: textos chicos más grandes para equilibrar con el título */
+.hero .kicker{font-size:clamp(13px,1.05vw,16px);letter-spacing:.14em;margin-bottom:30px}
+.hero .kicker .dot{width:10px;height:10px}
+.hero-lead{font-size:clamp(18px,1.7vw,24px);line-height:1.45;max-width:620px;color:rgba(255,255,255,.9)}
+.hero .btn-lg{font-size:clamp(16px,1.15vw,18px);padding:20px 32px;letter-spacing:.02em}
+.hero-top{font-size:clamp(12px,.9vw,14px)}
+.hero-tags li{font-size:13px;padding:9px 12px}
+.scroll-cue{font-size:13px}
+.spec-card{width:280px}.spec-card dl div{font-size:16px}.spec-head{font-size:13px}
+.mobile-menu .nav-cta{align-self:stretch;border:1px solid rgba(255,255,255,.35)}
