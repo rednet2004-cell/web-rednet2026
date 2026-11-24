@@ -438,3 +438,12 @@ body.menu-open .nav .logo-w{opacity:1}body.menu-open .nav .logo-n{opacity:0}
 .scroll-cue{font-size:13px}
 .spec-card{width:280px}.spec-card dl div{font-size:16px}.spec-head{font-size:13px}
 .mobile-menu .nav-cta{align-self:stretch;border:1px solid rgba(255,255,255,.35)}
+/* Títulos chicos del sitio: mismo tamaño que la etiqueta del hero, en cobre */
+.section-num{font-size:clamp(13px,1.05vw,16px);letter-spacing:.14em;color:var(--signal);font-weight:500;margin-bottom:26px}
+.section-num::before{background:var(--signal)}
+.tag,.sheet-title,.model-tabs .mono,.step-n,.step-meta,.svc .mono,.apps .mono,.reel-list .mono,.contact-data .mono,.form .mono,.f-chips legend,.sheet-grid dt,.demo-note,.big-num small{font-size:clamp(12px,.95vw,14px)}
+.sheet-grid dt{font-size:12px}
+.tag{color:var(--signal)}
+.tile-stat .tag,.tile-over .tag{color:var(--signal-2)}
+.section-lead{font-size:clamp(17px,1.4vw,20px)}
+.model-tabs button small{font-size:15px}
