@@ -1,0 +1,39 @@
+{
+  // Configuración de OpenCode para el estudio de diseño Rednet.
+  // El modelo se elige en OpenCode con /models (ver kit-opencode/MODELOS.md).
+  // Aquí no va ninguna clave: los tokens se leen de variables de entorno con {env:NOMBRE}.
+  "$schema": "https://opencode.ai/config.json",
+
+  "default_agent": "disenador-web",
+
+  "instructions": ["kit-opencode/BITACORA.md"],
+
+  "mcp": {
+    // Navegador para capturas y revisar la web en 1440 / 1024 / 768 / 390 px.
+    "playwright": {
+      "type": "local",
+      "command": ["npx", "-y", "@playwright/mcp@latest"],
+      "enabled": true
+    },
+    // GitHub (opcional). Por defecto se publica con git + gh desde la terminal.
+    // Para activarlo: crea un token fino solo para web-rednet2026, guárdalo en la
+    // variable GITHUB_TOKEN y cambia "enabled" a true.
+    "github": {
+      "type": "remote",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "oauth": false,
+      "headers": { "Authorization": "Bearer {env:GITHUB_TOKEN}" },
+      "enabled": false
+    }
+  },
+
+  "permission": {
+    "bash": {
+      "*": "allow",
+      "git push --force*": "deny",
+      "git push -f*": "deny",
+      "git reset --hard*": "ask",
+      "rm -rf *": "ask"
+    }
+  }
+}
