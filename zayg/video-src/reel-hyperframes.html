@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080, height=1920">
+<title>ZAYG reel 9x16</title>
+<script src="assets/gsap.min.js"></script>
+<style>
+@font-face{font-family:"Archivo";src:url("assets/Archivo.ttf") format("truetype");font-weight:100 900;font-stretch:62% 125%}
+@font-face{font-family:"JBMono";src:url("assets/JetBrainsMono.ttf") format("truetype");font-weight:100 800}
+body{margin:0;background:#091F2D;color:#fff;font-family:"Archivo",sans-serif}
+#root{position:relative;width:100%;height:100%;overflow:hidden;background:#091F2D}
+.clip{position:absolute;inset:0;overflow:hidden}
+.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.shade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(9,31,45,.95) 0%,rgba(9,31,45,.35) 45%,rgba(9,31,45,.55) 100%)}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);background-size:90px 90px}
+.mono{font-family:"JBMono",monospace;font-size:30px;letter-spacing:.12em;text-transform:uppercase}
+.label{position:absolute;left:80px;bottom:600px;color:#BC643E;font-size:34px}
+.title{position:absolute;left:80px;right:80px;bottom:200px;font-size:132px;line-height:.9;font-weight:850;font-stretch:68%;text-transform:uppercase;letter-spacing:-.02em}
+.title b{color:#BC643E;font-weight:850}
+.wipe{position:absolute;inset:0;background:#BC643E}
+.hud{position:absolute;left:80px;right:80px;top:96px;display:flex;justify-content:space-between;color:#C9D0D6;z-index:5}
+.bars{position:absolute;left:80px;right:80px;top:160px;display:flex;gap:12px;z-index:5}
+.bar{flex:1;height:4px;background:rgba(255,255,255,.2);overflow:hidden;position:relative}
+.bar i{position:absolute;inset:0;background:#BC643E;transform-origin:left;display:block}
+.logo{position:absolute;left:140px;right:140px;top:700px;width:800px}
+.tag{position:absolute;left:0;right:0;top:1120px;text-align:center;font-size:104px;font-weight:850;font-stretch:68%;text-transform:uppercase;line-height:.95}
+.tag b{color:#BC643E;font-weight:850}
+svg.draw{position:absolute;left:140px;top:420px;width:800px;height:240px;fill:none;stroke:#BC643E;stroke-width:3}
+.dim{position:absolute;left:80px;right:80px;top:1060px;height:120px}
+.dim .ln{position:absolute;left:0;right:0;top:60px;height:3px;background:#fff;transform-origin:left}
+.dim .tk{position:absolute;top:36px;width:3px;height:50px;background:#fff}
+.dim .txt{position:absolute;left:0;right:0;top:0;text-align:center;font-size:44px;font-weight:700}
+.dim .txt span{background:#091F2D;padding:0 20px;font-family:"JBMono",monospace}
+.end-sub{position:absolute;left:0;right:0;top:1380px;text-align:center;color:#C9D0D6}
+.end-url{position:absolute;left:0;right:0;top:1560px;text-align:center;font-size:56px;font-weight:800;color:#BC643E;font-family:"JBMono",monospace}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1080" data-height="1920" data-duration="20" data-fps="30">
+
+  <section id="s1" class="clip" data-start="0" data-duration="3.5" data-track-index="1">
+    <div class="grid" id="s1grid"></div>
+    <svg class="draw" viewBox="0 0 800 240" id="s1svg"><path id="s1p1" d="M10 230 V90 L400 10 L790 90 V230 Z"/><path id="s1p2" d="M10 90 H790 M200 230 V50 M400 230 V10 M600 230 V50"/></svg>
+    <img class="logo" id="s1logo" src="assets/logo-white.png" alt="ZAYG">
+    <div class="tag" id="s1tag">Galpones<br><b>a tu medida</b></div>
+  </section>
+
+  <section id="s2" class="clip" data-start="3.5" data-duration="4" data-track-index="1">
+    <img class="bg" id="s2img" src="assets/montaje.webp" alt="">
+    <div class="shade"></div>
+    <div class="mono label" id="s2lab">01 · Ingeniería</div>
+    <div class="title" id="s2t">Cálculo<br>estructural<br><b>y planos</b></div>
+    <div class="wipe" id="s2w"></div>
+  </section>
+
+  <section id="s3" class="clip" data-start="7.5" data-duration="4" data-track-index="1">
+    <img class="bg" id="s3img" src="assets/obra-hero.webp" alt="">
+    <div class="shade"></div>
+    <div class="mono label" id="s3lab">02 · Montaje</div>
+    <div class="title" id="s3t">Acero que<br>se levanta<br><b>en obra</b></div>
+    <div class="wipe" id="s3w"></div>
+  </section>
+
+  <section id="s4" class="clip" data-start="11.5" data-duration="4" data-track-index="1">
+    <img class="bg" id="s4img" src="assets/modelo-600.webp" alt="">
+    <div class="shade"></div>
+    <div class="dim" id="s4dim"><div class="ln" id="s4ln"></div><div class="tk" style="left:0"></div><div class="tk" style="right:0"></div><div class="txt" id="s4txt"><span>30 × 20 m · 600 m²</span></div></div>
+    <div class="mono label" id="s4lab">03 · Habilitación</div>
+    <div class="title" id="s4t">Listo para<br><b>operar</b></div>
+    <div class="wipe" id="s4w"></div>
+  </section>
+
+  <section id="s5" class="clip" data-start="15.5" data-duration="4.5" data-track-index="1">
+    <img class="bg" id="s5img" src="assets/llave-en-mano.webp" alt="">
+    <div class="shade" id="s5shade"></div>
+    <div class="grid" id="s5grid"></div>
+    <img class="logo" id="s5logo" src="assets/logo-white.png" alt="ZAYG">
+    <div class="tag" id="s5tag">Llave<br><b>en mano.</b></div>
+    <div class="mono end-sub" id="s5sub">Ingeniería · Montaje · Habilitación</div>
+    <div class="end-url" id="s5url">zayg.cl</div>
+    <div class="wipe" id="s5w"></div>
+  </section>
+
+  <div class="mono hud" id="hud"><span>ZAYG</span><span>Constructora e Ingeniería</span></div>
+  <div class="bars" id="bars"><div class="bar"><i id="b1"></i></div><div class="bar"><i id="b2"></i></div><div class="bar"><i id="b3"></i></div><div class="bar"><i id="b4"></i></div><div class="bar"><i id="b5"></i></div></div>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+const E = "power3.out";
+// progress bars
+[[0,3.5],[3.5,4],[7.5,4],[11.5,4],[15.5,4.4]].forEach(([s,d],i)=>{
+  tl.fromTo("#b"+(i+1),{scaleX:0},{scaleX:1,duration:d,ease:"none"},s);
+});
+// S1
+tl.fromTo("#s1grid",{opacity:0},{opacity:1,duration:1},0);
+["#s1p1","#s1p2"].forEach((p,i)=>{const el=document.querySelector(p);const L=el.getTotalLength();tl.fromTo(p,{strokeDasharray:L,strokeDashoffset:L},{strokeDashoffset:0,duration:1.6,ease:"power2.inOut"},0.1+i*0.3);});
+tl.fromTo("#s1logo",{y:60,opacity:0},{y:0,opacity:1,duration:1,ease:E},0.6);
+tl.fromTo("#s1tag",{y:60,opacity:0},{y:0,opacity:1,duration:1,ease:E},1.1);
+// scene helper
+function scene(n,s,d){
+  tl.fromTo("#s"+n+"w",{xPercent:0},{xPercent:101,duration:.7,ease:"power3.inOut"},s);
+  tl.fromTo("#s"+n+"img",{scale:1.18},{scale:1.02,duration:d,ease:"none"},s);
+  if(document.querySelector("#s"+n+"lab")) tl.fromTo("#s"+n+"lab",{y:30,opacity:0},{y:0,opacity:1,duration:.7,ease:E},s+.5);
+  if(document.querySelector("#s"+n+"t")) tl.fromTo("#s"+n+"t",{y:80,opacity:0},{y:0,opacity:1,duration:.9,ease:E},s+.65);
+}
+scene(2,3.5,4); scene(3,7.5,4); scene(4,11.5,4);
+tl.fromTo("#s4ln",{scaleX:0},{scaleX:1,duration:1.2,ease:"power2.inOut"},12.4);
+tl.fromTo("#s4txt",{opacity:0},{opacity:1,duration:.6},13.2);
+// S5
+tl.fromTo("#s5w",{xPercent:0},{xPercent:101,duration:.7,ease:"power3.inOut"},15.5);
+tl.fromTo("#s5img",{scale:1.15},{scale:1.03,duration:4.5,ease:"none"},15.5);
+tl.fromTo("#s5shade",{opacity:.6},{opacity:1,duration:1.2},16.6);
+tl.fromTo("#s5img",{opacity:1},{opacity:.15,duration:1.2},16.6);
+tl.fromTo("#s5grid",{opacity:0},{opacity:1,duration:1},16.8);
+tl.fromTo("#s5logo",{y:50,opacity:0},{y:0,opacity:1,duration:.9,ease:E},17);
+tl.fromTo("#s5tag",{y:50,opacity:0},{y:0,opacity:1,duration:.9,ease:E},17.3);
+tl.fromTo("#s5sub",{opacity:0},{opacity:1,duration:.8},17.8);
+tl.fromTo("#s5url",{y:30,opacity:0},{y:0,opacity:1,duration:.8,ease:E},18.1);
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>
