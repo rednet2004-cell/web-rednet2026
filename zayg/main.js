@@ -192,8 +192,13 @@
         i.classList.toggle("is-err", bad); if (bad) ok = false;
       });
       if (!ok) { msg.textContent = "Revisa tu nombre y correo, por favor."; return; }
-      msg.textContent = "¡Gracias! Recibimos tu solicitud y te contactaremos en un día hábil.";
-      f.reset();
+      var d = new FormData(f), body = [
+        "Nombre: " + d.get("nombre"), "Empresa: " + (d.get("empresa") || "-"),
+        "Correo: " + d.get("correo"), "Teléfono: " + (d.get("telefono") || "-"),
+        "Superficie: " + (d.get("m2") || "-"), "Comuna del terreno: " + (d.get("comuna") || "-"),
+        "", (d.get("mensaje") || "")].join("\n");
+      location.href = "mailto:info@zayg.cl?subject=" + encodeURIComponent("Cotización de galpón · " + d.get("nombre")) + "&body=" + encodeURIComponent(body);
+      msg.textContent = "Abrimos tu correo con la solicitud lista para enviar a info@zayg.cl.";
     });
   }, "form");
 
