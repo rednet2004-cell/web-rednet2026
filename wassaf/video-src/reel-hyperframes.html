@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080, height=1920">
+<title>Wasaff reel 9x16</title>
+<script src="assets/gsap.min.js"></script>
+<style>
+@font-face{font-family:"IS";src:url("assets/is-b.woff2") format("woff2");font-weight:400 700;font-stretch:75% 100%}
+@font-face{font-family:"IS";src:url("assets/is-a.woff2") format("woff2");font-weight:400 700;font-stretch:75% 100%;unicode-range:U+0100-024F,U+1E00-1EFF}
+@font-face{font-family:"PM";src:url("assets/mono.woff2") format("woff2");font-weight:500}
+body{margin:0;background:#062236;color:#fff;font-family:"IS",sans-serif}
+#root{position:relative;width:100%;height:100%;overflow:hidden;background:#062236}
+.clip{position:absolute;inset:0;overflow:hidden}
+.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.shade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,34,54,.96) 0%,rgba(6,34,54,.3) 48%,rgba(6,34,54,.55) 100%)}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:90px 90px}
+.mono{font-family:"PM",monospace;font-size:30px;letter-spacing:.12em;text-transform:uppercase}
+.label{position:absolute;left:80px;bottom:560px;color:#8FE3AE;font-size:34px}
+.title{position:absolute;left:80px;right:80px;bottom:200px;font-size:128px;line-height:.92;font-weight:600;font-stretch:85%;letter-spacing:-.045em}
+.title b{color:#8FE3AE;font-weight:600}
+.wipe{position:absolute;inset:0;background:#0B8F4A}
+.hud{position:absolute;left:80px;right:80px;top:96px;display:flex;justify-content:space-between;color:#C9D6E0;z-index:5;font-size:26px}
+.bars{position:absolute;left:80px;right:80px;top:150px;display:flex;gap:12px;z-index:5}
+.bar{flex:1;height:4px;background:rgba(255,255,255,.2);overflow:hidden;position:relative}
+.bar i{position:absolute;inset:0;background:#05A342;transform-origin:left;display:block}
+/* scan box */
+.scan{position:absolute;left:250px;top:560px;width:580px;height:420px}
+.scan .c{position:absolute;width:70px;height:70px;border:5px solid #8FE3AE}
+.scan .c1{left:0;top:0;border-right:0;border-bottom:0}.scan .c2{right:0;top:0;border-left:0;border-bottom:0}
+.scan .c3{left:0;bottom:0;border-right:0;border-top:0}.scan .c4{right:0;bottom:0;border-left:0;border-top:0}
+.scan .ln{position:absolute;left:10px;right:10px;top:0;height:4px;background:#8FE3AE;box-shadow:0 0 30px 8px rgba(143,227,174,.6)}
+.chip{position:absolute;left:250px;top:1010px;background:rgba(6,34,54,.85);border:2px solid rgba(143,227,174,.6);border-radius:16px;padding:18px 26px;font-size:30px;color:#fff;white-space:nowrap}
+.chip b{color:#8FE3AE;margin-left:14px}
+/* logo */
+.mark{position:absolute;left:290px;top:560px;width:500px;height:344px}
+.word{position:absolute;left:0;right:0;top:960px;text-align:center;font-size:150px;font-weight:700;letter-spacing:.01em;font-stretch:88%}
+.sub{position:absolute;left:0;right:0;top:1130px;text-align:center;letter-spacing:.5em;font-size:34px;color:#C9D6E0}
+.tag{position:absolute;left:0;right:0;top:1300px;text-align:center;font-size:84px;font-weight:600;letter-spacing:-.035em;line-height:1}
+.tag b{color:#8FE3AE;font-weight:600}
+.end-sub{position:absolute;left:0;right:0;top:1440px;text-align:center;color:#C9D6E0;font-size:28px}
+.end-cta{position:absolute;left:240px;right:240px;top:1580px;text-align:center;background:#0B8F4A;border-radius:999px;padding:30px 0;font-size:40px;font-weight:600}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1080" data-height="1920" data-duration="20" data-fps="30">
+
+  <section id="s1" class="clip" data-start="0" data-duration="3.5" data-track-index="1">
+    <div class="grid" id="s1grid"></div>
+    <svg class="mark" viewBox="0 0 64 44"><path id="s1l" d="M15 4 30 22 15 40 0 22Z" fill="#05A342"/><path id="s1r" d="M49 4 64 22 49 40 34 22Z" fill="#05A342"/><path id="s1c" d="M32 1 52 22 32 43 12 22Z" fill="#387CC9" stroke="#0B2C4A" stroke-width="1"/></svg>
+    <div class="word" id="s1w">WASAFF</div>
+    <div class="mono sub" id="s1s">LOGÍSTICA</div>
+    <div class="tag" id="s1t">Tu operación,<br><b>bajo control.</b></div>
+  </section>
+
+  <section id="s2" class="clip" data-start="3.5" data-duration="4" data-track-index="1">
+    <img class="bg" id="s2img" src="assets/recepcion.webp" style="object-position:64% 50%" alt="">
+    <div class="shade"></div>
+    <div class="scan" id="s2scan"><i class="c c1"></i><i class="c c2"></i><i class="c c3"></i><i class="c c4"></i><i class="ln" id="s2ln"></i></div>
+    <div class="chip mono" id="s2chip">OC-4587 · 24 bultos<b>✓</b></div>
+    <div class="mono label" id="s2lab">01 · Recepción</div>
+    <div class="title" id="s2t">Cada bulto,<br><b>registrado.</b></div>
+    <div class="wipe" id="s2w"></div>
+  </section>
+
+  <section id="s3" class="clip" data-start="7.5" data-duration="4" data-track-index="1">
+    <img class="bg" id="s3img" src="assets/almacenaje.webp" style="object-position:58% 50%" alt="">
+    <div class="shade"></div>
+    <div class="scan" id="s3scan"><i class="c c1"></i><i class="c c2"></i><i class="c c3"></i><i class="c c4"></i><i class="ln" id="s3ln"></i></div>
+    <div class="chip mono" id="s3chip">Pallet → rack B1-04<b>✓</b></div>
+    <div class="mono label" id="s3lab">02 · Almacenaje</div>
+    <div class="title" id="s3t">Stock al día,<br><b>ubicación exacta.</b></div>
+    <div class="wipe" id="s3w"></div>
+  </section>
+
+  <section id="s4" class="clip" data-start="11.5" data-duration="4" data-track-index="1">
+    <img class="bg" id="s4img" src="assets/picking.webp" style="object-position:40% 50%" alt="">
+    <div class="shade"></div>
+    <div class="scan" id="s4scan"><i class="c c1"></i><i class="c c2"></i><i class="c c3"></i><i class="c c4"></i><i class="ln" id="s4ln"></i></div>
+    <div class="chip mono" id="s4chip">Pedido P-0031 · 12/12<b>✓</b></div>
+    <div class="mono label" id="s4lab">03 · Picking y packing</div>
+    <div class="title" id="s4t">Validado,<br><b>unidad por unidad.</b></div>
+    <div class="wipe" id="s4w"></div>
+  </section>
+
+  <section id="s5" class="clip" data-start="15.5" data-duration="4.5" data-track-index="1">
+    <img class="bg" id="s5img" src="assets/despacho.webp" style="object-position:38% 50%" alt="">
+    <div class="shade" id="s5shade"></div>
+    <div class="grid" id="s5grid"></div>
+    <div class="mono label" id="s5lab">04 · Despacho</div>
+    <svg class="mark" id="s5mark" viewBox="0 0 64 44" style="top:420px"><path d="M15 4 30 22 15 40 0 22Z" fill="#05A342"/><path d="M49 4 64 22 49 40 34 22Z" fill="#05A342"/><path d="M32 1 52 22 32 43 12 22Z" fill="#387CC9" stroke="#0B2C4A" stroke-width="1"/></svg>
+    <div class="word" id="s5word" style="top:820px">WASAFF</div>
+    <div class="tag" id="s5tag" style="top:1100px">Gestión logística<br><b>integral.</b></div>
+    <div class="mono end-sub" id="s5sub" style="top:1330px">Recepción · Stock · Picking · Despacho</div>
+    <div class="end-cta" id="s5cta" style="top:1480px">Evaluemos tu operación</div>
+    <div class="wipe" id="s5w"></div>
+  </section>
+
+  <audio id="musica" src="assets/musica-wasaff.wav" data-start="0" data-duration="20" data-volume="0.8" data-track-index="9"></audio>
+
+  <div class="mono hud" id="hud"><span>Wasaff Logística</span><span>WMS · En línea</span></div>
+  <div class="bars" id="bars"><div class="bar"><i id="b1"></i></div><div class="bar"><i id="b2"></i></div><div class="bar"><i id="b3"></i></div><div class="bar"><i id="b4"></i></div><div class="bar"><i id="b5"></i></div></div>
+</div>
+<script>
+window.__timelines = window.__timelines || {};
+const tl = gsap.timeline({ paused: true });
+const E = "power3.out";
+[[0,3.5],[3.5,4],[7.5,4],[11.5,4],[15.5,4.4]].forEach(([s,d],i)=>{
+  tl.fromTo("#b"+(i+1),{scaleX:0},{scaleX:1,duration:d,ease:"none"},s);
+});
+// S1: logo se arma
+tl.fromTo("#s1grid",{opacity:0},{opacity:1,duration:1},0);
+tl.fromTo("#s1c",{scale:0,rotation:-90,transformOrigin:"50% 50%"},{scale:1,rotation:0,duration:1,ease:"back.out(1.6)"},0.15);
+tl.fromTo("#s1l",{x:-30,opacity:0},{x:0,opacity:1,duration:.8,ease:E},0.55);
+tl.fromTo("#s1r",{x:30,opacity:0},{x:0,opacity:1,duration:.8,ease:E},0.55);
+tl.fromTo("#s1w",{y:60,opacity:0},{y:0,opacity:1,duration:.9,ease:E},0.9);
+tl.fromTo("#s1s",{opacity:0,y:20},{opacity:1,y:0,duration:1,ease:E},1.1);
+tl.fromTo("#s1t",{y:60,opacity:0},{y:0,opacity:1,duration:.9,ease:E},1.5);
+function scene(n,s,d){
+  tl.fromTo("#s"+n+"w",{xPercent:0},{xPercent:101,duration:.7,ease:"power3.inOut"},s);
+  tl.fromTo("#s"+n+"img",{scale:1.2},{scale:1.03,duration:d,ease:"none"},s);
+  tl.fromTo("#s"+n+"lab",{y:30,opacity:0},{y:0,opacity:1,duration:.7,ease:E},s+.5);
+  if(document.querySelector("#s"+n+"t")) tl.fromTo("#s"+n+"t",{y:80,opacity:0},{y:0,opacity:1,duration:.9,ease:E},s+.65);
+  if(document.querySelector("#s"+n+"scan")){
+    tl.fromTo("#s"+n+"scan",{scale:1.35,opacity:0},{scale:1,opacity:1,duration:.6,ease:E},s+.8);
+    tl.fromTo("#s"+n+"ln",{y:0},{y:410,duration:1.1,ease:"power1.inOut"},s+1.1);
+    tl.to("#s"+n+"ln",{opacity:0,duration:.2},s+2.2);
+    tl.fromTo("#s"+n+"chip",{y:30,opacity:0},{y:0,opacity:1,duration:.5,ease:"back.out(2)"},s+2.1);
+  }
+}
+scene(2,3.5,4); scene(3,7.5,4); scene(4,11.5,4);
+// S5
+tl.fromTo("#s5w",{xPercent:0},{xPercent:101,duration:.7,ease:"power3.inOut"},15.5);
+tl.fromTo("#s5img",{scale:1.15},{scale:1.03,duration:4.5,ease:"none"},15.5);
+tl.fromTo("#s5lab",{y:30,opacity:0},{y:0,opacity:1,duration:.6,ease:E},16.0);
+tl.to("#s5lab",{opacity:0,duration:.4},16.8);
+tl.fromTo("#s5shade",{opacity:.6},{opacity:1,duration:1.2},16.6);
+tl.fromTo("#s5img",{opacity:1},{opacity:.12,duration:1.2},16.6);
+tl.fromTo("#s5grid",{opacity:0},{opacity:1,duration:1},16.8);
+tl.fromTo("#s5mark",{scale:.6,opacity:0,transformOrigin:"50% 50%"},{scale:1,opacity:1,duration:.9,ease:"back.out(1.6)"},17);
+tl.fromTo("#s5word",{y:50,opacity:0},{y:0,opacity:1,duration:.8,ease:E},17.2);
+tl.fromTo("#s5tag",{y:50,opacity:0},{y:0,opacity:1,duration:.8,ease:E},17.45);
+tl.fromTo("#s5sub",{opacity:0},{opacity:1,duration:.7},17.8);
+tl.fromTo("#s5cta",{y:30,opacity:0,scale:.95},{y:0,opacity:1,scale:1,duration:.7,ease:"back.out(1.8)"},18.1);
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>
