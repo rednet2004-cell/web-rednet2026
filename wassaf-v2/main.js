@@ -148,6 +148,13 @@
       v.muted = !v.muted; if (!v.muted) { v.currentTime = 0; v.play(); }
       b.setAttribute("aria-pressed", String(!v.muted)); b.textContent = v.muted ? "♪ Activar música" : "♪ Silenciar";
     });
+    var w = $("#watchBtn");
+    if (w) w.addEventListener("click", function () {
+      var r = v.getBoundingClientRect();
+      if (r.top < 0 || r.bottom > innerHeight) window.scrollTo({ top: scrollY + r.top - 110, behavior: "smooth" });
+      v.muted = false; v.currentTime = 0; var p = v.play(); if (p && p.catch) p.catch(function () {});
+      b.setAttribute("aria-pressed", "true"); b.textContent = "♪ Silenciar";
+    });
     if ("IntersectionObserver" in window) new IntersectionObserver(function (e) {
       if (e[0].isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else v.pause();
     }, { threshold: 0.05 }).observe(v);
