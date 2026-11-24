@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es" data-slug="three-globo">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Efectos Rednet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/demo.css">
+<style>html,body{margin:0;height:100%;background:#0e0d0c;color:#f2f0ec;font-family:Geist,system-ui,sans-serif;overflow:hidden}
+canvas{position:fixed;inset:0;display:block;width:100%!important;height:100%!important;touch-action:none}
+.hero{position:fixed;left:max(16px,6vw);bottom:110px;z-index:2;pointer-events:none;max-width:520px}
+.lbl{font:500 12px/1 "Geist Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:#ff7a5c}
+.hero h1{font-size:clamp(38px,6vw,84px);letter-spacing:-.045em;line-height:.92;margin:12px 0 10px;font-weight:650}
+.hero p{margin:0;color:#b9b3aa;line-height:1.5}
+.hero{left:auto;right:max(16px,6vw);text-align:right;top:50%;bottom:auto;transform:translateY(-50%)}
+@media (max-width:760px){.hero{right:auto;left:16px;text-align:left;top:auto;bottom:100px;transform:none}}
+.lbl{color:#5cf2c4}
+</style>
+<script type="importmap">{"imports":{"three":"../../vendor/three.module.min.js","three/addons/":"../../vendor/three-addons/"}}</script>
+</head>
+<body>
+<div class="hero"><span class="lbl">Three.js · puntos + arcos animados</span><h1>De Santiago<br>al mundo</h1><p>Arrastra el globo. Cada arco es una ruta de despacho.</p></div>
+<script type="module">
+import * as THREE from 'three';
+const R=new THREE.WebGLRenderer({antialias:true,alpha:true});R.setPixelRatio(Math.min(devicePixelRatio,2));R.setSize(innerWidth,innerHeight);document.body.prepend(R.domElement);
+const S=new THREE.Scene(),C=new THREE.PerspectiveCamera(40,innerWidth/innerHeight,.1,100);C.position.z=7.5;
+const G=new THREE.Group();S.add(G);
+// esfera de puntos (distribución de Fibonacci)
+const N=5000,pos=new Float32Array(N*3);for(let i=0;i<N;i++){const y=1-2*(i+.5)/N,r=Math.sqrt(1-y*y),a=i*Math.PI*(3-Math.sqrt(5));pos.set([Math.cos(a)*r*2,y*2,Math.sin(a)*r*2],i*3)}
+const pg=new THREE.BufferGeometry();pg.setAttribute('position',new THREE.BufferAttribute(pos,3));
+G.add(new THREE.Points(pg,new THREE.PointsMaterial({color:0x9fd8e6,size:.04,transparent:true,opacity:.7,sizeAttenuation:true})));
+G.add(new THREE.Mesh(new THREE.SphereGeometry(1.985,64,64),new THREE.MeshBasicMaterial({color:0x0a1820})));
+// halo atmosférico
+const halo=new THREE.Mesh(new THREE.SphereGeometry(2.35,64,64),new THREE.ShaderMaterial({transparent:true,side:THREE.BackSide,depthWrite:false,blending:THREE.AdditiveBlending,
+ vertexShader:'varying vec3 n;void main(){n=normalize(normalMatrix*normal);gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',
+ fragmentShader:'varying vec3 n;void main(){float i=pow(max(0.,.62-dot(n,vec3(0,0,1.))),2.2);gl_FragColor=vec4(.36,.95,.77,1.)*i*.9;}'}));S.add(halo);
+// ciudades (lat, lon)
+const ll=(la,lo,r=2)=>{const p=(90-la)*Math.PI/180,t=(lo+180)*Math.PI/180;return new THREE.Vector3(-r*Math.sin(p)*Math.cos(t),r*Math.cos(p),r*Math.sin(p)*Math.sin(t))};
+const SCL=[-33.45,-70.66],dest=[[-12.05,-77.04],[4.71,-74.07],[25.76,-80.19],[40.42,-3.70],[31.23,121.47],[34.05,-118.24],[-34.60,-58.38],[-23.55,-46.63],[19.43,-99.13],[51.51,-.13]];
+const dot=new THREE.SphereGeometry(.035,12,12),dm=new THREE.MeshBasicMaterial({color:0xffffff});
+const mk=(v,c=0x5cf2c4)=>{const m=new THREE.Mesh(dot,dm.clone());m.material.color.set(c);m.position.copy(v);G.add(m);return m};
+const o=ll(...SCL);mk(o,0xff5a3c).scale.setScalar(1.8);
+const arcs=dest.map((d,i)=>{const b=ll(...d);mk(b);const mid=o.clone().add(b).multiplyScalar(.5),h=2+o.distanceTo(b)*.35;mid.normalize().multiplyScalar(h);
+ const curve=new THREE.QuadraticBezierCurve3(o,mid,b),pts=curve.getPoints(100),g=new THREE.BufferGeometry().setFromPoints(pts);
+ const line=new THREE.Line(g,new THREE.LineBasicMaterial({color:0xff7a5c,transparent:true,opacity:.9}));G.add(new THREE.Line(g.clone(),new THREE.LineBasicMaterial({color:0xff7a5c,transparent:true,opacity:.18})));G.add(line);g.setDrawRange(0,0);
+ const p=mk(b,0xffffff);p.scale.setScalar(1.3);return{g,curve,p,off:i*.37}});
+// arrastrar con mouse o dedo
+let rx=-.45,ry=-.25,vx=0,vy=.0012,drag=false,lx=0,ly=0;
+R.domElement.addEventListener('pointerdown',e=>{drag=true;lx=e.clientX;ly=e.clientY;R.domElement.setPointerCapture(e.pointerId)});
+addEventListener('pointerup',()=>drag=false);
+addEventListener('pointermove',e=>{if(!drag)return;vy=(e.clientX-lx)*.0004;vx=(e.clientY-ly)*.0004;ry+=(e.clientX-lx)*.006;rx+=(e.clientY-ly)*.006;rx=Math.max(-1,Math.min(1,rx));lx=e.clientX;ly=e.clientY});
+function fit(){R.setSize(innerWidth,innerHeight);C.aspect=innerWidth/innerHeight;C.updateProjectionMatrix();const wide=innerWidth>760;G.position.x=halo.position.x=wide?-1.4:0;G.position.y=halo.position.y=wide?0:1.1;C.position.z=wide?7.5:12.5}
+addEventListener('resize',fit);fit();
+const clk=new THREE.Clock();
+R.setAnimationLoop(()=>{const t=clk.getElapsedTime();if(!drag){ry+=vy;vy+=(.0012-vy)*.02;vx*=.95;rx+=vx}G.rotation.set(rx,ry,0);
+ arcs.forEach(a=>{const k=((t*.35+a.off)%1.6)/1.2;const s=Math.max(0,Math.min(1,k)),e=Math.max(0,Math.min(1,k-.45));a.g.setDrawRange(Math.floor(e*100),Math.max(0,Math.floor((s-e)*100)+1));a.p.position.copy(a.curve.getPoint(s));a.p.visible=k<1});
+ R.render(S,C)});
+</script>
+<script src="../../assets/catalogo.js"></script>
+<script src="../../assets/demo.js"></script>
+</body>
+</html>

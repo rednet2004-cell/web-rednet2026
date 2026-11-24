@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es" data-slug="gsap-portada-zoom">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Efectos Rednet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/demo.css">
+<style>html{background:#0e0d0c}body{margin:0;background:#0e0d0c;color:#f2f0ec;font-family:Geist,system-ui,sans-serif}
+.lbl{font:500 12px/1 "Geist Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:#ff7a5c}
+.intro{min-height:100svh;display:grid;place-content:center;text-align:center;padding:0 16px}
+.intro h1{font-size:clamp(40px,7vw,96px);letter-spacing:-.04em;line-height:.95;margin:16px 0;font-weight:650}
+.intro p{color:#a8a39b;margin:0}
+.hint{margin-top:36px;font:500 12px "Geist Mono",monospace;color:#a8a39b;animation:hb 1.6s ease-in-out infinite}
+@keyframes hb{50%{transform:translateY(6px)}}
+.outro{min-height:70svh;display:grid;place-content:center;color:#a8a39b;text-align:center;padding:0 16px 80px}
+.open{height:100svh;position:relative;overflow:hidden;display:grid;place-items:center}
+.open .win{position:absolute;inset:0;clip-path:inset(30% 34% 30% 34% round 24px)}
+.open .win img{width:100%;height:100%;object-fit:cover;transform:scale(1.4)}
+.open h1{position:relative;z-index:2;font-size:clamp(44px,11vw,180px);letter-spacing:-.06em;line-height:.85;margin:0;text-align:center;font-weight:700;mix-blend-mode:difference;color:#fff}
+.open .lbl{position:absolute;top:24px;left:50%;transform:translateX(-50%);z-index:3}
+.par{position:relative;min-height:150svh;padding:20vh max(16px,6vw);overflow:hidden}
+.par h2{font-size:clamp(34px,5vw,72px);letter-spacing:-.04em;margin:0;max-width:12ch;position:relative;z-index:3;line-height:1}
+.par img{position:absolute;border-radius:16px;object-fit:cover;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.p1{width:34vw;height:44vw;max-height:70svh;right:6vw;top:12vh}
+.p2{width:22vw;height:28vw;right:38vw;top:62vh;z-index:2}
+.p3{width:18vw;height:22vw;left:8vw;top:90vh}
+@media (max-width:720px){.p1{width:60vw;height:70vw}.p2{width:44vw;height:54vw;right:30vw}.p3{width:38vw;height:46vw}}
+</style>
+</head>
+<body>
+<section class="open" id="open"><span class="lbl">GSAP · clip-path + Lenis</span><div class="win"><img src="../../../zayg/assets/img/obra-hero.webp" alt=""></div><h1>Obras<br>que duran</h1></section>
+<section class="par"><h2>Capas que se mueven a distinta velocidad</h2>
+ <img class="p1" data-speed="-30" src="../../../zayg/assets/img/modelo-450.webp" alt=""><img class="p2" data-speed="40" src="../../../zayg/assets/img/cierres.webp" alt=""><img class="p3" data-speed="-60" src="../../../zayg/assets/img/montaje.webp" alt="">
+</section>
+<section class="outro"><p>Scroll suave con Lenis + ScrollTrigger.</p></section>
+<script src="../../vendor/gsap.min.js"></script><script src="../../vendor/ScrollTrigger.min.js"></script><script src="../../vendor/lenis.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+// Scroll suave (Lenis) conectado a GSAP
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches){const lenis=new Lenis({lerp:.09});lenis.on('scroll',ScrollTrigger.update);gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0)}
+const tl=gsap.timeline({scrollTrigger:{trigger:'#open',start:'top top',end:'+=130%',pin:true,scrub:.8}});
+tl.to('#open .win',{clipPath:'inset(0% 0% 0% 0% round 0px)',ease:'power2.inOut'},0)
+  .to('#open .win img',{scale:1,ease:'power2.inOut'},0)
+  .to('#open h1',{scale:1.6,opacity:0,ease:'power1.in'},.35);
+gsap.utils.toArray('[data-speed]').forEach(el=>gsap.to(el,{yPercent:+el.dataset.speed,ease:'none',scrollTrigger:{trigger:'.par',start:'top bottom',end:'bottom top',scrub:true}}));
+</script>
+<script src="../../assets/catalogo.js"></script>
+<script src="../../assets/demo.js"></script>
+</body>
+</html>

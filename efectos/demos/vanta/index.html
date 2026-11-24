@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es" data-slug="vanta">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Efectos Rednet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/demo.css">
+<style>
+html,body{margin:0;height:100%;background:#0e0d0c;color:#f2f0ec;font-family:Geist,system-ui,sans-serif;overflow:hidden}
+#bg{position:fixed;inset:0}
+.hero{position:relative;z-index:2;height:100%;display:grid;place-content:center;text-align:center;padding:0 16px;pointer-events:none}
+.hero small{font:500 12px/1 "Geist Mono",monospace;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.hero h1{font-size:clamp(40px,8vw,104px);line-height:.95;letter-spacing:-.04em;margin:14px 0 0;font-weight:650;text-shadow:0 4px 40px rgba(0,0,0,.35)}
+.ctrl{position:fixed;z-index:3;top:16px;left:50%;transform:translateX(-50%);display:flex;flex-wrap:wrap;justify-content:center;gap:6px;width:calc(100% - 32px);max-width:760px}
+.ctrl button,.ctrl label{all:unset;cursor:pointer;font:500 13px/1 Geist,system-ui;padding:9px 13px;border-radius:999px;background:rgba(14,13,12,.6);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(10px);display:inline-flex;align-items:center;gap:8px}
+.ctrl button[aria-pressed=true]{background:#f2f0ec;color:#0e0d0c}
+.ctrl input{width:20px;height:20px;border:0;padding:0;background:none;cursor:pointer}
+</style>
+</head>
+<body>
+<div id="bg"></div>
+<div class="ctrl" id="ctrl"></div>
+<div class="hero"><small id="tag">VANTA.WAVES</small><h1>Tu marca,<br>en movimiento</h1></div>
+<script src="../../vendor/three-r134.min.js"></script>
+<script src="../../vendor/vanta.waves.min.js"></script><script src="../../vendor/vanta.net.min.js"></script><script src="../../vendor/vanta.fog.min.js"></script><script src="../../vendor/vanta.birds.min.js"></script>
+<script src="../../vendor/vanta.globe.min.js"></script><script src="../../vendor/vanta.halo.min.js"></script><script src="../../vendor/vanta.dots.min.js"></script><script src="../../vendor/vanta.cells.min.js"></script>
+<script>
+// Cada efecto es una línea: VANTA.WAVES({ el:'#bg', color:0x... })
+const base={el:'#bg',mouseControls:true,touchControls:true,gyroControls:false,minHeight:200,minWidth:200};
+const fx={
+  WAVES:c=>({color:c,shininess:40,waveHeight:18,zoom:.85}),
+  NET:c=>({color:c,backgroundColor:0x0e0d0c,points:11,maxDistance:22,spacing:17}),
+  FOG:c=>({highlightColor:c,midtoneColor:0x5a2a8a,lowlightColor:0x101830,baseColor:0x0e0d0c,blurFactor:.6,speed:1.2}),
+  BIRDS:c=>({backgroundColor:0x0e0d0c,color1:c,color2:0xf2f0ec,quantity:4,birdSize:1.1}),
+  GLOBE:c=>({color:c,color2:0xf2f0ec,backgroundColor:0x0e0d0c,size:1.1}),
+  HALO:c=>({baseColor:c,backgroundColor:0x0e0d0c,amplitudeFactor:1.4,size:1.4}),
+  DOTS:c=>({color:c,color2:0xf2f0ec,backgroundColor:0x0e0d0c,showLines:false,spacing:28}),
+  CELLS:c=>({color1:0x0e0d0c,color2:c,size:1.6,speed:1.2})
+};
+const def={WAVES:'#16264a',NET:'#ff5a3c',FOG:'#ff7a5c',BIRDS:'#ff5a3c',GLOBE:'#ff5a3c',HALO:'#5b3cff',DOTS:'#ff5a3c',CELLS:'#ff5a3c'};
+let cur='WAVES',inst=null,color=def.WAVES;
+const ctrl=document.getElementById('ctrl'),tag=document.getElementById('tag');
+Object.keys(fx).forEach(k=>{const b=document.createElement('button');b.textContent=k[0]+k.slice(1).toLowerCase();b.setAttribute('aria-pressed',k===cur);b.onclick=()=>{cur=k;color=def[k];lab.querySelector('input').value=color;run()};ctrl.appendChild(b)});
+const lab=document.createElement('label');lab.innerHTML='Color <input type="color" value="'+color+'" aria-label="Color del efecto">';ctrl.appendChild(lab);
+lab.querySelector('input').addEventListener('input',e=>{color=e.target.value;clearTimeout(window._t);window._t=setTimeout(run,120)});
+function run(){if(inst)inst.destroy();const c=parseInt(color.slice(1),16);inst=VANTA[cur](Object.assign({},base,fx[cur](c)));tag.textContent='VANTA.'+cur;[...ctrl.querySelectorAll('button')].forEach(b=>b.setAttribute('aria-pressed',b.textContent.toUpperCase()===cur))}
+run();
+</script>
+<script src="../../assets/catalogo.js"></script>
+<script src="../../assets/demo.js"></script>
+</body>
+</html>

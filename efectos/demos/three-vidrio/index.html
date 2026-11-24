@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es" data-slug="three-vidrio">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Efectos Rednet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/demo.css">
+<style>html,body{margin:0;height:100%;background:#0e0d0c;color:#f2f0ec;font-family:Geist,system-ui,sans-serif;overflow:hidden}
+canvas{position:fixed;inset:0;display:block;width:100%!important;height:100%!important;touch-action:none}
+.hero{position:fixed;left:max(16px,6vw);bottom:110px;z-index:2;pointer-events:none;max-width:520px}
+.lbl{font:500 12px/1 "Geist Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:#ff7a5c}
+.hero h1{font-size:clamp(38px,6vw,84px);letter-spacing:-.045em;line-height:.92;margin:12px 0 10px;font-weight:650}
+.hero p{margin:0;color:#b9b3aa;line-height:1.5}</style>
+<script type="importmap">{"imports":{"three":"../../vendor/three.module.min.js","three/addons/":"../../vendor/three-addons/"}}</script>
+</head>
+<body>
+<div class="hero"><span class="lbl">Three.js · MeshPhysicalMaterial (transmission)</span><h1>Vidrio<br>que flota</h1><p>Mueve el mouse. Las piezas refractan el texto y la luz de atrás.</p></div>
+<script type="module">
+import * as THREE from 'three';
+import {RoomEnvironment} from 'three/addons/RoomEnvironment.js';
+const R=new THREE.WebGLRenderer({antialias:true});R.setPixelRatio(Math.min(devicePixelRatio,1.75));R.setSize(innerWidth,innerHeight);
+R.toneMapping=THREE.ACESFilmicToneMapping;R.toneMappingExposure=1.05;document.body.prepend(R.domElement);
+const S=new THREE.Scene(),C=new THREE.PerspectiveCamera(35,innerWidth/innerHeight,.1,100);C.position.set(0,0,9);
+S.environment=new THREE.PMREMGenerator(R).fromScene(new RoomEnvironment(),.04).texture;
+// fondo: lienzo con texto y manchas de color (para que el vidrio tenga algo que refractar)
+const cv=document.createElement('canvas');cv.width=2048;cv.height=1024;const x=cv.getContext('2d');
+x.fillStyle='#0e0d0c';x.fillRect(0,0,2048,1024);
+[['#ff5a3c',560,420,420],['#5b3cff',1500,620,460],['#ffc46b',1150,260,260]].forEach(([c,a,b,r])=>{const g=x.createRadialGradient(a,b,0,a,b,r);g.addColorStop(0,c);g.addColorStop(1,'transparent');x.fillStyle=g;x.fillRect(0,0,2048,1024)});
+x.font='700 250px Geist, system-ui, sans-serif';x.fillStyle='rgba(242,240,236,.92)';x.textAlign='center';x.textBaseline='middle';x.fillText('REDNET',1024,430);
+const tex=new THREE.CanvasTexture(cv);tex.colorSpace=THREE.SRGBColorSpace;
+const bg=new THREE.Mesh(new THREE.PlaneGeometry(16,8),new THREE.MeshBasicMaterial({map:tex}));bg.position.z=-4;S.add(bg);
+document.fonts.ready.then(()=>{x.fillStyle='#0e0d0c';x.fillRect(0,0,2048,1024);[['#ff5a3c',560,420,420],['#5b3cff',1500,620,460],['#ffc46b',1150,260,260]].forEach(([c,a,b,r])=>{const g=x.createRadialGradient(a,b,0,a,b,r);g.addColorStop(0,c);g.addColorStop(1,'transparent');x.fillStyle=g;x.fillRect(0,0,2048,1024)});x.font='700 250px Geist';x.fillStyle='rgba(242,240,236,.92)';x.fillText('REDNET',1024,430);tex.needsUpdate=true});
+const glass=new THREE.MeshPhysicalMaterial({transmission:1,roughness:.06,thickness:1.4,ior:1.5,iridescence:.6,iridescenceIOR:1.3,clearcoat:1,clearcoatRoughness:.05,color:0xffffff,attenuationColor:0xffe8e0,attenuationDistance:4});
+const G=new THREE.Group();S.add(G);
+const parts=[[new THREE.TorusKnotGeometry(.75,.28,220,32),[-2.6,.6,0]],[new THREE.IcosahedronGeometry(1,0),[2.4,.9,-.5]],[new THREE.TorusGeometry(.8,.32,48,120),[.3,-1.1,.6]],[new THREE.CapsuleGeometry(.45,1,8,24),[-.4,1.6,-1]],[new THREE.OctahedronGeometry(.6),[1.6,-1.7,-1.2]]]
+ .map(([g,p],i)=>{const m=new THREE.Mesh(g,glass);m.position.set(...p);m.userData={p,ph:i*1.3,sp:.3+i*.07};G.add(m);return m});
+const L=new THREE.DirectionalLight(0xffffff,1.5);L.position.set(3,4,5);S.add(L);
+let mx=0,my=0;addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
+addEventListener('resize',()=>{R.setSize(innerWidth,innerHeight);C.aspect=innerWidth/innerHeight;C.updateProjectionMatrix();const s=Math.min(1,innerWidth/900);G.scale.setScalar(.6+.4*s);C.position.z=innerWidth<760?16:9;G.position.y=innerWidth<760?.9:0});dispatchEvent(new Event('resize'));
+const clk=new THREE.Clock(),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+R.setAnimationLoop(()=>{const t=reduce?0:clk.getElapsedTime();
+ parts.forEach(m=>{const u=m.userData;m.position.y=u.p[1]+Math.sin(t*.8+u.ph)*.18;m.rotation.x=t*u.sp;m.rotation.y=t*u.sp*.8});
+ G.rotation.y+=(mx*.5-G.rotation.y)*.05;G.rotation.x+=(my*.3-G.rotation.x)*.05;R.render(S,C)});
+</script>
+<script src="../../assets/catalogo.js"></script>
+<script src="../../assets/demo.js"></script>
+</body>
+</html>

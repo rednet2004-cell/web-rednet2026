@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="es" data-slug="r3f-escena">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Efectos Rednet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/demo.css">
+<style>
+html,body,#root{margin:0;height:100%;background:#f2f0ec;color:#141210;font-family:Geist,system-ui,sans-serif;overflow:hidden}
+#root canvas{touch-action:none}
+.hero{position:fixed;left:max(16px,6vw);top:56px;z-index:2;pointer-events:none;max-width:520px}
+.lbl{font:500 12px/1 "Geist Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:#d2401f}
+.hero h1{font-size:clamp(36px,5.4vw,76px);letter-spacing:-.045em;line-height:.92;margin:12px 0 10px;font-weight:650}
+.hero p{margin:0;color:#5d574e;line-height:1.5}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<div class="hero"><span class="lbl">React Three Fiber + Drei</span><h1>Pasa el mouse,<br>haz clic</h1><p>Cada pieza es un componente de React: crece con el hover y cambia de color al clic.</p></div>
+<script type="module" src="app.js"></script>
+<script src="../../assets/catalogo.js"></script>
+<script src="../../assets/demo.js"></script>
+</body>
+</html>
