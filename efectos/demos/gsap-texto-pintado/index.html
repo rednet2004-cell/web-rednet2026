@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es" data-slug="gsap-texto-pintado">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Efectos Rednet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/demo.css">
+<style>html{background:#0e0d0c}body{margin:0;background:#0e0d0c;color:#f2f0ec;font-family:Geist,system-ui,sans-serif}
+.lbl{font:500 12px/1 "Geist Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:#ff7a5c}
+.intro{min-height:100svh;display:grid;place-content:center;text-align:center;padding:0 16px}
+.intro h1{font-size:clamp(40px,7vw,96px);letter-spacing:-.04em;line-height:.95;margin:16px 0;font-weight:650}
+.intro p{color:#a8a39b;margin:0}
+.hint{margin-top:36px;font:500 12px "Geist Mono",monospace;color:#a8a39b;animation:hb 1.6s ease-in-out infinite}
+@keyframes hb{50%{transform:translateY(6px)}}
+.outro{min-height:70svh;display:grid;place-content:center;color:#a8a39b;text-align:center;padding:0 16px 80px}
+.pin{height:100svh;display:flex;align-items:center;padding:0 max(16px,7vw)}
+.pin p{font-size:clamp(28px,4.4vw,64px);line-height:1.12;letter-spacing:-.03em;font-weight:550;max-width:22ch;margin:0}
+.pin p .w{color:rgba(242,240,236,.14);transition:none}
+.pin p em{font-style:normal}
+.bar{position:fixed;left:0;top:0;height:3px;background:#ff5a3c;width:100%;transform-origin:0 50%;transform:scaleX(0);z-index:5}
+</style>
+</head>
+<body>
+<div class="bar" id="bar"></div>
+<section class="intro"><span class="lbl">GSAP · ScrollTrigger (pin + scrub)</span><h1>El texto se<br>pinta al bajar</h1><p>La sección se queda fija hasta leerla completa.</p><div class="hint">↓ scroll</div></section>
+<section class="pin" id="pin"><p id="txt">No vendemos páginas web. Ordenamos cómo tu empresa se presenta, responde y vende, <em>para que el cliente correcto</em> te encuentre primero y confíe a la primera.</p></section>
+<section class="outro"><p>El texto queda completo. Al subir se apaga de nuevo.</p></section>
+<script src="../../vendor/gsap.min.js"></script><script src="../../vendor/ScrollTrigger.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+const p=document.getElementById('txt');
+p.innerHTML=p.innerHTML.replace(/(<em>|<\/em>)|([^\s<>]+)/g,(m,tag,w)=>tag?tag:'<span class="w">'+w+'</span>');
+const words=p.querySelectorAll('.w'),acc=p.querySelectorAll('em .w');
+const tl=gsap.timeline({scrollTrigger:{trigger:'#pin',start:'top top',end:'+=180%',pin:true,scrub:.6,onUpdate:s=>gsap.set('#bar',{scaleX:s.progress})}});
+tl.to(words,{color:'#f2f0ec',stagger:.1,ease:'none',duration:.1});
+tl.to(acc,{color:'#ff7a5c',duration:.3},'-=0.2');
+</script>
+<script src="../../assets/catalogo.js"></script>
+<script src="../../assets/demo.js"></script>
+</body>
+</html>

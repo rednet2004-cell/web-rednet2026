@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es" data-slug="three-recorrido">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Efectos Rednet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/demo.css">
+<style>
+html{background:#07070a}body{margin:0;background:#07070a;color:#f2f0ec;font-family:Geist,system-ui,sans-serif}
+canvas{position:fixed;inset:0;display:block;width:100%!important;height:100%!important}
+.steps{position:relative;z-index:2}
+.step{height:100svh;display:flex;align-items:center;padding:0 max(16px,7vw)}
+.step:nth-child(even){justify-content:flex-end;text-align:right}
+.step div{max-width:460px}
+.lbl{font:500 12px/1 "Geist Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:#ff7a5c}
+.step h2{font-size:clamp(36px,5.6vw,80px);letter-spacing:-.045em;line-height:.95;margin:12px 0 12px;font-weight:650}
+.step p{margin:0;color:#c9c3ba;line-height:1.5;font-size:17px}
+.prog{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:3;display:flex;flex-direction:column;gap:10px}
+.prog i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.25);transition:background .3s,transform .3s}.prog i.on{background:#ff5a3c;transform:scale(1.6)}
+</style>
+<script type="importmap">{"imports":{"three":"../../vendor/three.module.min.js"}}</script>
+</head>
+<body>
+<div class="prog" id="prog"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+<main class="steps">
+ <section class="step"><div><span class="lbl">Three.js + GSAP ScrollTrigger</span><h2>Así trabajamos</h2><p>Baja: la cámara recorre el proceso por dentro.</p></div></section>
+ <section class="step"><div><span class="lbl">01 · Diagnóstico</span><h2>Escuchamos primero</h2><p>Visitamos tu operación y medimos dónde se pierde tiempo.</p></div></section>
+ <section class="step"><div><span class="lbl">02 · Diseño</span><h2>Plan a tu medida</h2><p>Planos, costos y plazos claros antes de empezar.</p></div></section>
+ <section class="step"><div><span class="lbl">03 · Ejecución</span><h2>Obra sin sorpresas</h2><p>Avance semanal con fotos y un responsable único.</p></div></section>
+ <section class="step"><div><span class="lbl">04 · Entrega</span><h2>Listo para operar</h2><p>Recepción, garantías y soporte después de la entrega.</p></div></section>
+</main>
+<script src="../../vendor/gsap.min.js"></script><script src="../../vendor/ScrollTrigger.min.js"></script>
+<script type="module">
+import * as THREE from 'three';
+gsap.registerPlugin(ScrollTrigger);
+const R=new THREE.WebGLRenderer({antialias:true});R.setPixelRatio(Math.min(devicePixelRatio,1.75));R.setSize(innerWidth,innerHeight);document.body.prepend(R.domElement);
+const S=new THREE.Scene();S.fog=new THREE.Fog(0x07070a,4,26);S.background=new THREE.Color(0x07070a);
+const C=new THREE.PerspectiveCamera(60,innerWidth/innerHeight,.1,60);
+// camino curvo y "portales" a lo largo
+const path=new THREE.CatmullRomCurve3([[0,0,0],[2,1,-12],[-2,-1,-24],[1.5,1.5,-36],[0,0,-50],[0,0,-56]].map(p=>new THREE.Vector3(...p)));
+const pal=[0xff5a3c,0x5b3cff,0x2ef2b4,0xffc46b];
+for(let i=0;i<60;i++){const t=i/60,p=path.getPointAt(t),tg=path.getTangentAt(t);
+ const ring=new THREE.Mesh(new THREE.TorusGeometry(2.2+Math.sin(i)*.2,.02,8,90),new THREE.MeshBasicMaterial({color:pal[Math.floor(t*4)%4],transparent:true,opacity:.75}));
+ ring.position.copy(p);ring.lookAt(p.clone().add(tg));ring.rotation.z=i*.2;S.add(ring);
+ if(i%3===0){const b=new THREE.Mesh(new THREE.BoxGeometry(.3,.3,.3),new THREE.MeshStandardMaterial({color:0xf2f0ec,roughness:.3,metalness:.6}));
+  const a=i*1.7;b.position.copy(p).add(new THREE.Vector3(Math.cos(a)*1.3,Math.sin(a)*1.3,0));b.userData.s=.5+Math.random();S.add(b)}}
+// polvo
+const N=1500,pp=new Float32Array(N*3);for(let i=0;i<N;i++)pp.set([(Math.random()-.5)*14,(Math.random()-.5)*10,-Math.random()*60],i*3);
+const pg=new THREE.BufferGeometry();pg.setAttribute('position',new THREE.BufferAttribute(pp,3));S.add(new THREE.Points(pg,new THREE.PointsMaterial({color:0xffffff,size:.03,transparent:true,opacity:.6})));
+S.add(new THREE.AmbientLight(0xffffff,.4));const pl=new THREE.PointLight(0xff8a6c,30,10);S.add(pl);
+const st={t:0};
+gsap.to(st,{t:.97,ease:'none',scrollTrigger:{trigger:'.steps',start:'top top',end:'bottom bottom',scrub:1.2}});
+const dots=[...document.querySelectorAll('#prog i')];
+ScrollTrigger.create({trigger:'.steps',start:'top top',end:'bottom bottom',onUpdate:s=>{const k=Math.min(4,Math.round(s.progress*4));dots.forEach((d,i)=>d.classList.toggle('on',i===k))}});
+let mx=0,my=0;addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
+addEventListener('resize',()=>{R.setSize(innerWidth,innerHeight);C.aspect=innerWidth/innerHeight;C.updateProjectionMatrix()});
+const clk=new THREE.Clock();
+R.setAnimationLoop(()=>{const e=clk.getElapsedTime(),p=path.getPointAt(st.t),la=path.getPointAt(Math.min(1,st.t+.03));
+ C.position.copy(p).add(new THREE.Vector3(mx*.6,-my*.4,0));C.lookAt(la);pl.position.copy(la);
+ S.children.forEach(o=>{if(o.userData.s){o.rotation.x=e*o.userData.s;o.rotation.y=e*o.userData.s*.7}});R.render(S,C)});
+</script>
+<script src="../../assets/catalogo.js"></script>
+<script src="../../assets/demo.js"></script>
+</body>
+</html>

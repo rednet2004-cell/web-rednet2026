@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es" data-slug="lista-imagen-flotante">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Efectos Rednet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/demo.css">
+<style>
+html,body{margin:0;min-height:100%;background:#ebe6dc;color:#161412;font-family:Geist,system-ui,sans-serif}
+main{max-width:1180px;margin:0 auto;padding:64px 16px 120px}
+.lbl{font:500 12px/1 "Geist Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:#b3361b}
+h1{font-size:clamp(30px,4vw,48px);letter-spacing:-.04em;margin:14px 0 36px;line-height:1}
+ul{list-style:none;margin:0;padding:0;border-top:1px solid #161412}
+li a{display:grid;grid-template-columns:70px 1fr auto;align-items:center;gap:16px;padding:22px 4px;border-bottom:1px solid rgba(22,20,18,.25);color:inherit;text-decoration:none;transition:padding .4s cubic-bezier(.2,.8,.2,1),color .3s}
+li b{font:500 13px "Geist Mono",monospace;color:#6d665b}
+li h2{margin:0;font-size:clamp(30px,6vw,84px);letter-spacing:-.05em;line-height:.95;font-weight:600}
+li span{font-size:14px;color:#6d665b;text-align:right}
+ul:hover li a{color:rgba(22,20,18,.3)}ul li a:hover{color:#161412;padding-left:24px}
+#flo{position:fixed;left:0;top:0;width:min(340px,34vw);aspect-ratio:4/5;border-radius:12px;overflow:hidden;pointer-events:none;z-index:50;scale:.6;opacity:0;translate:-50% -50%;box-shadow:0 30px 70px rgba(0,0,0,.3)}
+#flo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .35s}
+#flo img.on{opacity:1}
+@media (pointer:coarse){#flo{display:none}li a{grid-template-columns:44px 1fr}li span{display:none}}
+</style>
+</head>
+<body>
+<main>
+ <span class="lbl">GSAP quickTo · hover</span><h1>Servicios</h1>
+ <ul id="ls">
+  <li><a href="#" data-i="0"><b>01</b><h2>Galpones</h2><span>Llave en mano</span></a></li>
+  <li><a href="#" data-i="1"><b>02</b><h2>Bodegaje</h2><span>Con WMS</span></a></li>
+  <li><a href="#" data-i="2"><b>03</b><h2>Agroindustria</h2><span>Packings y frío</span></a></li>
+  <li><a href="#" data-i="3"><b>04</b><h2>Despacho</h2><span>Región Metropolitana</span></a></li>
+  <li><a href="#" data-i="4"><b>05</b><h2>Montaje</h2><span>Cuadrillas propias</span></a></li>
+ </ul>
+</main>
+<div id="flo" aria-hidden="true"><img src="../../../zayg/assets/img/llave-en-mano.webp" alt=""><img src="../../../wassaf/assets/img/bodegas.webp" alt=""><img src="../../../zayg/assets/img/agroindustria.webp" alt=""><img src="../../../wassaf/assets/img/despacho.webp" alt=""><img src="../../../zayg/assets/img/montaje.webp" alt=""></div>
+<script src="../../vendor/gsap.min.js"></script>
+<script>
+const flo=document.getElementById('flo'),imgs=flo.querySelectorAll('img');
+const qx=gsap.quickTo(flo,'x',{duration:.7,ease:'power3'}),qy=gsap.quickTo(flo,'y',{duration:.7,ease:'power3'}),qr=gsap.quickTo(flo,'rotate',{duration:.8,ease:'power3'});
+let lx=0;addEventListener('pointermove',e=>{qx(e.clientX);qy(e.clientY);qr(gsap.utils.clamp(-12,12,(e.clientX-lx)*.6));lx=e.clientX});
+const ls=document.getElementById('ls');
+ls.addEventListener('pointerenter',()=>gsap.to(flo,{scale:1,opacity:1,duration:.5,ease:'power3.out'}));
+ls.addEventListener('pointerleave',()=>gsap.to(flo,{scale:.6,opacity:0,duration:.4}));
+ls.querySelectorAll('a').forEach(a=>{a.addEventListener('pointerenter',()=>imgs.forEach((im,i)=>im.classList.toggle('on',i==a.dataset.i)));a.addEventListener('click',e=>e.preventDefault())});
+</script>
+<script src="../../assets/catalogo.js"></script>
+<script src="../../assets/demo.js"></script>
+</body>
+</html>

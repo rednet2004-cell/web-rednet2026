@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es" data-slug="cursor-magnetico">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Efectos Rednet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/demo.css">
+<style>
+html,body{margin:0;min-height:100%;background:#f2f0ec;color:#141210;font-family:Geist,system-ui,sans-serif}
+@media (pointer:fine){html,body,a,button{cursor:none}}
+main{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:48px;padding:48px 16px 110px;text-align:center}
+.lbl{font:500 12px/1 "Geist Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:#d2401f}
+h1{font-size:clamp(40px,8vw,120px);letter-spacing:-.05em;line-height:.9;margin:14px 0 0;font-weight:700}
+.row{display:flex;flex-wrap:wrap;gap:22px;justify-content:center;align-items:center}
+.mag{all:unset;display:inline-grid;place-items:center;font-weight:600;font-size:16px;border-radius:999px;position:relative}
+.mag>span{display:inline-block;pointer-events:none}
+.b1{background:#141210;color:#f2f0ec;padding:22px 34px}
+.b2{border:1.5px solid #141210;padding:20px 32px}
+.b3{width:150px;height:150px;background:#ff5a3c;color:#140a07;font-size:18px}
+.soc{display:flex;gap:14px}.soc .mag{width:56px;height:56px;border:1.5px solid rgba(0,0,0,.2);font:600 14px "Geist Mono"}
+#cur,#dot{position:fixed;left:0;top:0;pointer-events:none;z-index:9998;border-radius:50%;translate:-50% -50%}
+#cur{width:40px;height:40px;border:1.5px solid #141210;mix-blend-mode:difference;border-color:#fff;transition:width .3s,height .3s,background .3s}
+#dot{width:6px;height:6px;background:#fff;mix-blend-mode:difference}
+#cur.big{width:90px;height:90px;background:#fff}
+#cur.txt::after{content:attr(data-t);position:absolute;inset:0;display:grid;place-items:center;font:600 11px Geist;color:#000;mix-blend-mode:normal}
+.big-link{font-size:clamp(28px,5vw,60px);letter-spacing:-.04em;font-weight:650;color:#141210;text-decoration:none}
+@media (pointer:coarse){#cur,#dot{display:none}}
+</style>
+</head>
+<body>
+<div id="cur"></div><div id="dot"></div>
+<main>
+ <div><span class="lbl">GSAP quickTo · cursor propio</span><h1>Acércate<br>a los botones</h1></div>
+ <div class="row"><button class="mag b1" data-s=".4"><span>Hablemos</span></button><button class="mag b2" data-s=".35"><span>Ver proyectos</span></button><button class="mag b3" data-s=".5" data-cur="Ir"><span>Cotiza →</span></button></div>
+ <div class="soc"><a class="mag" href="#" data-s=".6"><span>IG</span></a><a class="mag" href="#" data-s=".6"><span>IN</span></a><a class="mag" href="#" data-s=".6"><span>WA</span></a></div>
+ <a class="big-link" href="#" data-cur="Ver">Pasa por este enlace</a>
+</main>
+<script src="../../vendor/gsap.min.js"></script>
+<script>
+if(matchMedia('(pointer:fine)').matches){
+ const cur=document.getElementById('cur'),dot=document.getElementById('dot');
+ const cx=gsap.quickTo(cur,'x',{duration:.45,ease:'power3'}),cy=gsap.quickTo(cur,'y',{duration:.45,ease:'power3'});
+ const dx=gsap.quickTo(dot,'x',{duration:.08}),dy=gsap.quickTo(dot,'y',{duration:.08});
+ addEventListener('pointermove',e=>{cx(e.clientX);cy(e.clientY);dx(e.clientX);dy(e.clientY)});
+ document.querySelectorAll('.mag').forEach(el=>{
+  const s=+el.dataset.s,x=gsap.quickTo(el,'x',{duration:.6,ease:'elastic.out(1,.4)'}),y=gsap.quickTo(el,'y',{duration:.6,ease:'elastic.out(1,.4)'}),
+        lab=el.querySelector('span'),lx=gsap.quickTo(lab,'x',{duration:.6,ease:'elastic.out(1,.4)'}),ly=gsap.quickTo(lab,'y',{duration:.6,ease:'elastic.out(1,.4)'});
+  el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect(),mx=e.clientX-r.left-r.width/2,my=e.clientY-r.top-r.height/2;x(mx*s);y(my*s);lx(mx*s*.35);ly(my*s*.35)});
+  el.addEventListener('pointerleave',()=>{x(0);y(0);lx(0);ly(0)});
+ });
+ document.querySelectorAll('.mag,.big-link').forEach(el=>{
+  el.addEventListener('pointerenter',()=>{cur.classList.add('big');if(el.dataset.cur){cur.dataset.t=el.dataset.cur;cur.classList.add('txt')}});
+  el.addEventListener('pointerleave',()=>cur.classList.remove('big','txt'))});
+}
+document.querySelectorAll('a').forEach(a=>a.addEventListener('click',e=>e.preventDefault()));
+</script>
+<script src="../../assets/catalogo.js"></script>
+<script src="../../assets/demo.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es" data-slug="imagen-liquida">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Efectos Rednet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/demo.css">
+<style>
+html,body{margin:0;height:100%;background:#0e0d0c;color:#f2f0ec;font-family:Geist,system-ui,sans-serif;overflow:hidden}
+canvas{position:fixed;inset:0;display:block;width:100%!important;height:100%!important;touch-action:none}
+.hero{position:fixed;left:max(16px,6vw);bottom:110px;z-index:2;pointer-events:none;max-width:560px}
+.lbl{font:500 12px/1 "Geist Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:#fff;opacity:.85}
+.hero h1{font-size:clamp(42px,7vw,108px);letter-spacing:-.05em;line-height:.9;margin:12px 0 10px;font-weight:700;text-shadow:0 6px 40px rgba(0,0,0,.4)}
+.hero p{margin:0;line-height:1.5;text-shadow:0 2px 16px rgba(0,0,0,.6)}
+.pick{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:3;display:flex;gap:8px}
+.pick button{all:unset;cursor:pointer;width:56px;height:38px;border-radius:9px;background-size:cover;background-position:center;border:2px solid rgba(255,255,255,.3)}
+.pick button[aria-pressed=true]{border-color:#fff}
+</style>
+<script type="importmap">{"imports":{"three":"../../vendor/three.module.min.js","three/addons/":"../../vendor/three-addons/"}}</script>
+</head>
+<body>
+<div class="pick" id="pick"></div>
+<div class="hero"><span class="lbl">Three.js · shader de distorsión · estilo Unicorn Studio</span><h1>Una foto<br>que respira</h1><p>Pasa el mouse o el dedo por la imagen: se ondula como agua.</p></div>
+<script type="module">
+import * as THREE from 'three';
+const IMGS=['../../../zayg/assets/img/obra-hero.webp','../../../wassaf/assets/img/bodegas.webp','../../../zayg/assets/img/agroindustria.webp'];
+const R=new THREE.WebGLRenderer({antialias:false});R.setPixelRatio(Math.min(devicePixelRatio,1.5));R.setSize(innerWidth,innerHeight);document.body.prepend(R.domElement);
+const S=new THREE.Scene(),C=new THREE.OrthographicCamera(-1,1,1,-1,0,1);
+const L=new THREE.TextureLoader();
+// rastro del mouse: 16 últimas posiciones con su "fuerza", para que la onda deje estela
+const TR=16,trail=Array.from({length:TR},()=>new THREE.Vector3(0,0,0));
+const U={uTex:{value:null},uRes:{value:new THREE.Vector2()},uImg:{value:new THREE.Vector2(1,1)},uTime:{value:0},uTrail:{value:trail}};
+const M=new THREE.ShaderMaterial({uniforms:U,vertexShader:'varying vec2 v;void main(){v=uv;gl_Position=vec4(position.xy,0.,1.);}',
+fragmentShader:`precision highp float;varying vec2 v;uniform sampler2D uTex;uniform vec2 uRes,uImg;uniform float uTime;uniform vec3 uTrail[${TR}];
+vec2 cover(vec2 uv){float rs=uRes.x/uRes.y,ri=uImg.x/uImg.y;vec2 s=rs>ri?vec2(1.,ri/rs):vec2(rs/ri,1.);return (uv-.5)*s+.5;}
+void main(){vec2 uv=v;vec2 off=vec2(0.);float ar=uRes.x/uRes.y;
+ for(int i=0;i<${TR};i++){vec3 t=uTrail[i];if(t.z<.001)continue;vec2 d=(uv-t.xy)*vec2(ar,1.);float r=length(d);
+  float w=sin(r*38.-uTime*6.)*exp(-r*7.)*t.z;off+=normalize(d+1e-5)*w*.018;}
+ off+=vec2(sin(uv.y*6.+uTime*.6),cos(uv.x*5.+uTime*.5))*.0025;
+ vec2 c=cover(uv+off);float k=length(off)*2.2;
+ vec3 col=vec3(texture2D(uTex,c+vec2(k,0.)).r,texture2D(uTex,c).g,texture2D(uTex,c-vec2(k,0.)).b);
+ col*=1.-.35*pow(length(v-.5)*1.3,2.);gl_FragColor=vec4(col,1.);}`});
+S.add(new THREE.Mesh(new THREE.PlaneGeometry(2,2),M));
+function load(i){L.load(IMGS[i],t=>{t.colorSpace=THREE.SRGBColorSpace;t.minFilter=THREE.LinearFilter;U.uTex.value=t;U.uImg.value.set(t.image.width,t.image.height)})}
+const pick=document.getElementById('pick');
+IMGS.forEach((src,i)=>{const b=document.createElement('button');b.style.backgroundImage='url('+src+')';b.setAttribute('aria-label','Imagen '+(i+1));b.setAttribute('aria-pressed',i===0);b.onclick=()=>{load(i);pick.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b))};pick.appendChild(b)});
+load(0);
+let head=0,last=new THREE.Vector2(-1,-1);
+addEventListener('pointermove',e=>{const p=new THREE.Vector2(e.clientX/innerWidth,1-e.clientY/innerHeight);if(p.distanceTo(last)<.012)return;last.copy(p);head=(head+1)%TR;trail[head].set(p.x,p.y,1)});
+function fit(){R.setSize(innerWidth,innerHeight);U.uRes.value.set(innerWidth,innerHeight)}addEventListener('resize',fit);fit();
+const clk=new THREE.Clock();
+R.setAnimationLoop(()=>{U.uTime.value=clk.getElapsedTime();trail.forEach(t=>t.z*=.965);R.render(S,C)});
+</script>
+<script src="../../assets/catalogo.js"></script>
+<script src="../../assets/demo.js"></script>
+</body>
+</html>

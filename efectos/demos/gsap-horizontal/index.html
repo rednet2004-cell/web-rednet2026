@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es" data-slug="gsap-horizontal">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Efectos Rednet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/demo.css">
+<style>html{background:#0e0d0c}body{margin:0;background:#0e0d0c;color:#f2f0ec;font-family:Geist,system-ui,sans-serif}
+.lbl{font:500 12px/1 "Geist Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:#ff7a5c}
+.intro{min-height:100svh;display:grid;place-content:center;text-align:center;padding:0 16px}
+.intro h1{font-size:clamp(40px,7vw,96px);letter-spacing:-.04em;line-height:.95;margin:16px 0;font-weight:650}
+.intro p{color:#a8a39b;margin:0}
+.hint{margin-top:36px;font:500 12px "Geist Mono",monospace;color:#a8a39b;animation:hb 1.6s ease-in-out infinite}
+@keyframes hb{50%{transform:translateY(6px)}}
+.outro{min-height:70svh;display:grid;place-content:center;color:#a8a39b;text-align:center;padding:0 16px 80px}
+.hz{height:100svh;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+.hz header{padding:0 max(16px,6vw);display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:28px}
+.hz h2{font-size:clamp(30px,4.4vw,60px);letter-spacing:-.04em;margin:10px 0 0;line-height:1}
+.track{display:flex;gap:24px;padding:0 max(16px,6vw);width:max-content}
+.card{width:min(78vw,440px);flex:none;border-radius:22px;overflow:hidden;background:#1a1816;position:relative}
+.card img{width:100%;height:min(52svh,440px);object-fit:cover;display:block;transform:scale(1.15)}
+.card div{padding:18px 20px 22px}.card b{font:500 12px "Geist Mono",monospace;color:#ff7a5c}.card h3{margin:8px 0 0;font-size:22px;letter-spacing:-.02em}
+.prog{height:2px;background:rgba(255,255,255,.12);margin:32px max(16px,6vw) 0;border-radius:2px;overflow:hidden}.prog i{display:block;height:100%;background:#ff5a3c;transform-origin:0;transform:scaleX(0)}
+.count{font:500 14px "Geist Mono",monospace;color:#a8a39b}
+</style>
+</head>
+<body>
+<section class="intro"><span class="lbl">GSAP · ScrollTrigger · pin + containerAnimation</span><h1>Bajas, y la<br>galería avanza</h1><p>Ideal para servicios o proyectos.</p><div class="hint">↓ scroll</div></section>
+<section class="hz" id="hz">
+ <header><div><span class="lbl">Servicios</span><h2>Lo que hacemos</h2></div><span class="count" id="cnt">01 / 06</span></header>
+ <div class="track" id="track">
+  <article class="card"><img src="../../../wassaf/assets/img/recepcion.webp" alt=""><div><b>01</b><h3>Recepción de carga</h3></div></article>
+  <article class="card"><img src="../../../wassaf/assets/img/almacenaje.webp" alt=""><div><b>02</b><h3>Almacenaje</h3></div></article>
+  <article class="card"><img src="../../../wassaf/assets/img/picking.webp" alt=""><div><b>03</b><h3>Picking y packing</h3></div></article>
+  <article class="card"><img src="../../../wassaf/assets/img/despacho.webp" alt=""><div><b>04</b><h3>Despacho</h3></div></article>
+  <article class="card"><img src="../../../wassaf/assets/img/wms.webp" alt=""><div><b>05</b><h3>Sistema WMS</h3></div></article>
+  <article class="card"><img src="../../../wassaf/assets/img/inhouse.webp" alt=""><div><b>06</b><h3>Operación in-house</h3></div></article>
+ </div>
+ <div class="prog"><i id="pg"></i></div>
+</section>
+<section class="outro"><p>Fotos de ejemplo tomadas de la maqueta de Wasaff.</p></section>
+<script src="../../vendor/gsap.min.js"></script><script src="../../vendor/ScrollTrigger.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+const track=document.getElementById('track'),cards=gsap.utils.toArray('.card'),cnt=document.getElementById('cnt');
+const dist=()=>track.scrollWidth-innerWidth;
+const tw=gsap.to(track,{x:()=>-dist(),ease:'none',scrollTrigger:{trigger:'#hz',start:'top top',end:()=>'+='+dist(),pin:true,scrub:.8,invalidateOnRefresh:true,
+  onUpdate:s=>{gsap.set('#pg',{scaleX:s.progress});cnt.textContent=String(Math.min(cards.length,1+Math.floor(s.progress*cards.length))).padStart(2,'0')+' / 06'}}});
+// parallax interno de cada foto, sincronizado con el movimiento horizontal
+cards.forEach(c=>gsap.fromTo(c.querySelector('img'),{xPercent:-8},{xPercent:8,ease:'none',scrollTrigger:{trigger:c,containerAnimation:tw,start:'left right',end:'right left',scrub:true}}));
+</script>
+<script src="../../assets/catalogo.js"></script>
+<script src="../../assets/demo.js"></script>
+</body>
+</html>
