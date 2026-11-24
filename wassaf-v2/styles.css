@@ -386,3 +386,18 @@ section{position:relative}
   .chip-img{width:1.25em}
 }
 .hero__title .line{padding:0 .14em .06em}
+
+/* v2.1 · nav más grande, botones en píldora con hover azul Wasaff, título más chico sin cortes */
+.nav__pill{max-width:1240px;padding:12px 12px 12px 26px;gap:24px}
+.brand svg{width:60px}
+.brand span{font-size:1.45rem}
+.brand small{font-size:.7rem;margin-top:5px}
+.nav__links{gap:8px}
+.nav__links a{font-size:1.02rem;padding:12px 20px;background:rgba(255,255,255,.55);border:1px solid rgba(10,42,63,.1);color:var(--ink);transition:background .3s,color .3s,border-color .3s,transform .3s var(--ease)}
+.nav__links a:hover{background:var(--blue);border-color:var(--blue);color:#fff;transform:translateY(-1px)}
+.nav__pill>.btn--sm{padding:15px 26px;font-size:1.02rem}
+.hero{padding-top:170px}
+.hero__title{font-size:clamp(2.6rem,7vw,6.4rem)}
+.hero__title .line{padding:0 .3em .2em;margin-bottom:-.12em}
+@media (max-width:1060px){ .nav__pill{padding:10px 10px 10px 20px} .brand svg{width:50px} .brand span{font-size:1.3rem} .burger{width:50px;height:50px} .burger i{left:16px;right:16px} .burger i:first-child{top:20px} .burger i:last-child{top:28px} }
+@media (max-width:620px){ .hero{padding-top:140px} .hero__title{font-size:clamp(2.3rem,10.6vw,3.6rem)} .brand svg{width:44px} .brand span{font-size:1.2rem} }
