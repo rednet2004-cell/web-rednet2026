@@ -401,3 +401,14 @@ section{position:relative}
 .hero__title .line{padding:0 .3em .2em;margin-bottom:-.12em}
 @media (max-width:1060px){ .nav__pill{padding:10px 10px 10px 20px} .brand svg{width:50px} .brand span{font-size:1.3rem} .burger{width:50px;height:50px} .burger i{left:16px;right:16px} .burger i:first-child{top:20px} .burger i:last-child{top:28px} }
 @media (max-width:620px){ .hero{padding-top:140px} .hero__title{font-size:clamp(2.3rem,10.6vw,3.6rem)} .brand svg{width:44px} .brand span{font-size:1.2rem} }
+
+/* v2.2 · menos espacio en blanco entre secciones */
+.route{padding:clamp(56px,6vw,88px) 0 clamp(48px,5vw,72px)}
+.adv,.modes,.wms,.proc,.faq{padding:clamp(56px,6vw,88px) 0}
+.reel,.sectors{padding:clamp(48px,5vw,76px) 0}
+.testi{padding:0 0 clamp(48px,5vw,76px)}
+.contact{padding:clamp(60px,6.5vw,96px) 0}
+.head{margin-bottom:clamp(28px,3.5vw,48px)}
+.facts{padding-top:44px}
+.station{margin-bottom:clamp(44px,5vw,72px)}
+.switch{margin-bottom:28px}
