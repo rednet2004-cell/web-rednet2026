@@ -191,8 +191,9 @@
         var bad = !i.value.trim() || (i.type === "email" && !/^\S+@\S+\.\S+$/.test(i.value));
         i.classList.toggle("is-err", bad); if (bad) ok = false;
       });
-      if (!ok) { msg.textContent = "Revisa tu nombre y correo, por favor."; return; }
+      if (!ok) { msg.textContent = "Revisa los campos marcados, por favor."; return; }
       var d = new FormData(f), body = [
+        "Servicio: " + (d.get("servicio") || "-"), "Uso previsto: " + (d.get("uso") || "-"),
         "Nombre: " + d.get("nombre"), "Empresa: " + (d.get("empresa") || "-"),
         "Correo: " + d.get("correo"), "Teléfono: " + (d.get("telefono") || "-"),
         "Superficie: " + (d.get("m2") || "-"), "Comuna del terreno: " + (d.get("comuna") || "-"),
