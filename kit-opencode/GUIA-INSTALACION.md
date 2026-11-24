@@ -21,9 +21,9 @@ Las skills de **HyperFrames** (para los reels) se instalan desde su fuente ofici
 
 ## Antes de empezar (lo que hace Benito)
 
-1. **GitHub:** el diseñador crea su cuenta en github.com (gratis). Benito entra a `github.com/rednet2004-cell/web-rednet2026` → **Settings → Collaborators → Add people** y lo invita con permiso de escritura. El diseñador acepta la invitación desde su correo.
-2. **Google Drive:** Benito (o quien administre assets@rednet.cl) comparte la carpeta **imagebank** con el correo de Google del diseñador, como **Lector** (o Editor si va a subir cosas).
-3. **Modelo de IA:** decidir qué proveedor paga (ver paso 6).
+1. **GitHub (para publicar las demos):** el diseñador crea su propia cuenta en github.com (gratis). Benito entra a `github.com/rednet2004-cell/web-rednet2026` → **Settings → Collaborators → Add people** y lo invita con permiso de escritura. El diseñador acepta la invitación desde su correo. Así cada demo queda publicada en GitHub Pages, igual que hoy, y se sabe quién subió cada cambio.
+2. **Google Drive:** el diseñador usa la misma cuenta **assets@rednet.cl** que ya usan los otros proyectos. Benito le da la contraseña en persona (nunca por el repo ni por chat).
+3. **Modelo de IA:** ver `kit-opencode/MODELOS.md`. Para empezar alcanza con los modelos gratis.
 
 ## Paso 1 · Programas base
 
@@ -31,10 +31,11 @@ Hace falta: **Git**, **Node.js 22 o más**, **Python 3**, **FFmpeg**, **GitHub C
 
 ## Paso 2 · Descargar el repositorio
 
-En una terminal (en Windows: PowerShell):
+Abre **PowerShell** (botón Inicio → escribe "PowerShell"). En Windows 10, si `winget` no se reconoce, instala o actualiza **Instalador de aplicación** (App Installer) desde Microsoft Store y abre PowerShell de nuevo.
 
 ```
-cd $HOME\Documents          # o la carpeta que prefieras
+winget install --id Git.Git -e        # solo si git no está instalado; después cierra y abre PowerShell
+cd $HOME\Documents                    # o la carpeta que prefieras
 git clone https://github.com/rednet2004-cell/web-rednet2026.git
 cd web-rednet2026
 ```
@@ -55,9 +56,9 @@ El instalador revisa e instala lo que falte, instala OpenCode, las librerías de
 
 ## Paso 4 · Carpeta de imágenes de Google Drive
 
-1. Instala **Google Drive para escritorio** (google.com/drive/download) e inicia sesión con el correo al que se compartió imagebank.
-2. Como la carpeta está compartida, en drive.google.com ve a **Compartido conmigo**, clic derecho en **imagebank → Organizar → Agregar acceso directo** y elige **Mi unidad**. Así aparece en el disco.
-3. La ruta local queda más o menos así:
+1. Instala **Google Drive para escritorio** (google.com/drive/download) e inicia sesión con **assets@rednet.cl**.
+2. Abre el Explorador de archivos: aparece una unidad **Google Drive (G:)**. Entra a **Mi unidad** y busca la carpeta **imagebank**. (Si imagebank estuviera en "Compartido conmigo", en drive.google.com haz clic derecho → **Organizar → Agregar acceso directo** → **Mi unidad**.)
+3. La ruta local queda más o menos así (la letra puede variar):
    - Windows: `G:\Mi unidad\imagebank`
    - Mac: `~/Library/CloudStorage/GoogleDrive-<correo>/Mi unidad/imagebank`
 4. Si el instalador no la guardó, hazlo a mano:

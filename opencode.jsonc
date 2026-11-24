@@ -6,6 +6,11 @@
 
   "default_agent": "disenador-web",
 
+  // Modelo por defecto (gratis, ve imágenes). Si desaparece de la lista, elige otro con /models
+  // y cámbialo aquí. Opciones y plan de prueba en kit-opencode/MODELOS.md.
+  "model": "opencode/nemotron-3.5-super-vl-free",
+  "small_model": "opencode/nemotron-3.5-lightning-free",
+
   "instructions": ["kit-opencode/BITACORA.md"],
 
   "mcp": {
