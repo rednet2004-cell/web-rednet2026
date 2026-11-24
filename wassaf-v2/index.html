@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400..800;1,400..800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261124c">
+<link rel="stylesheet" href="styles.css?v=20261124d">
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -240,18 +240,18 @@
     <div class="reel__sticky">
       <div class="reel__card">
         <video id="reel" autoplay muted loop playsinline preload="metadata" poster="assets/reel-poster.webp">
-          <source src="assets/wasaff-reel-v2.mp4?v=2" type="video/mp4">
+          <source src="assets/wasaff-reel-v2.mp4?v=3" type="video/mp4">
         </video>
         <button class="reel-sound" type="button" aria-pressed="false">♪ Activar música</button>
       </div>
     </div>
     <div class="reel__copy">
-      <p class="pill pill--soft">En movimiento</p>
-      <h2 class="h2 reveal">Veinte segundos<br><em>de tu operación.</em></h2>
-      <div class="reel__step reveal"><span>01</span><h3>Llega</h3><p>Cada paquete se cuenta y se registra contra la documentación.</p></div>
-      <div class="reel__step reveal"><span>02</span><h3>Se ubica</h3><p>El pallet queda en una posición conocida, visible en el sistema.</p></div>
-      <div class="reel__step reveal"><span>03</span><h3>Se prepara</h3><p>Picking validado con lector, unidad por unidad.</p></div>
-      <div class="reel__step reveal"><span>04</span><h3>Sale</h3><p>Despacho validado y respaldado. Tú ves el estado.</p></div>
+      <button class="watch" type="button" id="watchBtn"><span class="watch__play" aria-hidden="true"></span>Ver video</button>
+      <h2 class="h2 reveal">Medio minuto<br><em>de tu operación.</em></h2>
+      <div class="reel__step reveal"><span>Estación 01</span><h3>Llega</h3><p>Cada paquete se cuenta y se registra contra la documentación.</p></div>
+      <div class="reel__step reveal"><span>Estación 02</span><h3>Se ubica</h3><p>El pallet queda en una posición conocida, visible en el sistema.</p></div>
+      <div class="reel__step reveal"><span>Estación 03</span><h3>Se prepara</h3><p>Picking validado con lector, unidad por unidad.</p></div>
+      <div class="reel__step reveal"><span>Estación 04</span><h3>Sale</h3><p>Despacho validado y respaldado. Tú ves el estado.</p></div>
     </div>
   </div>
 </section>
@@ -389,6 +389,6 @@
 
 <script defer src="lib/gsap.min.js"></script>
 <script defer src="lib/ScrollTrigger.min.js"></script>
-<script defer src="main.js?v=20261124b"></script>
+<script defer src="main.js?v=20261124c"></script>
 </body>
 </html>
