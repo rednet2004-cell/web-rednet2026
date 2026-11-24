@@ -398,3 +398,4 @@ section{position:relative}
 @media (max-width:760px){.proceso-head::before{display:none}.proceso-head{padding-right:0}}
 .apps{padding:0;margin:56px max(var(--gut),calc((100vw - 1388px)/2)) 0;max-width:none}
 .model-imgs img{object-position:25% 50%}
+.reel-sound{font-size:12px;padding:10px 14px;bottom:16px;right:16px}

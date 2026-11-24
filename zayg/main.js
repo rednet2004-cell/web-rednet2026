@@ -170,7 +170,7 @@
       }, { threshold: 0.25 }).observe(v);
     }
     btn.addEventListener("click", function () {
-      v.muted = !v.muted; btn.setAttribute("aria-pressed", String(!v.muted)); btn.textContent = "Sonido · " + (v.muted ? "OFF" : "ON");
+      v.muted = !v.muted; btn.setAttribute("aria-pressed", String(!v.muted)); btn.textContent = v.muted ? "♪ Activar música" : "♪ Silenciar";
       if (!v.muted) v.play();
     });
   }, "reel");
