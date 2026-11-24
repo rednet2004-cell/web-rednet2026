@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080, height=1920">
+<title>Wasaff reel v2 9x16</title>
+<script src="assets/gsap.min.js"></script>
+<style>
+@font-face{font-family:"PJ";src:url("assets/pj.woff2") format("woff2");font-weight:200 800}
+@font-face{font-family:"DM";src:url("assets/dm.woff2") format("woff2");font-weight:500}
+body{margin:0;background:#F3F6F2;color:#0A2A3F;font-family:"PJ",sans-serif}
+#root{position:relative;width:100%;height:100%;overflow:hidden;background:#F3F6F2}
+.glow{position:absolute;left:-200px;top:-300px;width:1500px;height:1100px;background:radial-gradient(circle,rgba(185,240,203,.8),transparent 60%)}
+.clip{position:absolute;inset:0;overflow:hidden}
+.card{position:absolute;left:70px;right:70px;top:250px;height:960px;border-radius:56px;overflow:hidden;box-shadow:0 60px 120px -60px rgba(10,42,63,.6)}
+.card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.badge{position:absolute;left:40px;top:40px;background:#fff;border-radius:999px;padding:18px 30px;font-family:"DM";font-size:28px;letter-spacing:.1em;text-transform:uppercase}
+.status{position:absolute;right:40px;bottom:40px;display:flex;align-items:center;gap:20px;background:#fff;border-radius:28px;padding:20px 30px 20px 20px;font-size:32px;font-weight:600}
+.status b{width:60px;height:60px;border-radius:18px;background:#E2F3E8;color:#0B8F4A;display:grid;place-items:center;font-size:34px}
+.status small{display:block;font-family:"DM";font-size:22px;letter-spacing:.1em;text-transform:uppercase;color:#6A7F8B;font-weight:500}
+.num{position:absolute;left:80px;top:1290px;font-family:"DM";font-size:34px;color:#0B8F4A;letter-spacing:.1em}
+.title{position:absolute;left:76px;right:70px;top:1350px;font-size:118px;line-height:1;font-weight:800;letter-spacing:-.055em}
+.title em{font-style:normal;color:#0B8F4A}
+.top{position:absolute;left:80px;right:80px;top:110px;display:flex;justify-content:space-between;align-items:center;z-index:5}
+.brand{display:flex;align-items:center;gap:18px;font-size:42px;font-weight:800;letter-spacing:-.02em}
+.brand svg{width:84px}
+.dots{display:flex;gap:12px}
+.dots i{width:16px;height:16px;border-radius:50%;background:#DCE4DF;display:block}
+.dots i.on{background:#0B8F4A}
+.mark{position:absolute;left:290px;top:520px;width:500px}
+.big{position:absolute;left:0;right:0;top:960px;text-align:center;font-size:150px;font-weight:800;letter-spacing:-.06em;line-height:.96}
+.big em{font-style:normal;color:#0B8F4A}
+.sub{position:absolute;left:0;right:0;top:1300px;text-align:center;font-family:"DM";font-size:30px;letter-spacing:.14em;text-transform:uppercase;color:#36505F}
+.cta{position:absolute;left:220px;right:220px;top:1440px;text-align:center;background:#0A2A3F;color:#fff;border-radius:999px;padding:36px 0;font-size:44px;font-weight:700}
+.route{position:absolute;left:80px;right:80px;top:1800px;height:6px;background:#DCE4DF;border-radius:6px;overflow:hidden}
+.route i{position:absolute;inset:0;background:#0B8F4A;transform-origin:left;display:block}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1080" data-height="1920" data-duration="20" data-fps="30">
+  <div class="glow" id="glow"></div>
+
+  <section id="s1" class="clip" data-start="0" data-duration="3.5" data-track-index="1">
+    <svg class="mark" viewBox="0 0 64 44"><path id="s1l" d="M15 4 30 22 15 40 0 22Z" fill="#05A342"/><path id="s1r" d="M49 4 64 22 49 40 34 22Z" fill="#05A342"/><path id="s1c" d="M32 1 52 22 32 43 12 22Z" fill="#387CC9" stroke="#0B2C4A" stroke-width="1"/></svg>
+    <div class="big" id="s1t">Tu operación,<br><em>bajo control.</em></div>
+    <div class="sub" id="s1s">Wasaff Logística</div>
+  </section>
+
+  <section id="s2" class="clip" data-start="3.5" data-duration="4" data-track-index="1">
+    <div class="card" id="s2c"><img id="s2i" src="assets/recepcion.webp" style="object-position:62% 50%" alt=""><span class="badge">Estación 01</span>
+      <div class="status" id="s2s"><b>✓</b><span><small>Recepción</small>OC-4587 · 24 bultos</span></div></div>
+    <div class="num" id="s2n">01 · Recepción</div>
+    <div class="title" id="s2t">Cada bulto,<br><em>registrado.</em></div>
+  </section>
+
+  <section id="s3" class="clip" data-start="7.5" data-duration="4" data-track-index="1">
+    <div class="card" id="s3c"><img id="s3i" src="assets/almacenaje.webp" style="object-position:58% 50%" alt=""><span class="badge">Estación 02</span>
+      <div class="status" id="s3s"><b>✓</b><span><small>Ubicación</small>Pallet → rack B1-04</span></div></div>
+    <div class="num" id="s3n">02 · Almacenaje</div>
+    <div class="title" id="s3t">Stock al día,<br><em>ubicación exacta.</em></div>
+  </section>
+
+  <section id="s4" class="clip" data-start="11.5" data-duration="4" data-track-index="1">
+    <div class="card" id="s4c"><img id="s4i" src="assets/picking.webp" style="object-position:40% 50%" alt=""><span class="badge">Estación 03</span>
+      <div class="status" id="s4s"><b>✓</b><span><small>Picking</small>Pedido P-0031 · 12/12</span></div></div>
+    <div class="num" id="s4n">03 · Picking y packing</div>
+    <div class="title" id="s4t">Picking<br><em>con lector.</em></div>
+  </section>
+
+  <section id="s5" class="clip" data-start="15.5" data-duration="4.5" data-track-index="1">
+    <div class="card" id="s5c"><img id="s5i" src="assets/despacho.webp" style="object-position:38% 50%" alt=""><span class="badge">Estación 04</span>
+      <div class="status" id="s5s"><b>✓</b><span><small>Despacho</small>Guía 88213 · ruta Norte</span></div></div>
+    <div class="num" id="s5n">04 · Despacho</div>
+    <div class="title" id="s5t">Sale validado.<br><em>Tú lo ves.</em></div>
+  </section>
+
+  <audio id="musica" src="assets/musica-wasaff.wav" data-start="0" data-duration="20" data-volume="0.8" data-track-index="9"></audio>
+
+  <div class="top" id="top">
+    <div class="brand"><svg viewBox="0 0 64 44"><path d="M15 4 30 22 15 40 0 22Z" fill="#05A342"/><path d="M49 4 64 22 49 40 34 22Z" fill="#05A342"/><path d="M32 1 52 22 32 43 12 22Z" fill="#387CC9" stroke="#0B2C4A" stroke-width="1"/></svg>Wasaff</div>
+    <div class="dots"><i id="d1"></i><i id="d2"></i><i id="d3"></i><i id="d4"></i></div>
+  </div>
+  <div class="route"><i id="routeBar"></i></div>
+</div>
+<script>
+window.__timelines = window.__timelines || {};
+const tl = gsap.timeline({ paused: true });
+const E = "power3.out";
+tl.fromTo("#routeBar",{scaleX:0},{scaleX:1,duration:19.5,ease:"none"},0);
+tl.fromTo("#glow",{x:0,y:0},{x:300,y:200,duration:20,ease:"sine.inOut"},0);
+// S1
+tl.fromTo("#s1c",{scale:0,rotation:-90,transformOrigin:"50% 50%"},{scale:1,rotation:0,duration:1,ease:"back.out(1.6)"},0.1);
+tl.fromTo("#s1l",{x:-30,opacity:0},{x:0,opacity:1,duration:.8,ease:E},0.5);
+tl.fromTo("#s1r",{x:30,opacity:0},{x:0,opacity:1,duration:.8,ease:E},0.5);
+tl.fromTo("#s1t",{y:70,opacity:0},{y:0,opacity:1,duration:1,ease:E},0.9);
+tl.fromTo("#s1s",{opacity:0},{opacity:1,duration:.8},1.4);
+tl.to(["#s1t","#s1s",".mark"],{y:-80,opacity:0,duration:.5,ease:"power2.in"},3.0);
+// escenas tarjeta
+function scene(n,s,d){
+  tl.fromTo("#s"+n+"c",{y:900,rotation:4,scale:.92},{y:0,rotation:0,scale:1,duration:.9,ease:"power4.out"},s);
+  tl.fromTo("#s"+n+"i",{scale:1.25},{scale:1.04,duration:d,ease:"none"},s);
+  tl.fromTo("#s"+n+"n",{y:30,opacity:0},{y:0,opacity:1,duration:.6,ease:E},s+.45);
+  tl.fromTo("#s"+n+"t",{y:70,opacity:0},{y:0,opacity:1,duration:.8,ease:E},s+.55);
+  tl.fromTo("#s"+n+"s",{y:40,opacity:0,scale:.9},{y:0,opacity:1,scale:1,duration:.6,ease:"back.out(2)"},s+1.4);
+  if(n<5) tl.to("#s"+n+"c",{y:-120,scale:.9,opacity:0,duration:.5,ease:"power2.in"},s+d-.45);
+  if(n<5) tl.to(["#s"+n+"n","#s"+n+"t"],{opacity:0,duration:.35},s+d-.4);
+}
+scene(2,3.5,4); scene(3,7.5,4); scene(4,11.5,4);
+tl.set("#d1",{className:"on"},3.5); tl.set("#d2",{className:"on"},7.5); tl.set("#d3",{className:"on"},11.5); tl.set("#d4",{className:"on"},15.5);
+// S5: tarjeta y luego cierre
+scene(5,15.5,4.5);
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>
