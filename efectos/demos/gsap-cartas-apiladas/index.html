@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es" data-slug="gsap-cartas-apiladas">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Efectos Rednet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/demo.css">
+<style>html{background:#0e0d0c}body{margin:0;background:#0e0d0c;color:#f2f0ec;font-family:Geist,system-ui,sans-serif}
+.lbl{font:500 12px/1 "Geist Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:#ff7a5c}
+.intro{min-height:100svh;display:grid;place-content:center;text-align:center;padding:0 16px}
+.intro h1{font-size:clamp(40px,7vw,96px);letter-spacing:-.04em;line-height:.95;margin:16px 0;font-weight:650}
+.intro p{color:#a8a39b;margin:0}
+.hint{margin-top:36px;font:500 12px "Geist Mono",monospace;color:#a8a39b;animation:hb 1.6s ease-in-out infinite}
+@keyframes hb{50%{transform:translateY(6px)}}
+.outro{min-height:70svh;display:grid;place-content:center;color:#a8a39b;text-align:center;padding:0 16px 80px}
+.stack{padding:0 max(16px,5vw) 20vh}
+.c{position:sticky;top:max(16px,8vh);height:min(78svh,640px);border-radius:28px;overflow:hidden;margin-bottom:8vh;display:grid;grid-template-columns:1fr 1fr;transform-origin:50% 0;will-change:transform}
+.c .tx{padding:clamp(24px,4vw,56px);display:flex;flex-direction:column;justify-content:space-between}
+.c h3{font-size:clamp(30px,4.4vw,64px);letter-spacing:-.045em;line-height:.98;margin:0}
+.c p{font-size:17px;line-height:1.5;max-width:36ch;margin:0;opacity:.8}
+.c img{width:100%;height:100%;object-fit:cover}
+.c:nth-child(1){background:#f2f0ec;color:#141210}.c:nth-child(2){background:#ff5a3c;color:#140a07}.c:nth-child(3){background:#1f3b5c;color:#eef4ff}.c:nth-child(4){background:#d9ff5a;color:#141210}
+.c .n{font:500 13px "Geist Mono",monospace}
+@media (max-width:720px){.c{grid-template-columns:1fr;grid-template-rows:auto 42%}}
+</style>
+</head>
+<body>
+<section class="intro"><span class="lbl">CSS sticky + GSAP scrub</span><h1>Cartas que<br>se apilan</h1><p>Cada una se queda arriba y la siguiente la tapa.</p><div class="hint">↓ scroll</div></section>
+<section class="stack">
+ <article class="c"><div class="tx"><span class="n">01 / 04</span><div><h3>Galpones llave en mano</h3><p>Diseño, cálculo, permisos y montaje con un solo responsable.</p></div></div><img src="../../../zayg/assets/img/llave-en-mano.webp" alt=""></article>
+ <article class="c"><div class="tx"><span class="n">02 / 04</span><div><h3>Estructuras para agroindustria</h3><p>Packings, bodegas frías y naves de proceso a la medida del predio.</p></div></div><img src="../../../zayg/assets/img/agroindustria.webp" alt=""></article>
+ <article class="c"><div class="tx"><span class="n">03 / 04</span><div><h3>Montaje en terreno</h3><p>Cuadrillas propias, plazos cortos y obra limpia.</p></div></div><img src="../../../zayg/assets/img/montaje.webp" alt=""></article>
+ <article class="c"><div class="tx"><span class="n">04 / 04</span><div><h3>Portones y cierres</h3><p>Terminaciones que hacen ver la obra terminada de verdad.</p></div></div><img src="../../../zayg/assets/img/portones.webp" alt=""></article>
+</section>
+<section class="outro"><p>Fotos de ejemplo tomadas de la maqueta de Zayg.</p></section>
+<script src="../../vendor/gsap.min.js"></script><script src="../../vendor/ScrollTrigger.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+const cs=gsap.utils.toArray('.c');
+cs.forEach((c,i)=>{if(i===cs.length-1)return;
+  gsap.to(c,{scale:.9,filter:'brightness(.55)',ease:'none',scrollTrigger:{trigger:cs[i+1],start:'top bottom',end:'top 10%',scrub:true}})});
+</script>
+<script src="../../assets/catalogo.js"></script>
+<script src="../../assets/demo.js"></script>
+</body>
+</html>

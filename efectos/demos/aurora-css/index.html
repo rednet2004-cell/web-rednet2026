@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es" data-slug="aurora-css">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Efectos Rednet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/demo.css">
+<style>html,body{margin:0;height:100%;background:#0e0d0c;color:#f2f0ec;font-family:Geist,system-ui,sans-serif;overflow:hidden}
+.hero{position:relative;z-index:2;height:100%;display:grid;place-content:center;text-align:center;padding:0 16px;pointer-events:none}
+.hero small{font:500 12px/1 "Geist Mono",monospace;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.hero h1{font-size:clamp(40px,8vw,104px);line-height:.95;letter-spacing:-.04em;margin:14px 0 0;font-weight:650}
+.hero p{max-width:460px;margin:18px auto 0;color:#cfcac2;font-size:17px;line-height:1.5}
+body{background:#f6f3ee;color:#141210}
+.hero p{color:#4a4640}
+.au{position:fixed;inset:-20%;filter:blur(70px) saturate(1.3);opacity:.85}
+.au i{position:absolute;border-radius:50%;mix-blend-mode:multiply;animation:m 22s ease-in-out infinite alternate}
+.au i:nth-child(1){width:55vmax;height:45vmax;left:5%;top:10%;background:#ffb199;animation-duration:24s}
+.au i:nth-child(2){width:50vmax;height:50vmax;right:0;top:0;background:#a9c7ff;animation-duration:19s;animation-delay:-6s}
+.au i:nth-child(3){width:45vmax;height:40vmax;left:25%;bottom:0;background:#c3f0d6;animation-duration:27s;animation-delay:-12s}
+.au i:nth-child(4){width:30vmax;height:30vmax;right:20%;bottom:15%;background:#e6c2ff;animation-duration:17s;animation-delay:-3s}
+@keyframes m{0%{transform:translate(0,0) rotate(0) scale(1)}50%{transform:translate(8vmax,-6vmax) rotate(40deg) scale(1.15)}100%{transform:translate(-6vmax,5vmax) rotate(-20deg) scale(.9)}}
+.grain{position:fixed;inset:0;opacity:.18;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.sw{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:3;display:flex;gap:6px}
+.sw button{all:unset;cursor:pointer;font:500 13px/1 Geist;padding:9px 13px;border-radius:999px;background:rgba(255,255,255,.6);border:1px solid rgba(0,0,0,.1)}
+.sw button[aria-pressed=true]{background:#141210;color:#fff}
+body.dark{background:#0b0a12;color:#f2f0ec}body.dark .hero p{color:#cfcac2}body.dark .au i{mix-blend-mode:screen}body.dark .au{opacity:.6}body.dark .grain{mix-blend-mode:overlay}
+body.dark .sw button{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.15)}body.dark .sw button[aria-pressed=true]{background:#fff;color:#0b0a12}
+@media (prefers-reduced-motion:reduce){.au i{animation:none}}
+</style>
+</head>
+<body>
+<div class="au" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="grain" aria-hidden="true"></div>
+<div class="sw"><button aria-pressed="true" data-m="">Claro</button><button aria-pressed="false" data-m="dark">Oscuro</button></div>
+<div class="hero"><small>Solo CSS · 0 JavaScript</small><h1>Moderno,<br>y liviano</h1><p>Cuatro manchas de color difuminadas que se mueven lento, con grano de película encima.</p></div>
+<script>document.querySelectorAll('.sw button').forEach(b=>b.onclick=()=>{document.body.className=b.dataset.m;document.querySelectorAll('.sw button').forEach(x=>x.setAttribute('aria-pressed',x===b))})</script>
+<script src="../../assets/catalogo.js"></script>
+<script src="../../assets/demo.js"></script>
+</body>
+</html>

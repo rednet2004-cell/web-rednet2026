@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es" data-slug="dock-iconos">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Efectos Rednet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/demo.css">
+<style>
+html,body{margin:0;height:100%;font-family:Geist,system-ui,sans-serif;color:#fff;overflow:hidden;background:linear-gradient(135deg,#1d2b64,#5b3c8c 45%,#f8746b)}
+main{height:100%;display:grid;place-content:center;text-align:center;padding:0 16px}
+.lbl{font:500 12px/1 "Geist Mono",monospace;letter-spacing:.14em;text-transform:uppercase;opacity:.8}
+h1{font-size:clamp(36px,6vw,80px);letter-spacing:-.045em;line-height:.95;margin:14px 0 0}
+p{opacity:.8}
+.dock{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);display:flex;align-items:flex-end;gap:10px;padding:10px 12px;border-radius:22px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);height:64px;box-sizing:border-box;overflow:visible}
+.dock a{width:44px;height:44px;flex:none;border-radius:12px;display:grid;place-items:center;font-size:22px;text-decoration:none;color:#fff;position:relative;transform-origin:50% 100%;background:var(--c)}
+.dock a::after{content:attr(aria-label);position:absolute;bottom:calc(100% + 10px);left:50%;translate:-50% 0;font:500 12px Geist;background:rgba(0,0,0,.7);padding:5px 9px;border-radius:7px;white-space:nowrap;opacity:0;transition:opacity .2s;pointer-events:none}
+.dock a:hover::after,.dock a:focus-visible::after{opacity:1}
+.sep{width:1px;align-self:stretch;background:rgba(255,255,255,.35);margin:4px 2px}
+</style>
+</head>
+<body>
+<main><div><span class="lbl">JS puro · estilo Magic UI Dock</span><h1>Pasa el mouse<br>por la barra</h1><p>Cada ícono crece según qué tan cerca está el cursor.</p></div></main>
+<nav class="dock" id="dock" aria-label="Accesos">
+ <a href="#" aria-label="Inicio" style="--c:#3b82f6">🏠</a><a href="#" aria-label="Servicios" style="--c:#8b5cf6">🧰</a><a href="#" aria-label="Proyectos" style="--c:#ec4899">🗂️</a><a href="#" aria-label="Cotizar" style="--c:#f97316">🧾</a>
+ <span class="sep"></span><a href="#" aria-label="WhatsApp" style="--c:#22c55e">💬</a><a href="#" aria-label="Instagram" style="--c:#e11d48">📷</a><a href="#" aria-label="Correo" style="--c:#0ea5e9">✉️</a>
+</nav>
+<script>
+const items=[...document.querySelectorAll('.dock a')],BASE=44,MAXS=1.9,RANGE=150; // tamaño, aumento máximo, alcance en px
+let mx=null,cur=items.map(()=>1);
+document.getElementById('dock').addEventListener('pointermove',e=>mx=e.clientX);
+document.getElementById('dock').addEventListener('pointerleave',()=>mx=null);
+(function f(){requestAnimationFrame(f);items.forEach((a,i)=>{let tgt=1;if(mx!==null){const r=a.getBoundingClientRect(),c=r.left+r.width/2-(cur[i]-1)*0,d=Math.abs(mx-c);tgt=1+(MAXS-1)*Math.max(0,Math.cos(Math.min(d/RANGE,1)*Math.PI/2))}
+  cur[i]+=(tgt-cur[i])*.2;a.style.width=a.style.height=BASE*cur[i]+'px';a.style.fontSize=22*cur[i]+'px'})})();
+items.forEach(a=>a.addEventListener('click',e=>e.preventDefault()));
+</script>
+<script src="../../assets/catalogo.js"></script>
+<script src="../../assets/demo.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+/* Barra común de todas las demos del catálogo */
+:root{--fx-bg:rgba(14,13,12,.72);--fx-line:rgba(255,255,255,.12);--fx-ink:#f2f0ec;--fx-dim:#a8a39b;--fx-acc:#ff5a3c}
+.fx-bar{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:9999;display:flex;align-items:center;gap:6px;padding:6px;border-radius:999px;background:var(--fx-bg);border:1px solid var(--fx-line);backdrop-filter:blur(14px) saturate(1.4);-webkit-backdrop-filter:blur(14px) saturate(1.4);font:500 13px/1 "Geist",system-ui,sans-serif;color:var(--fx-ink);box-shadow:0 10px 40px rgba(0,0,0,.35);max-width:calc(100vw - 32px)}
+.fx-bar a,.fx-bar button{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 12px;border-radius:999px;white-space:nowrap;transition:background .2s}
+.fx-bar a:hover,.fx-bar button:hover{background:rgba(255,255,255,.1)}
+.fx-bar a:focus-visible,.fx-bar button:focus-visible{outline:2px solid var(--fx-acc);outline-offset:2px}
+.fx-bar .fx-name{padding:0 8px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.fx-bar .fx-lib{color:var(--fx-dim);font-weight:400}
+.fx-bar .fx-info{background:var(--fx-ink);color:#0e0d0c}
+.fx-bar .fx-info:hover{background:#fff}
+.fx-panel{position:fixed;left:50%;bottom:66px;transform:translate(-50%,8px);z-index:9999;width:min(420px,calc(100vw - 32px));padding:20px;border-radius:18px;background:rgba(14,13,12,.92);border:1px solid var(--fx-line);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);color:var(--fx-ink);font:400 14px/1.5 "Geist",system-ui,sans-serif;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s cubic-bezier(.2,.8,.2,1)}
+.fx-panel.open{opacity:1;pointer-events:auto;transform:translate(-50%,0)}
+.fx-panel h2{font:600 17px/1.25 "Geist",system-ui,sans-serif;margin:0 0 4px}
+.fx-panel .fx-meta{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 14px}
+.fx-panel .fx-meta span{font:500 11px/1 "Geist Mono",ui-monospace,monospace;letter-spacing:.02em;padding:6px 8px;border-radius:6px;background:rgba(255,255,255,.08);color:#d9d5ce}
+.fx-panel p{margin:0 0 10px;color:#d9d5ce}
+.fx-panel p b{color:var(--fx-ink);font-weight:600}
+.fx-panel a{color:#ffb4a3}
+.fx-panel .fx-nav{display:flex;justify-content:space-between;gap:12px;margin-top:14px;padding-top:12px;border-top:1px solid var(--fx-line);font-size:13px}
+.fx-panel .fx-nav a{color:var(--fx-dim);text-decoration:none}.fx-panel .fx-nav a:hover{color:var(--fx-ink)}
+@media (max-width:520px){.fx-bar .fx-lib{display:none}}

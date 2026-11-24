@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es" data-slug="anime-texto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Efectos Rednet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/demo.css">
+<style>
+body{margin:0;background:#f4f1ea;color:#141210;font-family:Geist,system-ui,sans-serif}
+.lbl{font:500 12px/1 "Geist Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:#d2401f}
+section{min-height:88svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:60px 16px;border-bottom:1px solid rgba(0,0,0,.08)}
+h1{font-size:clamp(52px,11vw,170px);letter-spacing:-.05em;line-height:.9;margin:22px 0;font-weight:750}
+h1 span{display:inline-block}
+.rep{all:unset;cursor:pointer;font:500 13px Geist;padding:10px 16px;border-radius:999px;border:1px solid rgba(0,0,0,.18);margin-top:18px}
+.rep:hover{background:#141210;color:#f4f1ea}
+.rep:focus-visible{outline:2px solid #d2401f;outline-offset:2px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,4vw,64px);margin-top:28px;width:min(980px,100%)}
+.stats div{border-top:2px solid #141210;padding-top:16px;text-align:left}
+.stats b{display:block;font-size:clamp(40px,7vw,96px);letter-spacing:-.05em;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.stats small{color:#5d574e;font-size:15px}
+svg{width:min(360px,80vw);height:auto;margin-top:24px;overflow:visible}
+svg path,svg circle{fill:none;stroke:#141210;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+svg .acc{stroke:#d2401f}
+@media (max-width:620px){.stats{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<section><span class="lbl">Anime.js v4 · splitText + stagger</span><h1 id="t">Rednet</h1><p>Letras que saltan en ola, una tras otra.</p><button class="rep" data-r="t">Repetir</button></section>
+<section id="s2"><span class="lbl">Contadores al aparecer</span>
+ <div class="stats"><div><b data-n="520" data-pre="+">0</b><small>clientes atendidos</small></div><div><b data-n="98" data-suf="%">0</b><small>pedidos a tiempo</small></div><div><b data-n="24" data-suf="/7">0</b><small>soporte</small></div></div>
+ <button class="rep" data-r="n">Repetir</button></section>
+<section id="s3"><span class="lbl">Trazos SVG que se dibujan · createDrawable</span>
+ <svg viewBox="0 0 320 200" aria-hidden="true">
+  <path d="M20 180 V80 L160 20 L300 80 V180 Z"/><path d="M60 180 V110 H260 V180"/><path d="M60 135 H260"/><path d="M60 158 H260"/>
+  <path class="acc" d="M128 70 l20 20 l44 -44"/><circle class="acc" cx="160" cy="62" r="40"/>
+ </svg>
+ <p>Ideal para íconos de servicios que se "construyen" al hacer scroll.</p><button class="rep" data-r="d">Repetir</button></section>
+<script src="../../vendor/anime.umd.min.js"></script>
+<script>
+const {animate,stagger,splitText,svg,utils}=anime;
+// 1 · letras
+const {chars}=splitText('#t',{chars:true});
+const ola=()=>animate(chars,{y:[{to:'-0.35em',ease:'outExpo',duration:500},{to:0,ease:'outBounce',duration:800}],rotate:[{from:-8,to:0}],delay:stagger(60)});
+// 2 · contadores
+const cont=()=>document.querySelectorAll('[data-n]').forEach((el,i)=>{const o={v:0};animate(o,{v:+el.dataset.n,duration:1800,delay:i*150,ease:'outExpo',modifier:utils.round(0),
+  onUpdate:()=>el.textContent=(el.dataset.pre||'')+o.v+(el.dataset.suf||'')})});
+// 3 · trazos
+const dib=()=>animate(svg.createDrawable('#s3 path, #s3 circle'),{draw:['0 0','0 1'],ease:'inOutQuad',duration:1400,delay:stagger(180)});
+const run={t:ola,n:cont,d:dib};
+document.querySelectorAll('.rep').forEach(b=>b.onclick=()=>run[b.dataset.r]());
+// se disparan al entrar en pantalla
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){({s2:cont,s3:dib}[e.target.id]||ola)();io.unobserve(e.target)}}),{threshold:.4});
+['s2','s3'].forEach(id=>io.observe(document.getElementById(id)));ola();
+</script>
+<script src="../../assets/catalogo.js"></script>
+<script src="../../assets/demo.js"></script>
+</body>
+</html>
