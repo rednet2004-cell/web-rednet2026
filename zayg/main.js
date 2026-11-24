@@ -160,18 +160,25 @@
 
   /* ---------- Video 9:16: reproducir solo cuando se ve ---------- */
   safe(function () {
-    var v = $(".reel-video"), btn = $(".reel-sound"); if (!v) return;
-    var src = $("source", v);
-    v.addEventListener("error", function () { v.style.display = "none"; }, true);
-    if (src) src.addEventListener("error", function () { v.style.display = "none"; });
-    if ("IntersectionObserver" in window) {
-      new IntersectionObserver(function (en) {
-        en.forEach(function (e) { if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else v.pause(); });
-      }, { threshold: 0.25 }).observe(v);
-    }
-    btn.addEventListener("click", function () {
-      v.muted = !v.muted; btn.setAttribute("aria-pressed", String(!v.muted)); btn.textContent = v.muted ? "♪ Activar música" : "♪ Silenciar";
-      if (!v.muted) v.play();
+    $$(".reel-frame").forEach(function (fr) {
+      var v = $(".reel-video", fr), btn = $(".reel-sound", fr); if (!v || !btn) return;
+      var src = $("source", v);
+      v.addEventListener("error", function () { v.style.display = "none"; }, true);
+      if (src) src.addEventListener("error", function () { v.style.display = "none"; });
+      if ("IntersectionObserver" in window) {
+        new IntersectionObserver(function (en) {
+          en.forEach(function (e) { if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else v.pause(); });
+        }, { threshold: 0.25 }).observe(v);
+      }
+      function setSound(on) { v.muted = !on; btn.setAttribute("aria-pressed", String(on)); btn.textContent = on ? "♪ Silenciar" : "♪ Activar música"; }
+      btn.addEventListener("click", function () { setSound(v.muted); if (!v.muted) v.play(); });
+      fr._play = function () { setSound(true); v.currentTime = 0; var p = v.play(); if (p && p.catch) p.catch(function () {}); };
+    });
+    var w = $("#watchBtn"), ef = $(".empresa-frame");
+    if (w && ef) w.addEventListener("click", function () {
+      var r = ef.getBoundingClientRect();
+      if (r.top < 70 || r.bottom > innerHeight) window.scrollTo({ top: scrollY + r.top - 100, behavior: "smooth" });
+      if (ef._play) ef._play();
     });
   }, "reel");
 
@@ -232,7 +239,7 @@
     safe(function () {
       if (!fillWords.length) return;
       ST.create({
-        trigger: ".manifesto", start: "top 75%", end: "bottom 45%", scrub: true,
+        trigger: ".manifesto-text", start: "top 85%", end: "bottom 55%", scrub: true,
         onUpdate: function (s) {
           var n = Math.round(s.progress * fillWords.length);
           for (var i = 0; i < fillWords.length; i++) fillWords[i].style.opacity = i < n ? 1 : 0.14;

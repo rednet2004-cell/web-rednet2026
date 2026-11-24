@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261124f">
+<link rel="stylesheet" href="styles.css?v=20261124g">
 <link rel="preload" as="image" href="assets/img/obra-hero.webp">
 </head>
 <body>
@@ -115,9 +115,28 @@
 </div>
 
 <!-- Manifiesto -->
-<section class="manifesto" id="manifiesto">
-  <p class="section-num mono">00 / Enfoque</p>
-  <p class="manifesto-text" data-fill>Diseñamos, calculamos y levantamos galpones de acero para empresas que necesitan crecer sin detener su operación. Una obra limpia, plazos que se cumplen y una estructura pensada para durar, ampliarse y reutilizarse.</p>
+<section class="manifesto empresa" id="manifiesto">
+  <div class="empresa-copy">
+    <p class="section-num mono">00 / La empresa</p>
+    <h2 class="h2 empresa-title">Ingeniería para construir <em>soluciones a tu medida.</em></h2>
+    <p class="empresa-lead">Galpones para empresas medianas: ingeniería, montaje y habilitación a tu medida.</p>
+    <p class="manifesto-text" data-fill>Diseñamos, calculamos y levantamos galpones de acero para empresas que necesitan crecer sin detener su operación. Una obra limpia, plazos que se cumplen y una estructura pensada para durar, ampliarse y reutilizarse.</p>
+    <button class="watch" type="button" id="watchBtn"><span class="watch-play" aria-hidden="true"></span>Ver video</button>
+    <ol class="empresa-steps">
+      <li><span class="mono">Etapa 01</span><b>Ingeniería</b><p>Cálculo estructural y planos según el uso de tu galpón.</p></li>
+      <li><span class="mono">Etapa 02</span><b>Obra civil</b><p>Radieres y fundaciones preparados para la carga real.</p></li>
+      <li><span class="mono">Etapa 03</span><b>Montaje</b><p>Estructura de acero levantada en plazo, con obra ordenada.</p></li>
+      <li><span class="mono">Etapa 04</span><b>Habilitación</b><p>Cierres, portones y terminaciones: listo para operar.</p></li>
+    </ol>
+  </div>
+  <div class="empresa-reel">
+    <div class="reel-frame empresa-frame">
+      <video class="reel-video" id="empresaVideo" muted loop playsinline preload="metadata" poster="assets/img/empresa-poster.webp" data-autoplay>
+        <source src="assets/video/zayg-empresa-9x16.mp4" type="video/mp4">
+      </video>
+      <button class="reel-sound" type="button" aria-pressed="false">♪ Activar música</button>
+    </div>
+  </div>
 </section>
 
 <!-- VENTAJAS -->
@@ -483,6 +502,6 @@
 
 <script defer src="lib/gsap.min.js"></script>
 <script defer src="lib/ScrollTrigger.min.js"></script>
-<script defer src="main.js?v=20261124f"></script>
+<script defer src="main.js?v=20261124g"></script>
 </body>
 </html>
