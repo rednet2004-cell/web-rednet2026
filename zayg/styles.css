@@ -447,3 +447,18 @@ body.menu-open .nav .logo-w{opacity:1}body.menu-open .nav .logo-n{opacity:0}
 .tile-stat .tag,.tile-over .tag{color:var(--signal-2)}
 .section-lead{font-size:clamp(17px,1.4vw,20px)}
 .model-tabs button small{font-size:15px}
+/* Formulario: título, campos como barras en otro tono y desplegables con flecha grande */
+.form-head{margin-bottom:6px}
+.form-head .section-num{margin-bottom:12px}
+.form-title{font-size:clamp(34px,3.4vw,52px);font-variation-settings:"wdth" 70;text-transform:uppercase;color:#fff}
+.form-title em{color:var(--signal)}
+.form input:not([type=radio]),.form textarea,.form select{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-bottom:2px solid rgba(255,255,255,.35);padding:14px 16px;border-radius:0;color:#fff;font:inherit;font-size:17px;width:100%;transition:background .3s,border-color .3s}
+.form input:not([type=radio]):hover,.form textarea:hover,.form select:hover{background:rgba(255,255,255,.11)}
+.form input:focus,.form textarea:focus,.form select:focus{outline:none;background:rgba(255,255,255,.12);border-color:var(--signal)}
+.select{position:relative;display:block}
+.form select{appearance:none;-webkit-appearance:none;cursor:pointer;padding-right:60px}
+.form select option{color:var(--ink);background:#fff}
+.select::after{content:"";position:absolute;right:0;top:0;bottom:0;width:52px;background:var(--signal) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center/24px no-repeat;pointer-events:none}
+.form select:invalid{color:rgba(255,255,255,.6)}
+.contact-data li:first-child span:last-child{font-weight:600}
+.form .form-head .section-num{color:var(--signal)}
