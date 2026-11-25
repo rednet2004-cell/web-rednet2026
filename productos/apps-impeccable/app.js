@@ -1,0 +1,144 @@
+/* Apps Móviles Rednet · apps-impeccable (paso 2 de la ruta rednet-design-1) */
+(function(){
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const hasG = typeof gsap !== 'undefined';
+if (hasG) gsap.registerPlugin(ScrollTrigger);
+const escritorio = matchMedia('(min-width:861px)');
+const espera = ms => new Promise(r => setTimeout(r, ms));
+
+/* Header sobre el hero rojo, barra fija móvil y selector de versiones */
+const hdr = document.getElementById('hdr'), barra = document.getElementById('barraMovil'), contacto = document.getElementById('contacto'), hero = document.querySelector('.p-hero');
+const onScroll = () => {
+const enHero = scrollY < hero.offsetHeight - 80;
+hdr.classList.toggle('solido', !enHero); hdr.classList.toggle('sobre-hero', enHero && scrollY > 40);
+barra.classList.toggle('on', scrollY > innerHeight * .8 && contacto.getBoundingClientRect().top > innerHeight);
+document.body.classList.toggle('bajo', scrollY > 120);
+};
+addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+/* Menú móvil: Escape cierra, el foco va al primer link */
+const menuBtn = document.getElementById('menuBtn'), navP = document.getElementById('navPrincipal');
+const cerrarMenu = () => { navP.classList.remove('abierto'); document.body.classList.remove('menu-abierto'); menuBtn.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; };
+menuBtn.addEventListener('click', () => {
+const ab = !navP.classList.contains('abierto');
+navP.classList.toggle('abierto', ab); document.body.classList.toggle('menu-abierto', ab); menuBtn.setAttribute('aria-expanded', ab); document.body.style.overflow = ab ? 'hidden' : '';
+if (ab) navP.querySelector('a').focus();
+});
+navP.querySelectorAll('a').forEach(a => a.addEventListener('click', cerrarMenu));
+addEventListener('keydown', e => { if (e.key === 'Escape' && navP.classList.contains('abierto')){ cerrarMenu(); menuBtn.focus(); } });
+
+/* 1 Hero: la app se arma una sola vez; después llega un pedido cada 6 s.
+Botón de pausa visible y el ciclo se detiene fuera de pantalla (WCAG 2.2.2). */
+const piezas = [...document.querySelectorAll('#fonoHero .pz')], toast = document.getElementById('fToast'), hPausa = document.getElementById('heroPausa');
+let hVisible = true, hPausado = false, hTimer = null;
+function cicloAviso(){
+clearTimeout(hTimer);
+if (hPausado || !hVisible) return;
+toast.classList.add('on');
+hTimer = setTimeout(() => { toast.classList.remove('on'); hTimer = setTimeout(cicloAviso, 2400); }, 3600);
+}
+if (reduce){ piezas.forEach(p => p.classList.add('in')); toast.classList.add('on'); }
+else {
+(async () => { await espera(400); for (const p of piezas){ p.classList.add('in'); await espera(200); } await espera(500); hPausa.hidden = false; cicloAviso(); })();
+new IntersectionObserver(([en]) => { hVisible = en.isIntersecting; if (hVisible) cicloAviso(); else clearTimeout(hTimer); }, {threshold:.25}).observe(document.getElementById('plano'));
+hPausa.addEventListener('click', () => {
+hPausado = !hPausado; hPausa.setAttribute('aria-pressed', hPausado);
+hPausa.querySelector('.txt').textContent = hPausado ? 'Seguir avisos' : 'Pausar avisos';
+hPausa.firstElementChild.textContent = hPausado ? '▶' : '❚❚';
+if (hPausado){ clearTimeout(hTimer); } else cicloAviso();
+});
+}
+
+/* 2 Arma tu app */
+const rubros = [
+{n:'[Tu panadería]', s:'Hola, [Nombre]', cat:'Pan amasado, tortas y empanadas', ped:'Pide hoy y retira a las 18:30', res:'Encarga tu torta con 2 días', pag:'Paga con tarjeta o transferencia', pun:'Llevas [8] de 10 cafés', not:'Pan recién salido a las 7:00', seg:'Tu pedido está en el horno'},
+{n:'[Tu gimnasio]', s:'Vamos, [Nombre]', cat:'Planes y clases de la semana', ped:'Compra tu pase en un toque', res:'Reserva tu cupo en spinning', pag:'Renueva tu plan sin filas', pun:'[12] clases este mes', not:'Hoy hay clase extra a las 20:00', seg:'Tu avance del mes'},
+{n:'[Tu clínica]', s:'Hola, [Nombre]', cat:'Especialidades y profesionales', ped:'Pide tus exámenes', res:'Toma tu hora en segundos', pag:'Paga tu consulta antes de llegar', pun:'Beneficios para pacientes', not:'Recordatorio: tu hora es mañana', seg:'Tus resultados ya están listos'},
+{n:'[Tu tienda]', s:'Hola, [Nombre]', cat:'Lo nuevo de la temporada', ped:'Compra y retira en tienda', res:'Aparta un producto por 24 h', pag:'Paga en cuotas o al contado', pun:'Tienes [1.200] puntos', not:'Llegó tu talla favorita', seg:'Tu pedido va en camino'}
+];
+const nombresRubro = ['Panadería', 'Gimnasio', 'Clínica', 'Tienda'];
+const mods = {cat:['▦', 'Catálogo'], ped:['◎', 'Pedidos'], res:['◷', 'Reservas'], pag:['$', 'Pagos'], pun:['★', 'Puntos'], not:['◉', 'Avisos'], seg:['➝', 'Seguimiento']};
+const est = {r:0};
+const aCards = document.getElementById('aCards'), aTab = document.getElementById('aTab'), aN = document.getElementById('aN'), aCotizar = document.getElementById('aCotizar'), fMsg = document.getElementById('fMsg');
+const modBtns = [...document.querySelectorAll('#aMods button')];
+const activos = () => modBtns.filter(b => b.getAttribute('aria-pressed') === 'true').map(b => b.dataset.k);
+function armar(animar){
+const R = rubros[est.r], act = activos();
+document.getElementById('aNom').textContent = R.n; document.getElementById('aSub').textContent = R.s;
+aN.textContent = act.length;
+aCards.innerHTML = ''; aTab.innerHTML = '';
+if (!act.length){ const d = document.createElement('div'); d.className = 'ac'; d.innerHTML = '<i>+</i><div><b>Elige una función</b><small>Tu app empieza aquí</small></div>'; aCards.append(d); }
+act.forEach(k => {
+const d = document.createElement('div'); d.className = 'ac';
+const i = document.createElement('i'); i.textContent = mods[k][0]; i.setAttribute('aria-hidden', 'true');
+const t = document.createElement('div'); const b = document.createElement('b'); b.textContent = mods[k][1]; const s = document.createElement('small'); s.textContent = R[k]; t.append(b, s);
+d.append(i, t); aCards.append(d);
+});
+['Inicio', ...act.slice(0, 4).map(k => mods[k][1])].forEach((n, j) => { const s = document.createElement('span'); const i = document.createElement('i'); i.textContent = j ? mods[act[j - 1]][0] : '⌂'; s.append(i, n); aTab.append(s); });
+if (animar && hasG && !reduce) gsap.from(aCards.children, {y:20, opacity:0, duration:.45, ease:'power3.out', stagger:.05});
+}
+modBtns.forEach(b => b.addEventListener('click', () => { b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') !== 'true'); armar(true); }));
+const rbs = [...document.querySelectorAll('#aRubro button')];
+rbs.forEach((b, i) => b.addEventListener('click', () => { rbs.forEach(x => x.setAttribute('aria-pressed', x === b)); est.r = i; armar(true); }));
+armar(false);
+/* "Cotiza esta app" deja escrito en el formulario lo que armaste */
+aCotizar.addEventListener('click', () => {
+const act = activos().map(k => mods[k][1].toLowerCase());
+fMsg.value = 'Rubro: ' + nombresRubro[est.r].toLowerCase() + '. Funciones: ' + (act.join(', ') || 'por definir') + '.';
+});
+
+/* 3 Etapas: el scroll avanza en escritorio y los botones eligen la etapa en cualquier tamaño */
+const fonoEt = document.getElementById('fonoEt'), etBtns = [...document.querySelectorAll('#etLista button')], tiendas = document.getElementById('tiendas'), probadores = document.getElementById('probadores');
+function etapa(e){
+fonoEt.dataset.e = e;
+etBtns.forEach((b, k) => b.setAttribute('aria-pressed', k === e));
+tiendas.classList.toggle('on', e === 3); probadores.classList.toggle('on', e === 2);
+}
+let stEt = null;
+etBtns.forEach((b, k) => b.addEventListener('click', () => {
+etapa(k);
+if (stEt && escritorio.matches) scrollTo({top:stEt.start + (stEt.end - stEt.start) * (k + .5) / 4, behavior:reduce ? 'auto' : 'smooth'});
+}));
+etapa(0);
+
+/* Video de fondo del contacto: solo escritorio, sin ahorro de datos ni reducir movimiento; se pausa fuera de pantalla */
+const vCta = document.getElementById('vCta');
+const sinVideo = reduce || !escritorio.matches || (navigator.connection && navigator.connection.saveData);
+if (!sinVideo) new IntersectionObserver(([en]) => { if (en.isIntersecting){ vCta.preload = 'auto'; vCta.play().catch(() => {}); } else vCta.pause(); }, {rootMargin:'200px'}).observe(vCta);
+
+/* Los CTA con plan preseleccionan el formulario */
+const fQue = document.getElementById('fQue');
+document.querySelectorAll('[data-plan]').forEach(a => a.addEventListener('click', () => { fQue.value = a.dataset.plan; setTimeout(() => document.getElementById('fNombre').focus({preventScroll:true}), 600); }));
+/* Formulario (maqueta: valida y confirma, no envía) */
+const form = document.getElementById('form'), fErr = document.getElementById('fError'), fOk = document.getElementById('fOk');
+form.addEventListener('submit', e => {
+e.preventDefault();
+const n = form.nombre, c = form.contacto, malos = [n, c].filter(i => !i.value.trim());
+[n, c].forEach(i => i.setAttribute('aria-invalid', malos.includes(i)));
+fErr.hidden = !malos.length;
+if (malos.length){ malos[0].focus(); return; }
+fOk.hidden = false;
+});
+
+if (!hasG || reduce){ etapa(3); return; }
+/* Entrada del hero */
+gsap.from('#heroTxt > *', {y:40, opacity:0, duration:1, ease:'power3.out', stagger:.08});
+gsap.from('#fonoHero', {y:100, rotate:-6, opacity:0, duration:1.2, ease:'power3.out', delay:.2});
+gsap.from('.nota-p', {scale:0, opacity:0, duration:.6, ease:'back.out(2)', stagger:.12, delay:1});
+/* Entradas en grupo */
+document.querySelectorAll('[data-rv]').forEach(g => gsap.from(g.children, {y:40, opacity:0, duration:.8, ease:'power3.out', stagger:.1, scrollTrigger:{trigger:g, start:'top 85%'}}));
+/* Etapas con el scroll en escritorio */
+const mm = gsap.matchMedia();
+mm.add('(min-width:861px)', () => {
+stEt = ScrollTrigger.create({trigger:'#etapas', start:'top top', end:'bottom bottom', onUpdate:s => etapa(Math.min(3, Math.floor(s.progress * 4)))});
+gsap.fromTo('#fonoEt', {rotate:-8, y:30}, {rotate:4, y:-30, ease:'none', scrollTrigger:{trigger:'#etapas', start:'top top', end:'bottom bottom', scrub:true}});
+return () => { stEt = null; };
+});
+/* En móvil el teléfono va bajo la lista: avanza mientras pasa por la pantalla */
+mm.add('(max-width:860px)', () => { ScrollTrigger.create({trigger:'.et-esc', start:'top 75%', end:'bottom 35%', onUpdate:s => etapa(Math.min(3, Math.floor(s.progress * 4)))}); });
+/* Avisos caen en la pantalla de bloqueo */
+gsap.from('#blLista .nt', {y:-60, opacity:0, scale:.9, duration:.7, ease:'back.out(1.6)', stagger:.25, scrollTrigger:{trigger:'#bloqueo', start:'top 70%'}});
+/* Android e iPhone giran hacia ti */
+gsap.fromTo('.fono-d.izq', {rotateY:38, x:40}, {rotateY:-8, x:0, ease:'none', scrollTrigger:{trigger:'#dosFonos', start:'top 90%', end:'center 45%', scrub:true}});
+gsap.fromTo('.fono-d.der', {rotateY:-38, x:-40}, {rotateY:8, x:0, ease:'none', scrollTrigger:{trigger:'#dosFonos', start:'top 90%', end:'center 45%', scrub:true}});
+})();
