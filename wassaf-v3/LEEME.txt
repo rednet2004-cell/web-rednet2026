@@ -1,0 +1,36 @@
+WASAFF LOGÍSTICA · web v3 · instrucciones de instalación
+================================================
+
+1. Sube TODO el contenido de esta carpeta a la raíz pública del dominio
+   (public_html o www de wasafflogistica.cl), incluido el archivo oculto .htaccess.
+
+2. Abre config.php con un editor de texto y reemplaza
+       'clave' => 'ESCRIBE_AQUI_LA_CLAVE',
+   por la clave real de info@wasafflogistica.cl. Guarda el archivo.
+
+3. Prueba el formulario "Evalúa tu proyecto" con tu propio correo.
+   La solicitud llega a info@wasafflogistica.cl. Si respondes ese correo, la
+   respuesta va directo al cliente (Reply-To).
+
+Cómo envía
+----------
+- enviar.php usa SMTP con validación por contraseña (PHPMailer 6.9.3,
+  en lib/PHPMailer), no la función mail() de PHP.
+- Servidor de salida: correo2.rednetchile.cl, usuario info@wasafflogistica.cl.
+- Prueba estos puertos en orden hasta que uno funcione:
+  587 STARTTLS, 465 SSL, 25 STARTTLS y 25 sin cifrado.
+  Si ya sabes cuál usa el servidor, deja solo ese en 'intentos' (config.php)
+  para que responda más rápido.
+- Si el certificado del servidor de correo no coincide con su nombre,
+  cambia 'verificar_certificado' a false.
+- Si no logra enviar, el visitante ve un mensaje con el correo y el
+  teléfono de contacto, y el error queda en el log de errores de PHP
+  (busca "[wasaff-form]").
+
+Protecciones incluidas
+----------------------
+- config.php y lib/ no se pueden abrir desde el navegador (.htaccess, Apache).
+  Si el hosting usa Nginx, hay que bloquearlos en su configuración.
+- Campo trampa oculto contra robots y límite de 5 envíos cada 10 minutos por IP.
+
+Requisitos: PHP 7.4 o superior con la extensión openssl (lo normal en cualquier hosting).
