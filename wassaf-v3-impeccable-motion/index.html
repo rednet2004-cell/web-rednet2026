@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wasaff Logística · La ruta de tu carga, bajo control</title>
+<meta name="description" content="Operador logístico integral para empresas medianas: recepción, almacenaje, control de stock, picking, packing y despacho, con personal propio y WMS. Quilicura, Región Metropolitana.">
+<meta name="theme-color" content="#F3F6F2">
+<meta property="og:title" content="Wasaff Logística · Tu operación, bajo control">
+<meta property="og:image" content="assets/img/hero-poster.webp">
+<link rel="icon" href="../wassaf-v3/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400..800;1,400..800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=mot1">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<!-- ===== NAV flotante ===== -->
+<header class="nav" id="nav">
+  <div class="nav__pill">
+    <a href="#top" class="brand" aria-label="Wasaff Logística, inicio">
+      <svg viewBox="0 0 64 44" aria-hidden="true"><path d="M15 4 30 22 15 40 0 22Z" fill="#05A342"/><path d="M49 4 64 22 49 40 34 22Z" fill="#05A342"/><path d="M32 1 52 22 32 43 12 22Z" fill="#387CC9" stroke="#0B2C4A" stroke-width="1.6"/></svg>
+      <span>Wasaff<small>Logística</small></span>
+    </a>
+    <nav class="nav__links" aria-label="Principal">
+      <a href="#ruta">Servicios</a><a href="#ventajas">Ventajas</a><a href="#modalidades">Modalidades</a><a href="#wms">WMS</a><a href="#proceso">Proceso</a>
+    </nav>
+    <a href="#contacto" class="btn btn--dark btn--sm">Cotizar <span class="arr">→</span></a>
+    <button class="burger" aria-label="Abrir menú" aria-expanded="false"><i></i><i></i></button>
+  </div>
+  <div class="drawer" hidden>
+    <a href="#ruta">Servicios</a><a href="#ventajas">Ventajas</a><a href="#modalidades">Modalidades</a><a href="#wms">WMS</a><a href="#proceso">Proceso</a><a href="#faq">Preguntas</a><a href="#contacto" class="btn btn--green">Cotizar mi operación</a>
+  </div>
+</header>
+
+<main id="contenido">
+
+<!-- ===== HERO claro, centrado, ventana de video que se expande ===== -->
+<section class="hero" id="top">
+  <div class="hero__copy">
+    <h1 class="hero__title">
+      <span class="line"><span>Tu operación,</span></span>
+      <span class="line"><span>bajo <span class="chip-img" aria-hidden="true"><img src="../wassaf-v3/assets/img/almacenaje.webp" alt=""></span> control<i class="dia" aria-hidden="true"></i></span></span>
+    </h1>
+    <p class="hero__lead reveal">Recibimos, guardamos, preparamos y despachamos tu mercadería con personal propio y un WMS que registra cada movimiento. Tú ves tu stock; nosotros movemos la carga.</p>
+    <div class="hero__ctas reveal">
+      <a href="#contacto" class="btn btn--green">Evaluemos tu operación <span class="arr">→</span></a>
+      <a href="#ruta" class="btn btn--line">Ver la ruta de tu carga</a>
+    </div>
+  </div>
+
+  <div class="window" id="window">
+    <div class="window__frame">
+      <!-- Animación del hero: reemplaza hero.mp4 por la versión final (1920x1080, sin audio, en bucle) -->
+      <video id="heroVid" muted loop playsinline preload="none" poster="../wassaf-v3/assets/img/hero-poster.webp" data-src="../wassaf-v3/assets/hero.mp4">
+      </video>
+      <div class="window__tint"></div>
+      <div class="float f1"><b>✓</b><span><small>Recepción</small>OC-4587 · 24 paquetes</span></div>
+      <div class="float f2"><b>✓</b><span><small>Ubicación</small>Pallet → rack B1-04</span></div>
+      <div class="float f3"><b>✓</b><span><small>Picking</small>Pedido P-0031 · 12/12</span></div>
+      <div class="float f4"><b class="b-blue">→</b><span><small>Despacho</small>Guía 88213 · ruta Norte</span></div>
+      <span class="window__note">Datos de ejemplo</span>
+    </div>
+  </div>
+
+  <ul class="facts">
+    <li><strong>4</strong><span>procesos integrados, de la recepción al despacho</span></li>
+    <li><strong>2</strong><span>modalidades: en nuestra bodega o en la tuya</span></li>
+    <li><strong>1</strong><span>WMS con API para ver todo tu inventario</span></li>
+    <li><strong>RM</strong><span>Base en Quilicura, Región Metropolitana</span></li>
+  </ul>
+</section>
+
+<!-- ===== LA RUTA: línea verde vertical que se dibuja ===== -->
+<section class="route" id="ruta">
+  <div class="wrap">
+    <header class="head head--center">
+      <h2 class="h2 reveal">La ruta de tu carga,<br><em>paso a paso.</em></h2>
+      <p class="lead reveal">Del ingreso de carga a la expedición. Cada estación queda registrada en el sistema.</p>
+    </header>
+
+    <div class="route__body">
+      <svg class="route__svg" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 10 1000"><line x1="5" y1="0" x2="5" y2="1000" class="route__base"/><line x1="5" y1="0" x2="5" y2="1000" class="route__draw" id="routeDraw"/></svg>
+
+      <article class="station">
+        <span class="station__node" aria-hidden="true"><i></i></span>
+        <figure class="station__img"><img src="../wassaf-v3/assets/img/recepcion.webp" alt="Equipo Wasaff descargando un contenedor con pallets" width="1610" height="977" loading="lazy"><figcaption>Estación 01</figcaption></figure>
+        <div class="station__txt">
+          <span class="tagline">FCL / LCL · Paletizado</span>
+          <h3>Recepción y desconsolidación</h3>
+          <p>Descargamos tu contenedor, contamos, inspeccionamos y registramos cada paquete contra tu documentación antes de que entre al inventario.</p>
+          <ul class="pills"><li>Conteo</li><li>Control documental</li><li>Etiquetado</li></ul>
+        </div>
+      </article>
+
+      <article class="station station--rev">
+        <span class="station__node" aria-hidden="true"><i></i></span>
+        <figure class="station__img"><img src="../wassaf-v3/assets/img/almacenaje.webp" alt="Operario escaneando pallets en racks" width="1610" height="977" loading="lazy"><figcaption>Estación 02</figcaption></figure>
+        <div class="station__txt">
+          <span class="tagline">Ubicaciones · Existencias</span>
+          <h3>Almacenaje y control de stock</h3>
+          <p>Cada pallet tiene una ubicación asignada y cada movimiento queda registrado. Sabes qué tienes, dónde está y cuánto rota.</p>
+          <ul class="pills"><li>Ubicaciones</li><li>Inventarios cíclicos</li><li>Trazabilidad por lote</li></ul>
+        </div>
+      </article>
+
+      <article class="station">
+        <span class="station__node" aria-hidden="true"><i></i></span>
+        <figure class="station__img"><img src="../wassaf-v3/assets/img/picking.webp" alt="Operaria embalando un pedido etiquetado" width="1610" height="977" loading="lazy"><figcaption>Estación 03</figcaption></figure>
+        <div class="station__txt">
+          <span class="tagline">Preparación · Consolidación</span>
+          <h3>Picking y packing</h3>
+          <p>Preparamos tus pedidos unidad por unidad, validados con lector. Armado, embalaje y etiquetado listos para salir.</p>
+          <ul class="pills"><li>Picking con escáner</li><li>Embalaje</li><li>Etiquetado</li></ul>
+        </div>
+      </article>
+
+      <article class="station station--rev">
+        <span class="station__node" aria-hidden="true"><i></i></span>
+        <figure class="station__img"><img src="../wassaf-v3/assets/img/despacho.webp" alt="Pallets cargándose en un camión" width="1610" height="977" loading="lazy"><figcaption>Estación 04</figcaption></figure>
+        <div class="station__txt">
+          <span class="tagline">Expedición · Seguimiento</span>
+          <h3>Despacho y distribución</h3>
+          <p>Validamos cada salida, coordinamos con los transportistas y dejamos respaldo de lo que se entregó, a quién y cuándo.</p>
+          <ul class="pills"><li>Validación de salidas</li><li>Transporte</li><li>Respaldo de entrega</li></ul>
+        </div>
+      </article>
+
+      <div class="route__end"><span class="route__end-dia" aria-hidden="true"></span><p>Tu cliente recibe. Tú tienes el registro.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VENTAJAS: índice editorial con imagen que sigue al cursor ===== -->
+<section class="adv" id="ventajas">
+  <div class="wrap">
+    <header class="head head--split">
+      <div><h2 class="h2 reveal">Externalizas la operación,<br><em>no el control.</em></h2></div>
+      <p class="lead reveal">Trabajamos para que tengas más información sobre tu inventario que antes, no menos.</p>
+    </header>
+    <ol class="index" id="index">
+      <li class="index__row"><h3>Control de stock al día</h3><p>Existencias que se actualizan con cada recepción, picking y despacho. Sin planillas paralelas.</p></li>
+      <li class="index__row"><h3>Trazabilidad de punta a punta</h3><p>Cada lote deja huella desde que llega hasta que sale, con fecha, hora y responsable.</p></li>
+      <li class="index__row"><h3>Personal propio y capacitado</h3><p>Un equipo Wasaff que conoce tu operación, no personal rotativo.</p></li>
+      <li class="index__row"><h3>Servicio modular</h3><p>Contratas solo lo que necesitas y sumas servicios cuando tu operación crece.</p></li>
+      <li class="index__row"><h3>Reportes e indicadores</h3><p>Rotación, exactitud de inventario y cumplimiento de pedidos para decidir con datos.</p></li>
+      <li class="index__row index__row--eco"><h3><svg class="leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c0-8 5-13 14-14-1 9-6 14-14 14Zm0 0 7-7"/></svg>Logística más sostenible</h3><p>Espacio optimizado, registro digital que reduce papel y despachos consolidados con menos viajes vacíos.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== MODALIDADES: selector ===== -->
+<section class="modes" id="modalidades">
+  <div class="wrap">
+    <header class="head head--center">
+      <h2 class="h2 reveal">Dos formas de operar.<br><em>Un mismo estándar.</em></h2>
+    </header>
+    <div class="switch" role="tablist" aria-label="Modalidad">
+      <button role="tab" aria-selected="true" aria-controls="m1" id="t1">Bodega arrendada</button>
+      <button role="tab" aria-selected="false" aria-controls="m2" id="t2">Operación in house</button>
+      <i class="switch__knob" aria-hidden="true"></i>
+    </div>
+    <div class="modes__stage">
+      <div class="mode is-on" id="m1" role="tabpanel" aria-labelledby="t1">
+        <figure><img src="../wassaf-v3/assets/img/bodegas.webp" alt="Bodega con racks y pallets" width="1516" height="1038" loading="lazy"></figure>
+        <div class="mode__card">
+          <span class="tagline">En nuestra bodega</span>
+          <h3>Capacidad según tu operación.</h3>
+          <p>Espacios y recursos dimensionados según tu volumen y tipo de carga. Creces o ajustas sin invertir en infraestructura propia.</p>
+          <ul class="checks"><li>Pagas por el espacio que usas</li><li>Equipo y supervisión Wasaff</li><li>Inventario visible en el WMS</li></ul>
+          <a href="#contacto" class="btn btn--green btn--sm">Consultar disponibilidad <span class="arr">→</span></a>
+        </div>
+      </div>
+      <div class="mode" id="m2" role="tabpanel" aria-labelledby="t2" hidden>
+        <figure><img src="../wassaf-v3/assets/img/inhouse.webp" alt="Personal Wasaff trabajando en la bodega del cliente" width="1672" height="941" loading="lazy"></figure>
+        <div class="mode__card">
+          <span class="tagline">En tu bodega</span>
+          <h3>Personal Wasaff en tus instalaciones.</h3>
+          <p>Externalizas los procesos dentro de tu propia bodega, con personal propio y supervisión Wasaff. Tú mantienes el espacio; nosotros, la operación.</p>
+          <ul class="checks"><li>Sin trasladar tu mercadería</li><li>Equipo dedicado a tu operación</li><li>Mismo WMS y mismos reportes</li></ul>
+          <a href="#contacto" class="btn btn--green btn--sm">Evaluar mi bodega <span class="arr">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WMS: simulador de consulta de SKU ===== -->
+<section class="wms" id="wms">
+  <div class="wrap wms__in">
+    <div class="wms__copy">
+      <h2 class="h2 reveal">Control de stock.<br><em>Trazabilidad operacional.</em></h2>
+      <p class="lead reveal">Un sistema de gestión de bodega para administrar recepciones, ubicaciones, inventario y expedición.</p>
+    </div>
+    <div class="feat feat--big">
+      <div class="feat__i reveal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg><b>Registro de movimientos y existencias</b><p>Cada entrada, traslado y salida queda registrada, con stock actualizado en línea.</p></div>
+      <div class="feat__i reveal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg><b>Validación de picking y despacho</b><p>Lectura con escáner para confirmar producto y cantidad antes de que salga.</p></div>
+      <div class="feat__i reveal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19V11M12 19V5M19 19v-6"/></svg><b>Reportes e indicadores operacionales</b><p>Rotación, exactitud de inventario y cumplimiento de pedidos, listos para revisar.</p></div>
+      <div class="feat__i reveal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4"/></svg><b>API disponible para tu ERP o tienda</b><p>Conecta tu sistema o e-commerce para recibir pedidos y compartir stock.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REEL sticky ===== -->
+<section class="reel" id="video">
+  <div class="wrap reel__in">
+    <div class="reel__sticky">
+      <div class="reel__card">
+        <video id="reel" autoplay muted loop playsinline preload="metadata" poster="../wassaf-v3/assets/reel-poster.webp">
+          <source src="../wassaf-v3/assets/wasaff-reel-v2.mp4?v=3" type="video/mp4">
+        </video>
+        <button class="reel-sound" type="button" aria-pressed="false">♪ Activar música</button>
+        <button class="reel-pause" type="button" aria-pressed="false" aria-label="Pausar video"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-pause" d="M9 6v12M15 6v12"/><path class="i-play" d="M8 5l11 7-11 7Z"/></svg></button>
+      </div>
+    </div>
+    <div class="reel__copy">
+      <button class="watch" type="button" id="watchBtn"><span class="watch__play" aria-hidden="true"></span>Ver video</button>
+      <h2 class="h2 reveal">Medio minuto<br><em>de tu operación.</em></h2>
+      <div class="reel__step reveal"><span>Estación 01</span><h3>Llega</h3><p>Cada paquete se cuenta y se registra contra la documentación.</p></div>
+      <div class="reel__step reveal"><span>Estación 02</span><h3>Se ubica</h3><p>El pallet queda en una posición conocida, visible en el sistema.</p></div>
+      <div class="reel__step reveal"><span>Estación 03</span><h3>Se prepara</h3><p>Picking validado con lector, unidad por unidad.</p></div>
+      <div class="reel__step reveal"><span>Estación 04</span><h3>Sale</h3><p>Despacho validado y respaldado. Tú ves el estado.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESO: stepper con autoavance ===== -->
+<section class="proc" id="proceso">
+  <div class="wrap">
+    <header class="head head--split">
+      <div><h2 class="h2 reveal">De la evaluación<br><em>a la operación.</em></h2></div>
+      <p class="lead reveal">Cuatro etapas claras. En cada una sabes qué recibes.</p>
+    </header>
+    <div class="stepper" id="stepper">
+      <div class="stepper__tabs" role="tablist" aria-label="Etapas">
+        <button role="tab" id="st0" aria-controls="sp0" aria-selected="true" class="is-on" tabindex="0"><span>01</span>Diagnóstico operativo<i></i></button>
+        <button role="tab" id="st1" aria-controls="sp1" aria-selected="false" tabindex="-1"><span>02</span>Diseño del servicio<i></i></button>
+        <button role="tab" id="st2" aria-controls="sp2" aria-selected="false" tabindex="-1"><span>03</span>Puesta en marcha<i></i></button>
+        <button role="tab" id="st3" aria-controls="sp3" aria-selected="false" tabindex="-1"><span>04</span>Control de gestión<i></i></button>
+      </div>
+      <button class="pause" type="button" id="stepPause" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-pause" d="M9 6v12M15 6v12"/><path class="i-play" d="M8 5l11 7-11 7Z"/></svg><span>Pausar</span></button>
+      <div class="stepper__panels">
+        <div class="sp is-on" id="sp0" role="tabpanel" aria-labelledby="st0"><b class="sp__big">01</b><div><h3>Diagnóstico operativo</h3><p>Conversamos y levantamos tu realidad: tipo de carga, SKU, volúmenes, estacionalidad y los procesos que quieres externalizar.</p><p class="sp__get"><span>Recibes</span>Un resumen de tu operación actual.</p></div></div>
+        <div class="sp" id="sp1" role="tabpanel" aria-labelledby="st1"><b class="sp__big">02</b><div><h3>Diseño del servicio</h3><p>Proponemos la modalidad, los servicios y los indicadores que vamos a medir. Sin paquetes cerrados.</p><p class="sp__get"><span>Recibes</span>Una propuesta modular con indicadores.</p></div></div>
+        <div class="sp" id="sp2" role="tabpanel" aria-labelledby="st2"><b class="sp__big">03</b><div><h3>Puesta en marcha</h3><p>Cargamos tu inventario inicial en el WMS, definimos ubicaciones, capacitamos al equipo y arrancamos.</p><p class="sp__get"><span>Recibes</span>Acceso a tu inventario en línea.</p></div></div>
+        <div class="sp" id="sp3" role="tabpanel" aria-labelledby="st3"><b class="sp__big">04</b><div><h3>Control de gestión</h3><p>Reportes periódicos, reuniones de seguimiento y mejora continua sobre los indicadores acordados.</p><p class="sp__get"><span>Recibes</span>Reportes e indicadores periódicos.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTORES: grilla con íconos ===== -->
+<section class="sectors">
+  <div class="wrap">
+    <header class="head head--center"><h2 class="h2 h2--sm reveal">Trabajamos con empresas que mueven mercadería todos los días.</h2></header>
+    <ul class="sectors__grid">
+      <li class="reveal"><svg viewBox="0 0 32 32"><path d="M4 22h24M7 22V12l9-5 9 5v10M12 22v-6h8v6"/></svg>Importadores</li>
+      <li class="reveal"><svg viewBox="0 0 32 32"><path d="M3 20h16V9H3zM19 13h6l4 4v3h-10M8 24a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM23 24a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>Distribuidores</li>
+      <li class="reveal"><svg viewBox="0 0 32 32"><path d="M4 26V14l7 4v-4l7 4v-4l7 4V6h3v20z"/></svg>Industria</li>
+      <li class="reveal"><svg viewBox="0 0 32 32"><path d="M6 10h20l-2 14H8zM11 10a5 5 0 0 1 10 0"/></svg>Comercializadoras</li>
+      <li class="reveal"><svg viewBox="0 0 32 32"><path d="M5 12l2-6h18l2 6M5 12v14h22V12M5 12h22M13 26v-7h6v7"/></svg>Retail</li>
+      <li class="reveal"><svg viewBox="0 0 32 32"><rect x="5" y="6" width="22" height="16" rx="2"/><path d="M11 27h10M16 22v5M12 14l3 3 5-6"/></svg>Comercio electrónico</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIOS: uno a la vez ===== -->
+<section class="testi" id="testimonios">
+  <div class="wrap">
+    <div class="testi__box">
+      <span class="demo">Testimonios de ejemplo · se reemplazarán por reales</span>
+      <div class="testi__slides" id="testi" aria-live="off">
+        <figure class="ts is-on"><blockquote>“Antes cerrábamos el mes cuadrando planillas. Hoy vemos el stock por ubicación y los quiebres los detectamos antes de que lleguen al cliente.”</blockquote><figcaption><b>María R.</b> · Jefa de Operaciones, importadora de repuestos</figcaption></figure>
+        <figure class="ts"><blockquote>“Partimos solo con almacenaje y despacho. Cuando creció la tienda online sumamos picking y packing sin cambiar de proveedor ni de sistema.”</blockquote><figcaption><b>Javier P.</b> · Gerente Comercial, marca de comercio electrónico</figcaption></figure>
+        <figure class="ts"><blockquote>“El equipo in house trabaja dentro de nuestra bodega como si fuera propio, y los reportes semanales nos ordenaron la conversación con compras.”</blockquote><figcaption><b>Carolina S.</b> · Gerenta de Abastecimiento, distribuidora industrial</figcaption></figure>
+      </div>
+      <div class="testi__nav">
+        <button class="tn" data-dir="-1" aria-label="Testimonio anterior">←</button>
+        <span class="testi__count"><b id="tCur">01</b> / 03</span>
+        <button class="tn" data-dir="1" aria-label="Testimonio siguiente">→</button>
+        <button class="pause pause--dark" type="button" id="testiPause" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-pause" d="M9 6v12M15 6v12"/><path class="i-play" d="M8 5l11 7-11 7Z"/></svg><span>Pausar</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <header class="head head--center"><h2 class="h2 reveal">Lo que nos preguntan<br><em>antes de partir.</em></h2></header>
+    <div class="faq__grid">
+      <details class="qa"><summary>¿Qué tamaño de operación atienden?<i></i></summary><p>Trabajamos con empresas medianas: importadores, distribuidores, industria, retail y comercio electrónico. Dimensionamos el espacio y el equipo según tu volumen real.</p></details>
+      <details class="qa"><summary>¿Puedo contratar solo algunos servicios?<i></i></summary><p>Sí. El servicio es modular: puedes partir solo con almacenaje y despacho y sumar recepción, picking o packing cuando lo necesites.</p></details>
+      <details class="qa"><summary>¿Bodega arrendada u operación in house?<i></i></summary><p>En bodega arrendada tu mercadería se almacena y opera en espacios que gestionamos nosotros. En in house, el personal Wasaff trabaja dentro de tus instalaciones. En ambos casos usas el mismo WMS.</p></details>
+      <details class="qa"><summary>¿Cómo veo mi inventario?<i></i></summary><p>A través del WMS: existencias, ubicaciones y movimientos actualizados con cada recepción, picking y despacho, más reportes periódicos.</p></details>
+      <details class="qa"><summary>¿El WMS se conecta con mi ERP o tienda online?<i></i></summary><p>El WMS tiene API disponible. Cada integración se revisa con tu equipo técnico para confirmar alcance y plazos.</p></details>
+      <details class="qa"><summary>¿Cuánto tarda la puesta en marcha?<i></i></summary><p>Depende del volumen, la cantidad de SKU y la modalidad. Después del diagnóstico te entregamos un plan con fechas concretas.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACTO ===== -->
+<section class="contact contact--dark" id="contacto">
+  <div class="contact__bg" aria-hidden="true"><video id="contactVid" muted loop playsinline preload="none" poster="../wassaf-v3/assets/img/hero-poster.webp" data-src="../wassaf-v3/assets/hero.mp4"></video></div>
+  <div class="wrap contact__in">
+    <div class="contact__copy">
+      <div class="contact__brand reveal" aria-label="Wasaff Logística">
+        <svg viewBox="0 0 64 44" aria-hidden="true"><path d="M15 4 30 22 15 40 0 22Z" fill="#05A342"/><path d="M49 4 64 22 49 40 34 22Z" fill="#05A342"/><path d="M32 1 52 22 32 43 12 22Z" fill="#387CC9" stroke="#0B2C4A" stroke-width="1.6"/></svg>
+        <span>Wasaff<small>Logística</small></span>
+      </div>
+      <h2 class="h2 h2--light reveal">Evaluemos tu operación logística.</h2>
+      <p class="contact__lead reveal">Cuéntanos qué tipo de carga manejas, qué volumen mueves y qué procesos quieres externalizar. Te respondemos con una propuesta a tu medida.</p>
+      <ul class="contact__data reveal">
+        <li><small>Dirección</small>Lo Echevers 280, depto. 88, Quilicura</li>
+        <li><small>Teléfono y WhatsApp</small><span><a href="tel:+56988182735">+56 9 8818 2735</a> · <a href="https://wa.me/56988182735" target="_blank" rel="noopener">Escríbenos por WhatsApp</a></span></li>
+        <li><small>Correo</small><a href="mailto:info@wasafflogistica.cl">info@wasafflogistica.cl</a></li>
+        <li><small>Razón social</small>Wasaff Logística SpA</li>
+      </ul>
+    </div>
+    <form class="form reveal" id="form" action="enviar.php" method="post" novalidate>
+      <h3 class="form__title">Evalúa tu <em>proyecto</em></h3>
+      <div class="form__row">
+        <label class="fl"><input name="nombre" required autocomplete="given-name" maxlength="80" placeholder=" "><span>Nombre *</span></label>
+        <label class="fl"><input name="apellido" required autocomplete="family-name" maxlength="80" placeholder=" "><span>Apellido *</span></label>
+      </div>
+      <label class="fl"><input name="empresa" autocomplete="organization" maxlength="120" placeholder=" "><span>Empresa</span></label>
+      <div class="form__row">
+        <label class="fl"><input name="correo" type="email" required autocomplete="email" maxlength="160" placeholder=" "><span>Correo de contacto *</span></label>
+        <label class="fl"><input name="telefono" type="tel" autocomplete="tel" maxlength="40" placeholder=" "><span>Teléfono / celular</span></label>
+      </div>
+      <label class="fl"><textarea name="mensaje" rows="4" required maxlength="4000" placeholder=" "></textarea><span>¿Qué necesitas? *</span></label>
+      <label class="form__trap" aria-hidden="true">Web<input name="web" tabindex="-1" autocomplete="off"></label>
+      <button class="btn btn--dark btn--full" type="submit">Enviar solicitud <span class="arr">→</span></button>
+      <p class="form__msg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<div class="mbar" id="mbar" aria-label="Contacto rápido" hidden>
+  <a href="#contacto" class="btn btn--dark">Cotizar</a>
+  <a href="https://wa.me/56988182735" target="_blank" rel="noopener" class="btn btn--wa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7Z"/><path d="M9 9.5c.3 1.8 1.8 3.8 4.5 4.6l1.2-1.2 1.8.8-.3 1.6c-3.6.4-8.3-3.7-8.4-7.5l1.6-.4.8 1.8Z"/></svg>WhatsApp</a>
+</div>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <a href="#top" class="brand" aria-label="Wasaff Logística, volver arriba">
+      <svg viewBox="0 0 64 44" aria-hidden="true"><path d="M15 4 30 22 15 40 0 22Z" fill="#05A342"/><path d="M49 4 64 22 49 40 34 22Z" fill="#05A342"/><path d="M32 1 52 22 32 43 12 22Z" fill="#387CC9" stroke="#0B2C4A" stroke-width="1.6"/></svg>
+      <span>Wasaff<small>Logística</small></span>
+    </a>
+    <nav aria-label="Pie de página"><a href="#ruta">Servicios</a><a href="#modalidades">Modalidades</a><a href="#wms">WMS</a><a href="#proceso">Proceso</a><a href="#faq">Preguntas</a><a href="#contacto">Contacto</a></nav>
+    <p>Lo Echevers 280, Quilicura · <a href="tel:+56988182735">+56 9 8818 2735</a> · <a href="mailto:info@wasafflogistica.cl">info@wasafflogistica.cl</a></p>
+  </div>
+  <div class="wrap foot__bar"><span>© 2026 Wasaff Logística SpA · Gestión logística integral</span><a href="#top">Volver arriba ↑</a></div>
+</footer>
+
+<script defer src="../wassaf-v3/lib/gsap.min.js"></script>
+<script defer src="../wassaf-v3/lib/ScrollTrigger.min.js"></script>
+<script defer src="main.js?v=mot1"></script>
+</body>
+</html>
