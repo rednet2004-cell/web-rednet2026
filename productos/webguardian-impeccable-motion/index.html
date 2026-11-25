@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>WebGuardian · Rednet</title>
+<meta name="theme-color" content="#0E0D0C">
+<meta name="description" content="WebGuardian: alguien está mirando tu sitio aunque tú no. Vigilamos, actualizamos y bloqueamos lo raro antes de que se convierta en un problema.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500;112,700;112,800;100,400;100,600&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<header id="hdr">
+<div class="wrap">
+<a href="../../v4-pulido/" class="logo" aria-label="Rednet, volver al inicio"><img src="../logo-rednet-header.png" alt="Rednet" width="250" height="72"></a>
+<button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navPrincipal"><span></span><span></span><span class="sr">Menú</span></button>
+<nav aria-label="Principal" id="navPrincipal"><a href="../../v4-pulido/">Inicio</a><a href="#guardia">Cómo funciona</a><a href="#incluye">Qué incluye</a><a href="#planes">Planes</a><a href="#faq">Preguntas</a><a href="#contacto" class="solo-movil">Contacto</a></nav>
+<a class="btn btn-rojo hdr-cta" href="#contacto">Pide tu presupuesto</a>
+</div>
+</header>
+<main id="top">
+<span id="contenido"></span>
+<!-- 1 HERO negro: radar que barre el sitio y bloquea amenazas (con pausa) -->
+<section class="p-hero" id="hero" aria-label="WebGuardian">
+<div class="wrap hero-grid">
+<div class="hero-txt" id="heroTxt">
+<nav class="miga" aria-label="Estás en"><a href="../../v4-pulido/">Inicio</a><i aria-hidden="true">/</i><a href="../../v4-pulido/#servicios">Seguridad y soporte</a><i aria-hidden="true">/</i><span aria-current="page" translate="no">WebGuardian</span></nav>
+<h1>Alguien está mirando tu sitio, <em>aunque tú no</em></h1>
+<p>Seguridad y mantención constante, sin que tengas que acordarte. Vigilamos, actualizamos y bloqueamos lo raro antes de que se convierta en un problema.</p>
+<div class="hero-ctas">
+<a class="btn btn-rojo" href="#contacto" data-plan="Quiero que revisen mi sitio">Pide una revisión de tu sitio</a>
+<a class="btn btn-claro" href="#guardia">Mira una noche de guardia <i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></i></a>
+</div>
+</div>
+<div class="radar-caja">
+<div class="radar" id="radar" aria-hidden="true">
+<div class="r-anillo a1"></div><div class="r-anillo a2"></div><div class="r-anillo a3"></div>
+<div class="r-barrido"></div>
+<div class="r-centro"><svg viewBox="0 0 54 62" fill="none"><path d="M27 2 50 10v20c0 15-10 25-23 30C14 55 4 45 4 30V10L27 2Z" stroke="#fff" stroke-width="3"/><path d="m17 31 7 7 13-14" stroke="#fff" stroke-width="3.5"/></svg><small>tusitio.cl</small></div>
+<span class="r-punto" style="--a:40deg;--r:38%"></span>
+<span class="r-punto" style="--a:150deg;--r:30%"></span>
+<span class="r-punto" style="--a:230deg;--r:44%"></span>
+<span class="r-punto" style="--a:310deg;--r:24%"></span>
+<div class="r-chip"><i class="led"></i><span id="radarTxt">Todo en orden</span></div>
+</div>
+<button type="button" class="pausa" id="radarPausa" aria-pressed="false"><svg class="i-pausa" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z"/></svg><span>Pausar animación</span></button>
+</div>
+</div>
+</section>
+
+<!-- 2 FRASE -->
+<section class="manifiesto">
+<div class="wrap">
+<p data-palabras>La mayoría de los sitios hackeados <span class="ico r"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" aria-hidden="true"><path d="M12 8v5M12 16v.5"/><path d="M10.3 3.9 2.5 18a2 2 0 0 0 1.7 3h15.6a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg></span> no eran un objetivo: simplemente nadie los estaba cuidando. El tuyo tiene <span class="ico o"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></span> a alguien de guardia.</p>
+</div>
+</section>
+
+<!-- 3 UNA NOCHE DE GUARDIA: sección fijada, el reloj avanza y aparece el registro -->
+<section class="guardia-sec" id="guardia">
+<div class="wrap guardia-grid">
+<div class="guardia-info">
+<h2>Mientras duermes, <span class="g">esto pasa en tu sitio</span></h2>
+<div class="reloj-g"><b id="horaG">22:00</b><span>Registro de ejemplo</span></div>
+<div class="contadores">
+<div><b id="cBloq">0</b><span>intentos bloqueados</span></div>
+<div><b id="cAct">0</b><span>actualizaciones aplicadas</span></div>
+<div><b id="cRev">0</b><span>revisiones completas</span></div>
+</div>
+</div>
+<div class="registro">
+<div class="reg-top"><span><i class="led"></i><span translate="no">WebGuardian · tusitio.cl</span></span><span>Ejemplo</span></div>
+<ol class="reg-lista" id="regLista" aria-label="Registro de una noche de ejemplo"></ol>
+</div>
+</div>
+</section>
+
+<!-- 4 CAPAS DE PROTECCIÓN: anillos que se dibujan con el scroll -->
+<section class="capas-sec" id="incluye">
+<div class="wrap capas-grid">
+<div class="escudo" aria-hidden="true">
+<svg viewBox="0 0 400 400">
+<circle class="cap" cx="200" cy="200" r="180"/>
+<circle class="cap" cx="200" cy="200" r="150"/>
+<circle class="cap" cx="200" cy="200" r="120"/>
+<circle class="cap" cx="200" cy="200" r="90"/>
+<circle class="cap" cx="200" cy="200" r="60"/>
+<g transform="translate(173 168)"><path d="M27 2 50 10v20c0 15-10 25-23 30C14 55 4 45 4 30V10L27 2Z" fill="#E30613"/><path d="m17 31 7 7 13-14" stroke="#fff" stroke-width="3.5" fill="none"/></g>
+</svg>
+</div>
+<div class="capas-txt">
+<h2>Cinco capas <span class="g">alrededor de tu sitio</span></h2>
+<ol class="lista-capas" id="listaCapas">
+<li><i class="sw" aria-hidden="true"></i><div><b>Monitoreo</b><small>Revisamos que tu sitio esté en línea [frecuencia y horario 24/7 por confirmar] y te avisamos si se cae.</small></div></li>
+<li><i class="sw" aria-hidden="true"></i><div><b>Firewall</b><small>Un filtro que deja pasar a tus visitas y frena los intentos de entrar a la fuerza.</small></div></li>
+<li><i class="sw" aria-hidden="true"></i><div><b>Revisión de malware</b><small>Buscamos código malicioso escondido en tu sitio y, si aparece, lo sacamos.</small></div></li>
+<li><i class="sw" aria-hidden="true"></i><div><b>Actualizaciones</b><small><span translate="no">WordPress</span>, plugins y temas al día, revisados antes de aplicarlos.</small></div></li>
+<li><i class="sw" aria-hidden="true"></i><div><b>Informe mensual</b><small>Un resumen claro de lo que pasó y lo que hicimos.</small></div></li>
+</ol>
+</div>
+</div>
+</section>
+
+<!-- 5 DOLORES -->
+<section class="sin-top">
+<div class="wrap dolores" data-rv>
+<a class="dolor d-rojo" href="#contacto" data-plan="Quiero que revisen mi sitio"><small>Si no lo sabes</small><b>¿Tu sitio está realmente seguro? Revisémoslo.</b><span class="ir">Pide una revisión<i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></span></a>
+<a class="dolor d-grafito" href="#contacto" data-plan="Me hackearon y necesito ayuda"><small>Si ya pasó</small><b>¿Te hackearon? Lo limpiamos y lo dejamos protegido.</b><span class="ir">Pide ayuda ahora<i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></span></a>
+</div>
+</section>
+
+<!-- 6 INFORME MENSUAL -->
+<section class="informe-sec sin-top">
+<div class="wrap informe-grid">
+<div>
+<h2>Cada mes sabes <span class="g">cómo está tu sitio</span></h2>
+<p class="inf-p">Sin tecnicismos: qué revisamos, qué actualizamos y qué bloqueamos. Si hay algo que decidir, te lo decimos claro.</p>
+</div>
+<div class="informe" id="informe">
+<div class="inf-cab"><small>Informe · [Mes] 2026</small><b>tusitio.cl</b><span class="estado-ok">Saludable</span></div>
+<div class="inf-fila"><span>Disponibilidad</span><b>[—]%</b><i style="--w:96%"></i></div>
+<div class="inf-fila"><span>Actualizaciones aplicadas</span><b>[N]</b><i style="--w:70%"></i></div>
+<div class="inf-fila"><span>Intentos bloqueados</span><b>[N]</b><i style="--w:85%"></i></div>
+<div class="inf-fila"><span>Revisiones de malware</span><b>[N] · limpio</b><i style="--w:100%"></i></div>
+<p class="aviso">Datos de ejemplo</p>
+</div>
+</div>
+</section>
+
+<!-- 7 PLANES (sin toggle mensual/anual: no hay precio anual) -->
+<section id="planes" class="sin-top">
+<div class="wrap">
+<div class="cab"><h2>Protección a tu medida, <span class="g">sin letra chica</span></h2></div>
+<div class="planes" data-rv>
+<div class="plan"><small>Guardia</small><div class="precio">$[—]<span>/mes</span></div><p class="pd">Para sitios corporativos.</p><ul><li>Monitoreo <span class="ph-i">[24/7 por confirmar]</span></li><li>Firewall</li><li>Actualizaciones mensuales</li><li>Informe mensual</li></ul><a class="btn" href="#contacto" data-plan="Plan Guardia">Empezar con Guardia</a></div>
+<div class="plan dest"><small>Guardia+ <em>Más elegido</em></small><div class="precio">$[—]<span>/mes</span></div><p class="pd">Para sitios que no pueden fallar.</p><ul><li>Todo lo de Guardia</li><li>Revisión de malware semanal</li><li>Limpieza incluida <span class="ph-i">[por confirmar]</span></li><li>Respaldo Automático <span class="ph-i">[por confirmar]</span></li></ul><a class="btn" href="#contacto" data-plan="Plan Guardia+">Quiero Guardia+</a></div>
+<div class="plan med"><small>Tienda</small><div class="precio">Hablemos</div><p class="pd">Para tiendas online y sitios con pagos.</p><ul><li>Todo lo de Guardia+</li><li>Monitoreo prioritario</li><li>Revisión de pagos</li><li>Soporte con prioridad</li></ul><a class="btn" href="#contacto" data-plan="Plan Tienda">Hablar con Rednet</a></div>
+</div>
+<p class="letra">Sin permanencia [por confirmar]. Precios en pesos chilenos por confirmar.</p>
+</div>
+</section>
+
+<!-- 8 FAQ -->
+<section id="faq" class="sin-top">
+<div class="wrap faq">
+<h2>Preguntas <span class="g">sobre <span translate="no">WebGuardian</span></span></h2>
+<div>
+<details open><summary>¿Mi sitio es tan importante como para que lo ataquen? <i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 6v12M6 12h12"/></svg></i></summary><div class="resp"><p>Los ataques suelen ser automáticos: buscan cualquier sitio desactualizado, no uno en particular.</p></div></details>
+<details><summary>¿Qué es eso de firewall y malware? <i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 6v12M6 12h12"/></svg></i></summary><div class="resp"><p>El firewall es un filtro: deja pasar a tus visitas y frena el tráfico que intenta entrar a la fuerza. Malware es código malicioso que alguien mete en un sitio para robar datos o mandar spam. Lo buscamos y, si aparece, lo sacamos.</p></div></details>
+<details><summary>¿Las actualizaciones pueden romper algo? <i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 6v12M6 12h12"/></svg></i></summary><div class="resp"><p>Las revisamos antes de aplicarlas y, si algo no anda, volvemos a la versión anterior desde un respaldo <span class="ph-i">[confirmar cómo se respalda en cada plan]</span>.</p></div></details>
+<details><summary>¿Sirve si mi sitio no está en Hosting Rednet? <i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 6v12M6 12h12"/></svg></i></summary><div class="resp"><p>[Por confirmar]. Lo revisamos y te decimos qué podemos cubrir donde está hoy.</p></div></details>
+<details><summary>¿Y si ya me hackearon? <i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 6v12M6 12h12"/></svg></i></summary><div class="resp"><p>Escríbenos. Lo limpiamos, lo dejamos al día y lo protegemos para que no vuelva a pasar.</p></div></details>
+</div>
+</div>
+</section>
+
+<!-- 9 CONTACTO: banda a ancho completo, video suave detrás, formulario blanco -->
+<section class="cierre" id="contacto">
+<div class="cta" id="cta">
+<div class="cta-fondo" aria-hidden="true"><video id="vCta" muted playsinline loop preload="none" poster="../../v4-impeccable/video/cta-poster.jpg"><source src="../../v4-impeccable/video/cta-loop.webm" type="video/webm"><source src="../../v4-impeccable/video/cta-loop.mp4" type="video/mp4"></video></div>
+<div class="wrap cta-grid">
+<div class="cta-txt">
+<h2>Duerme tranquilo, <span class="g">alguien está de guardia</span></h2>
+<p>Revisamos tu sitio y te contamos cómo está y qué plan le sirve.</p>
+<a class="btn btn-borde" href="https://wa.me/?text=Hola%20Rednet%2C%20quiero%20proteger%20mi%20sitio%20con%20WebGuardian" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.8A8 8 0 1 1 8 19z"/></svg>Escríbenos por WhatsApp</a>
+<p class="cta-nota">[Número de WhatsApp por confirmar: hoy el botón abre WhatsApp sin destinatario.]</p>
+</div>
+<form class="form" id="form" novalidate>
+<div class="campo"><label for="fNombre">Tu nombre</label><input id="fNombre" name="nombre" autocomplete="name" required placeholder="Ej: Camila Rojas"></div>
+<div class="campo"><label for="fWsp">WhatsApp o correo</label><input id="fWsp" name="contacto" autocomplete="tel" required aria-describedby="fWspAyuda"><small id="fWspAyuda">Ej: +56 9 1234 5678</small></div>
+<div class="campo"><label for="fQue">¿Qué necesitas?</label><select id="fQue" name="que"><option>Quiero que revisen mi sitio</option><option>Me hackearon y necesito ayuda</option><option>Plan Guardia</option><option>Plan Guardia+</option><option>Plan Tienda</option><option>Aún no sé, quiero orientación</option></select></div>
+<div class="campo"><label for="fMsg">Pega el link de tu sitio o cuéntanos qué pasa <span>(opcional)</span></label><textarea id="fMsg" name="mensaje" rows="3" placeholder="Ej: tusitio.cl, está hecho en WordPress"></textarea></div>
+<p class="error" id="fError" role="alert" hidden>Falta tu nombre y un WhatsApp o correo para responderte.</p>
+<button class="btn btn-rojo" type="submit">Pide tu presupuesto</button>
+<p class="ok" id="fOk" role="status" hidden>Listo, recibimos tu mensaje. Te escribimos pronto. <span>(Maqueta: el formulario todavía no envía datos.)</span></p>
+</form>
+</div>
+</div>
+</section>
+
+<!-- 10 RELACIONADOS -->
+<section class="otros-sec">
+<div class="wrap">
+<h2 class="otros-t">Completa tu protección</h2>
+<div class="otros"><a class="otro" href="../hosting-pulido/"><small>Infraestructura</small><b translate="no">Hosting Rednet</b><span>Tu sitio en servidores que cuida el mismo equipo.</span></a><a class="otro" href="../respaldo/"><small>Infraestructura</small><b>Respaldo Automático</b><span>Copias de tu sitio para volver atrás si algo se rompe.</span></a><a class="otro" href="../soporte/"><small>Seguridad y soporte</small><b>Soporte Rednet</b><span>Una persona que te responde cuando algo no anda.</span></a></div>
+</div>
+</section>
+</main>
+
+<div class="barra-movil" id="barraMovil"><a class="btn btn-rojo" href="#contacto">Presupuesto</a><a class="btn btn-negro" href="https://wa.me/?text=Hola%20Rednet%2C%20quiero%20proteger%20mi%20sitio%20con%20WebGuardian" target="_blank" rel="noopener">WhatsApp</a></div>
+
+<footer>
+<div class="wrap">
+<div class="pie">
+<div><a href="../../v4-pulido/" class="logo" style="display:inline-flex" aria-label="Rednet, inicio"><img src="../logo-rednet-header.png" alt="Rednet" width="250" height="72"></a><p style="margin-top:16px;max-width:30ch">Servicios digitales para pymes: web, hosting, seguridad, IA y automatización.</p></div>
+<div><p class="pie-t">Servicios</p><ul><li><a href="../diseno-web-pulido/">Sitios web</a></li><li><a href="../tienda-online/">Ventas online</a></li><li><a href="../hosting-pulido/">Infraestructura</a></li><li><a href="./" aria-current="page">Seguridad y soporte</a></li><li><a href="../seo-geo/">Marketing y visibilidad</a></li><li><a href="../asistente-virtual-pulido/">IA y automatización</a></li><li><a href="../../v4-pulido/#servicios">Video</a></li></ul></div>
+<div><p class="pie-t">Empresa</p><ul><li><a href="../../v4-pulido/#proceso">Cómo trabajamos</a></li><li><a href="../../v4-pulido/#caso">Casos</a></li><li><a href="../../v4-pulido/#proyectos">Proyectos</a></li><li><a href="../../v4-pulido/#planes">Planes</a></li></ul></div>
+<div><p class="pie-t">Contacto</p><ul><li translate="no">soporte@rednet.cl <span class="marca-ph">¿o @rednetspa.cl?</span></li><li>WhatsApp [número]</li><li translate="no">www.rednetspa.cl</li></ul></div>
+</div>
+<div class="legal"><span>© 2026 Rednet SpA · RUT [por confirmar] · [Dirección por confirmar]</span><span>Página de producto · webguardian-impeccable-motion · contenido entre [ ] por confirmar</span></div>
+</div>
+</footer>
+<nav class="versiones" aria-label="Versiones de esta página"><span>Versión</span><a href="../webguardian/">Original</a><a href="../webguardian-impeccable/">Impeccable</a><a href="../webguardian-impeccable-motion/" aria-current="page">Motion</a><a href="../webguardian-pulido/">Pulido</a></nav>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
