@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Mantención Web Rednet · mantencion-impeccable-motion</title>
+<meta name="color-scheme" content="light">
+<meta name="description" content="Mantención Web Rednet: tu sitio se mantiene actualizado y funcionando sin que tengas que pensarlo. Cuidado continuo cada mes, no una reparación de emergencia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500;112,700;112,800;100,400;100,600&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<header id="hdr">
+<div class="wrap">
+<a href="../../v4-pulido/" class="logo" aria-label="Rednet, volver al inicio"><img src="../logo-rednet-header.png" alt="Rednet"></a>
+<button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navPrincipal"><span></span><span></span><span class="sr">Menú</span></button>
+<nav aria-label="Principal" id="navPrincipal"><a href="../../v4-pulido/">Inicio</a><a href="#tiempo">Gira el tiempo</a><a href="#incluye">Qué incluye</a><a href="#planes">Planes</a><a href="#faq">Preguntas</a><a href="#contacto" class="solo-movil">Contacto</a></nav>
+<a class="btn btn-rojo hdr-cta" href="#contacto">Pide tu presupuesto</a>
+</div>
+</header>
+<main id="top">
+<span id="contenido"></span>
+<!-- 1 HERO negro + verde: chequeo continuo del sitio -->
+<section class="p-hero" aria-label="Mantención Web Rednet">
+<div class="wrap hero-grid">
+<div class="hero-txt" id="heroTxt">
+<nav class="miga" aria-label="Estás en"><a href="../../v4-pulido/">Inicio</a><i aria-hidden="true">/</i><a href="../../v4-pulido/#servicios">Sitios web</a><i aria-hidden="true">/</i><span aria-current="page">Mantención web</span></nav>
+<h1>Tu sitio, siempre <em>al día</em></h1>
+<p>Se mantiene actualizado y funcionando sin que tengas que pensarlo. Cuidado continuo cada mes, no una reparación de emergencia.</p>
+<div class="hero-ctas">
+<a class="btn btn-verde" href="#contacto" data-plan="Mantener mi sitio al día">Cuida tu sitio</a>
+<a class="btn btn-claro" href="#tiempo">Gira el tiempo <i>↓</i></a>
+</div>
+</div>
+<div>
+<figure class="chequeo" id="chequeo" aria-label="Ejemplo de revisión diaria de un sitio: actualizaciones, copia, formularios, enlaces, velocidad y seguridad, todo en orden.">
+<div class="ch-top"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><b>tunegocio.cl</b><em id="chEst" aria-hidden="true">Revisando…</em><button class="pausa" id="pausa" type="button" aria-pressed="false" aria-label="Pausar la revisión animada"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg></button></div>
+<svg class="pulso" viewBox="0 0 400 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 H120 L135 30 L145 8 L158 52 L170 30 H250 L262 30 L272 14 L282 46 L292 30 H400" fill="none" stroke="#7fe0a5" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+<ul class="ch-lista" id="chLista" aria-hidden="true">
+<li><b>Actualizaciones</b><span>Sistema y plugins al día</span></li>
+<li><b>Copia de seguridad</b><span>Hecha a las 03:00</span></li>
+<li><b>Formularios</b><span>Probados, llegan bien</span></li>
+<li><b>Enlaces</b><span>0 rotos</span></li>
+<li><b>Velocidad</b><span>Carga rápida en celular</span></li>
+<li><b>Seguridad</b><span>Sin alertas</span></li>
+</ul>
+<div class="ch-pie" aria-hidden="true"><span>Última revisión: hoy 03:00</span><span>Próxima: mañana 03:00</span></div>
+</figure>
+<p class="nota-ej">Revisión de ejemplo</p>
+</div>
+</div>
+</section>
+
+<!-- 2 GIRA EL TIEMPO: perilla de 12 meses, sitio sin y con mantención -->
+<section class="tiempo-sec" id="tiempo">
+<div class="wrap">
+<div class="cab"><h2>Un sitio sin cuidado <span class="g">se va rompiendo solo</span></h2><p class="nota">Mueve el tiempo y mira qué pasa en 12 meses.</p></div>
+<div class="tiempo-grid">
+<div class="sitio-m sin" id="sitioSin" aria-hidden="true">
+<div class="sm-top"><span class="sm-et">Sin mantención</span><span class="sm-alerta">Sitio no seguro</span></div>
+<div class="sm-cuerpo"><div class="sm-hero"><b>[Tu negocio]</b><i></i></div><div class="sm-fila"><i></i><i></i><i></i></div><div class="sm-form"><i></i><i></i><span class="sm-err">Error al enviar</span></div></div>
+</div>
+<div class="perilla-box">
+<div class="perilla" id="perilla" aria-hidden="true">
+<div class="marcas" id="marcas"></div>
+<div class="pomo" id="pomo"><span class="aguja"></span></div>
+<div class="p-centro"><b id="pMes">0</b><small id="pMesTxt">meses</small></div>
+</div>
+<div class="control-m">
+<label for="meses">Meses sin mantención</label>
+<button class="paso" type="button" id="menos" aria-label="Un mes menos">−</button>
+<input type="range" id="meses" min="0" max="12" step="1" value="0" aria-valuetext="0 meses">
+<button class="paso" type="button" id="mas" aria-label="Un mes más">+</button>
+</div>
+<div class="stats" id="stats" aria-live="polite">
+<p class="stats-cab" aria-hidden="true"><span>Sin</span><span>Con Rednet</span></p>
+<div><span>Actualizaciones pendientes</span><b id="sAct">0</b><b class="ok">0</b></div>
+<div><span>Enlaces rotos</span><b id="sEnl">0</b><b class="ok">0</b></div>
+<div><span>Carga en celular</span><b id="sVel">1,8 s</b><b class="ok">1,8 s</b></div>
+<div><span>Alertas de seguridad</span><b id="sSeg">0</b><b class="ok">0</b></div>
+</div>
+<p class="ej">Simulación de ejemplo</p>
+</div>
+<div class="sitio-m con" aria-hidden="true">
+<div class="sm-top"><span class="sm-et">Con Rednet</span><span class="sm-ok">✓ Al día</span></div>
+<div class="sm-cuerpo"><div class="sm-hero"><b>[Tu negocio]</b><i></i></div><div class="sm-fila"><i></i><i></i><i></i></div><div class="sm-form"><i></i><i></i></div></div>
+<div class="tareas-n"><b id="tN">0</b> tareas hechas</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 3 CADA MES (checklist que se completa con el scroll) -->
+<section class="mes-sec sin-top" id="incluye">
+<div class="wrap">
+<div class="cab"><h2>Tu mes, <span class="g">revisado punto por punto</span></h2><p class="nota">Todos los días: copia de seguridad y monitoreo <span class="marca">[¿copia de Rednet o del hosting?]</span></p></div>
+<div class="semanas" id="semanas">
+<div class="sem"><h3>Semana 1</h3><ul><li>Actualizamos sistema y plugins</li><li>Revisamos las copias</li></ul></div>
+<div class="sem"><h3>Semana 2</h3><ul><li>Probamos formularios y enlaces</li><li>Revisamos en celulares</li></ul></div>
+<div class="sem"><h3>Semana 3</h3><ul><li>Ajustamos velocidad e imágenes</li><li>Revisión de seguridad</li></ul></div>
+<div class="sem"><h3>Semana 4</h3><ul><li>Hacemos tus cambios pedidos</li><li>Te enviamos el informe</li></ul></div>
+</div>
+</div>
+</section>
+
+<!-- 4 PÍDELO Y ESTÁ HECHO -->
+<section class="pide-sec sin-top">
+<div class="wrap pide-grid">
+<div>
+<h2>Lo pides <span class="g">y está hecho</span></h2>
+<p class="pide-p">¿Cambió un precio o un horario? Escríbenos y lo actualizamos, sin cotizar cada detalle. Elige un pedido de ejemplo:</p>
+<div class="pedidos" id="pedidos" role="group" aria-label="Pedidos de ejemplo"><button type="button" aria-pressed="true">Cambiar un precio</button><button type="button" aria-pressed="false">Subir fotos nuevas</button><button type="button" aria-pressed="false">Nuevo horario</button><button type="button" aria-pressed="false">Agregar un banner</button></div>
+</div>
+<div class="ticket" id="ticket">
+<div class="tk-top"><small>Pedido #[0000]</small><span>Respuesta en [24] h <span class="marca">por confirmar</span></span></div>
+<b id="tkTit">Cambiar un precio</b>
+<p id="tkDet">"El menú del día ahora cuesta $[—]."</p>
+<ol class="tk-estados" id="tkEst" aria-label="Estado del pedido"><li>Recibido</li><li>En curso</li><li>Hecho ✓</li></ol>
+<p class="sr" id="tkVivo" role="status"></p>
+<p class="ej">Pedido de ejemplo</p>
+</div>
+</div>
+</section>
+
+<!-- 5 ANTES DEL PROBLEMA -->
+<section id="funciona" class="sin-top">
+<div class="wrap antes-grid">
+<div>
+<h2>Antes del problema, <span class="g">no después</span></h2>
+<div class="toggle" id="toggle" data-m="con" role="group" aria-label="Comparar"><button type="button" data-m="antes" aria-pressed="false">Apagar incendios</button><button type="button" data-m="con" aria-pressed="true">Mantención</button></div>
+<div class="met" id="met" data-m="con" aria-live="polite">
+<div data-wa="1" data-wc=".12"><span>Cuándo te enteras de una falla</span><b data-a="Cuando un cliente te avisa" data-c="Lo vemos en la revisión">Lo vemos en la revisión</b><div class="barra"><i style="transform:scaleX(.12)"></i></div></div>
+<div data-wa="1" data-wc=".4"><span>Cuánto cuesta</span><b data-a="Urgencia, impredecible" data-c="Fijo cada mes">Fijo cada mes</b><div class="barra"><i style="transform:scaleX(.4)"></i></div></div>
+<div data-wa="1" data-wc=".08"><span>Tu tiempo</span><b data-a="Horas buscando a alguien" data-c="Un mensaje si quieres un cambio">Un mensaje si quieres un cambio</b><div class="barra"><i style="transform:scaleX(.08)"></i></div></div>
+</div>
+</div>
+<ol class="pasos-m" data-rv>
+<li><h3>Revisamos tu sitio</h3><p>Vemos cómo está hoy y qué hay que poner al día.</p></li>
+<li><h3>Lo dejamos al día</h3><p>Actualizamos, limpiamos y aseguramos lo pendiente.</p></li>
+<li><h3>Lo cuidamos cada mes</h3><p>Con tu plan, sin que tengas que pedirlo.</p></li>
+<li><h3>Te contamos en simple</h3><p>Un informe corto: qué hicimos y cómo está.</p></li>
+</ol>
+</div>
+</section>
+
+<!-- 6 DOLORES -->
+<section class="sin-top">
+<div class="wrap dolores" data-rv>
+<a class="dolor d-negro" href="#contacto" data-plan="Revisar el estado de mi sitio"><small>Si te pasa esto</small><b>¿Hace cuánto no revisas tu sitio? Puede estar fallando y no saberlo.</b><span class="ir">Revisemos tu sitio<i>→</i></span></a>
+<a class="dolor d-verde" href="#contacto" data-plan="Mantener mi sitio al día"><small>Lo que buscas</small><b>Que alguien lo cuide cada mes, sin tener que acordarte.</b><span class="ir">Cuida tu sitio<i>→</i></span></a>
+</div>
+</section>
+
+<!-- 7 PLANES (sin toggle Mensual/Anual: no hay precio anual) -->
+<section id="planes" class="sin-top">
+<div class="wrap">
+<div class="cab"><h2>Cuidado mensual, <span class="g">sin letra chica</span></h2></div>
+<div class="planes" data-rv>
+<div class="plan"><small>Básico</small><div class="precio">$[—]<span class="per">/mes</span></div><p class="pd">Para que nada se rompa.</p><ul><li>Actualizaciones</li><li>Copia diaria</li><li>Monitoreo</li><li>Informe mensual</li></ul><a class="btn" href="#contacto" data-plan="Plan Básico">Empezar con Básico</a></div>
+<div class="plan dest"><small>Completo <em>Recomendado</em></small><div class="precio">$[—]<span class="per">/mes</span></div><p class="pd">Al día y con cambios incluidos.</p><ul><li>Todo lo de Básico</li><li>[N] cambios pequeños al mes</li><li>Revisión de velocidad</li><li>Revisión de seguridad</li></ul><a class="btn" href="#contacto" data-plan="Plan Completo">Quiero el Completo</a></div>
+<div class="plan med"><small>Tienda online</small><div class="precio">Hablemos</div><p class="pd">Para sitios que venden.</p><ul><li>Pagos y stock revisados</li><li>Más cambios al mes</li><li>Respuesta prioritaria</li><li><span>WebGuardian</span> incluido <span class="marca">[por confirmar]</span></li></ul><a class="btn" href="#contacto" data-plan="Plan Tienda online">Cotizar para mi tienda</a></div>
+</div>
+<p class="letra">Precios en pesos chilenos por confirmar.</p>
+</div>
+</section>
+
+<!-- 8 FAQ -->
+<section id="faq" class="sin-top">
+<div class="wrap faq">
+<h2>Preguntas <span class="g">sobre la mantención</span></h2>
+<div>
+<details open><summary><span>¿Mantienen sitios que no hizo Rednet?</span> <i aria-hidden="true">+</i></summary><div class="resp"><p>Sí. Primero lo revisamos y te decimos en qué estado está y qué hay que poner al día.</p></div></details>
+<details><summary><span>¿Qué cuenta como cambio pequeño?</span> <i aria-hidden="true">+</i></summary><div class="resp"><p>Precios, textos, fotos, horarios o un banner. Si es algo más grande, te lo cotizamos aparte antes de hacerlo.</p></div></details>
+<details><summary><span>¿Y si el sitio se cae igual?</span> <i aria-hidden="true">+</i></summary><div class="resp"><p>Lo revisamos apenas nos avisas o lo detecta el monitoreo, y lo levantamos desde la última copia. [¿Incluido en todos los planes? Por confirmar.]</p></div></details>
+<details><summary><span>¿En qué se diferencia de <span>WebGuardian</span>?</span> <i aria-hidden="true">+</i></summary><div class="resp"><p><span>WebGuardian</span> vigila la seguridad todo el tiempo; la mantención cuida que todo funcione y esté al día. Se complementan.</p></div></details>
+</div>
+</div>
+</section>
+
+<!-- 9 CONTACTO: banda a ancho completo, video suave detrás, formulario blanco -->
+<section class="cierre" id="contacto">
+<div class="cta" id="cta">
+<div class="cta-fondo" aria-hidden="true"><video id="vCta" muted playsinline loop preload="none" poster="../../v4-impeccable/video/cta-poster.jpg"><source src="../../v4-impeccable/video/cta-loop.webm" type="video/webm"><source src="../../v4-impeccable/video/cta-loop.mp4" type="video/mp4"></video></div>
+<div class="wrap cta-grid">
+<div class="cta-txt">
+<h2>Olvídate de tu sitio. <span class="g">Nosotros no.</span></h2>
+<p>Te hacemos una revisión y te contamos cómo está hoy, en simple.</p>
+<a class="btn btn-borde" href="https://wa.me/?text=Hola%20Rednet%2C%20quiero%20la%20mantenci%C3%B3n%20de%20mi%20sitio" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+<p class="cta-nota">[Número de WhatsApp por confirmar: hoy el botón abre WhatsApp sin destinatario.]</p>
+</div>
+<form class="form" id="form" novalidate>
+<div class="campo"><label for="fNombre">Tu nombre</label><input id="fNombre" name="nombre" autocomplete="name" required placeholder="Ej: Camila Rojas…"></div>
+<div class="campo"><label for="fWsp">WhatsApp o correo</label><input id="fWsp" name="contacto" autocomplete="tel" required aria-describedby="fWspAyuda"><small id="fWspAyuda">Ej: +56 9 1234 5678</small></div>
+<div class="campo"><label for="fQue">¿Qué necesitas?</label><select id="fQue" name="que"><option>Aún no sé, quiero orientación</option><option>Revisar el estado de mi sitio</option><option>Mantener mi sitio al día</option><option>Plan Básico</option><option>Plan Completo</option><option>Plan Tienda online</option></select></div>
+<div class="campo"><label for="fMsg">Pega el link de tu sitio o cuéntanos qué pasa <span>(opcional)</span></label><textarea id="fMsg" name="mensaje" rows="3" placeholder="Ej: mi sitio es en WordPress y hace un año que nadie lo actualiza…"></textarea></div>
+<p class="error" id="fError" role="alert" hidden>Falta tu nombre y un WhatsApp o correo para responderte.</p>
+<button class="btn btn-verde" type="submit">Pide tu revisión</button>
+<p class="ok" id="fOk" role="status" hidden>Listo, recibimos tu mensaje. Te escribimos pronto. <span>(Maqueta: el formulario todavía no envía datos.)</span></p>
+</form>
+</div>
+</div>
+</section>
+
+<!-- 10 RELACIONADOS -->
+<section class="otros-sec">
+<div class="wrap">
+<h2 class="otros-t">Cuida tu sitio completo</h2>
+<div class="otros"><a class="otro" href="../webguardian-pulido/"><small>Seguridad</small><b>WebGuardian</b><span>Vigila la seguridad de tu sitio de día y de noche.</span></a><a class="otro" href="../respaldo-pulido/"><small>Infraestructura</small><b>Respaldo Automático</b><span>Una copia cada noche para volver atrás si algo falla.</span></a><a class="otro" href="../soporte-pulido/"><small>Seguridad y soporte</small><b>Soporte Rednet</b><span>Una persona que te ayuda cuando algo no funciona.</span></a></div>
+</div>
+</section>
+</main>
+
+<div class="barra-movil" id="barraMovil"><a class="btn btn-rojo" href="#contacto">Presupuesto</a><a class="btn btn-negro" href="https://wa.me/?text=Hola%20Rednet%2C%20quiero%20la%20mantenci%C3%B3n%20de%20mi%20sitio" target="_blank" rel="noopener">WhatsApp</a></div>
+
+<footer>
+<div class="wrap">
+<div class="pie">
+<div><a href="../../v4-pulido/" class="logo" style="display:inline-flex" aria-label="Rednet, inicio"><img src="../logo-rednet-header.png" alt="Rednet"></a><p style="margin-top:16px;max-width:30ch">Servicios digitales para pymes: web, hosting, seguridad, IA y automatización.</p></div>
+<div><p class="pie-t">Servicios</p><ul><li><a href="../diseno-web-pulido/">Sitios web</a></li><li><a href="../tienda-online/">Ventas online</a></li><li><a href="../hosting-pulido/">Infraestructura</a></li><li><a href="../webguardian-pulido/">Seguridad y soporte</a></li><li><a href="../seo-geo-pulido/">Marketing y visibilidad</a></li><li><a href="../asistente-virtual-pulido/">IA y automatización</a></li><li><a href="../../v4-pulido/#servicios">Video</a></li></ul></div>
+<div><p class="pie-t">Empresa</p><ul><li><a href="../../v4-pulido/#proceso">Cómo trabajamos</a></li><li><a href="../../v4-pulido/#caso">Casos</a></li><li><a href="../../v4-pulido/#proyectos">Proyectos</a></li><li><a href="../../v4-pulido/#planes">Planes</a></li></ul></div>
+<div><p class="pie-t">Contacto</p><ul><li><span>soporte@rednet.cl</span> <span class="marca-ph">¿o @rednetspa.cl?</span></li><li>WhatsApp [número]</li><li>www.rednetspa.cl</li></ul></div>
+</div>
+<div class="legal"><span>© 2026 Rednet SpA</span><span>Página de producto · mantencion-impeccable-motion · contenido entre [ ] por confirmar</span></div>
+</div>
+</footer>
+<nav class="versiones" aria-label="Versiones de esta página"><span>Versión</span><a href="../mantencion/">Original</a><a href="../mantencion-impeccable/">Impeccable</a><a href="../mantencion-impeccable-motion/" aria-current="page">Motion</a><a href="../mantencion-pulido/">Pulido</a></nav>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
