@@ -55,6 +55,7 @@ HTML + CSS + JavaScript sin build. GSAP 3 + ScrollTrigger locales en `<carpeta>/
 
 ## Comandos del proyecto
 
+- `/web-pyme <cliente>`: web premium para pyme corporativa desde el brief `clientes/<cliente>-brief.md` (plantilla genérica, la recomendada).
 - `/nuevo-cliente <cliente>`: arma la web de un cliente desde su carpeta del Drive.
 - `/reel <cliente>`: hace (o rehace) el reel 9:16 y el video del hero.
 - `/revisar <carpeta>`: capturas + crítica + auditoría, sin cambiar nada.
