@@ -104,7 +104,7 @@ Dentro de OpenCode (en la carpeta del repo):
 ## Cómo se trabaja un cliente nuevo
 
 1. Confirma que la carpeta del cliente esté en Drive: `imagebank/clientes/<cliente>/`.
-2. En OpenCode: `/nuevo-cliente <cliente>` (por ejemplo `/nuevo-cliente ferreteria-norte`). Te propone una dirección visual antes de construir: revísala.
+2. Copia `kit-opencode/plantillas/brief-cliente.md` a `clientes/<cliente>-brief.md` y llena lo que sepas. Luego en OpenCode: `/web-pyme <cliente>` (o `/nuevo-cliente <cliente>` si no hay brief) (por ejemplo `/nuevo-cliente ferreteria-norte`). Te propone una dirección visual antes de construir: revísala.
 3. Pide ajustes en lenguaje normal ("los botones más cuadrados", "el hero con otra foto").
 4. `/reel <cliente>` si hay que rehacer el video vertical.
 5. `/revisar <cliente>` y después `/pulir <cliente>`.
