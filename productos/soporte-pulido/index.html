@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Soporte Rednet · soporte-pulido</title>
+<meta name="theme-color" content="#2A2725">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Soporte Rednet: cuando algo no funciona, te responde una persona del equipo y lo resuelve contigo, sin tecnicismos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500;112,700;112,800;100,400;100,600&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<header id="hdr">
+<div class="wrap">
+<a href="../../v4-pulido/" class="logo" aria-label="Rednet, volver al inicio"><img src="../logo-rednet-header.png" alt="Rednet" width="250" height="72" decoding="async"></a>
+<button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navPrincipal"><span></span><span></span><span class="sr">Menú</span></button>
+<nav aria-label="Principal" id="navPrincipal"><a href="../../v4-pulido/">Inicio</a><a href="#problema">¿Qué te pasa?</a><a href="#funciona">Cómo funciona</a><a href="#planes">Planes</a><a href="#faq">Preguntas</a><a href="#contacto" class="solo-movil">Contacto</a></nav>
+<a class="btn btn-rojo hdr-cta" href="#contacto">Habla con una persona</a>
+</div>
+</header>
+<main id="top">
+<span id="contenido"></span>
+<!-- 1 HERO grafito: "del otro lado hay alguien" + hilo rojo que une tu lado con el de Rednet -->
+<section class="p-hero" aria-label="Soporte Rednet">
+<div class="wrap hero-txt" id="heroTxt">
+<nav class="miga" aria-label="Estás en"><a href="../../v4-pulido/">Inicio</a><i aria-hidden="true">/</i><a href="../../v4-pulido/#servicios">Seguridad y soporte</a><i aria-hidden="true">/</i><span aria-current="page">Soporte técnico</span></nav>
+<h1>Del otro lado <em>hay alguien</em></h1>
+<p>Cuando algo no funciona, te responde una persona del equipo Rednet y lo resuelve contigo. Sin menús automáticos, sin tecnicismos.</p>
+<div class="hero-ctas">
+<a class="btn btn-rojo" href="#contacto">Habla con una persona</a>
+<a class="btn btn-claro" href="#problema">¿Qué te pasa? <i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></i></a>
+</div>
+</div>
+<div class="wrap lados" id="lados" aria-hidden="true">
+<div class="lado tu"><small>Tu lado</small><div class="burbuja b-tu">Mi sitio no carga y tengo clientes esperando.</div><span class="persona p-tu">Tú</span></div>
+<svg class="hilo" viewBox="0 0 400 120" preserveAspectRatio="none"><path id="hilo" d="M0 60 C 120 -10, 280 130, 400 60" fill="none" stroke="#E30613" stroke-width="3" stroke-linecap="round"/><circle id="chispa" r="6" fill="#E30613"/></svg>
+<div class="hilo-v"><i id="chispaV"></i></div>
+<div class="lado rn"><small>Lado Rednet</small><div class="burbuja b-rn">Hola, soy [Nombre] de <span translate="no">Rednet</span>. Ya lo estoy revisando, te aviso en minutos.</div><span class="persona p-rn">[Nombre]</span></div>
+</div>
+</section>
+
+<!-- 2 ¿QUÉ TE PASA?: el visitante elige un problema y ve cómo se resuelve -->
+<section id="problema">
+<div class="wrap">
+<div class="cab"><h2>Elige tu problema <span class="g">y mira cómo lo resolvemos</span></h2><p class="nota">Casos y tiempos de ejemplo, por confirmar.</p></div>
+<div class="prob-grid">
+<div class="chips-p" role="tablist" aria-label="¿Qué te pasa?">
+<button role="tab" id="tab0" aria-controls="resol" aria-selected="true" tabindex="0">Mi sitio no carga</button>
+<button role="tab" id="tab1" aria-controls="resol" aria-selected="false" tabindex="-1">No me llegan los correos</button>
+<button role="tab" id="tab2" aria-controls="resol" aria-selected="false" tabindex="-1">Olvidé mi contraseña</button>
+<button role="tab" id="tab3" aria-controls="resol" aria-selected="false" tabindex="-1">Algo se ve raro en el celular</button>
+<button role="tab" id="tab4" aria-controls="resol" aria-selected="false" tabindex="-1">Otra cosa</button>
+</div>
+<div class="resol" id="resol" role="tabpanel" aria-labelledby="tab0" tabindex="0">
+<div class="rs-top"><span class="rs-av" aria-hidden="true">[N]</span><div><b>[Nombre] · <span translate="no">Soporte Rednet</span></b><small id="rsCanal">Te responde por WhatsApp</small></div><span class="rs-t" id="rsT">[3] min<small>primera respuesta</small></span></div>
+<p class="rs-msg" id="rsMsg"></p>
+<ol class="rs-pasos" id="rsPasos"></ol>
+<div class="rs-fin"><span id="rsFin"></span><a class="btn" href="#contacto" id="rsCta" data-plan="Mi sitio no carga">Tengo este problema</a></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 3 RECORRIDO DE UN TICKET: línea vertical que se llena con el scroll -->
+<section class="ticket-sec sin-top" id="funciona">
+<div class="wrap ticket-grid">
+<div class="ticket-fijo">
+<h2>Tu pedido, <span class="g">de principio a fin</span></h2>
+<div class="tk-card" aria-hidden="true"><small>Ticket #[0000]</small><b id="tkEstado">Recibido</b><div class="tk-barra"><i id="tkBarra"></i></div></div>
+</div>
+<ol class="recorrido-v" id="recV">
+<li><span class="rv-n" aria-hidden="true">1</span><div><small>Nos escribes</small><h3>Por donde te acomode</h3><p>WhatsApp, correo o llamada. Cuéntanos con tus palabras, sin tecnicismos.</p></div></li>
+<li><span class="rv-n" aria-hidden="true">2</span><div><small>Te toma una persona</small><h3>Con nombre y apellido</h3><p>Alguien del equipo se hace cargo y te avisa que lo está viendo.</p></div></li>
+<li><span class="rv-n" aria-hidden="true">3</span><div><small>Lo resolvemos</small><h3>Entramos y lo arreglamos</h3><p>Si hace falta, con acceso remoto y tu permiso. Tú no tienes que hacer nada técnico.</p></div></li>
+<li><span class="rv-n" aria-hidden="true">4</span><div><small>Te contamos</small><h3>Qué pasó y qué hicimos</h3><p>Te lo explicamos en simple y te decimos cómo evitar que vuelva a pasar.</p></div></li>
+</ol>
+</div>
+</section>
+
+<!-- 4 BOT VS PERSONA -->
+<section class="bot-sec sin-top">
+<div class="wrap bot-grid">
+<div>
+<h2>La diferencia <span class="g">se nota al primer mensaje</span></h2>
+<div class="toggle" id="toggle" data-m="con" role="group" aria-label="Comparar un bot con Soporte Rednet"><button type="button" data-m="antes" aria-pressed="false">Un bot</button><button type="button" data-m="con" aria-pressed="true">Rednet</button></div>
+<div class="met" id="met">
+<div data-wa="100%" data-wc="8%"><span>Respuestas automáticas antes de hablar con alguien</span><b data-a="[5+]" data-c="0">0</b><div class="barra"><i style="--w:0.08"></i></div></div>
+<div data-wa="20%" data-wc="90%"><span>Problemas resueltos en la primera conversación</span><b data-a="[—]%" data-c="[—]%">[—]%</b><div class="barra"><i style="--w:0.9"></i></div></div>
+<div data-wa="10%" data-wc="100%"><span>Te explican qué pasó</span><b data-a="Rara vez" data-c="Siempre">Siempre</b><div class="barra"><i style="--w:1"></i></div></div>
+</div>
+<p class="aviso">Valores de ejemplo · dato a confirmar</p>
+</div>
+<div class="chat-cmp" id="chatCmp" data-m="con" aria-hidden="true">
+<div class="cc bot"><div class="m r">Hola, ¿en qué te puedo ayudar? Elige una opción: 1) Ventas 2) Facturación 3) Otro</div><div class="m y">Mi sitio no carga</div><div class="m r">No entendí tu respuesta. Elige una opción: 1) Ventas 2) Facturación 3) Otro</div></div>
+<div class="cc per"><div class="m y">Mi sitio no carga</div><div class="m r"><b>[Nombre] · Rednet</b>Hola, ya lo veo: el certificado venció anoche. Lo renuevo ahora y te aviso.</div><div class="m r"><b>[Nombre] · Rednet</b>Listo, tu sitio ya carga. Dejé la renovación automática activada.</div></div>
+</div>
+</div>
+</section>
+
+<!-- 5 DOLORES -->
+<section class="sin-top">
+<div class="wrap dolores" data-rv>
+<a class="dolor d-rojo" href="#contacto" data-plan="Algo dejó de funcionar"><small>Si te pasa esto</small><b>Algo falló y no sabes a quién llamar.</b><span class="ir">Escríbenos ahora<i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></span></a>
+<a class="dolor d-grafito" href="#contacto" data-plan="Plan Mensual"><small>Lo que buscas</small><b>Alguien que conteste y resuelva, no un menú automático.</b><span class="ir">Habla con una persona<i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></span></a>
+</div>
+</section>
+
+<!-- 6 PLANES (sin toggle Mensual/Anual: no hay precio anual) -->
+<section id="planes" class="sin-top">
+<div class="wrap">
+<div class="cab"><h2>Soporte cuando lo necesitas, <span class="g">sin letra chica</span></h2></div>
+<div class="planes" data-rv>
+<div class="plan"><small>Por evento</small><div class="precio">$[—]</div><p class="pd">Para cuando algo falla de vez en cuando.</p><ul><li>Atención por WhatsApp o correo</li><li>Acceso remoto</li><li>Informe de lo que se hizo</li><li>Sin contrato</li></ul><a class="btn" href="#contacto" data-plan="Plan Por evento">Pedir ayuda una vez</a></div>
+<div class="plan dest"><small>Mensual <em>Recomendado</em></small><div class="precio">$[—]<span class="per">/mes</span></div><p class="pd">Para tener a alguien siempre a mano.</p><ul><li>[N] horas de soporte al mes</li><li>Respuesta prioritaria</li><li>Llamada incluida</li><li>Revisión mensual</li></ul><a class="btn" href="#contacto" data-plan="Plan Mensual">Quiero soporte mensual</a></div>
+<div class="plan med"><small>Empresa</small><div class="precio">Hablemos</div><p class="pd">Para equipos con varios sitios o usuarios.</p><ul><li>Soporte a tu equipo</li><li>Varios sitios</li><li translate="no">WebGuardian</li><li>Respaldo Automático</li></ul><a class="btn" href="#contacto" data-plan="Plan Empresa">Cotizar para mi empresa</a></div>
+</div>
+<p class="letra">Precios en pesos chilenos por confirmar.</p>
+</div>
+</section>
+
+<!-- 7 FAQ -->
+<section id="faq" class="sin-top">
+<div class="wrap faq">
+<h2>Preguntas <span class="g">sobre soporte</span></h2>
+<div>
+<details open><summary>¿En qué horario responden? <i aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6v12M6 12h12"/></svg></i></summary><div class="resp"><p>[Horario por confirmar]. Para caídas del sitio hay atención de urgencia [por confirmar].</p></div></details>
+<details><summary>¿Tengo que saber explicar el problema técnico? <i aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6v12M6 12h12"/></svg></i></summary><div class="resp"><p>No. Cuéntalo como te salga; una captura o un audio también sirven.</p></div></details>
+<details><summary>¿Atienden sitios que no hizo Rednet? <i aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6v12M6 12h12"/></svg></i></summary><div class="resp"><p>Sí. Lo revisamos primero y te decimos qué podemos hacer.</p></div></details>
+<details><summary>¿Cómo entran a mi sitio o computador? <i aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6v12M6 12h12"/></svg></i></summary><div class="resp"><p>Solo con tu permiso, con acceso remoto seguro, y te avisamos cuando terminamos.</p></div></details>
+</div>
+</div>
+</section>
+
+<!-- 8 CONTACTO: banda a ancho completo, video suave detrás, formulario blanco -->
+<section class="cierre" id="contacto">
+<div class="cta" id="cta">
+<div class="cta-fondo" aria-hidden="true"><video id="vCta" muted playsinline loop preload="none" poster="../../v4-impeccable/video/cta-poster.jpg"><source src="../../v4-impeccable/video/cta-loop.webm" type="video/webm"><source src="../../v4-impeccable/video/cta-loop.mp4" type="video/mp4"></video></div>
+<div class="wrap cta-grid">
+<div class="cta-txt">
+<h2>No te quedes solo <span class="g">cuando algo falla</span></h2>
+<p>Cuéntanos qué pasa y te responde una persona del equipo Rednet.</p>
+<a class="btn btn-borde" href="https://wa.me/?text=Hola%20Rednet%2C%20necesito%20soporte" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.8A8 8 0 1 1 8 19z"/></svg>Escríbenos por WhatsApp</a>
+<p class="cta-nota">[Número de WhatsApp por confirmar: hoy el botón abre WhatsApp sin destinatario.]</p>
+</div>
+<form class="form" id="form" novalidate>
+<div class="campo"><label for="fNombre">Tu nombre</label><input id="fNombre" name="nombre" autocomplete="name" required placeholder="Ej: Camila Rojas…"></div>
+<div class="campo"><label for="fWsp">WhatsApp o correo</label><input id="fWsp" name="contacto" autocomplete="tel" spellcheck="false" required aria-describedby="fWspAyuda"><small id="fWspAyuda">Ej: +56 9 1234 5678</small></div>
+<div class="campo"><label for="fQue">¿Qué necesitas?</label><select id="fQue" name="que"><option>Aún no sé, quiero orientación</option><option>Mi sitio no carga</option><option>No me llegan los correos</option><option>Olvidé mi contraseña</option><option>Algo se ve raro en el celular</option><option>Algo dejó de funcionar</option><option>Plan Por evento</option><option>Plan Mensual</option><option>Plan Empresa</option></select></div>
+<div class="campo"><label for="fMsg">Cuéntanos qué pasa <span>(opcional)</span></label><textarea id="fMsg" name="mensaje" rows="3" placeholder="Ej: desde ayer mi sitio muestra un error y no puedo entrar…"></textarea></div>
+<p class="error" id="fError" role="alert" hidden>Falta tu nombre y un WhatsApp o correo para responderte.</p>
+<button class="btn btn-rojo" type="submit">Pide ayuda</button>
+<p class="ok" id="fOk" role="status" hidden>Listo, recibimos tu mensaje. Te escribe una persona del equipo. <span>(Maqueta: el formulario todavía no envía datos.)</span></p>
+</form>
+</div>
+</div>
+</section>
+
+<!-- 9 RELACIONADOS -->
+<section class="otros-sec">
+<div class="wrap">
+<h2 class="otros-t">Para que falle menos</h2>
+<div class="otros"><a class="otro" href="../webguardian-pulido/"><small>Seguridad</small><b translate="no">WebGuardian</b><span>Vigila tu sitio de noche y frena ataques antes de que lo notes.</span></a><a class="otro" href="../respaldo-pulido/"><small>Infraestructura</small><b>Respaldo Automático</b><span>Copias diarias para volver atrás si algo se rompe.</span></a><a class="otro" href="../mantencion/"><small>Seguridad y soporte</small><b>Mantención web</b><span>Actualizaciones y revisiones cada mes, sin que lo pienses.</span></a></div>
+</div>
+</section>
+</main>
+
+<div class="barra-movil" id="barraMovil"><a class="btn btn-rojo" href="#contacto">Pide ayuda</a><a class="btn btn-negro" href="https://wa.me/?text=Hola%20Rednet%2C%20necesito%20soporte" target="_blank" rel="noopener">WhatsApp</a></div>
+
+<footer>
+<div class="wrap">
+<div class="pie">
+<div><a href="../../v4-pulido/" class="logo" style="display:inline-flex" aria-label="Rednet, inicio"><img src="../logo-rednet-header.png" alt="Rednet" width="250" height="72" decoding="async"></a><p style="margin-top:16px;max-width:30ch">Servicios digitales para pymes: web, hosting, seguridad, IA y automatización.</p></div>
+<div><p class="pie-t">Servicios</p><ul><li><a href="../diseno-web-pulido/">Sitios web</a></li><li><a href="../tienda-online/">Ventas online</a></li><li><a href="../hosting-pulido/">Infraestructura</a></li><li><a href="../webguardian-pulido/">Seguridad y soporte</a></li><li><a href="../seo-geo/">Marketing y visibilidad</a></li><li><a href="../asistente-virtual-pulido/">IA y automatización</a></li><li><a href="../../v4-pulido/#servicios">Video</a></li></ul></div>
+<div><p class="pie-t">Empresa</p><ul><li><a href="../../v4-pulido/#proceso">Cómo trabajamos</a></li><li><a href="../../v4-pulido/#caso">Casos</a></li><li><a href="../../v4-pulido/#proyectos">Proyectos</a></li><li><a href="../../v4-pulido/#planes">Planes</a></li></ul></div>
+<div><p class="pie-t">Contacto</p><ul><li><span translate="no">soporte@rednet.cl</span> <span class="marca-ph">¿o @rednetspa.cl?</span></li><li>WhatsApp [número]</li><li translate="no">www.rednetspa.cl</li></ul></div>
+</div>
+<div class="legal"><span>© 2026 Rednet SpA · RUT [por confirmar] · [Dirección por confirmar]</span><span>Página de producto · soporte-pulido · contenido entre [ ] por confirmar</span></div>
+</div>
+</footer>
+<nav class="versiones" aria-label="Versiones de esta página"><span>Versión</span><a href="../soporte/">Original</a><a href="../soporte-impeccable/">Impeccable</a><a href="../soporte-impeccable-motion/">Motion</a><a href="../soporte-pulido/" aria-current="page">Pulido</a></nav>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

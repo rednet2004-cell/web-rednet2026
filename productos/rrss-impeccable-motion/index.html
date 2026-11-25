@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Publicador RRSS Rednet · rrss-impeccable-motion</title>
+<meta name="description" content="Publicador RRSS Rednet: diseñamos, escribimos y publicamos tus posts todos los días, en tus redes, sin que tengas que sentarte a programarlos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500;112,700;112,800;100,400;100,600&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<header id="hdr">
+<div class="wrap">
+<a href="../../v4-pulido/" class="logo" aria-label="Rednet, volver al inicio"><img src="../logo-rednet-header.png" alt="Rednet"></a>
+<button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navPrincipal"><span></span><span></span><span class="sr">Menú</span></button>
+<nav aria-label="Principal" id="navPrincipal"><a href="../../v4-pulido/">Inicio</a><a href="#funciona">Cómo funciona</a><a href="#incluye">Qué incluye</a><a href="#planes">Planes</a><a href="#faq">Preguntas</a><a href="#contacto" class="solo-movil">Contacto</a></nav>
+<a class="btn btn-rojo hdr-cta" href="#contacto" data-plan="Reactivar mis redes">Reactiva tus redes</a>
+</div>
+</header>
+<main id="top">
+<span id="contenido"></span>
+<!-- 1 HERO rosado: un perfil que se llena solo, post a post (avanza cada 5 s, con pausa) -->
+<section class="p-hero" aria-label="Publicador RRSS Rednet">
+<div class="wrap hero-grid">
+<div class="hero-txt" id="heroTxt">
+<nav class="miga" aria-label="Estás en"><a href="../../v4-pulido/">Inicio</a><i aria-hidden="true">/</i><a href="../../v4-pulido/#servicios">Marketing y visibilidad</a><i aria-hidden="true">/</i><span aria-current="page">Publicaciones RRSS</span></nav>
+<h1>Tus redes, <em>todos los días</em></h1>
+<p>Diseñamos, escribimos y publicamos tus posts a tiempo, en tus redes. Sin que tengas que sentarte a programarlos.</p>
+<div class="hero-ctas">
+<a class="btn btn-rojo" href="#contacto" data-plan="Reactivar mis redes">Reactiva tus redes</a>
+<a class="btn btn-tinta" href="#funciona">Mira tu semana <i>↓</i></a>
+</div>
+<p class="hero-redes">Instagram, Facebook, LinkedIn, TikTok y tu ficha de Google, según el plan.</p>
+</div>
+<div class="perfil-esc">
+<div class="perfil" id="perfil" aria-hidden="true">
+<div class="pf-top"><span class="pf-av"></span><div><b>@[tunegocio]</b><small id="pfDia">Lunes · 09:00</small></div><span class="pf-seg">Siguiendo</span></div>
+<div class="pf-grid" id="pfGrid"></div>
+<div class="toast" id="toast"><span>✓</span><div><b>Publicado</b><small id="toastTxt">Lunes · 09:00 · Instagram</small></div></div>
+</div>
+<button type="button" class="pausa" id="pausa" aria-pressed="false"><span class="i-pausa">❚❚</span><span class="i-play">▶</span><span class="pausa-t">Pausar</span></button>
+</div>
+</div>
+</section>
+
+<!-- 2 TU SEMANA, LISTA SOLA: las publicaciones caen en su día con el scroll -->
+<section class="semana-sec" id="funciona">
+<div class="semana-track" id="semTrack">
+<div class="semana-fijo">
+<div class="wrap semana-grid">
+<div>
+<h2>Tu semana, <span class="g">lista sola</span></h2>
+<ol class="flujo-p" id="flujoP">
+<li class="on"><b>Creamos</b><span>Diseño, texto y hashtags con tu marca.</span></li>
+<li><b>Apruebas, si quieres</b><span>Te llega la semana para revisar en un clic.</span></li>
+<li><b>Se programa</b><span>Cada post en su día y a la mejor hora.</span></li>
+<li><b>Se publica</b><span>Solo. Tú sigues con tu negocio.</span></li>
+</ol>
+</div>
+<div class="mesa" id="mesa" aria-hidden="true">
+<span class="mesa-t">Pila de la semana</span>
+<div class="dias" id="dias"><div><small>Lun</small><i></i></div><div><small>Mar</small><i></i></div><div><small>Mié</small><i></i></div><div><small>Jue</small><i></i></div><div><small>Vie</small><i></i></div><div><small>Sáb</small><i></i></div><div><small>Dom</small><i></i></div></div>
+<div class="pila" id="pila"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 3 ABANDONADA vs ACTIVA -->
+<section class="antes-sec">
+<div class="wrap antes-grid">
+<div>
+<h2>De abandonadas <span class="g">a activas</span></h2>
+<div class="toggle" id="tgPerfil" data-m="con" role="group" aria-label="Comparar tu perfil"><button type="button" data-m="antes" aria-pressed="false">Sin Rednet</button><button type="button" data-m="con" aria-pressed="true">Con Rednet</button></div>
+<div class="met" id="met" aria-live="polite">
+<div data-wa="7" data-wc="100"><span>Publicaciones al mes</span><b data-a="[2]" data-c="[30]">[30]</b><div class="barra"><i style="--v:1"></i></div></div>
+<div data-wa="100" data-wc="4"><span>Último post</span><b data-a="Hace [94] días" data-c="Hoy">Hoy</b><div class="barra"><i style="--v:.04"></i></div></div>
+<div data-wa="100" data-wc="6"><span>Tiempo que te ocupa a la semana</span><b data-a="[8] h" data-c="[15] min">[15] min</b><div class="barra"><i style="--v:.06"></i></div></div>
+</div>
+<p class="aviso">Valores de ejemplo · dato a confirmar</p>
+</div>
+<div class="perfil2" id="perfil2" data-m="con" aria-hidden="true">
+<div class="pf-top"><span class="pf-av"></span><div><b>@[tunegocio]</b><small class="p2-est"><span class="a">Último post: hace [94] días</span><span class="c">Publicado hoy · 09:00</span></small></div></div>
+<div class="p2-grid"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<span class="p2-sello">Abandonada</span>
+</div>
+</div>
+</section>
+
+<!-- 4 QUÉ PUBLICAMOS SEGÚN TU RUBRO -->
+<section class="rubro-sec sin-top">
+<div class="wrap">
+<div class="cab"><h2>Qué publicamos <span class="g">por ti</span></h2>
+<div class="chips" id="cRubro" role="group" aria-label="Elige tu rubro"><button type="button" aria-pressed="true">Cafetería</button><button type="button" aria-pressed="false">Ferretería</button><button type="button" aria-pressed="false">Estética</button><button type="button" aria-pressed="false">Inmobiliaria</button></div></div>
+<div class="posts" id="posts" aria-live="polite"></div>
+<p class="aviso">Ideas de ejemplo · el calendario real se arma contigo</p>
+</div>
+</section>
+
+<!-- 5 QUÉ INCLUYE -->
+<section class="sin-top" id="incluye">
+<div class="wrap">
+<div class="cab"><h2>Todo el trabajo, <span class="g">menos tu tiempo</span></h2></div>
+<ul class="incl" data-rv>
+<li class="in in-rojo"><b>Diseño de cada post</b><span>Con tus colores, tu logo y tus fotos.</span></li>
+<li class="in"><b>Textos y hashtags</b><span>En tu tono y pensados para tu ciudad.</span></li>
+<li class="in in-rosa"><b>Calendario mensual</b><span>Fechas importantes de tu rubro incluidas.</span></li>
+<li class="in in-negro"><b>Publicación automática</b><span>Cada día, a la hora en que más te ven.</span></li>
+<li class="in"><b>Apruebas si quieres</b><span>O nos das carta blanca. Tú decides.</span></li>
+<li class="in in-rosa"><b>Informe mensual</b><span>Qué funcionó y qué haremos el próximo mes.</span></li>
+</ul>
+</div>
+</section>
+
+<!-- 6 DOLORES -->
+<section class="sin-top">
+<div class="wrap dolores" data-rv>
+<a class="dolor d-rojo" href="#contacto" data-plan="Reactivar mis redes"><small>Si te pasa esto</small><b>¿Tus redes quedaron abandonadas? Reactívalas.</b><span class="ir">Reactiva tus redes<i>→</i></span></a>
+<a class="dolor d-negro" href="#contacto" data-plan="Plan Todos los días"><small>Lo que buscas</small><b>Publica todos los días sin hacerlo tú.</b><span class="ir">Quiero publicar a diario<i>→</i></span></a>
+</div>
+</section>
+
+<!-- 7 PLANES -->
+<section id="planes" class="sin-top">
+<div class="wrap">
+<div class="cab"><h2>Contenido todo el mes, <span class="g">sin letra chica</span></h2></div>
+<div class="planes" data-rv>
+<div class="plan"><small>Presencia</small><div class="precio">$[—]<span class="per">/mes</span></div><p class="pd">Para no desaparecer.</p><ul><li>[12] posts al mes</li><li>1 red social</li><li>Diseño y textos</li><li>Publicación automática</li></ul><a class="btn" href="#contacto" data-plan="Plan Presencia">Empezar con Presencia</a></div>
+<div class="plan dest"><small>Todos los días <em>Recomendado</em></small><div class="precio">$[—]<span class="per">/mes</span></div><p class="pd">Un post cada día, en tus redes.</p><ul><li>[30] posts al mes</li><li>Hasta 3 redes</li><li>Historias incluidas</li><li>Informe mensual</li></ul><a class="btn" href="#contacto" data-plan="Plan Todos los días">Quiero publicar a diario</a></div>
+<div class="plan med"><small>Marca completa</small><div class="precio">Hablemos</div><p class="pd">Para marcas con varias redes y campañas.</p><ul><li>Reels y videos</li><li>Todas tus redes</li><li>Campañas por temporada</li><li>Reunión mensual</li></ul><a class="btn" href="#contacto" data-plan="Plan Marca completa">Cotizar Marca completa</a></div>
+</div>
+<p class="letra">Pago mensual. Precios en pesos chilenos por confirmar.</p>
+</div>
+</section>
+
+<!-- 8 FAQ -->
+<section id="faq" class="sin-top">
+<div class="wrap faq">
+<h2>Preguntas <span class="g">sobre tus redes</span></h2>
+<div>
+<details open><summary>¿Tengo que aprobar cada publicación? <i aria-hidden="true">+</i></summary><div class="resp"><p>Solo si quieres. Puedes revisar la semana completa en un clic o dejarnos publicar sin pasar por ti.</p></div></details>
+<details><summary>¿De dónde salen las fotos? <i aria-hidden="true">+</i></summary><div class="resp"><p>De las que nos mandes, de un banco de imágenes con licencia o de piezas que diseñamos para tu marca.</p></div></details>
+<details><summary>¿En qué redes publican? <i aria-hidden="true">+</i></summary><div class="resp"><p>Instagram, Facebook, LinkedIn, TikTok y tu ficha de Google, según el plan.</p></div></details>
+<details><summary>¿Responden los comentarios? <i aria-hidden="true">+</i></summary><div class="resp"><p>Te avisamos de los comentarios importantes. Si quieres que también los respondamos, lo sumamos como servicio aparte [por confirmar].</p></div></details>
+</div>
+</div>
+</section>
+
+<!-- 9 CONTACTO: banda a ancho completo, video suave detrás, formulario blanco -->
+<section class="cierre" id="contacto">
+<div class="cta" id="cta">
+<div class="cta-fondo" aria-hidden="true"><video id="vCta" muted playsinline loop preload="none" poster="../../v4-impeccable/video/cta-poster.jpg"><source src="../../v4-impeccable/video/cta-loop.webm" type="video/webm"><source src="../../v4-impeccable/video/cta-loop.mp4" type="video/mp4"></video></div>
+<div class="wrap cta-grid">
+<div class="cta-txt">
+<h2>Que tu marca <span class="g">no desaparezca</span></h2>
+<p>Cuéntanos de tu negocio y te mostramos cómo se vería tu primer mes de publicaciones.</p>
+<a class="btn btn-borde" href="https://wa.me/?text=Hola%20Rednet%2C%20quiero%20publicar%20en%20mis%20redes%20todos%20los%20d%C3%ADas" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+<p class="cta-nota">[Número de WhatsApp por confirmar: hoy el botón abre WhatsApp sin destinatario.]</p>
+</div>
+<form class="form" id="form" novalidate>
+<div class="campo"><label for="fNombre">Tu nombre</label><input id="fNombre" name="nombre" autocomplete="name" required placeholder="Ej: Camila Rojas…"></div>
+<div class="campo"><label for="fWsp">WhatsApp o correo</label><input id="fWsp" name="contacto" autocomplete="tel" required aria-describedby="fWspAyuda"><small id="fWspAyuda">Ej: +56 9 1234 5678</small></div>
+<div class="campo"><label for="fQue">¿Qué necesitas?</label><select id="fQue" name="que"><option>Aún no sé, quiero orientación</option><option>Reactivar mis redes</option><option>Plan Presencia</option><option>Plan Todos los días</option><option>Plan Marca completa</option></select></div>
+<div class="campo"><label for="fMsg">Cuéntanos de tu negocio o pega el link de tu Instagram <span>(opcional)</span></label><textarea id="fMsg" name="mensaje" rows="3" placeholder="Ej: tengo una cafetería y no publico desde marzo…"></textarea></div>
+<p class="error" id="fError" role="alert" hidden>Falta tu nombre y un WhatsApp o correo para responderte.</p>
+<button class="btn btn-rojo" type="submit">Quiero ver mi primer mes</button>
+<p class="ok" id="fOk" role="status" hidden>Listo, recibimos tu mensaje. Te escribimos pronto. <span>(Maqueta: el formulario todavía no envía datos.)</span></p>
+</form>
+</div>
+</div>
+</section>
+
+<!-- 10 RELACIONADOS -->
+<section class="otros-sec">
+<div class="wrap">
+<h2 class="otros-t">Que te encuentren, también</h2>
+<div class="otros"><a class="otro" href="../seo-geo/"><small>Marketing y visibilidad</small><b>SEO y GEO Rednet</b><span>Que tu negocio aparezca en Google y en las respuestas de la IA.</span></a><a class="otro" href="../asistentes/"><small>IA y automatización</small><b>Asistentes Virtuales Rednet</b><span>Responde los mensajes que llegan por tus redes, a cualquier hora.</span></a><a class="otro" href="../diseno-web-pulido/"><small>Sitios web</small><b>Diseño web a medida</b><span>Un sitio al que tus posts puedan llevar a tus clientes.</span></a></div>
+</div>
+</section>
+</main>
+
+<div class="barra-movil" id="barraMovil"><a class="btn btn-rojo" href="#contacto">Presupuesto</a><a class="btn btn-negro" href="https://wa.me/?text=Hola%20Rednet%2C%20quiero%20publicar%20en%20mis%20redes%20todos%20los%20d%C3%ADas" target="_blank" rel="noopener">WhatsApp</a></div>
+
+<footer>
+<div class="wrap">
+<div class="pie">
+<div><a href="../../v4-pulido/" class="logo" style="display:inline-flex" aria-label="Rednet, inicio"><img src="../logo-rednet-header.png" alt="Rednet"></a><p style="margin-top:16px;max-width:30ch">Servicios digitales para pymes: web, hosting, seguridad, IA y automatización.</p></div>
+<div><p class="pie-t">Servicios</p><ul><li><a href="../diseno-web-pulido/">Sitios web</a></li><li><a href="../tienda-online/">Ventas online</a></li><li><a href="../hosting-pulido/">Infraestructura</a></li><li><a href="../webguardian/">Seguridad y soporte</a></li><li><a href="../rrss-impeccable-motion/" aria-current="page">Marketing y visibilidad</a></li><li><a href="../asistente-virtual-pulido/">IA y automatización</a></li><li><a href="../../v4-pulido/#servicios">Video</a></li></ul></div>
+<div><p class="pie-t">Empresa</p><ul><li><a href="../../v4-pulido/#proceso">Cómo trabajamos</a></li><li><a href="../../v4-pulido/#caso">Casos</a></li><li><a href="../../v4-pulido/#proyectos">Proyectos</a></li><li><a href="../../v4-pulido/#planes">Planes</a></li></ul></div>
+<div><p class="pie-t">Contacto</p><ul><li>soporte@rednet.cl <span class="marca-ph">¿o @rednetspa.cl?</span></li><li>WhatsApp [número]</li><li>www.rednetspa.cl</li></ul></div>
+</div>
+<div class="legal"><span>© 2026 Rednet SpA · RUT [por confirmar] · [Dirección por confirmar]</span><span>Página de producto · rrss-impeccable-motion · contenido entre [ ] por confirmar</span></div>
+</div>
+</footer>
+<nav class="versiones" aria-label="Versiones de esta página"><span>Versión</span><a href="../rrss/">Original</a><a href="../rrss-impeccable/">Impeccable</a><a href="../rrss-impeccable-motion/" aria-current="page">Motion</a><a href="../rrss-pulido/">Pulido</a></nav>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
