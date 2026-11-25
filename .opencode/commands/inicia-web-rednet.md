@@ -3,4 +3,4 @@ description: Web nueva de cualquier tipo. Pregunta dominio, cliente y tipo de we
 agent: disenador-web
 ---
 
-Carga la skill `iniciar-web-rednet` y síguela. Datos que ya te doy (puede venir vacío): $ARGUMENTS
+Carga la skill `inicia-web-rednet` y síguela. Datos que ya te doy (puede venir vacío): $ARGUMENTS

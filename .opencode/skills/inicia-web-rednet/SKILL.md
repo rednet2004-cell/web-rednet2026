@@ -1,5 +1,5 @@
 ---
-name: iniciar-web-rednet
+name: inicia-web-rednet
 description: Inicia una web nueva de Rednet. Pregunta dominio, cliente y tipo de web (corporativa, emprendimiento, personal, portafolio, pyme mediana, tienda) y arma la demo con el flujo Rednet.
 ---
 

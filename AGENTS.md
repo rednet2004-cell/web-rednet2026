@@ -48,17 +48,18 @@ HTML + CSS + JavaScript sin build. GSAP 3 + ScrollTrigger locales en `<carpeta>/
 | Arquetipos, efectos, imágenes, checklist, IA (chat/calculadora) | `crear-web-como-servicio` (sus `reference/`; ojo: publicar en Hostinger solo si lo piden, las demos van a GitHub Pages) |
 | Dirección visual de una web nueva (elige UNA) | `frontend-design` o `high-end-visual-design` (`gpt-taste` y `minimalist-ui` como alternativas) |
 | Revisar, criticar, auditar, pulir | `impeccable` (scripts en `.opencode/skills/impeccable/scripts/`), `web-design-guidelines` |
-| Mejorar una web que ya existe | `redesign-existing-projects` + `rednet-design-1` (ruta de 4 pasos) |
+| Mejorar una web que ya existe | `redesign-existing-projects` + `aplica-rednet-design-1` (ruta de 4 pasos) |
 | Animación | `gsap-core`, `gsap-scrolltrigger`, `gsap-timeline`, `gsap-plugins`, `gsap-utils`, `gsap-performance`, `animate` |
 | Revisar animaciones | `review-animations`, `emil-design-eng` |
 | Reels y videos | `hyperframes` (primero) y `hyperframes-cli` (instaladas con `npx skills add heygen-com/hyperframes -a opencode -y`, quedan en `.agents/skills/`) |
 
 ## Comandos del proyecto
 
-- `/iniciar-web [dominio]`: punto de partida para cualquier web nueva; pregunta cliente y tipo de web (corporativa, pyme mediana, emprendimiento, personal, portafolio, tienda).
+- `/inicia-web-rednet [dominio]`: punto de partida para cualquier web nueva; pregunta cliente y tipo de web (corporativa, pyme mediana, emprendimiento, personal, portafolio, tienda).
 - `/web-pyme <cliente>`: web premium para pyme corporativa desde el brief `clientes/<cliente>-brief.md` (plantilla genérica, la recomendada).
 - `/nuevo-cliente <cliente>`: arma la web de un cliente desde su carpeta del Drive.
 - `/reel <cliente>`: hace (o rehace) el reel 9:16 y el video del hero.
+- `/aplica-rednet-design-1 <carpeta>`: pule una web existente con la ruta de 4 pasos (diagnóstico, impeccable, movimiento, pulido).
 - `/revisar <carpeta>`: capturas + crítica + auditoría, sin cambiar nada.
 - `/pulir <carpeta>`: aplica los arreglos de la revisión en una carpeta nueva.
 - `/efecto <nombre>`: suma un efecto al catálogo `efectos/`.

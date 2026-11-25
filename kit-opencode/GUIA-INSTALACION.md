@@ -12,7 +12,7 @@ Todo vive dentro del repositorio de demos `rednet2004-cell/web-rednet2026`. Al a
 | `opencode.jsonc` | Configuración: agente por defecto, navegador para capturas (Playwright), GitHub opcional, permisos. |
 | `.opencode/agents/` | 3 agentes: `disenador-web` (principal), `revisor-diseno` (solo revisa), `video-reel` (videos). |
 | `.opencode/commands/` | 6 comandos: `/nuevo-cliente`, `/reel`, `/revisar`, `/pulir`, `/efecto`, `/publicar`. |
-| `.opencode/skills/` | 19 skills: el flujo Rednet (`rednet-web-cliente`, `rednet-design-1`, `crear-web-como-servicio`), dirección visual (`impeccable`, `frontend-design`, `high-end-visual-design`, `gpt-taste`, `minimalist-ui`, `redesign-existing-projects`), animación (`gsap-*`, `animate`, `review-animations`, `emil-design-eng`) y `web-design-guidelines`. |
+| `.opencode/skills/` | 19 skills: el flujo Rednet (`rednet-web-cliente`, `aplica-rednet-design-1`, `crear-web-como-servicio`), dirección visual (`impeccable`, `frontend-design`, `high-end-visual-design`, `gpt-taste`, `minimalist-ui`, `redesign-existing-projects`), animación (`gsap-*`, `animate`, `review-animations`, `emil-design-eng`) y `web-design-guidelines`. |
 | `clientes/` | Fichas de cada cliente (ya están Zayg y Wasaff). |
 | `kit-opencode/BITACORA.md` | Reglas que va pidiendo Benito. OpenCode la lee siempre. |
 | `kit-opencode/plantillas/` | Plantilla de ficha de cliente. |

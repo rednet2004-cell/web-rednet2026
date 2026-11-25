@@ -1,5 +1,5 @@
 ---
-name: "rednet-design-1"
+name: "aplica-rednet-design-1"
 description: "Ruta de diseño Rednet v1: diagnosticar, dirigir con Impeccable, afinar movimiento y pulir una página o proyecto web, publicando cada paso como variante aparte."
 ---
 
