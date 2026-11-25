@@ -29,7 +29,7 @@ Cómo envía
 
 Protecciones incluidas
 ----------------------
-- config.php y lib/ no se pueden abrir desde el navegador (.htaccess, Apache).
+- config.php y lib/PHPMailer/ no se pueden abrir desde el navegador (.htaccess, Apache).
   Si el hosting usa Nginx, hay que bloquearlos en su configuración.
 - Campo trampa oculto contra robots y límite de 5 envíos cada 10 minutos por IP.
 

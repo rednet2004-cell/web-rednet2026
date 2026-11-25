@@ -4,7 +4,7 @@
 </FilesMatch>
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteRule ^lib/ - [F,L]
+  RewriteRule ^lib/PHPMailer/ - [F,L]
 </IfModule>
 
 # Caché para imágenes, fuentes y videos
