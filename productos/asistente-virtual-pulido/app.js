@@ -41,7 +41,7 @@ const entra = (d, delay = 0) => { if (hasG && !reduce) gsap.from(d, {y:8, scale:
 /* Conversaciones de ejemplo por canal */
 const guiones = {
 wsp:{canal:'Asistente IA · WhatsApp', msgs:[['cli','Hola, ¿abren el sábado?'],['bot','¡Hola! Sí, el sábado abrimos de 10:00 a 14:00. ¿Quieres que te reserve una hora?'],['cli','Sí, a las 11, porfa'],['bot','Listo, quedaste agendado el sábado a las 11:00. Te mandé la confirmación por aquí mismo.'],['ok','Reserva creada · 6 s']]},
-tg:{canal:'Asistente IA · Telegram', msgs:[['cli','¿Tienen despacho a regiones?'],['bot','Sí, despachamos a todo Chile. A regiones demora [2 a 4] días hábiles. ¿A qué ciudad sería?'],['cli','Temuco'],['bot','Perfecto. Te dejo el link de compra con el despacho a Temuco ya calculado.'],['ok','Link de pago enviado · 5 s']]},
+tg:{canal:'Asistente IA · Telegram', msgs:[['cli','¿Qué necesito para legalizar una firma?'],['bot','Hola. Necesitas tu cédula vigente y el documento sin firmar; la firma se hace aquí, frente al notario. Atendemos de lunes a viernes de [9:00 a 14:00].'],['cli','¿Hay que pedir hora?'],['bot','No, es por orden de llegada. Si quieres, te dejo la dirección y el valor del trámite.'],['ok','Consulta resuelta · 5 s']]},
 tel:{canal:'Asistente IA · Llamada', msgs:[['cli','Aló, quería saber si atienden hoy en la tarde.'],['bot','Hola, sí, hoy atendemos hasta las 19:00. ¿Te agendo una hora?'],['cli','Ya, a las cinco.'],['bot','Listo, quedaste a las 17:00. Te llega un SMS con la confirmación.'],['ok','Hora agendada por voz']]}
 };
 const tel = document.getElementById('telefono'), telMsgs = document.getElementById('telMsgs'), telCanal = document.getElementById('telCanal');
@@ -81,7 +81,7 @@ canal('wsp');
 /* Historia: cada paso muestra una conversación distinta en el teléfono fijo */
 const pasosChat = [
 [['cli','23:40 · ¿Todavía atienden?'],['bot','¡Hola! Ahora estamos cerrados, pero te ayudo yo. ¿Qué necesitas?']],
-[['cli','¿Cuánto sale el corte de pelo?'],['bot','El corte sale $[—] y dura unos 40 minutos. Si quieres, te dejo una hora tomada para mañana.']],
+[['cli','¿Cuánto sale una limpieza dental?'],['bot','La limpieza sale $[—] y dura unos 40 minutos. Si quieres, te dejo una hora tomada para mañana.']],
 [['cli','Mañana a las 10'],['bot','Listo, quedaste mañana a las 10:00.'],['ok','Reserva creada en tu calendario']],
 [['cli','Quiero hacer un reclamo por un cobro'],['bot','Entiendo. Te paso con una persona del equipo para revisarlo contigo.'],['ok','Derivado a tu equipo con el contexto','ir']]
 ];
