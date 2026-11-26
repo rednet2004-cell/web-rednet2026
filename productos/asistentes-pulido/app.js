@@ -32,11 +32,11 @@ addEventListener('keydown', e => { if (e.key === 'Escape' && navP.classList.cont
    Un mensaje nuevo cada 5,2 s. Botón de pausa; el bucle se detiene fuera de pantalla. */
 const vit = document.getElementById('vitrina'), reloj = document.getElementById('reloj'), astro = vit.querySelector('.astro'), flujo = document.getElementById('flujo'), pausa = document.getElementById('pausa');
 const charlas = [
-['WhatsApp', '¿Atienden mañana sábado?', '¡Hola! Sí, de 10:00 a 14:00. ¿Te reservo una hora?'],
-['Telegram', '¿Cuánto cuesta el despacho?', 'Dentro de [tu comuna] es $[—] y llega en 24 h.'],
-['Llamada', '¿Puedo cambiar mi hora del lunes?', 'Listo, te la cambié al martes 11:00.'],
-['WhatsApp', '¿Tienen estacionamiento?', 'Sí, frente al local. Te mando la ubicación 📍'],
-['WhatsApp', '¿Aceptan transferencia?', '¡Sí! Te paso los datos por aquí mismo.']
+['Chat de la tienda', '¿Tienen la talla M en negro?', '¡Sí! Quedan [—]. ¿Te la dejo en el carrito?'],
+['WhatsApp', '¿Cuánto demora el despacho a Concepción?', 'Llega en [—] días hábiles y cuesta $[—]. ¿Lo agrego a tu pedido?'],
+['Chat de la tienda', 'Busco una mochila para notebook, de menos de $40.000', 'Tengo dos: [Mochila A] a $[—] y [Mochila B] a $[—]. ¿Te muestro las dos?'],
+['Chat de la tienda', '¿Cabe un sofá de 2 m en mi living?', 'El [Sofá Lino] mide [—] cm de ancho. ¿Te paso los colores disponibles?'],
+['WhatsApp', '¿Puedo pagar con transferencia?', '¡Sí! Al pagar eliges transferencia y te llegan los datos.']
 ];
 function cielo(min){
 const u = (min - 1020) / 540;
@@ -67,10 +67,10 @@ new IntersectionObserver(([en]) => { visible = en.isIntersecting; correr(); }).o
 
 /* 2 Pruébalo: rubro × tono × canal */
 const rubros = [
-{n:'[Tu clínica]', q:'¿Tienen hora para una limpieza esta semana?', r:['¡Hola! Sí, tenemos el jueves a las 10:00 o a las 16:30. ¿Cuál te acomoda? Te la dejo reservada al tiro.', 'Buenas noches. Sí, tenemos horas disponibles el jueves a las 10:00 y a las 16:30. ¿Desea que le reserve alguna?', '¡Hola! Tus dientes van a estar felices 😁 Hay hora el jueves a las 10:00 o a las 16:30. ¿Cuál te guardo?']},
-{n:'[Tu restaurante]', q:'¿Puedo reservar para 6 personas el sábado en la noche?', r:['¡Hola! Sí, para 6 el sábado tenemos a las 20:30 o a las 21:30. ¿A nombre de quién la dejo?', 'Buenas noches. Sí, tenemos mesa para 6 personas el sábado a las 20:30 o a las 21:30. ¿A nombre de quién la reservo?', '¡Hola! Mesa para 6, el mejor plan 🍷 Hay a las 20:30 o a las 21:30. ¿A nombre de quién?']},
-{n:'[Tu ferretería]', q:'¿Tienen taladro percutor y hacen despacho?', r:['¡Hola! Sí, tenemos varios desde $[—] y despachamos en 24 horas dentro de [tu comuna]. ¿Te mando las opciones?', 'Buenas noches. Sí, contamos con taladros percutores desde $[—] y despacho en 24 horas dentro de [tu comuna]. ¿Le envío las opciones?', '¡Hola! Sí, y con harta potencia 🔩 Desde $[—], con despacho en 24 horas en [tu comuna]. ¿Te mando las opciones?']},
-{n:'[Tu inmobiliaria]', q:'¿El depto de 2 dormitorios sigue disponible? ¿Puedo verlo?', r:['¡Hola! Sí, sigue disponible. ¿Te acomoda verlo el martes o el miércoles? Dime la hora y lo agendo.', 'Buenas noches. Sí, la propiedad sigue disponible. Podemos coordinar una visita el martes o el miércoles. ¿Qué horario le acomoda?', '¡Hola! Sigue disponible y con harta luz ☀️ ¿Lo vamos a ver el martes o el miércoles?']}
+{n:'[Tu tienda de muebles]', q:'Busco un sofá de 3 cuerpos, de menos de $400.000. ¿Cuánto demora a Concepción?', r:['¡Hola! Tengo dos: [Sofá Lino] a $[—] y [Sofá Nube] a $[—], los dos en stock. A Concepción llegan en [—] días hábiles. ¿Te dejo uno en el carrito?', 'Buenas noches. Le sugiero dos modelos: [Sofá Lino] a $[—] y [Sofá Nube] a $[—], ambos disponibles. El despacho a Concepción toma [—] días hábiles. ¿Desea que agregue alguno al carrito?', '¡Hola! Tu living va a quedar feliz 🛋️ Tengo [Sofá Lino] a $[—] y [Sofá Nube] a $[—], con stock. A Concepción, [—] días hábiles. ¿Cuál te guardo?']},
+{n:'[Tu tienda de belleza]', q:'¿Qué sérum me recomiendan para piel grasa? Tengo $20.000.', r:['¡Hola! Para piel grasa tengo [Sérum A] a $[—] y [Sérum B] a $[—], los dos dentro de tu presupuesto. ¿Te dejo uno en el carrito?', 'Buenas noches. Para piel grasa le sugiero [Sérum A] a $[—] o [Sérum B] a $[—], ambos dentro de su presupuesto. ¿Desea agregar alguno al carrito?', '¡Hola! Piel grasa, misión aceptada ✨ [Sérum A] a $[—] o [Sérum B] a $[—]. ¿Cuál te guardo?']},
+{n:'[Tu ferretería online]', q:'¿Tienen taladro percutor y hacen despacho?', r:['¡Hola! Sí, tengo [Taladro A] a $[—] y [Taladro B] a $[—], con stock. Despachamos a [tu comuna] en [—] días. ¿Te dejo uno en el carrito?', 'Buenas noches. Contamos con [Taladro A] a $[—] y [Taladro B] a $[—], ambos disponibles, con despacho a [tu comuna] en [—] días. ¿Desea agregar alguno al carrito?', '¡Hola! Sí, y con harta potencia 🔩 [Taladro A] a $[—] o [Taladro B] a $[—]. Llegan en [—] días. ¿Cuál te guardo?']},
+{n:'[Tu tienda de ropa]', q:'¿Tienen el polerón gris en talla M? ¿Y si no me queda?', r:['¡Hola! Sí, quedan [—] en talla M. Si no te queda, tienes [—] días para cambiarlo. ¿Te lo dejo en el carrito?', 'Buenas noches. Sí, contamos con [—] unidades en talla M. El plazo de cambio es de [—] días. ¿Desea que lo agregue al carrito?', '¡Hola! Talla M, presente 🙌 Quedan [—] y tienes [—] días para cambiarlo. ¿Te lo guardo?']}
 ];
 const est = {r:0, t:0, c:'wa'};
 const tel = document.getElementById('tel'), telChat = document.getElementById('telChat'), trans = document.getElementById('trans'), pie = document.getElementById('telPie'), onda = document.getElementById('onda');
@@ -83,7 +83,7 @@ probado = true;
 const id = ++pid, R = rubros[est.r], resp = R.r[est.t], lenta = reduce ? 0 : 1;
 tel.dataset.c = est.c;
 document.getElementById('telNom').textContent = R.n;
-document.getElementById('telEst').textContent = est.c === 'wa' ? 'en línea · 23:41' : est.c === 'tg' ? 'bot · 23:41' : 'llamada entrante · 23:41';
+document.getElementById('telEst').textContent = est.c === 'wa' ? 'chat de la tienda · 23:41' : 'WhatsApp · 23:41';
 pie.classList.remove('on'); telChat.textContent = ''; trans.textContent = '';
 if (est.c === 'll'){
 const p1 = document.createElement('p'), p2 = document.createElement('p'), b1 = document.createElement('b'), b2 = document.createElement('b');
