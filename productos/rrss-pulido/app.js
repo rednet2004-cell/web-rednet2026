@@ -1,4 +1,4 @@
-/* Publicador RRSS Rednet · rrss-pulido (ruta rednet-design-1, ruta completa: impeccable → motion → pulido) */
+/* Publicador Web/RRSS (P13) · rrss-pulido · contenido del catálogo v2.1 (ruta rednet-design-1, ruta completa: impeccable → motion → pulido) */
 (function(){
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const hasG = typeof gsap !== 'undefined';
@@ -29,8 +29,8 @@ addEventListener('keydown', e => { if (e.key === 'Escape' && navP.classList.cont
 const tile = (k, txt) => { const d = document.createElement('div'); d.className = 'tp t' + k; const s = document.createElement('span'); s.textContent = txt; d.append(s); return d; };
 
 /* 1 Perfil que se llena solo: un post cada 5 s, con botón de pausa; se detiene fuera de pantalla y con reducir movimiento */
-const textos = ['Nuevo', 'Tip del día', 'Hoy abrimos', '¿Sabías que?', 'Detrás de cámara', 'Clientes felices', 'Llegó', 'Receta', 'Finde', 'Encuesta', 'Novedades', 'Equipo'];
-const dias = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'], redes = ['Instagram', 'Facebook', 'LinkedIn', 'TikTok'];
+const textos = ['Nuevo', 'Tip del día', 'Hoy abrimos', '¿Sabías que?', 'Detrás de cámara', 'Noticia', 'Llegó', 'Receta', 'Finde', 'Encuesta', 'Novedades', 'Equipo'];
+const dias = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'], redes = ['Tu sitio', 'Instagram', 'Facebook', 'LinkedIn'];
 const grid = document.getElementById('pfGrid'), toast = document.getElementById('toast'), toastTxt = document.getElementById('toastTxt'), pfDia = document.getElementById('pfDia');
 const perfil = document.getElementById('perfil'), pausa = document.getElementById('pausa'), pausaT = pausa.querySelector('.pausa-t');
 for (let i = 0; i < 9; i++) grid.append(tile((i * 3) % 8, textos[(i + 3) % textos.length]));
@@ -81,10 +81,10 @@ met.querySelectorAll(':scope > div').forEach(d => { const v = d.querySelector('b
 
 /* 4 Ideas por rubro */
 const ideas = [
-[['Reel', 'Instagram', 0, 'De la molienda a tu taza', 'Así nace tu café de la mañana, en 15 segundos ☕', '#café #[tucomuna] #desayuno'], ['Carrusel', 'Instagram', 2, '3 formas de tomar café en verano', 'Frío, con tónica o con helado. ¿Cuál pruebas primero?', '#cafeteria #verano'], ['Historia', 'Instagram', 3, 'Torta del día', 'Encuesta: ¿qué torta hacemos el viernes?', '#hechoenlocal']],
-[['Carrusel', 'Facebook', 1, '5 herramientas para tu casa', 'Las que todo hogar debería tener, y para qué sirve cada una.', '#ferretería #hogar'], ['Reel', 'TikTok', 0, 'Cambia una llave de paso', 'Paso a paso en un minuto. Guárdalo para cuando lo necesites.', '#hazlotumismo #[tucomuna]'], ['Historia', 'Instagram', 6, '¿Qué arreglas este finde?', 'Encuesta: pintura, jardín o baño.', '#finde']],
-[['Reel', 'Instagram', 4, 'Así es una limpieza facial', 'Lo que pasa en una sesión, sin filtros y paso a paso.', '#estética #cuidadodelapiel'], ['Carrusel', 'Instagram', 5, 'Rutina para el invierno', '4 pasos para que tu piel no sufra con el frío.', '#skincare #[tucomuna]'], ['Historia', 'Instagram', 3, 'Quedan horas el sábado', 'Reserva directo por WhatsApp en un clic.', '#agenda']],
-[['Reel', 'TikTok', 7, 'Recorrido: depto 2D', 'Te mostramos cada rincón en 30 segundos.', '#arriendo #[tucomuna]'], ['Carrusel', 'LinkedIn', 1, '5 cosas antes de arrendar', 'La lista que nadie te pasa y que te ahorra problemas.', '#inmobiliaria #consejos'], ['Historia', 'Instagram', 0, 'Visita abierta el sábado', 'De 11:00 a 14:00. Responde esta historia y te guardamos un cupo.', '#visitaabierta']]
+[['Reel', 'Instagram', 0, 'De la molienda a tu taza', 'Así nace tu café de la mañana, en 15 segundos ☕', '#café #[tucomuna] #desayuno'], ['Carrusel', 'Instagram', 2, '3 formas de tomar café en verano', 'Frío, con tónica o con helado. ¿Cuál pruebas primero?', '#cafeteria #verano'], ['Noticia', 'Tu sitio', 3, 'Abrimos los domingos', 'La noticia sale en tu sitio y se comparte en Instagram y Facebook.', 'Sitio + Instagram + Facebook']],
+[['Carrusel', 'Facebook', 1, '5 herramientas para tu casa', 'Las que todo hogar debería tener, y para qué sirve cada una.', '#ferretería #hogar'], ['Reel', 'TikTok', 0, 'Cambia una llave de paso', 'Paso a paso en un minuto. Guárdalo para cuando lo necesites.', '#hazlotumismo #[tucomuna]'], ['Noticia', 'Tu sitio', 6, 'Llegó la temporada de jardín', 'Novedad en tu sitio y destacada en la portada; el aviso sale también en Facebook.', 'Sitio + Facebook']],
+[['Reel', 'Instagram', 4, 'Así es una limpieza facial', 'Lo que pasa en una sesión, sin filtros y paso a paso.', '#estética #cuidadodelapiel'], ['Carrusel', 'Instagram', 5, 'Rutina para el invierno', '4 pasos para que tu piel no sufra con el frío.', '#skincare #[tucomuna]'], ['Destacado', 'Tu sitio', 3, 'Antes y después', 'Tu último trabajo, destacado en tu sitio y en tus historias de Instagram.', 'Sitio + Instagram']],
+[['Reel', 'TikTok', 7, 'Recorrido: depto 2D', 'Te mostramos cada rincón en 30 segundos.', '#arriendo #[tucomuna]'], ['Carrusel', 'LinkedIn', 1, '5 cosas antes de arrendar', 'La lista que nadie te pasa y que te ahorra problemas.', '#inmobiliaria #consejos'], ['Noticia', 'Tu sitio', 0, 'Visita abierta el sábado', 'De 11:00 a 14:00. La noticia queda en tu sitio y se anuncia en Instagram.', 'Sitio + Instagram']]
 ];
 const posts = document.getElementById('posts');
 function rubro(r, animar){
