@@ -353,3 +353,6 @@ footer{padding-bottom:150px}
 .dolor b,.otro b,.otro>span,.plan ul li,.lug p,.sp-arch b{overflow-wrap:anywhere}
 .cp-ok svg{width:28px;height:28px}
 .l2 .marca{color:#3A2706;background:rgba(14,13,12,.08)}
+/* Catálogo v2.1: oferta de entrada (Plus) sobre los planes */
+.plus-entrada{margin:0 0 18px;padding:14px 18px;border-radius:14px;background:var(--ocre-claro);color:#2E1F05;font-size:15.5px;max-width:none}
+.plus-entrada b{font-weight:600}
