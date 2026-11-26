@@ -1,4 +1,4 @@
-/* Respaldo Automático Rednet · respaldo-pulido (ruta rednet-design-1 completa: impeccable → motion → pulido) */
+/* Respaldo de Datos Seguro (P06, catálogo v2.1) · respaldo-pulido (ruta rednet-design-1 completa: impeccable → motion → pulido) */
 (function(){
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const hasG = typeof gsap !== 'undefined';
