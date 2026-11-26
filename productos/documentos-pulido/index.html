@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#2E1E12">
+<meta name="color-scheme" content="light">
+<title>Nube Documental · Rednet</title>
+<meta name="description" content="Nube Documental de Rednet: los documentos de tu oficina ordenados, accesibles desde el computador o el celular y bajo tu control, con permisos por persona y versiones. 30 días de prueba con tus propias carpetas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500;112,700;112,800;100,400;100,600&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<header id="hdr">
+<div class="wrap">
+<a href="../../v4-pulido/" class="logo" aria-label="Rednet, volver al inicio"><img src="../logo-rednet-header.png" alt="Rednet" width="250" height="72"></a>
+<button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navPrincipal"><span></span><span></span><span class="sr">Menú</span></button>
+<nav aria-label="Principal" id="navPrincipal"><a href="../../v4-pulido/">Inicio</a><a href="#busca">Cómo funciona</a><a href="#permisos">Permisos</a><a href="#planes">Planes</a><a href="#faq">Preguntas</a><a href="#contacto" class="solo-movil">Contacto</a></nav>
+<a class="btn btn-ocre hdr-cta" href="#contacto" data-plan="Probar 30 días con mis carpetas">Prueba 30 días</a>
+</div>
+</header>
+<main id="top">
+<span id="contenido"></span>
+<!-- 1 HERO café tostado: los archivos de la oficina pasan del desorden a cuatro carpetas -->
+<section class="p-hero" aria-label="Nube Documental">
+<div class="wrap hero-grid">
+<div class="hero-txt" id="heroTxt">
+<nav class="miga" aria-label="Estás en"><a href="../../v4-pulido/">Inicio</a><i aria-hidden="true">/</i><a href="../">Productos</a><i aria-hidden="true">/</i><span aria-current="page" translate="no">Nube Documental</span></nav>
+<h1><span class="ln"><span>Todo en</span></span> <span class="ln"><em>su lugar</em></span></h1>
+<p>Los documentos de tu oficina ordenados, a mano desde el computador o el celular y bajo tu control, no el de un tercero.</p>
+<div class="hero-ctas">
+<a class="btn btn-ocre" href="#contacto" data-plan="Probar 30 días con mis carpetas">Prueba 30 días con tus carpetas</a>
+<a class="btn btn-claro" href="#busca">Busca un archivo <i><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></i></a>
+</div>
+</div>
+<figure class="archivo-wrap">
+<div class="archivo" id="archivo">
+<div class="carpetas" aria-hidden="true"><span>Clientes</span><span>Contratos</span><span>Facturas</span><span>Proyectos</span></div>
+<div class="fichas" id="fichas" aria-hidden="true"></div>
+<button class="desordenar" id="desordenar" type="button"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.6-5.9"/><path d="M4 4v4h4"/></svg>Desordenar</button>
+</div>
+<figcaption class="sr">Ejemplo: dieciséis archivos repartidos en el correo, el escritorio, un pendrive y WhatsApp se ordenan solos en cuatro carpetas: Clientes, Contratos, Facturas y Proyectos.</figcaption>
+</figure>
+</div>
+</section>
+
+<!-- 2 FRASE (P15-A) -->
+<section class="manifiesto">
+<div class="wrap">
+<p>Renunció quien sabía dónde estaba todo. <span class="g">Y los archivos se fueron con esa persona.</span></p>
+</div>
+</section>
+
+<!-- 3 BUSCA: buscador real sobre archivos de ejemplo -->
+<section class="busca-sec" id="busca">
+<div class="wrap busca-grid">
+<div>
+<h2>Escribe una palabra. <span class="g">Ahí está.</span></h2>
+<p class="intro">Busca por nombre, cliente o fecha, desde cualquier equipo de la oficina. Pruébalo con estas palabras:</p>
+<div class="sugeridas" id="sugeridas"><button type="button">contrato</button><button type="button">marzo</button><button type="button">factura</button><button type="button">Soto</button></div>
+</div>
+<div class="buscador">
+<label class="bq"><span class="lupa" aria-hidden="true"></span><span class="sr">Buscar en documentos de ejemplo</span><input id="bqIn" type="search" placeholder="Buscar en tus documentos…" autocomplete="off" spellcheck="false"></label>
+<div class="bq-meta"><span id="bqN" aria-live="polite">14 archivos</span><span>Archivos de ejemplo</span></div>
+<ul class="lista" id="lista"></ul>
+</div>
+</div>
+</section>
+
+<!-- 4 PERMISOS (P15-B): quién puede ver qué -->
+<section class="perm-sec" id="permisos">
+<div class="wrap perm-grid">
+<div class="perm-txt">
+<h2>Una carpeta para toda la oficina, <span class="g">con permisos</span></h2>
+<p class="intro">Cada persona ve lo que le corresponde. Si alguien se va, le quitas el acceso y los archivos se quedan en la empresa. Elige a quién mirar:</p>
+<div class="toggle roles" id="roles" role="group" aria-label="Ver permisos de"><button type="button" data-r="0" aria-pressed="true">Socios</button><button type="button" data-r="1" aria-pressed="false">Contabilidad</button><button type="button" data-r="2" aria-pressed="false">Ventas</button><button type="button" data-r="3" aria-pressed="false">Quien se fue</button></div>
+<p class="aviso">Permisos de ejemplo · se arman con tu equipo</p>
+</div>
+<ul class="perm-lista" id="permLista" aria-live="polite">
+<li data-p="e,e,e,v"><span class="pc">Clientes</span><b></b></li>
+<li data-p="e,v,v,n"><span class="pc">Contratos</span><b></b></li>
+<li data-p="e,e,n,n"><span class="pc">Facturas</span><b></b></li>
+<li data-p="e,n,e,n"><span class="pc">Proyectos</span><b></b></li>
+<li data-p="e,v,n,n"><span class="pc">Personal</span><b></b></li>
+</ul>
+</div>
+</section>
+
+<!-- 5 BAJO TU LLAVE: dónde viven tus archivos (Nextcloud en un servidor que controlas) -->
+<section class="llave-sec" id="llave">
+<div class="wrap llave-grid">
+<div class="llave-vis" id="llaveVis" data-m="con" aria-hidden="true">
+<div class="nube"><i></i><i></i><i></i><span>Cuentas personales y servidores de otra empresa</span></div>
+<div class="caja"><div class="docs"><i></i><i></i><i></i><i></i></div><div class="candado"><span class="arco"></span><span class="cuerpo"></span></div><span>Tu nube</span></div>
+</div>
+<div class="llave-txt">
+<h2>Tus archivos, <span class="g">bajo tu control</span></h2>
+<p class="intro">Funciona con <b translate="no">Nextcloud</b>, un sistema abierto para documentos, en un servidor que controla tu empresa. No en el Drive personal de alguien.</p>
+<div class="toggle" id="tgLlave" data-m="con" role="group" aria-label="Comparar dónde viven tus archivos"><button type="button" data-m="antes" aria-pressed="false">Cada uno en su Drive</button><button type="button" data-m="con" aria-pressed="true">Con Nube Documental</button></div>
+<ul class="met" id="met" aria-live="polite">
+<li><span>Dónde están tus archivos</span><b data-a="En cuentas de cada persona" data-c="En la nube de tu empresa">En la nube de tu empresa</b><div class="barra"><i data-a=".3" data-c="1"></i></div></li>
+<li><span>Quién decide quién entra</span><b data-a="Quien abrió la cuenta" data-c="Tú">Tú</b><div class="barra"><i data-a=".35" data-c="1"></i></div></li>
+<li><span>Si alguien se va</span><b data-a="Se lleva sus archivos" data-c="Le quitas el acceso">Le quitas el acceso</b><div class="barra"><i data-a=".15" data-c="1"></i></div></li>
+</ul>
+<p class="aviso">Comparación de ejemplo · ubicación del servidor [por confirmar]</p>
+</div>
+</div>
+</section>
+
+<!-- 6 VERSIONES Y TRABAJO EN EQUIPO (abanico con el scroll) -->
+<section class="ver-sec" id="versiones">
+<div class="wrap ver-grid">
+<div>
+<h2>Editan juntos. <span class="g">Nada se pierde.</span></h2>
+<ul class="ver-lista" data-rv>
+<li><b>Historial de versiones</b><span>¿Alguien borró un párrafo? Vuelves a la versión de ayer.</span></li>
+<li><b>Varias personas en el mismo archivo</b><span>Cada uno ve los cambios del otro, sin mandar copias por correo.</span></li>
+<li><b>Comentarios en el documento</b><span>Adiós a "propuesta_final_v3_ahora_sí.docx".</span></li>
+</ul>
+</div>
+<div class="abanico" id="abanico" aria-hidden="true">
+<div class="hoja v1"><small>v1 · lunes</small><b>Propuesta [Cliente]</b><i></i><i></i><i></i></div>
+<div class="hoja v2"><small>v2 · martes</small><b>Propuesta [Cliente]</b><i></i><i></i><i></i><span class="rest">Restaurar</span></div>
+<div class="hoja v3"><small>v3 · miércoles</small><b>Propuesta [Cliente]</b><i></i><i></i><i></i></div>
+<div class="hoja v4"><small>v4 · hoy</small><b>Propuesta [Cliente]</b><i></i><i class="ed"></i><i></i>
+<span class="cur c1">Contabilidad</span><span class="cur c2">Ventas</span><span class="coment">¿Revisamos el plazo?</span></div>
+</div>
+</div>
+</section>
+
+<!-- 7 COMPARTE CON PERMISOS (interactivo) -->
+<section class="comp-sec sin-top" id="comparte">
+<div class="wrap comp-grid">
+<div class="enlace">
+<div class="en-top"><span class="en-ic" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></span><div><b>Contrato arriendo local 2026.pdf</b><small>Contratos · 1,2 MB</small></div></div>
+<div class="switches">
+<label><span>Puede editar</span><input type="checkbox" id="swEd" role="switch"><i aria-hidden="true"></i></label>
+<label><span>Vence en 7 días</span><input type="checkbox" id="swVe" role="switch" checked><i aria-hidden="true"></i></label>
+<label><span>Con contraseña</span><input type="checkbox" id="swPw" role="switch" checked><i aria-hidden="true"></i></label>
+<label><span>Permitir descarga</span><input type="checkbox" id="swDe" role="switch"><i aria-hidden="true"></i></label>
+</div>
+<div class="url"><code id="url" translate="no">docs.tuempresa.cl/s/k7Q2</code><button type="button" id="copiar">Copiar</button></div>
+<p class="resumen-en" id="resEn" aria-live="polite"></p>
+</div>
+<div>
+<h2>Un enlace, <span class="g">con tus reglas</span></h2>
+<p class="intro">Mandas un archivo a un cliente o proveedor y decides si puede editar, descargar o por cuánto tiempo lo ve. Prueba los interruptores.</p>
+<div class="dispos" aria-hidden="true">
+<div class="dv lap"><i></i><span>Computador</span></div>
+<div class="dv tab"><i></i><span>Tablet</span></div>
+<div class="dv cel"><i></i><span>Celular</span></div>
+</div>
+<p class="sync"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Lo mismo en todos tus equipos</p>
+</div>
+</div>
+</section>
+
+<!-- 8 PARA TU RUBRO: pestañas (P15-C abogados + salud, contables, construcción) -->
+<section class="sin-top" id="rubros">
+<div class="wrap">
+<div class="cab"><h2>Los documentos de tus clientes, <span class="g">¿en el Drive personal de quién?</span></h2><p class="nota">Elige tu rubro.</p></div>
+<div class="rub-grid">
+<div class="chips" id="rubTabs" role="tablist" aria-label="Rubro">
+<button type="button" role="tab" aria-selected="true" aria-controls="rAbo" id="tAbo">Abogados<small>Una carpeta por causa</small></button>
+<button type="button" role="tab" aria-selected="false" aria-controls="rSal" id="tSal" tabindex="-1">Salud y radiología<small>Datos sensibles</small></button>
+<button type="button" role="tab" aria-selected="false" aria-controls="rCon" id="tCon" tabindex="-1">Contables<small>Cierre de mes</small></button>
+<button type="button" role="tab" aria-selected="false" aria-controls="rObr" id="tObr" tabindex="-1">Construcción y arquitectura<small>Planos en obra</small></button>
+</div>
+<div class="rub-paneles">
+<div class="rub" id="rAbo" role="tabpanel" aria-labelledby="tAbo" tabindex="0"><h3>La confidencialidad empieza <span class="g">por saber dónde viven los archivos</span></h3><p>Escritos, poderes y contratos dejan de estar repartidos en cuentas personales. Cada causa tiene su carpeta en el espacio del estudio, y solo entra quien la lleva.</p><a class="lnk" href="#contacto" data-plan="Ordenar los documentos de mi estudio">Ordena y protege la información de tus clientes<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+<div class="rub" id="rSal" role="tabpanel" aria-labelledby="tSal" tabindex="0" hidden><h3>Informes y fichas <span class="g">con acceso controlado</span></h3><p>En salud la información es sensible. Nube Documental te ayuda a ordenar quién ve cada informe y a saber dónde está cada archivo, algo que pide la ley de datos personales 21.719. <span class="marca-c">El sistema ayuda, no certifica cumplimiento</span></p><a class="lnk" href="#contacto" data-plan="Ordenar informes de mi centro de salud">Cuéntanos cómo trabajas hoy<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+<div class="rub" id="rCon" role="tabpanel" aria-labelledby="tCon" tabindex="0" hidden><h3>Cada cliente, <span class="g">su carpeta del mes</span></h3><p>Facturas, libros y declaraciones de cada cliente en su lugar, con permisos para tu equipo y un enlace con vencimiento cuando el cliente tiene que mandarte algo.</p><a class="lnk" href="#contacto" data-plan="Ordenar las carpetas de mis clientes">Ordena tu cierre de mes<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+<div class="rub" id="rObr" role="tabpanel" aria-labelledby="tObr" tabindex="0" hidden><h3>El plano vigente, <span class="g">también en la obra</span></h3><p>El equipo en terreno abre la última versión desde el celular, y la oficina sabe cuál es. Las versiones anteriores quedan guardadas, sin pendrives.</p><a class="lnk" href="#contacto" data-plan="Ordenar planos y documentos de obra">Cuéntanos de tus proyectos<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 9 PLUS confirmado: 30 días de prueba + se suma Respaldo -->
+<section class="sin-top" id="prueba">
+<div class="wrap">
+<div class="prueba" data-rv>
+<div class="prueba-txt"><h2>30 días de prueba <span class="g">con tus propias carpetas</span></h2><p>No una demo con archivos de ejemplo: armamos tu nube con tus documentos reales y la usas un mes con tu equipo. Después decides.</p><a class="btn btn-ocre" href="#contacto" data-plan="Probar 30 días con mis carpetas">Quiero probarla</a></div>
+<div class="prueba-pasos"><div><small>Semana 1</small><b>Ordenamos tus carpetas</b></div><div><small>Semanas 2 a 4</small><b>Tu equipo la usa</b></div><div><small>Día 30</small><b>Decides si sigues</b></div></div>
+</div>
+</div>
+</section>
+
+<!-- 10 DOLORES (CTA 1 y CTA 2 del catálogo) -->
+<section class="sin-top">
+<div class="wrap dolores" data-rv>
+<a class="dolor d-cafe" href="#contacto" data-plan="Aún no sé, quiero orientación"><small>Si te pasa esto</small><b>¿No encuentras un documento cuando lo necesitas?</b><span class="ir">Ordena tus documentos<i><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></span></a>
+<a class="dolor d-ocre" href="#contacto" data-plan="Plan Empresa"><small>Lo que buscas</small><b>Tus archivos, bajo tu control, no el de un tercero.</b><span class="ir">Quiero mi nube<i><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></span></a>
+</div>
+</section>
+
+<!-- 11 PLANES -->
+<section id="planes" class="sin-top">
+<div class="wrap">
+<div class="cab"><h2>Tu archivo ordenado, <span class="g">sin letra chica</span></h2><p class="nota">Todos parten con 30 días de prueba con tus carpetas.</p></div>
+<div class="planes" data-rv>
+<div class="plan"><small>Equipo pequeño</small><div class="precio">$[—]<span class="per">/mes</span></div><p class="pd">Para ordenar una oficina.</p><ul><li>[N] GB de espacio</li><li>Hasta [N] personas</li><li>Permisos y enlaces</li><li>Historial de versiones</li></ul><a class="btn" href="#contacto" data-plan="Plan Equipo pequeño">Empezar</a></div>
+<div class="plan dest"><small>Empresa <em>Recomendado</em></small><div class="precio">$[—]<span class="per">/mes</span></div><p class="pd">La nube de tu empresa, con tus reglas.</p><ul><li>[N] GB de espacio</li><li>Personas según tu equipo</li><li>Edición en conjunto</li><li>Traemos tus archivos de otra nube</li></ul><a class="btn" href="#contacto" data-plan="Plan Empresa">Ordena tus documentos</a></div>
+<div class="plan med"><small>A medida</small><div class="precio">Hablemos</div><p class="pd">Para varias sedes o mucho volumen.</p><ul><li>Espacio a medida</li><li>Varias sedes</li><li>Conexión con tus sistemas</li><li>Capacitación al equipo</li></ul><a class="btn" href="#contacto" data-plan="Nube a medida">Hablar con Rednet</a></div>
+</div>
+<p class="letra">Precios en pesos chilenos por confirmar. Copia de seguridad: se suma con <a href="../respaldo-pulido/">Respaldo de Datos Seguro</a> <span class="marca-c">[¿incluida en algún plan? por confirmar]</span></p>
+</div>
+</section>
+
+<!-- 12 FAQ -->
+<section id="faq" class="sin-top">
+<div class="wrap faq">
+<h2>Preguntas <span class="g">sobre tus documentos</span></h2>
+<div>
+<details open><summary><span>¿Pueden traer lo que ya tengo en otra nube?</span> <i aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6v12M6 12h12"/></svg></i></summary><div class="resp"><p>Sí. Traemos tus archivos desde Drive, OneDrive, Dropbox o un computador, y los dejamos ordenados en carpetas antes de que empieces. <span class="marca-c">[¿migración incluida en todos los planes? por confirmar]</span></p></div></details>
+<details><summary><span>¿Cómo es la prueba de 30 días?</span> <i aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6v12M6 12h12"/></svg></i></summary><div class="resp"><p>Armamos tu nube con tus propias carpetas y la usa tu equipo durante 30 días. Al final decides si sigues. <span class="marca-c">[condiciones de la prueba por confirmar]</span></p></div></details>
+<details><summary><span>¿Lo puedo usar desde el celular?</span> <i aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6v12M6 12h12"/></svg></i></summary><div class="resp"><p>Sí, desde el navegador o con la app, en el computador, la tablet y el celular.</p></div></details>
+<details><summary><span>¿Qué es Nextcloud?</span> <i aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6v12M6 12h12"/></svg></i></summary><div class="resp"><p>Es el sistema con el que funciona Nube Documental: un software abierto para guardar, compartir y editar documentos. Como no depende de la cuenta de una persona, los archivos y los permisos quedan en manos de tu empresa.</p></div></details>
+<details><summary><span>¿Con esto cumplo la ley de datos personales?</span> <i aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6v12M6 12h12"/></svg></i></summary><div class="resp"><p>El sistema ayuda, no certifica. Te da orden, permisos por persona y saber dónde está cada archivo, algo que la ley 21.719 pide cuidar. El cumplimiento depende también de cómo trabaja tu equipo, y conviene revisarlo con tu asesor legal.</p></div></details>
+<details><summary><span>¿Qué pasa si se borra algo?</span> <i aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6v12M6 12h12"/></svg></i></summary><div class="resp"><p>Hay papelera y versiones anteriores. Para tener además una copia en otro lugar, se suma Respaldo de Datos Seguro.</p></div></details>
+<details><summary><span>¿Dónde queda el servidor?</span> <i aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6v12M6 12h12"/></svg></i></summary><div class="resp"><p>[Ubicación por confirmar]. Lo importante: tu empresa decide quién entra.</p></div></details>
+</div>
+</div>
+</section>
+
+<!-- 13 CONTACTO: banda a ancho completo, video suave detrás, formulario blanco -->
+<section class="cierre" id="contacto">
+<div class="cta" id="cta">
+<div class="cta-fondo" aria-hidden="true"><video id="vCta" muted playsinline loop preload="none" poster="../../v4-impeccable/video/cta-poster.jpg"><source src="../../v4-impeccable/video/cta-loop.webm" type="video/webm"><source src="../../v4-impeccable/video/cta-loop.mp4" type="video/mp4"></video></div>
+<div class="wrap cta-grid">
+<div class="cta-txt">
+<h2>Encuentra cualquier archivo <span class="g">en segundos</span></h2>
+<p>Cuéntanos cómo guardan hoy los documentos en tu oficina. Te mostramos cómo quedarían tus carpetas y tus permisos, y partes con 30 días de prueba. También puedes escribirnos a <a href="mailto:conversemos@rednetspa.cl?subject=Nube%20Documental" translate="no">conversemos@rednetspa.cl</a>.</p>
+<a class="btn btn-borde" href="https://wa.me/?text=Hola%20Rednet%2C%20quiero%20probar%20la%20Nube%20Documental" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.8A8 8 0 1 1 8 19z"/></svg>Escríbenos por WhatsApp</a>
+<p class="cta-nota">[Número de WhatsApp por confirmar: hoy el botón abre WhatsApp sin destinatario.]</p>
+</div>
+<form class="form" id="form" novalidate>
+<div class="campo"><label for="fNombre">Tu nombre</label><input id="fNombre" name="nombre" autocomplete="name" required placeholder="Ej: Camila Rojas…"></div>
+<div class="campo"><label for="fWsp">WhatsApp o correo</label><input id="fWsp" name="contacto" autocomplete="tel" spellcheck="false" required aria-describedby="fWspAyuda"><small id="fWspAyuda">Ej: +56 9 1234 5678</small></div>
+<div class="campo"><label for="fQue">¿Qué necesitas?</label><select id="fQue" name="que"><option>Aún no sé, quiero orientación</option><option>Probar 30 días con mis carpetas</option><option>Plan Equipo pequeño</option><option>Plan Empresa</option><option>Nube a medida</option><option>Ordenar los documentos de mi estudio</option><option>Ordenar informes de mi centro de salud</option><option>Ordenar las carpetas de mis clientes</option><option>Ordenar planos y documentos de obra</option><option>Sumar Respaldo de Datos Seguro</option></select></div>
+<div class="campo"><label for="fMsg">¿Cuántas personas son y dónde guardan hoy los archivos? <span>(opcional)</span></label><textarea id="fMsg" name="mensaje" rows="3" placeholder="Ej: somos 8, cada uno en su Drive y un disco en la oficina…"></textarea></div>
+<p class="error" id="fError" role="alert" hidden>Falta tu nombre y un WhatsApp o correo para responderte.</p>
+<button class="btn btn-rojo" type="submit">Quiero ordenar mis documentos</button>
+<p class="ok" id="fOk" role="status" hidden>Listo, recibimos tu mensaje. Te escribimos pronto. <span>(Maqueta: el formulario todavía no envía datos.)</span></p>
+</form>
+</div>
+</div>
+</section>
+
+<!-- 14 RELACIONADOS -->
+<section class="otros-sec">
+<div class="wrap">
+<h2 class="otros-t">Funciona mejor junto a</h2>
+<div class="otros"><a class="otro" href="../respaldo-pulido/"><small>Una copia en otro lugar</small><b translate="no">Respaldo de Datos Seguro</b><span>Si algo falla, tus documentos vuelven. El complemento natural de tu nube.</span></a><a class="otro" href="../automatizaciones-pulido/"><small>Menos trabajo a mano</small><b translate="no">Automatizaciones de Tareas</b><span>Que las facturas y los formularios lleguen solos a su carpeta.</span></a><a class="otro" href="../soporte-pulido/"><small>Una persona que responde</small><b translate="no">Soporte</b><span>Ayuda a tu equipo con los equipos, el correo y las dudas del día a día.</span></a></div>
+</div>
+</section>
+</main>
+
+<div class="barra-movil" id="barraMovil"><a class="btn btn-ocre" href="#contacto">Prueba 30 días</a><a class="btn btn-negro" href="https://wa.me/?text=Hola%20Rednet%2C%20quiero%20probar%20la%20Nube%20Documental" target="_blank" rel="noopener">WhatsApp</a></div>
+
+<footer>
+<div class="wrap">
+<div class="pie">
+<div><a href="../../v4-pulido/" class="logo" style="display:inline-flex" aria-label="Rednet, inicio"><img src="../logo-rednet-header.png" alt="Rednet" width="250" height="72"></a><p style="margin-top:16px;max-width:30ch">Servicios digitales para pymes: web, hosting, seguridad, IA y automatización.</p></div>
+<div><p class="pie-t">Servicios</p><ul><li><a href="../diseno-web-pulido/">Sitios web</a></li><li><a href="../tienda-online-pulido/">Ventas online</a></li><li><a href="../hosting-pulido/">Infraestructura</a></li><li><a href="../webguardian-pulido/">Seguridad y soporte</a></li><li><a href="../seo-geo-pulido/">Marketing y visibilidad</a></li><li><a href="../asistente-virtual-pulido/">IA y automatización</a></li><li><a href="../">Todos los productos</a></li></ul></div>
+<div><p class="pie-t">Empresa</p><ul><li><a href="../../v4-pulido/#proceso">Cómo trabajamos</a></li><li><a href="../../v4-pulido/#caso">Casos</a></li><li><a href="../../v4-pulido/#proyectos">Proyectos</a></li><li><a href="../../v4-pulido/#planes">Planes</a></li></ul></div>
+<div><p class="pie-t">Contacto</p><ul><li><a href="mailto:conversemos@rednetspa.cl" translate="no">conversemos@rednetspa.cl</a></li><li>WhatsApp [número]</li><li translate="no">www.rednetspa.cl</li></ul></div>
+</div>
+<div class="legal"><span>© 2026 Rednet SpA · RUT [por confirmar] · [Dirección por confirmar]</span><span>P15 <span translate="no">Nube Documental</span> · catálogo v2.1 · contenido entre [ ] por confirmar</span></div>
+</div>
+</footer>
+<nav class="versiones" aria-label="Versiones de esta página"><span>Versión</span><a href="../documentos/">Original</a><a href="../documentos-impeccable/">Impeccable</a><a href="../documentos-impeccable-motion/">Motion</a><a href="../documentos-pulido/" aria-current="page">Pulido</a></nav>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
