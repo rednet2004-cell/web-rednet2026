@@ -3,7 +3,7 @@
 const {reduce, hasG} = RN;
 /* 1 Hero: ciclo tema → borrador → aprobado → publicado, cambiando de destino */
 const ciclos = [
-['Climatización', '5 señales de que tu caldera necesita mantención', 'Tu sitio web'],
+['Climatización', '5 señales de que tu aire acondicionado necesita mantención', 'Tu sitio web'],
 ['Colegio', 'Guía de tallas para uniformes escolares', 'Tu app'],
 ['Corredora', 'Qué revisar antes de arrendar una oficina', 'Tu portal de clientes'],
 ['Clínica', 'Cómo preparar tu primera consulta', 'Tu sistema']
