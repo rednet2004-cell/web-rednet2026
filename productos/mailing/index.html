@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Mailing a Contactos · Rednet</title>
+<meta name="description" content="Mailing a Contactos de Rednet: ordenamos tu lista de clientes, diseñamos el correo, lo enviamos con link de baja y te entregamos un informe simple. El mensaje correcto al cliente correcto, sin sentirse spam.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500;112,700;112,800;100,400;100,600&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="../base.css">
+<link rel="stylesheet" href="pagina.css">
+</head>
+<body class="pg-mail">
+<header id="hdr">
+<div class="wrap">
+<a href="../../v4-pulido/" class="logo" aria-label="Rednet, volver al inicio"><img src="../logo-rednet-header.png" alt="Rednet"></a>
+<nav aria-label="Principal" id="navPrincipal"><a href="../../v4-pulido/">Inicio</a><a href="#funciona">Cómo funciona</a><a href="#campana">Arma tu campaña</a><a href="#contratar">Planes</a><a href="#faq">Preguntas</a></nav>
+<a class="btn btn-rojo" href="#contacto">Pide tu campaña gratis</a>
+</div>
+</header>
+<main id="top">
+<!-- 1 HERO verde planilla: la base dormida se ordena, recibe un correo y muestra quién abrió -->
+<section class="p-hero" aria-label="Mailing a Contactos">
+<div class="wrap hero-grid">
+<div class="hero-txt" id="heroTxt">
+<div class="miga"><a href="../../v4-pulido/">Inicio</a><i aria-hidden="true">/</i><a href="../">Productos</a><i aria-hidden="true">/</i><span>Mailing a Contactos</span></div>
+<span class="etq">P18 · Mailing a Contactos</span>
+<h1>Tu base está dormida en una <em>planilla</em></h1>
+<p>El mensaje correcto al cliente correcto, sin sentirse spam y con link de baja. Ordenamos tu lista, diseñamos el correo, lo enviamos y te mostramos quién abrió.</p>
+<div class="hero-ctas">
+<a class="btn btn-rojo" href="#contacto" data-plan="Mi primera campaña gratis">Pide tu primera campaña gratis</a>
+<a class="btn btn-claro" href="#funciona">Mira cómo funciona <i>↓</i></a>
+</div>
+</div>
+<figure class="planilla-esc" aria-label="Ejemplo: una planilla de clientes que nunca recibió un correo se ordena por tipo de cliente, el grupo elegido recibe una campaña y se ve quién abrió y quién respondió.">
+<div class="ultimo" id="ultimo" aria-hidden="true"><span class="u-dot"></span><span>Último correo a tus clientes:</span> <b id="ultTxt">nunca</b></div>
+<div class="planilla" id="planilla" data-f="0">
+<div class="pl-bar"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><small id="plRubro" aria-hidden="true">clientes.xlsx · Eventos</small></div>
+<div class="pl-tabla" id="plTabla" aria-hidden="true">
+<div class="pl-fila pl-cab"><span>Cliente</span><span>Tipo de cliente</span><span>Último correo</span></div>
+<div class="pl-fila"><span>Camila R.</span><span class="tipo">—</span><span class="est">Nunca</span></div>
+<div class="pl-fila"><span>Pedro S.</span><span class="tipo">—</span><span class="est">Nunca</span></div>
+<div class="pl-fila"><span>Ana M.</span><span class="tipo">—</span><span class="est">Nunca</span></div>
+<div class="pl-fila"><span>Jorge V.</span><span class="tipo">—</span><span class="est">Nunca</span></div>
+<div class="pl-fila"><span>Valentina T.</span><span class="tipo">—</span><span class="est">Nunca</span></div>
+<div class="pl-fila"><span>Luis C.</span><span class="tipo">—</span><span class="est">Nunca</span></div>
+</div>
+<div class="correo" id="correo" aria-hidden="true"><small>Asunto</small><b id="asunto">¿Repetimos la fiesta de fin de año?</b><div class="c-pie"><span class="c-btn" id="cBtn">Reservar fecha</span><span class="c-baja">Darme de baja</span></div></div>
+<div class="sello" id="sello" aria-hidden="true">Enviado<small id="selloTxt">Al grupo elegido · con baja</small></div>
+</div>
+<figcaption class="nota-ej">Planilla de ejemplo</figcaption>
+</figure>
+</div>
+</section>
+
+<!-- 2 MARQUEE de tipos de cliente -->
+<div class="marquee" aria-label="Tipos de cliente">
+<div class="pista"><span>Compra seguido</span><span>No vuelve hace meses</span><span>Cotizó y no compró</span><span>Clientes nuevos</span><span>Compró en tu tienda</span><span>Cumpleaños</span><span>Compra seguido</span><span>No vuelve hace meses</span><span>Cotizó y no compró</span><span>Clientes nuevos</span><span>Compró en tu tienda</span><span>Cumpleaños</span></div>
+</div>
+
+<!-- 3 FRASE -->
+<section class="manifiesto">
+<div class="wrap">
+<p data-palabras>[800] clientes que ya te compraron. ¿Cuándo les escribiste por última vez?</p>
+</div>
+</section>
+
+<!-- 3 CÓMO FUNCIONA: de la lista al informe, con el scroll -->
+<section class="flujo-sec" id="funciona">
+<div class="flujo-track" id="flujoTrack">
+<div class="flujo-fijo">
+<div class="wrap flujo-grid">
+<div>
+<span class="etq">Cómo funciona</span>
+<h2>Una campaña, <span class="g">de la lista al informe</span></h2>
+<ol class="pasos" id="pasos">
+<li class="on"><h3>Recibimos tu planilla</h3><p>Tal como la tengas: Excel, Google Sheets o lo que exporta tu tienda. Quitamos repetidos y correos que no sirven.</p></li>
+<li><h3>La ordenamos por tipo de cliente</h3><p>Quién compra seguido, quién no vuelve hace meses, quién cotizó y no compró. Cada grupo recibe un mensaje distinto.</p></li>
+<li><h3>Un correo, una sola acción</h3><p>Diseñado con tu marca, corto y con un solo botón. Siempre con quién lo envía y un link de baja de un clic.</p></li>
+<li><h3>Informe simple</h3><p>Quién abrió, quién respondió y quién se dio de baja. Sin planillas nuevas que entender.</p></li>
+</ol>
+</div>
+<div class="mesa" id="mesa" data-paso="0" aria-hidden="true">
+<div class="mp mp0">
+<span class="mp-etq">Tu planilla, tal como está</span>
+<div class="sucia"><span>camila.r@gmail.com · Camila</span><span class="mal">PEDRO SOTO · pedro.soto@gmial.com</span><span>ana.m@empresa.cl · Ana Muñoz</span><span class="mal">camila.r@gmail.com · Camila (repetido)</span><span>jorge.v@gmail.com · Jorge</span><span class="mal">Luis · (sin correo)</span></div>
+<div class="resumen"><span>[800] contactos</span><span>[37] repetidos</span><span>[52] sin correo válido</span></div>
+</div>
+<div class="mp mp1">
+<span class="mp-etq">Ordenada por tipo de cliente</span>
+<div class="segs">
+<div class="seg"><b>Compra seguido</b><span class="seg-n">[120]</span><div class="barra"><i style="transform:scaleX(.36)"></i></div></div>
+<div class="seg s2"><b>No vuelve hace +6 meses</b><span class="seg-n">[310]</span><div class="barra"><i style="transform:scaleX(.92)"></i></div></div>
+<div class="seg s3"><b>Cotizó y no compró</b><span class="seg-n">[95]</span><div class="barra"><i style="transform:scaleX(.28)"></i></div></div>
+<div class="seg"><b>Clientes nuevos</b><span class="seg-n">[186]</span><div class="barra"><i style="transform:scaleX(.55)"></i></div></div>
+</div>
+</div>
+<div class="mp mp2">
+<span class="mp-etq">Para: No vuelve hace +6 meses</span>
+<div class="mini-mail">
+<span class="mini-logo">[Tu logo]</span>
+<b>¿Te acuerdas de nosotros? Esto es nuevo</b>
+<div class="lineas"><i></i><i class="c"></i></div>
+<span class="unico">Ver lo nuevo</span>
+<span class="pie-mail">Te escribe [Tu negocio] porque eres cliente. <u>Darme de baja</u></span>
+</div>
+</div>
+<div class="mp mp3">
+<span class="mp-etq">Informe de la campaña</span>
+<div class="inf"><div class="inf-num"><small>Enviados</small><b>[310]</b></div><div class="inf-num"><small>Abrieron</small><b>[—]</b></div><div class="inf-num"><small>Respondieron</small><b>[—]</b></div></div>
+<ul class="quien"><li>Camila R. <span class="resp">Respondió</span></li><li>Pedro S. <span>Abrió</span></li><li>Jorge V. <span>Abrió</span></li><li>Luis C. <span class="baja">Se dio de baja</span></li></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 4 ARMA TU CAMPAÑA: un mensaje distinto por tipo de cliente, con baja de un clic que funciona -->
+<section id="campana">
+<div class="wrap">
+<div class="cab"><div><span class="etq">Arma tu campaña</span>
+<h2>El mensaje correcto <span class="g">al cliente correcto</span></h2></div>
+<p class="nota">Elige un tipo de cliente y mira el correo que le llegaría. Prueba también el link de baja.</p></div>
+<div class="camp-grid">
+<div class="chips" id="cSeg" role="tablist" aria-label="Tipo de cliente">
+<button type="button" role="tab" aria-selected="true" aria-controls="pFrec" id="tFrec">Compra seguido<small>Le avisas primero</small></button>
+<button type="button" role="tab" aria-selected="false" aria-controls="pDorm" id="tDorm" tabindex="-1">No vuelve hace +6 meses<small>Lo invitas de vuelta</small></button>
+<button type="button" role="tab" aria-selected="false" aria-controls="pCot" id="tCot" tabindex="-1">Cotizó y no compró<small>Le recuerdas su cotización</small></button>
+<button type="button" role="tab" aria-selected="false" aria-controls="pTienda" id="tTienda" tabindex="-1">Compró en tu tienda online<small>Le cuentas lo nuevo</small></button>
+</div>
+<div>
+<div class="prev" id="pFrec" role="tabpanel" aria-labelledby="tFrec" tabindex="0">
+<dl class="prev-cab"><div><dt>De</dt><dd>[Tu negocio] &lt;hola@tunegocio.cl&gt;</dd></div><div class="para"><dt>Para</dt><dd><em>Compra seguido · [120]</em></dd></div><div><dt>Asunto</dt><dd class="asunto">Antes que nadie: lo nuevo de este mes</dd></div></dl>
+<div class="prev-cuerpo"><span class="logo-c">[Tu logo]</span><h3>Como vuelves seguido, te avisamos primero</h3><p>Llegó [producto o servicio nuevo]. Antes de publicarlo, queremos que lo veas tú.</p><span class="unico">Ver la novedad</span></div>
+<div class="prev-pie">Te escribe [Tu negocio] porque eres cliente. <button class="baja" type="button">Darme de baja</button></div>
+</div>
+<div class="prev" id="pDorm" role="tabpanel" aria-labelledby="tDorm" tabindex="0" hidden>
+<dl class="prev-cab"><div><dt>De</dt><dd>[Tu negocio] &lt;hola@tunegocio.cl&gt;</dd></div><div class="para"><dt>Para</dt><dd><em>No vuelve hace +6 meses · [310]</em></dd></div><div><dt>Asunto</dt><dd class="asunto">¿Te acuerdas de nosotros? Esto es nuevo</dd></div></dl>
+<div class="prev-cuerpo"><span class="logo-c">[Tu logo]</span><h3>Hace tiempo que no nos vemos</h3><p>Desde tu última visita sumamos [novedad]. Si te sirve, aquí está; si no, puedes darte de baja abajo.</p><span class="unico">Ver lo nuevo</span></div>
+<div class="prev-pie">Te escribe [Tu negocio] porque eres cliente. <button class="baja" type="button">Darme de baja</button></div>
+</div>
+<div class="prev" id="pCot" role="tabpanel" aria-labelledby="tCot" tabindex="0" hidden>
+<dl class="prev-cab"><div><dt>De</dt><dd>[Tu negocio] &lt;hola@tunegocio.cl&gt;</dd></div><div class="para"><dt>Para</dt><dd><em>Cotizó y no compró · [95]</em></dd></div><div><dt>Asunto</dt><dd class="asunto">Tu cotización sigue disponible</dd></div></dl>
+<div class="prev-cuerpo"><span class="logo-c">[Tu logo]</span><h3>¿Seguimos con tu cotización?</h3><p>Guardamos lo que nos pediste. Si tienes dudas, respóndenos este correo y te ayudamos.</p><span class="unico">Retomar mi cotización</span></div>
+<div class="prev-pie">Te escribe [Tu negocio] porque nos pediste una cotización. <button class="baja" type="button">Darme de baja</button></div>
+</div>
+<div class="prev" id="pTienda" role="tabpanel" aria-labelledby="tTienda" tabindex="0" hidden>
+<dl class="prev-cab"><div><dt>De</dt><dd>[Tu tienda] &lt;hola@tutienda.cl&gt;</dd></div><div class="para"><dt>Para</dt><dd><em>Ya compró en la tienda · [—]</em></dd></div><div><dt>Asunto</dt><dd class="asunto">Llegó lo que viste la última vez</dd></div></dl>
+<div class="prev-cuerpo"><span class="logo-c">[Tu tienda]</span><h3>Ya tienes la tienda. Ahora avísales</h3><p>Productos nuevos en [categoría], para quienes ya te compraron. Un correo, un botón a la tienda.</p><span class="unico">Ver en la tienda</span></div>
+<div class="prev-pie">Te escribe [Tu tienda] porque compraste con nosotros. <button class="baja" type="button">Darme de baja</button></div>
+</div>
+<p class="aviso">Correos de ejemplo · el texto final se arma contigo</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 5 SIN SONAR A SPAM -->
+<section class="sin-top" id="spam">
+<div class="wrap spam-grid">
+<div>
+<span class="etq">Sin sonar a spam</span>
+<h2>Comunícate con tus clientes <span class="g">sin sonar a spam</span></h2>
+<div class="toggle" id="toggle" data-m="bien" role="group" aria-label="Comparar"><button type="button" data-m="spam" aria-pressed="false">Como spam</button><button type="button" data-m="bien" aria-pressed="true">Bien hecho</button></div>
+<ul class="crit" id="crit" data-m="bien" aria-live="polite">
+<li><span>A quién</span><b data-s="A toda la planilla, igual" data-b="Al tipo de cliente que corresponde">Al tipo de cliente que corresponde</b></li>
+<li><span>Asunto</span><b data-s="Largo, en mayúsculas y con urgencia" data-b="Corto y claro">Corto y claro</b></li>
+<li><span>Botones</span><b data-s="Seis ofertas a la vez" data-b="Una sola acción">Una sola acción</b></li>
+<li><span>Baja</span><b data-s="Escondida o no existe" data-b="Visible, de un clic">Visible, de un clic</b></li>
+</ul>
+</div>
+<div class="bandeja" id="bandeja" data-m="bien" aria-hidden="true">
+<div class="b-top"><span>Recibidos</span><span>Hoy</span></div>
+<div class="fila-i"><span class="av">B</span><b>Banco</b><small>Tu cartola de noviembre está disponible</small></div>
+<div class="fila-i tuya"><span class="av">T</span><b id="bAsunto">Tu negocio · Antes que nadie: lo nuevo de este mes</b><small id="bPrev">Como vuelves seguido, te avisamos primero.</small></div>
+<div class="fila-i"><span class="av">C</span><b>Courier</b><small>Tu pedido va en camino</small></div>
+<div class="fila-i"><span class="av">M</span><b>Mamá</b><small>¿Vienes el domingo?</small></div>
+</div>
+</div>
+</section>
+
+<!-- 6 QUÉ INCLUYE -->
+<section class="sin-top">
+<div class="wrap">
+<div class="cab"><div><span class="etq">Qué incluye</span>
+<h2>Tú pones la lista, <span class="g">nosotros el resto</span></h2></div></div>
+<div class="incl" data-rv>
+<div class="in in-vd"><h3>Lista ordenada</h3><p>Sin repetidos ni correos rotos, separada por tipo de cliente.</p></div>
+<div class="in"><h3>Diseño con tu marca</h3><p>Un correo corto, con un solo botón, que se lee bien en el celular.</p></div>
+<div class="in in-piedra"><h3>Envío cuidado</h3><p>Con quién lo envía y un link de baja de un clic en cada correo.</p></div>
+<div class="in in-rojo"><h3>Informe simple</h3><p>Quién abrió, quién respondió y quién se dio de baja.</p></div>
+<div class="in"><h3>Bajas respetadas</h3><p>Quien se da de baja no vuelve a recibir campañas. Sin excepciones.</p></div>
+<div class="in in-piedra"><h3>Desde tu correo</h3><p>Sale a nombre de tu negocio. [¿dominio propio o de Rednet?]</p></div>
+</div>
+</div>
+</section>
+
+<!-- 7 PROMESA HONESTA -->
+<section class="sin-top">
+<div class="wrap">
+<div class="honesto" data-rv>
+<div class="h-no"><small>Lo que no prometemos</small><p>Tasas de apertura ni ventas garantizadas.</p></div>
+<div class="h-si"><small>Lo que sí</small><p>El mensaje correcto al cliente correcto, con baja de un clic.</p></div>
+</div>
+</div>
+</section>
+
+<!-- 8 CON TU TIENDA O TU ASISTENTE -->
+<section class="sin-top" id="tienda">
+<div class="wrap">
+<div class="addon" data-rv>
+<div class="ad ad-tienda"><h3>Ya tienes la tienda. <span class="g">Ahora avísales.</span></h3><p>Para clientes de <span>Tienda Online</span>: cuando llegan productos nuevos, un correo a quienes ya compraron.</p>
+<ol class="ad-pasos"><li>Productos nuevos</li><li>Correo a quienes compraron</li><li>Vuelven a la tienda</li></ol>
+<a class="lnk" href="#contacto" data-plan="Sumar Mailing a mi tienda">Suma Mailing a tu tienda →</a></div>
+<div class="ad ad-asis"><h3>Con tu <span>Asistente Virtual</span></h3><p>Los contactos que deja el asistente en tu sitio pasan a tu lista, listos para la próxima campaña. <span class="marca-c">[por confirmar]</span></p>
+<a class="lnk" href="../asistente-virtual-pulido/">Conoce el Asistente Virtual →</a></div>
+</div>
+</div>
+</section>
+
+<!-- 9 DOLORES -->
+<section class="sin-top">
+<div class="wrap dolores" data-rv>
+<a class="dolor d-rojo" href="#contacto" data-plan="Ordenar mi lista de clientes"><small>Si te pasa esto</small><b>¿Tienes una lista de clientes y nunca les escribes?</b><span class="ir">Ordenemos tu lista<i>→</i></span></a>
+<a class="dolor d-vd" href="#contacto" data-plan="Mi primera campaña gratis"><small>Lo que buscas</small><b>Comunicarte con tus clientes sin sonar a spam.</b><span class="ir">Pide tu primera campaña gratis<i>→</i></span></a>
+</div>
+</section>
+
+<!-- 10 PLANES -->
+<section id="contratar" class="sin-top">
+<div class="wrap">
+<div class="cab"><div><span class="etq">Planes</span>
+<h2>Empieza con una campaña <span class="g">sin costo</span></h2></div><p class="nota">La primera va por nuestra cuenta: diseño, envío e informe.</p></div>
+<div class="planes" data-rv>
+<div class="plan dest"><small>Primera campaña <em>Para empezar</em></small><div class="precio">Gratis</div><p class="pd">A tu base, para que veas cómo funciona.</p><ul><li>Orden de tu lista</li><li>Diseño del correo con tu marca</li><li>Envío con link de baja</li><li>Informe de aperturas</li></ul><a class="btn" href="#contacto" data-plan="Mi primera campaña gratis">Pide tu campaña gratis</a></div>
+<div class="plan"><small>Campaña puntual</small><div class="precio">$[—]<span class="per">/campaña</span></div><p class="pd">Para una fecha, un lanzamiento o una oferta.</p><ul><li>Hasta [—] contactos</li><li>[1] tipo de cliente</li><li>Diseño y envío</li><li>Informe de la campaña</li></ul><a class="btn" href="#contacto" data-plan="Campaña puntual">Cotizar una campaña</a></div>
+<div class="plan med"><small>Plan mensual</small><div class="precio">$[—]<span class="per">/mes</span></div><p class="pd">Para escribirles a tus clientes todos los meses.</p><ul><li>[2] campañas al mes</li><li>Mensajes por tipo de cliente</li><li>Lista siempre al día</li><li>Informe mensual</li></ul><a class="btn" href="#contacto" data-plan="Plan mensual">Quiero el plan mensual</a></div>
+</div>
+<p class="letra">Precios en pesos chilenos por confirmar. Solo trabajamos con contactos propios de tu negocio, nunca con bases compradas.</p>
+</div>
+</section>
+
+<!-- 11 FAQ -->
+<section id="faq" class="sin-top">
+<div class="wrap faq">
+<div><span class="etq">Preguntas</span>
+<h2>Preguntas <span class="g">sobre Mailing</span></h2></div>
+<div>
+<details open><summary><span>¿Esto no es spam?</span> <i aria-hidden="true">+</i></summary><div class="resp"><p>No. Escribimos solo a personas que ya son tus clientes o te dejaron su contacto, con un mensaje pensado para cada tipo de cliente y un link de baja de un clic.</p></div></details>
+<details><summary><span>¿Qué pide la ley?</span> <i aria-hidden="true">+</i></summary><div class="resp"><p>Cada correo indica quién lo envía y permite darse de baja en un clic, como pide la Ley 19.496 (art. 28 B). Tu base se trata pensando en la Ley 21.719 de protección de datos personales: se usa solo para tus campañas y quien se da de baja no vuelve a recibirlas.</p></div></details>
+<details><summary><span>¿Cuántos van a abrir el correo?</span> <i aria-hidden="true">+</i></summary><div class="resp"><p>No prometemos tasas de apertura: dependen de tu base y de tu rubro. Lo que sí te entregamos es un informe claro con quién abrió, quién respondió y quién se dio de baja, para mejorar la siguiente.</p></div></details>
+<details><summary><span>¿Qué necesito para empezar?</span> <i aria-hidden="true">+</i></summary><div class="resp"><p>Tu lista de clientes en Excel, Google Sheets o exportada de tu tienda, aunque esté desordenada. Del resto nos encargamos nosotros.</p></div></details>
+<details><summary><span>¿Puedo usar una base comprada?</span> <i aria-hidden="true">+</i></summary><div class="resp"><p>No. Solo trabajamos con contactos propios de tu negocio. Una base comprada no te conoce y es justo lo que se siente como spam.</p></div></details>
+<details><summary><span>¿Desde qué correo sale?</span> <i aria-hidden="true">+</i></summary><div class="resp"><p>Sale a nombre de tu negocio. <span class="marca-c">[por confirmar: desde tu dominio o desde una casilla de envío de Rednet]</span></p></div></details>
+</div>
+</div>
+</section>
+
+<!-- 12 CTA -->
+<section class="cierre" id="contacto">
+<div class="wrap">
+<div class="cta" id="cta">
+<div class="niebla" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+<div class="grano" aria-hidden="true"></div>
+<h2>¿Cuándo le escribiste <span class="g">a tus clientes?</span></h2>
+<p>Mándanos tu lista y hacemos tu primera campaña gratis: diseño, envío e informe de aperturas.</p>
+<div class="hero-ctas"><a class="btn btn-blanco" href="mailto:conversemos@rednetspa.cl?subject=%C2%BFCu%C3%A1ndo%20le%20escribiste%20a%20tus%20clientes%3F">Pide tu primera campaña gratis</a><a class="btn btn-borde" href="#contacto">Escríbenos por WhatsApp</a></div>
+<p class="cta-mail">conversemos@rednetspa.cl</p>
+</div>
+</div>
+</section>
+
+<section class="otros-sec" style="padding-top:0">
+<div class="wrap">
+<span class="etq">Otras soluciones Rednet</span>
+<div class="otros"><a class="otro" href="../tienda-online/"><small>Ventas online</small><b>Tienda Online</b></a><a class="otro" href="../asistente-virtual-pulido/"><small>IA y automatización</small><b>Asistente Virtual</b></a><a class="otro aqui" href="./"><small>Estás aquí</small><b>Mailing a Contactos</b></a></div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="pie">
+<div><a href="../../v4-pulido/" class="logo" style="display:inline-flex" aria-label="Rednet, inicio"><img src="../logo-rednet-header.png" alt="Rednet"></a><p style="margin-top:16px;max-width:30ch">Servicios digitales para pymes: web, hosting, seguridad, IA y automatización.</p></div>
+<div><h4>Servicios</h4><ul><li><a href="../diseno-web-pulido/">Sitios web</a></li><li><a href="../tienda-online/">Ventas online</a></li><li><a href="../hosting-pulido/">Infraestructura</a></li><li><a href="../webguardian-pulido/">Seguridad y soporte</a></li><li><a href="../seo-geo-pulido/">Marketing y visibilidad</a></li><li><a href="../asistente-virtual-pulido/">IA y automatización</a></li><li><a href="../">Todos los productos</a></li></ul></div>
+<div><h4>Empresa</h4><ul><li><a href="../../v4-pulido/#proceso">Cómo trabajamos</a></li><li><a href="../../v4-pulido/#caso">Casos</a></li><li><a href="../../v4-pulido/#proyectos">Proyectos</a></li><li><a href="../../v4-pulido/#planes">Planes</a></li></ul></div>
+<div><h4>Contacto</h4><ul><li><a href="mailto:conversemos@rednetspa.cl">conversemos@rednetspa.cl</a></li><li>WhatsApp [número]</li><li>www.rednetspa.cl</li></ul></div>
+</div>
+<div class="legal"><span>© 2026 Rednet SpA</span><span>Borrador de página de producto · contenido entre [ ] por confirmar</span></div>
+</div>
+</footer>
+<div class="borradores" aria-label="Versión">P18 <a href="./" class="on" aria-current="page" aria-label="Borrador v1.0">v1</a><a href="../mailing-pulido/" aria-label="Versión pulida">P</a></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="../base.js"></script>
+<script src="pagina.js"></script>
+</body>
+</html>
