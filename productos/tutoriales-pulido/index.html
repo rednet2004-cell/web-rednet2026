@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#1B1C3D">
+<meta name="color-scheme" content="light">
+<title>Tutoriales/Manuales Animados · Rednet</title>
+<meta name="description" content="Tutoriales/Manuales Animados de Rednet: videos y slides explicativos para tu aplicación web, tus cursos, presentaciones y servicios. Paso a paso, con la pantalla real, recuadros y subtítulos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500;112,700;112,800;100,400;100,600&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<header id="hdr">
+<div class="wrap">
+<a href="../../v4-pulido/" class="logo" aria-label="Rednet, volver al inicio"><img src="../logo-rednet-header.png" alt="Rednet" width="250" height="72"></a>
+<button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navPrincipal"><span></span><span></span><span class="sr">Menú</span></button>
+<nav aria-label="Principal" id="navPrincipal"><a href="../../v4-pulido/">Inicio</a><a href="#funciona">Cómo funciona</a><a href="#arma">Arma tu tutorial</a><a href="#contratar">Planes</a><a href="#faq">Preguntas</a><a href="#contacto" class="solo-movil">Contacto</a></nav>
+<a class="btn btn-rojo hdr-cta" href="#contacto">Contáctanos</a>
+</div>
+</header>
+<main id="top">
+<span id="contenido"></span>
+<!-- 1 HERO pizarra índigo: el manual de 40 páginas se cierra y queda un tutorial paso a paso -->
+<section class="p-hero" aria-label="Tutoriales/Manuales Animados">
+<div class="wrap hero-grid">
+<div class="hero-txt" id="heroTxt">
+<nav class="miga" aria-label="Estás en"><a href="../../v4-pulido/">Inicio</a><i aria-hidden="true">/</i><a href="../">Productos</a><i aria-hidden="true">/</i><span aria-current="page" translate="no">Tutoriales/Manuales Animados</span></nav>
+<h1>El manual tiene 40 páginas. Nadie lo <em>abrió</em></h1>
+<p>Videos y slides que explican tu aplicación, tu curso, tu presentación o tu servicio paso a paso: la pantalla real, un recuadro en la acción y un subtítulo que se entiende a la primera.</p>
+<div class="hero-ctas">
+<a class="btn btn-rojo" href="#contacto" data-plan="Capítulo de muestra de 60 s">Pide tu capítulo de muestra</a>
+<a class="btn btn-claro" href="#funciona">Mira cómo funciona <i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></i></a>
+</div>
+</div>
+<figure class="tut-esc" aria-label="Ejemplo: un manual en PDF de 40 páginas se cierra y en su lugar aparece un tutorial en video de 4 pasos, con un recuadro amarillo sobre cada acción y su subtítulo.">
+<div class="tut" id="tut" data-f="0">
+<div class="manual" aria-hidden="true">
+<div class="mn-bar"><span translate="no">manual-inventario.pdf</span><span>pág. <b id="pag">1</b> de 40</span></div>
+<div class="mn-hoja"><b>3.4 Ingreso de productos al maestro de artículos</b><i></i><i></i><i class="c"></i><i></i><i></i><i class="c"></i><div class="mn-cap">Figura 17: pantalla de ingreso (versión 2019)</div><i></i><i></i><i class="c"></i><i></i></div>
+<div class="mn-busca" id="mnBusca">¿En qué página estaba?</div>
+</div>
+<div class="player" aria-hidden="true">
+<div class="pl-top"><span class="rec"></span><span id="capTxt">Capítulo 2 · Crear un producto</span><span class="paso-n" id="pasoN">Paso 1 de 4</span></div>
+<div class="app" id="app">
+<div class="app-side"><b translate="no">Bodega Austral</b><span>Inicio</span><span id="aProd">Productos</span><span>Stock</span><span>Informes</span></div>
+<div class="app-main">
+<div class="app-cab"><b>Productos</b><span class="app-btn" id="aNuevo">+ Nuevo producto</span></div>
+<div class="app-form" id="aForm">
+<label>Nombre</label><span class="app-in" id="aNombre"><span id="tipeo"></span></span>
+<label>Stock</label><span class="app-in"><span id="tipeo2"></span></span>
+<span class="app-btn app-guardar" id="aGuardar">Guardar</span>
+</div>
+<div class="app-lista"><span>Té verde 20 bolsas</span><span>Azúcar 1 kg</span><span>Harina 1 kg</span></div>
+<div class="toast" id="toast"><span class="ico-ok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Producto guardado</div>
+</div>
+<div class="foco" id="foco"><span id="focoN">1</span></div>
+</div>
+<div class="cc" id="cc">Entra a Productos, en el menú de la izquierda.</div>
+<div class="pl-barra"><i></i><i></i><i></i><i></i></div>
+</div>
+</div>
+<figcaption class="nota-ej"><span>Tutorial de ejemplo · sistema ficticio</span><button class="pausa" id="pausa" type="button" aria-pressed="false" aria-label="Pausar la animación del tutorial"><svg class="pz" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg><svg class="play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button></figcaption>
+</figure>
+</div>
+</section>
+
+<!-- 3 FRASE -->
+<section class="manifiesto">
+<div class="wrap">
+<p>Tu cliente pregunta lo mismo que ya está explicado. En la página 23.</p>
+</div>
+</section>
+
+<!-- 4 VIDEO DE EJEMPLO -->
+<section class="video-sec" id="ejemplo">
+<div class="wrap">
+<div class="cab"><h2>Así se ve un tutorial <span class="g">hecho por Rednet</span></h2><p class="nota">25 segundos, con capítulos, subtítulos y música. Dale play.</p></div>
+<div class="video-marco">
+<video controls playsinline preload="none" poster="../tutoriales/video/poster.jpg" width="1280" height="720"><source src="../tutoriales/video/tutoriales-25s.mp4" type="video/mp4"></video>
+</div>
+</div>
+</section>
+
+<!-- 5 CÓMO FUNCIONA: del manual al capítulo, con el scroll -->
+<section class="flujo-sec" id="funciona">
+<div class="flujo-track" id="flujoTrack">
+<div class="flujo-fijo">
+<div class="wrap flujo-grid">
+<div>
+<h2>Del manual <span class="g">al capítulo</span></h2>
+<ol class="pasos" id="pasos">
+<li class="on"><h3>Nos muestras cómo se hace</h3><p>Tu manual, tu presentación o una llamada donde nos enseñas el sistema. Con eso basta.</p></li>
+<li><h3>Lo partimos en pasos</h3><p>Un guion corto por capítulo: una tarea, un objetivo, pasos numerados.</p></li>
+<li><h3>Grabamos y marcamos</h3><p>La pantalla real, un recuadro en la acción, el número del paso y su subtítulo.</p></li>
+<li><h3>Te lo entregamos por capítulos</h3><p>Videos con nombre propio, en horizontal o vertical, y el deck animado si partimos de una presentación.</p></li>
+</ol>
+</div>
+<div class="mesa" id="mesa" data-paso="0" aria-hidden="true">
+<div class="mp mp0">
+<span class="mp-etq">Lo que tienes hoy</span>
+<div class="fuentes"><div class="fu"><b>manual-inventario.pdf</b><small>40 páginas · 2019</small></div><div class="fu"><b>Presentación capacitación.pptx</b><small>58 láminas</small></div><div class="fu"><b>Correo: "¿cómo creo un producto?"</b><small>Respondido 14 veces</small></div></div>
+</div>
+<div class="mp mp1">
+<span class="mp-etq">Guion · Capítulo 2</span>
+<ol class="guion"><li><b>Entra a Productos</b><span>0:00</span></li><li><b>Toca «Nuevo producto»</b><span>0:12</span></li><li><b>Escribe nombre y stock</b><span>0:25</span></li><li><b>Guarda y revisa</b><span>0:44</span></li></ol>
+<p class="obj">Objetivo: que puedas crear un producto sin ayuda.</p>
+</div>
+<div class="mp mp2">
+<span class="mp-etq">Grabación con marcas</span>
+<div class="mini-app"><div class="mini-side"><i></i><i class="on"></i><i></i><i></i></div><div class="mini-main"><i class="mini-btn"></i><i></i><i></i><i></i></div><div class="mini-foco"><span>2</span></div></div>
+<div class="mini-cc">Toca «Nuevo producto», arriba a la derecha.</div>
+</div>
+<div class="mp mp3">
+<span class="mp-etq">Entrega</span>
+<ul class="caps"><li><span class="cn">01</span><b>Entrar y buscar</b><em>16:9</em></li><li class="on"><span class="cn">02</span><b>Crear un producto</b><em>16:9</em></li><li><span class="cn">03</span><b>Ajustar el stock</b><em>16:9 · 9:16</em></li><li><span class="cn">04</span><b>Sacar un informe</b><em>16:9</em></li></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 6 PRESENTACIÓN VIVA: la misma lámina, por partes -->
+<section class="viva-sec" id="viva">
+<div class="wrap viva-grid">
+<div>
+<h2>Tu presentación estática, <span class="g">convertida en video</span></h2>
+<p class="viva-p">Las mismas láminas, con ritmo y voz. Mueve la línea de tiempo y mira cómo la lámina se arma por partes, en vez de aparecer entera de golpe.</p>
+<div class="toggle" id="vModo" role="group" aria-label="Comparar"><button type="button" data-m="quieta" aria-pressed="false">Lámina quieta</button><button type="button" data-m="viva" aria-pressed="true">Lámina viva</button></div>
+</div>
+<div class="lamina-w">
+<div class="lamina" id="lamina" data-m="viva" data-p="4">
+<div class="la-t lp1">Ventas del trimestre</div>
+<div class="la-b lp2"><span>Septiembre</span><i style="--h:.45"></i></div>
+<div class="la-b lp2"><span>Octubre</span><i style="--h:.62"></i></div>
+<div class="la-b lp3"><span>Noviembre</span><i style="--h:.9"></i></div>
+<div class="la-n lp3">Noviembre fue el mejor mes</div>
+<div class="la-c lp4">Siguiente paso: repetir la campaña en marzo</div>
+</div>
+<div class="linea-t">
+<button class="play-l" id="playL" type="button" aria-pressed="false" aria-label="Reproducir la lámina"><svg class="play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><svg class="pz" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg></button>
+<input type="range" id="rango" min="0" max="4" step="1" value="4" aria-label="Línea de tiempo de la lámina" aria-valuetext="Parte 4 de 4">
+<span class="parte" id="parte">4 / 4</span>
+</div>
+<p class="sub-l" id="subL" aria-live="polite">Y el siguiente paso, para cerrar.</p>
+<p class="aviso">Lámina de ejemplo · cifras ficticias</p>
+</div>
+</div>
+</section>
+
+<!-- 7 ARMA TU TUTORIAL: qué quieres explicar -->
+<section id="arma" class="sin-top">
+<div class="wrap">
+<div class="cab"><h2>¿Qué quieres <span class="g">explicar?</span></h2>
+<p class="nota">Elige y mira cómo quedaría partido en capítulos.</p></div>
+<div class="arma-grid">
+<div class="chips" id="cTipo" role="tablist" aria-label="Qué quieres explicar">
+<button type="button" role="tab" aria-selected="true" aria-controls="pApp" id="tApp">Tu aplicación web<small>Para que tus clientes la usen solos</small></button>
+<button type="button" role="tab" aria-selected="false" aria-controls="pCurso" id="tCurso" tabindex="-1">Un curso<small>Módulos cortos, fáciles de repasar</small></button>
+<button type="button" role="tab" aria-selected="false" aria-controls="pPres" id="tPres" tabindex="-1">Una presentación<small>Las mismas láminas, con ritmo</small></button>
+<button type="button" role="tab" aria-selected="false" aria-controls="pServ" id="tServ" tabindex="-1">Un servicio<small>Lo que tu cliente debe saber antes</small></button>
+</div>
+<div>
+<div class="ficha-t" id="pApp" role="tabpanel" aria-labelledby="tApp" tabindex="0">
+<div class="ft-cab"><small>Ejemplo · Sistema de inventario</small><b>Que tu aplicación llegue con un video que la explica</b></div>
+<ol class="ft-caps"><li><span>01</span>Entrar y buscar un producto<em>[—] s</em></li><li><span>02</span>Crear un producto<em>[—] s</em></li><li><span>03</span>Ajustar el stock<em>[—] s</em></li><li><span>04</span>Sacar el informe del mes<em>[—] s</em></li></ol>
+<div class="ft-pie"><span>16:9</span><span>Subtítulos</span><span>Para tu sitio, tu app o tu soporte</span></div>
+</div>
+<div class="ficha-t" id="pCurso" role="tabpanel" aria-labelledby="tCurso" tabindex="0" hidden>
+<div class="ft-cab"><small>Ejemplo · Curso de atención al cliente</small><b>Un módulo por idea, para ver y repasar</b></div>
+<ol class="ft-caps"><li><span>01</span>Cómo saludar y presentarte<em>[—] s</em></li><li><span>02</span>Qué preguntar primero<em>[—] s</em></li><li><span>03</span>Cómo responder un reclamo<em>[—] s</em></li><li><span>04</span>Cierre y seguimiento<em>[—] s</em></li></ol>
+<div class="ft-pie"><span>16:9</span><span>Slides animadas</span><span>Para tu plataforma de cursos</span></div>
+</div>
+<div class="ficha-t" id="pPres" role="tabpanel" aria-labelledby="tPres" tabindex="0" hidden>
+<div class="ft-cab"><small>Ejemplo · Presentación comercial</small><b>Convierte tu presentación en un video</b></div>
+<ol class="ft-caps"><li><span>01</span>Quiénes somos<em>[—] s</em></li><li><span>02</span>El problema que resolvemos<em>[—] s</em></li><li><span>03</span>Cómo trabajamos<em>[—] s</em></li><li><span>04</span>Próximo paso<em>[—] s</em></li></ol>
+<div class="ft-pie"><span>16:9</span><span>Deck y video juntos</span><span>Para enviar o presentar</span></div>
+</div>
+<div class="ficha-t" id="pServ" role="tabpanel" aria-labelledby="tServ" tabindex="0" hidden>
+<div class="ft-cab"><small>Ejemplo · Servicio que requiere explicación</small><b>Lo que tu cliente necesita saber, antes de llegar</b></div>
+<ol class="ft-caps"><li><span>01</span>Cómo pedir hora<em>[—] s</em></li><li><span>02</span>Qué traer el día de la cita<em>[—] s</em></li><li><span>03</span>Cómo es el proceso<em>[—] s</em></li><li><span>04</span>Qué pasa después<em>[—] s</em></li></ol>
+<div class="ft-pie"><span>9:16</span><span>Subtítulos</span><span>Para WhatsApp y redes</span></div>
+</div>
+<p class="aviso">Capítulos de ejemplo · el guion final se arma contigo</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 8 MANUAL O TUTORIAL -->
+<section class="sin-top" id="comparar">
+<div class="wrap comp-grid">
+<div>
+<h2>¿Tus manuales toman mucho tiempo en hacerse? <span class="g">Dales vida</span></h2>
+<div class="toggle" id="toggle" data-m="tut" role="group" aria-label="Comparar"><button type="button" data-m="pdf" aria-pressed="false">Manual en PDF</button><button type="button" data-m="tut" aria-pressed="true">Tutorial por capítulos</button></div>
+<ul class="crit" id="crit" data-m="tut" aria-live="polite">
+<li><span>Encontrar el paso</span><b data-s="Buscar entre 40 páginas" data-b="Un capítulo con su nombre">Un capítulo con su nombre</b></li>
+<li><span>Lo que ves</span><b data-s="Texto y una captura vieja" data-b="La pantalla real, con el recuadro en la acción">La pantalla real, con el recuadro en la acción</b></li>
+<li><span>Hacerlo</span><b data-s="Hay que redactarlo, diagramarlo y revisarlo" data-b="Lo armamos nosotros, desde tu manual o una llamada">Lo armamos nosotros, desde tu manual o una llamada</b></li>
+<li><span>Si cambia tu sistema</span><b data-s="Rehacer el documento" data-b="Se regraba ese capítulo, no todo">Se regraba ese capítulo, no todo</b></li>
+</ul>
+</div>
+<div class="pantalla-c" id="pantallaC" data-m="tut" aria-hidden="true">
+<div class="pc-pdf"><b>3.4 Ingreso de productos</b><i></i><i></i><i class="c"></i><i></i><i></i><i class="c"></i><i></i><i></i><small>Página 23 de 40</small></div>
+<div class="pc-tut"><div class="pc-pant"><span class="pc-foco"></span></div><span class="pc-paso">Paso 2 de 4</span><span class="pc-cc">Toca «Nuevo producto».</span></div>
+</div>
+</div>
+</section>
+
+<!-- 9 QUÉ INCLUYE -->
+<section class="sin-top">
+<div class="wrap">
+<div class="cab"><h2>Tú nos muestras cómo se hace, <span class="g">nosotros lo explicamos</span></h2></div>
+<div class="incl" data-rv>
+<div class="in in-tn"><h3>Guion por pasos</h3><p>Una tarea por capítulo, con pasos numerados y un objetivo claro.</p></div>
+<div class="in"><h3>Tu pantalla real</h3><p>Grabamos tu sistema tal como lo ven tus clientes, no una ilustración.</p></div>
+<div class="in in-piedra"><h3>Recuadro, número y subtítulo</h3><p>Se ve dónde hacer clic y se entiende sin audio.</p></div>
+<div class="in in-rojo"><h3>Horizontal y vertical</h3><p>16:9 para tu sitio o tu plataforma; 9:16 para WhatsApp y redes.</p></div>
+<div class="in"><h3>Slides animadas</h3><p>Si partimos de una presentación, te entregamos el deck y el video juntos.</p></div>
+<div class="in in-piedra"><h3>Voz en off</h3><p>Con locución o solo con subtítulos y música. <span class="marca-c">[por confirmar]</span></p></div>
+</div>
+</div>
+</section>
+
+<!-- 10 PROMESA HONESTA -->
+<section class="sin-top">
+<div class="wrap">
+<div class="honesto" data-rv>
+<div class="h-no"><small>Lo que no prometemos</small><p>Que bajen las consultas de soporte, sin medirlo con tus datos.</p></div>
+<div class="h-si"><small>Lo que sí</small><p>Videos y slides que explican paso a paso, para que se entienda a la primera.</p></div>
+</div>
+</div>
+</section>
+
+<!-- 11 DOLORES -->
+<section class="sin-top">
+<div class="wrap dolores" data-rv>
+<a class="dolor d-rojo" href="#contacto" data-plan="Convertir mi manual en video"><small>Si te pasa esto</small><b>¿Tus manuales toman mucho tiempo en hacerse? Dales vida.</b><span class="ir">Convierte tu manual<i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></span></a>
+<a class="dolor d-tn" href="#contacto" data-plan="Capítulo de muestra de 60 s"><small>Lo que buscas</small><b>Que tu aplicación llegue con un video que la explica.</b><span class="ir">Pide tu capítulo de muestra<i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></span></a>
+</div>
+</section>
+
+<!-- 12 PLANES -->
+<section id="contratar" class="sin-top">
+<div class="wrap">
+<div class="cab"><h2>Empieza con un capítulo <span class="g">sin costo</span></h2><p class="nota">60 segundos sobre una función de tu sistema. Con cupo.</p></div>
+<div class="planes" data-rv>
+<div class="plan dest"><small>Capítulo de muestra <em>Con cupo</em></small><div class="precio">Gratis</div><p class="pd">Un video de 60 s sobre una función de tu sistema, para que veas cómo queda.</p><ul><li>Guion de un paso a paso</li><li>Grabación de tu pantalla</li><li>Recuadro, número y subtítulos</li><li>[—] cupos al mes</li></ul><a class="btn" href="#contacto" data-plan="Capítulo de muestra de 60 s">Pide tu capítulo de muestra</a></div>
+<div class="plan"><small>Por capítulo</small><div class="precio">$[—]<span class="per">/capítulo</span></div><p class="pd">Para explicar una tarea puntual o una función nueva.</p><ul><li>Hasta [—] s por capítulo</li><li>16:9 o 9:16</li><li>Subtítulos</li><li>[—] rondas de cambios</li></ul><a class="btn" href="#contacto" data-plan="Tutorial por capítulo">Cotizar un capítulo</a></div>
+<div class="plan med"><small>Manual animado completo</small><div class="precio">$[—]<span class="per">/proyecto</span></div><p class="pd">Para reemplazar tu manual o tu curso por una serie de capítulos.</p><ul><li>Hasta [—] capítulos</li><li>Slides animadas o deck vivo</li><li>Horizontal y vertical</li><li>Voz en off [por confirmar]</li></ul><a class="btn" href="#contacto" data-plan="Manual animado completo">Quiero el manual completo</a></div>
+</div>
+<p class="letra">Precios en pesos chilenos por confirmar. Plazos de entrega por confirmar según la cantidad de capítulos.</p>
+</div>
+</section>
+
+<!-- 13 FAQ -->
+<section id="faq" class="sin-top">
+<div class="wrap faq">
+<div><h2>Preguntas <span class="g">sobre Tutoriales</span></h2></div>
+<div>
+<details open><summary><span>¿Qué necesito para empezar?</span> <i aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6v12M6 12h12"/></svg></i></summary><div class="resp"><p>Tu manual, tu presentación o 30 minutos para mostrarnos cómo se usa tu sistema. Si no tienes nada escrito, partimos desde la llamada.</p></div></details>
+<details><summary><span>¿Sirve para cualquier aplicación?</span> <i aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6v12M6 12h12"/></svg></i></summary><div class="resp"><p>Sirve para aplicaciones web, sistemas internos, cursos, presentaciones y servicios que necesitan explicación. Para grabar tu sistema necesitamos un acceso de prueba o que nos lo muestres en una llamada.</p></div></details>
+<details><summary><span>¿Van a bajar las consultas a mi soporte?</span> <i aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6v12M6 12h12"/></svg></i></summary><div class="resp"><p>No lo prometemos sin datos: depende de tu sistema y de tus clientes. Si quieres medirlo, comparamos tus consultas antes y después de publicar los capítulos.</p></div></details>
+<details><summary><span>¿Lleva voz o solo subtítulos?</span> <i aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6v12M6 12h12"/></svg></i></summary><div class="resp"><p>Siempre lleva subtítulos, para que se entienda sin audio. La voz en off <span class="marca-c">[por confirmar: incluida, opcional o con costo aparte]</span>.</p></div></details>
+<details><summary><span>¿Qué pasa si cambia mi sistema?</span> <i aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6v12M6 12h12"/></svg></i></summary><div class="resp"><p>Como cada capítulo explica una sola tarea, se regraba solo el que cambió. <span class="marca-c">[por confirmar: valor de la actualización]</span></p></div></details>
+<details><summary><span>¿Dónde los publico?</span> <i aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6v12M6 12h12"/></svg></i></summary><div class="resp"><p>Donde los necesites: en tu sitio, dentro de tu aplicación, en tu plataforma de cursos, en YouTube o por WhatsApp. Te entregamos los archivos en horizontal y vertical.</p></div></details>
+</div>
+</div>
+</section>
+
+<!-- 14 CONTACTO: banda a ancho completo, video suave detrás, formulario blanco -->
+<section class="cierre" id="contacto">
+<div class="cta" id="cta">
+<div class="cta-fondo" aria-hidden="true"><video id="vCta" muted playsinline loop preload="none" poster="../../v4-impeccable/video/cta-poster.jpg"><source src="../../v4-impeccable/video/cta-loop.webm" type="video/webm"><source src="../../v4-impeccable/video/cta-loop.mp4" type="video/mp4"></video></div>
+<div class="wrap cta-grid">
+<div class="cta-txt">
+<h2>Que se entienda <span class="g">a la primera</span></h2>
+<p>Pide tu capítulo de muestra: 60 segundos sobre una función de tu sistema, sin costo y con cupo. También puedes escribirnos a <a href="mailto:conversemos@rednetspa.cl?subject=Quiero%20mi%20cap%C3%ADtulo%20de%20muestra" translate="no">conversemos@rednetspa.cl</a>.</p>
+<a class="btn btn-borde" href="https://wa.me/?text=Hola%20Rednet%2C%20quiero%20mi%20cap%C3%ADtulo%20de%20muestra%20de%20Tutoriales" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.8A8 8 0 1 1 8 19z"/></svg>Escríbenos por WhatsApp</a>
+<p class="cta-nota">[Número de WhatsApp por confirmar: hoy el botón abre WhatsApp sin destinatario.]</p>
+</div>
+<form class="form" id="form" novalidate>
+<div class="campo"><label for="fNombre">Tu nombre</label><input id="fNombre" name="nombre" autocomplete="name" required placeholder="Ej: Camila Rojas…"></div>
+<div class="campo"><label for="fWsp">WhatsApp o correo</label><input id="fWsp" name="contacto" autocomplete="tel" spellcheck="false" required aria-describedby="fWspAyuda"><small id="fWspAyuda">Ej: +56 9 1234 5678</small></div>
+<div class="campo"><label for="fQue">¿Qué necesitas?</label><select id="fQue" name="que"><option>Capítulo de muestra de 60 s</option><option>Convertir mi manual en video</option><option>Tutorial por capítulo</option><option>Manual animado completo</option><option>Convertir mi presentación en video</option><option>Aún no sé, quiero orientación</option></select></div>
+<div class="campo"><label for="fMsg">¿Qué quieres explicar? <span>(opcional)</span></label><textarea id="fMsg" name="mensaje" rows="3" placeholder="Ej: cómo crear un pedido en nuestro sistema…"></textarea></div>
+<p class="error" id="fError" role="alert" hidden>Falta tu nombre y un WhatsApp o correo para responderte.</p>
+<button class="btn btn-rojo" type="submit">Pide tu capítulo de muestra</button>
+<p class="ok" id="fOk" role="status" hidden>Listo, recibimos tu mensaje. Te escribimos pronto. <span>(Maqueta: el formulario todavía no envía datos.)</span></p>
+</form>
+</div>
+</div>
+</section>
+
+<!-- 15 RELACIONADOS -->
+<section class="otros-sec">
+<div class="wrap">
+<h2 class="otros-t">Funciona mejor junto a</h2>
+<div class="otros"><a class="otro" href="../apps-pulido/"><small>Apps</small><b translate="no">Apps Móviles</b><span>Tu app nueva, con un capítulo por función.</span></a><a class="otro" href="../asistente-virtual-pulido/"><small>IA y automatización</small><b translate="no">Asistente Virtual</b><span>Responde la duda y manda al capítulo que la explica.</span></a><a class="otro" href="../webmotion-pulido/"><small>Video</small><b translate="no">WebMotion Cortos Comerciales</b><span>Lo que tu sitio ya muestra, en cortos para vender.</span></a></div>
+</div>
+</section>
+</main>
+
+<div class="barra-movil" id="barraMovil"><a class="btn btn-rojo" href="#contacto">Presupuesto</a><a class="btn btn-negro" href="https://wa.me/?text=Hola%20Rednet%2C%20quiero%20mi%20cap%C3%ADtulo%20de%20muestra%20de%20Tutoriales" target="_blank" rel="noopener">WhatsApp</a></div>
+
+<footer>
+<div class="wrap">
+<div class="pie">
+<div><a href="../../v4-pulido/" class="logo" style="display:inline-flex" aria-label="Rednet, inicio"><img src="../logo-rednet-header.png" alt="Rednet" width="250" height="72"></a><p style="margin-top:16px;max-width:30ch">Servicios digitales para pymes: web, hosting, seguridad, IA y automatización.</p></div>
+<div><p class="pie-t">Servicios</p><ul><li><a href="../diseno-web-pulido/">Sitios web</a></li><li><a href="../tienda-online-pulido/">Ventas online</a></li><li><a href="../hosting-pulido/">Infraestructura</a></li><li><a href="../webguardian-pulido/">Seguridad y soporte</a></li><li><a href="../seo-geo-pulido/">Marketing y visibilidad</a></li><li><a href="../asistente-virtual-pulido/">IA y automatización</a></li><li><a href="../">Todos los productos</a></li></ul></div>
+<div><p class="pie-t">Empresa</p><ul><li><a href="../../v4-pulido/#proceso">Cómo trabajamos</a></li><li><a href="../../v4-pulido/#caso">Casos</a></li><li><a href="../../v4-pulido/#proyectos">Proyectos</a></li><li><a href="../../v4-pulido/#planes">Planes</a></li></ul></div>
+<div><p class="pie-t">Contacto</p><ul><li><a href="mailto:conversemos@rednetspa.cl" translate="no">conversemos@rednetspa.cl</a></li><li>WhatsApp [número]</li><li translate="no">www.rednetspa.cl</li></ul></div>
+</div>
+<div class="legal"><span>© 2026 Rednet SpA · RUT [por confirmar] · [Dirección por confirmar]</span><span>P20 <span translate="no">Tutoriales/Manuales Animados</span> · catálogo v2.1 · contenido entre [ ] por confirmar</span></div>
+</div>
+</footer>
+<nav class="versiones" aria-label="Versiones de esta página"><span>Versión</span><a href="../tutoriales/">Original</a><a href="../tutoriales-impeccable/">Impeccable</a><a href="../tutoriales-impeccable-motion/">Motion</a><a href="../tutoriales-pulido/" aria-current="page">Pulido</a></nav>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
