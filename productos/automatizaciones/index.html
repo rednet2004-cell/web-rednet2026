@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Automatizaciones de Tareas · Rednet</title>
+<meta name="description" content="Automatizaciones de Tareas de Rednet: el trabajo repetitivo lo hace la máquina, de punta a punta. Facturas, avisos de despacho, recordatorios de pago. Evaluación gratis y reunión de 45 minutos sin costo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500;112,700;112,800;100,400;100,600&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="../base.css">
+<link rel="stylesheet" href="pagina.css">
+</head>
+<body class="pg-aut">
+<header id="hdr">
+<div class="wrap">
+<a href="../../v4-pulido/" class="logo" aria-label="Rednet, volver al inicio"><img src="../logo-rednet-header.png" alt="Rednet"></a>
+<nav aria-label="Principal"><a href="../../v4-pulido/">Inicio</a><a href="#funciona">Cómo funciona</a><a href="#rubros">Ejemplos</a><a href="#contratar">Cómo contratarlo</a><a href="#faq">Preguntas</a></nav>
+<a class="btn btn-rojo" href="#contacto">Pide tu evaluación gratis</a>
+</div>
+</header>
+<main id="top">
+<!-- 1 HERO pizarra: un flujo que corre solo, nodo a nodo -->
+<section class="p-hero" aria-label="Automatizaciones de Tareas">
+<div class="wrap hero-grid">
+<div class="hero-txt" id="heroTxt">
+<div class="miga"><a href="../../v4-pulido/">Inicio</a><i>/</i><a href="../">Productos</a><i>/</i><span>Automatizaciones de Tareas</span></div>
+<span class="etq">P12 · Automatizaciones de Tareas</span>
+<h1>Si lo haces igual todos los días, <em>puede hacerse solo</em></h1>
+<p>El trabajo repetitivo lo hace la máquina, de punta a punta: facturas, avisos de despacho, recordatorios de pago. Tú haces el resto de tu negocio.</p>
+<div class="hero-ctas">
+<a class="btn btn-rojo" href="#contacto">Pide tu evaluación gratis</a>
+<a class="btn btn-claro" href="#funciona">Mira un flujo <i>↓</i></a>
+</div>
+</div>
+<div class="lienzo-esc" aria-hidden="true">
+<div class="contador" id="contador"><span class="c-dot"></span><span>Hechas hoy:</span> <b id="cuenta">0</b></div>
+<div class="lienzo" id="lienzo">
+<div class="l-bar"><span></span><span></span><span></span><small id="lNombre">Flujo · Facturas de proveedores</small></div>
+<div class="nodos" id="nodos">
+<div class="nodo"><i class="n-ico">✉</i><div><small>Llega</small><b id="n0">Correo con factura.pdf</b></div></div>
+<div class="nodo"><i class="n-ico">⌕</i><div><small>Lee</small><b id="n1">RUT, monto y fecha</b></div></div>
+<div class="nodo"><i class="n-ico">▦</i><div><small>Anota</small><b id="n2">Fila nueva en la planilla</b></div></div>
+<div class="nodo"><i class="n-ico">➚</i><div><small>Avisa</small><b id="n3">Correo a contabilidad</b></div></div>
+<span class="pulso" id="pulso"></span>
+</div>
+<div class="log" id="log"><span>09:14 · Factura 4821 · registrada</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 2 MARQUEE de tareas -->
+<div class="marquee" aria-label="Tareas que se pueden automatizar">
+<div class="pista"><span>Facturas por cliente</span><span>Avisos de despacho</span><span>Recordatorios de pago</span><span>Planillas que se llenan solas</span><span>Vencimientos</span><span>Reportes semanales</span><span>Facturas por cliente</span><span>Avisos de despacho</span><span>Recordatorios de pago</span><span>Planillas que se llenan solas</span><span>Vencimientos</span><span>Reportes semanales</span></div>
+</div>
+
+<!-- 3 MANIFIESTO -->
+<section class="manifiesto">
+<div class="wrap">
+<p data-palabras>Copiar, pegar, enviar. Copiar, pegar, enviar. Lo que haces igual todos los días, probablemente puede hacerse solo.</p>
+</div>
+</section>
+
+<!-- 4 CÓMO FUNCIONA: una tarea de punta a punta, con el scroll -->
+<section class="flujo-sec" id="funciona">
+<div class="flujo-track" id="flujoTrack">
+<div class="flujo-fijo">
+<div class="wrap flujo-grid">
+<div>
+<span class="etq">Cómo funciona</span>
+<h2>Una tarea, <span class="g">de punta a punta</span></h2>
+<ol class="pasos" id="pasos">
+<li class="on"><b>Llega</b><span>Un correo con una factura, un pedido que sale, una fecha que se acerca.</span></li>
+<li><b>Lee y ordena</b><span>El flujo saca los datos y los deja donde van: planilla, carpeta o sistema.</span></li>
+<li><b>Avisa</b><span>A tu cliente, a tu equipo o a ti, por correo o WhatsApp.</span></li>
+<li><b>Queda registrado</b><span>Cada vez que corre, queda anotado qué hizo. Sin que nadie intervenga.</span></li>
+</ol>
+</div>
+<div class="banco" id="banco" data-paso="0" aria-hidden="true">
+<div class="bp bp0">
+<small class="bp-etq">Bandeja de entrada</small>
+<div class="correo nuevo"><b>Proveedor Andes Ltda.</b><span>Factura N° 4821 · noviembre</span><em>factura-4821.pdf</em></div>
+<div class="correo"><b>Transportes Sur</b><span>Factura N° 977</span></div>
+<div class="correo"><b>Insumos Maule</b><span>Factura N° 3310</span></div>
+</div>
+<div class="bp bp1">
+<small class="bp-etq">Datos leídos</small>
+<dl class="datos"><div><dt>Proveedor</dt><dd>Andes Ltda.</dd></div><div><dt>RUT</dt><dd>[76.xxx.xxx-x]</dd></div><div><dt>Monto</dt><dd>$[—]</dd></div><div><dt>Vence</dt><dd>15/12/2026</dd></div></dl>
+<div class="fila-pl"><span>128</span><span>Andes Ltda.</span><span>4821</span><span>15/12</span><span class="ok">✓</span></div>
+</div>
+<div class="bp bp2">
+<small class="bp-etq">Aviso enviado</small>
+<div class="msj"><small>Para: contabilidad@tuempresa.cl</small><p>Llegó la factura 4821 de Andes Ltda. Vence el 15/12. Ya está en la planilla, fila 128.</p></div>
+</div>
+<div class="bp bp3">
+<small class="bp-etq">Registro del flujo</small>
+<ul class="registro"><li><span>09:14</span>Correo recibido</li><li><span>09:14</span>Datos leídos</li><li><span>09:14</span>Planilla actualizada</li><li><span>09:14</span>Aviso enviado</li><li class="fin"><span>09:14</span>Listo · sin intervención</li></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 5 TÚ VS EL FLUJO -->
+<section class="duelo-sec" id="duelo">
+<div class="wrap">
+<div class="cab"><div><span class="etq">Pruébalo</span><h2>Diez facturas. <span class="g">Tú o el flujo.</span></h2></div>
+<p class="nota">Cada factura a mano son 5 clics. Haz la prueba.</p></div>
+<div class="duelo">
+<div class="carril c-mano">
+<div class="c-top"><b>A mano</b><span><b id="clics">0</b> clics</span></div>
+<ol class="facturas" id="fMano"></ol>
+<button class="btn btn-negro" id="bMano">Abrir correo</button>
+</div>
+<div class="carril c-flujo">
+<div class="c-top"><b>Con el flujo</b><span><b>0</b> clics</span></div>
+<ol class="facturas" id="fFlujo"></ol>
+<button class="btn btn-lima" id="bFlujo">Activar el flujo</button>
+</div>
+</div>
+<button class="reini" id="reini">Reiniciar ↻</button>
+</div>
+</section>
+
+<!-- 6 EJEMPLOS POR RUBRO -->
+<section class="rubros-sec" id="rubros">
+<div class="wrap">
+<div class="cab"><div><span class="etq">Ejemplos</span><h2>Tu tarea, <span class="g">en tu rubro</span></h2></div>
+<p class="nota">Ejemplos de flujos que se pueden armar. Cada uno parte con una evaluación.</p></div>
+<div class="chips" id="cRub" role="tablist">
+<button class="on" role="tab" aria-selected="true" aria-controls="rCont">Contables</button>
+<button role="tab" aria-selected="false" aria-controls="rTrans">Transporte</button>
+<button role="tab" aria-selected="false" aria-controls="rCob">Cobranza</button>
+<button role="tab" aria-selected="false" aria-controls="rSeg">Seguridad industrial</button>
+</div>
+<div class="rubro on" id="rCont" role="tabpanel">
+<div class="cadena"><div><small>Cuándo</small><b>Cada mañana</b></div><div><small>Qué hace</small><b>Baja las facturas del SII de cada cliente</b></div><div><small>Dónde</small><b>Las deja en la carpeta de cada cliente</b></div><div><small>Aviso</small><b>Te manda el resumen del día</b></div></div>
+<div class="burbuja"><small>Resumen · 08:00</small><p>14 facturas nuevas en 6 clientes. 2 clientes sin movimiento este mes.</p></div>
+</div>
+<div class="rubro" id="rTrans" role="tabpanel" hidden>
+<div class="cadena"><div><small>Cuándo</small><b>El pedido sale de bodega</b></div><div><small>Qué hace</small><b>Avisa al cliente que va en camino</b></div><div><small>Después</small><b>Avisa cuando se entrega</b></div><div><small>Registro</small><b>Queda en la planilla de despachos</b></div></div>
+<div class="burbuja"><small>WhatsApp · 11:32</small><p>Hola Marcela, tu pedido #2231 salió de bodega. Llega hoy entre 15:00 y 18:00.</p></div>
+</div>
+<div class="rubro" id="rCob" role="tabpanel" hidden>
+<div class="cadena"><div><small>Cuándo</small><b>3 días antes del vencimiento</b></div><div><small>Qué hace</small><b>Manda un recordatorio amable</b></div><div><small>Si paga</small><b>Se marca pagado en la planilla</b></div><div><small>Si no</small><b>Te avisa a ti</b></div></div>
+<div class="burbuja"><small>Correo · 09:00</small><p>Hola, te recordamos que la factura 1184 vence el viernes 12. Si ya pagaste, no consideres este mensaje.</p></div>
+</div>
+<div class="rubro" id="rSeg" role="tabpanel" hidden>
+<div class="cadena"><div><small>Cuándo</small><b>30 días antes de un vencimiento</b></div><div><small>Qué hace</small><b>Avisa al responsable</b></div><div><small>Seguimiento</small><b>Recuerda otra vez a los 7 días</b></div><div><small>Registro</small><b>Queda en la planilla de control</b></div></div>
+<div class="burbuja"><small>Aviso · 08:30</small><p>La certificación de extintores de Bodega 2 vence el 10/01. Responsable: Jorge.</p></div>
+</div>
+<p class="aviso">Ejemplos ilustrativos · nombres y datos inventados para mostrar el flujo</p>
+</div>
+</section>
+
+<!-- 7 ¿SE PUEDE AUTOMATIZAR? -->
+<section class="test-sec" id="se-puede">
+<div class="wrap test-grid">
+<div>
+<span class="etq">¿Se puede?</span>
+<h2>¿Tu tarea <span class="g">se puede automatizar?</span></h2>
+<p class="nota">Marca lo que se cumple.</p>
+</div>
+<div class="test" id="test">
+<label><input type="checkbox"> Se repite igual, todos los días o todas las semanas</label>
+<label><input type="checkbox"> Sigue reglas claras (si pasa esto, se hace esto otro)</label>
+<label><input type="checkbox"> Mueve datos entre correo, planillas o sistemas</label>
+<label><input type="checkbox"> Hoy la hace una persona copiando y pegando</label>
+<div class="veredicto" id="veredicto"><b>Marca al menos una</b><span>Y te decimos qué tan buena candidata es.</span></div>
+</div>
+</div>
+</section>
+
+<!-- 8 QUÉ INCLUYE -->
+<section style="padding-top:0">
+<div class="wrap">
+<div class="cab"><div><span class="etq">Qué incluye</span><h2>Lo armamos contigo, <span class="g">corre solo</span></h2></div></div>
+<div class="incl" data-rv>
+<div class="in in-vd"><b>Evaluación gratis</b><p>Reunión de 45 minutos para definir qué tarea conviene automatizar.</p></div>
+<div class="in"><b>Diseño del flujo</b><p>Paso a paso, con tus reglas y tus excepciones.</p></div>
+<div class="in in-papel"><b>Construcción en n8n</b><p>Conectado a tu correo, tus planillas y tus sistemas.</p></div>
+<div class="in in-rojo"><b>Pruebas con tus datos</b><p>Antes de dejarlo solo, lo probamos con casos reales.</p></div>
+<div class="in"><b>Registro de cada ejecución</b><p>Qué hizo, cuándo y con qué datos.</p></div>
+<div class="in in-papel"><b>Aviso si algo falla</b><p>Si un dato no calza, el flujo se detiene y avisa.</p></div>
+</div>
+</div>
+</section>
+
+<!-- 9 PROMESA HONESTA -->
+<section style="padding-top:0">
+<div class="wrap">
+<div class="honesto" data-rv>
+<div class="h-no"><small>Lo que no prometemos</small><b>Horas o pesos ahorrados sin haber medido tu proceso.</b></div>
+<div class="h-si"><small>Lo que sí</small><b>Una tarea hecha igual cada vez, de punta a punta, con registro.</b></div>
+</div>
+</div>
+</section>
+
+<!-- 10 DOLORES -->
+<section style="padding-top:0">
+<div class="wrap dolores" data-rv>
+<a class="dolor d-rojo" href="#contacto"><small>Si te pasa esto</small><b>¿Haces lo mismo todos los días a mano? Automatízalo.</b><span class="ir">Pide tu evaluación</span></a>
+<a class="dolor d-vd" href="#contacto"><small>Lo que buscas</small><b>Menos errores humanos, más tiempo para tu negocio.</b><span class="ir">Conversemos</span></a>
+</div>
+</section>
+
+<!-- 11 CÓMO CONTRATARLO -->
+<section id="contratar" style="padding-top:0">
+<div class="wrap">
+<div class="cab">
+<div><span class="etq">Cómo contratarlo</span><h2>Parte por <span class="g">una tarea</span></h2></div>
+<p class="nota">Primero vemos si conviene. Después la armamos.</p>
+</div>
+<div class="planes" data-rv>
+<div class="plan"><small>Evaluación</small><div class="precio">Gratis</div><p class="pd">Para saber qué conviene automatizar.</p><ul><li>Reunión de 45 minutos</li><li>Revisamos tu tarea paso a paso</li><li>Te decimos si conviene o no</li><li>Sin compromiso</li></ul><a class="btn" href="#contacto">Agendar evaluación</a></div>
+<div class="plan dest"><small>Una tarea <em>Para partir</em></small><div class="precio">$[—]</div><p class="pd">Una tarea, de punta a punta.</p><ul><li>Diseño y construcción del flujo</li><li>Pruebas con tus datos</li><li>Registro y aviso si falla</li><li>Soporte del flujo $[—]/mes [por confirmar]</li></ul><a class="btn" href="#contacto">Automatizar una tarea</a></div>
+<div class="plan med"><small>Varias tareas</small><div class="precio">Hablemos</div><p class="pd">Para un proceso completo o varias áreas.</p><ul><li>Mapa de tareas repetitivas</li><li>Prioridad según impacto</li><li>Flujos conectados entre sí</li><li>Revisión periódica</li></ul><a class="btn" href="#contacto">Hablar con Rednet</a></div>
+</div>
+<p class="letra">Precios en pesos chilenos por confirmar. Plus: evaluación gratis y reunión de 45 minutos sin costo para definir qué tarea conviene automatizar.</p>
+</div>
+</section>
+
+<!-- 12 FAQ -->
+<section id="faq" style="padding-top:0">
+<div class="wrap faq">
+<div><span class="etq">Preguntas</span><h2>Preguntas <span class="g">sobre las automatizaciones</span></h2></div>
+<div>
+<details open><summary>¿Qué es n8n? <i>+</i></summary><div class="resp"><p>Es la herramienta con la que armamos los flujos: conecta tu correo, tus planillas, WhatsApp y otros sistemas. No necesitas aprender a usarla.</p></div></details>
+<details><summary>¿Tengo que cambiar mis programas? <i>+</i></summary><div class="resp"><p>No. El flujo se conecta a lo que ya usas. Si algún sistema no lo permite, te lo decimos en la evaluación.</p></div></details>
+<details><summary>¿Cuánto tiempo me voy a ahorrar? <i>+</i></summary><div class="resp"><p>Depende de tu proceso. No prometemos horas ni pesos sin medirlo: en la evaluación vemos cuánto te toma hoy y qué cambia.</p></div></details>
+<details><summary>¿Qué pasa si algo falla? <i>+</i></summary><div class="resp"><p>Cada ejecución queda registrada. Si un dato no calza, el flujo se detiene y avisa para revisarlo.</p></div></details>
+<details><summary>¿Dónde quedan mis datos? <i>+</i></summary><div class="resp"><p>[Por confirmar: el flujo corre en un servidor de Rednet o en uno tuyo.] Solo tiene acceso a lo que el flujo necesita.</p></div></details>
+<details><summary>¿En qué se diferencia del Asistente Virtual? <i>+</i></summary><div class="resp"><p>El Asistente Virtual conversa con tus clientes. Una automatización hace tareas por detrás, sin conversar. Pueden ir juntos.</p></div></details>
+</div>
+</div>
+</section>
+
+<!-- 13 CTA -->
+<section class="cierre" id="contacto">
+<div class="wrap">
+<div class="cta" id="cta">
+<div class="niebla" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+<div class="grano" aria-hidden="true"></div>
+<h2>¿Haces lo mismo todos los días <span class="g">a mano?</span></h2>
+<p>Evaluación gratis y reunión de 45 minutos sin costo para definir qué tarea conviene automatizar.</p>
+<div class="hero-ctas"><a class="btn btn-blanco" href="mailto:conversemos@rednetspa.cl?subject=Evaluaci%C3%B3n%20gratis%20%C2%B7%20Automatizaciones%20de%20Tareas">Pide tu evaluación gratis</a><a class="btn btn-borde" href="#contacto">Escríbenos por WhatsApp</a></div>
+<p class="cta-mail">conversemos@rednetspa.cl</p>
+</div>
+</div>
+</section>
+<section class="otros-sec" style="padding-top:0">
+<div class="wrap">
+<span class="etq">Otras soluciones Rednet</span>
+<div class="otros"><a class="otro" href="../asistente-virtual-pulido/"><small>IA y automatización</small><b>Asistente Virtual</b></a><a class="otro" href="../documentos/"><small>Sistemas</small><b>Nube Documental</b></a><a class="otro aqui" href="./"><small>Estás aquí</small><b>Automatizaciones de Tareas</b></a></div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="pie">
+<div><a href="../../v4-pulido/" class="logo" style="display:inline-flex" aria-label="Rednet"><img src="../logo-rednet.png" alt="Rednet"></a><p style="margin-top:16px;max-width:30ch">Servicios digitales para pymes: web, hosting, seguridad, IA y automatización.</p></div>
+<div><h4>Servicios</h4><ul><li><a href="../diseno-web-pulido/">Sitio/Web Pro</a></li><li><a href="../tienda-online/">Tienda Online</a></li><li><a href="../hosting-pulido/">Hosting</a></li><li><a href="../webguardian-pulido/">WebGuardian</a></li><li><a href="../seo-geo-pulido/">SEO+GEO</a></li><li><a href="../asistente-virtual-pulido/">Asistente Virtual</a></li><li><a href="../">Todos los productos</a></li></ul></div>
+<div><h4>Empresa</h4><ul><li><a href="../../v4-pulido/#proceso">Cómo trabajamos</a></li><li><a href="../../v4-pulido/#caso">Casos</a></li><li><a href="../../v4-pulido/#proyectos">Proyectos</a></li></ul></div>
+<div><h4>Contacto</h4><ul><li><a href="mailto:conversemos@rednetspa.cl">conversemos@rednetspa.cl</a></li><li>WhatsApp [número]</li><li>www.rednetspa.cl</li></ul></div>
+</div>
+<div class="legal"><span>© 2026 Rednet SpA</span><span>Borrador de página de producto · contenido entre [ ] por confirmar</span></div>
+</div>
+</footer>
+<div class="borradores" aria-label="Versión">P12 <a href="./" class="on" aria-current="page" aria-label="Borrador v1.0">v1</a></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="../base.js"></script>
+<script src="pagina.js"></script>
+</body>
+</html>
