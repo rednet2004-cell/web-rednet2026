@@ -284,7 +284,7 @@ header .wrap{position:relative}
 .otros-sec{padding-block:clamp(72px,9vw,120px)}
 .otros-t{font-size:clamp(26px,3vw,36px);margin-bottom:24px}
 .otros{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.otro{border-radius:20px;padding:22px;min-height:170px;display:flex;flex-direction:column;gap:10px;text-decoration:none;background:var(--grafito);color:#fff;box-shadow:inset 0 0 0 1px var(--linea-noche);transition:transform .3s,box-shadow .3s}
+.otro{border-radius:20px;padding:22px;overflow:hidden;min-height:170px;display:flex;flex-direction:column;gap:10px;text-decoration:none;background:var(--grafito);color:#fff;box-shadow:inset 0 0 0 1px var(--linea-noche);transition:transform .3s,box-shadow .3s}
 .otro:hover{transform:translateY(-4px);box-shadow:inset 0 0 0 1px var(--ocre)}
 .otro small{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ocre-claro)}
 .otro b{font-family:var(--f-display);font-stretch:112%;font-size:22px;letter-spacing:-.02em;line-height:1.1;margin-top:auto}
@@ -396,3 +396,5 @@ button,a,summary,.btn,select{touch-action:manipulation}
 .r-chip{min-width:15.5em;justify-content:center}
 /* mientras el radar está quieto, el botón lo dice con color */
 .pausa[aria-pressed="true"]{color:var(--ocre-claro);border-color:rgba(237,203,147,.4)}
+
+.otro-foto{display:block;margin:-22px -22px 6px;aspect-ratio:16/9;overflow:hidden;background:#0a0909}.otro-foto img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease-out,ease)}.otro:hover .otro-foto img{transform:scale(1.05)}@media (prefers-reduced-motion:reduce){.otro:hover .otro-foto img{transform:none}}
