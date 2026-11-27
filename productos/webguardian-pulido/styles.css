@@ -232,14 +232,14 @@ header .wrap{position:relative}
 .plan.med{background:var(--piedra);color:var(--tinta);box-shadow:none}
 .plan.med small,.plan.med .pd{color:var(--gris-texto)}
 .letra{font-size:13px;color:var(--gris-noche);margin-top:22px}
-.informe-dl{display:flex;align-items:center;gap:16px;margin-top:26px;padding:16px 20px;border-radius:var(--r);background:var(--grafito);box-shadow:inset 0 0 0 1px var(--linea-noche);color:#fff;text-decoration:none;transition:background .25s ease,box-shadow .25s ease}
-.informe-dl:hover{background:var(--grafito-2);box-shadow:inset 0 0 0 1px var(--ocre)}
+.informe-dl{display:flex;align-items:center;gap:16px;margin-top:26px;padding:26px 28px;min-height:96px;border-radius:var(--r);background:#3a3735;box-shadow:inset 0 1px 0 rgba(255,255,255,.12),inset 0 0 0 1px rgba(255,255,255,.1),0 6px 0 #1d1b1a,0 14px 30px -10px rgba(0,0,0,.6);color:#fff;text-decoration:none;transition:background .25s ease,box-shadow .25s ease,transform .2s ease}
+.informe-dl:hover{background:#47433f;transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.16),inset 0 0 0 1px var(--ocre),0 8px 0 #1d1b1a,0 18px 34px -10px rgba(0,0,0,.6)}.informe-dl:active{transform:translateY(3px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.1),0 2px 0 #1d1b1a}.informe-dl:focus-visible{outline:3px solid #fff;outline-offset:3px}
 .informe-dl svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .dl-doc{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--rojo);flex:none}
 .dl-txt{flex:1;font-family:var(--f-mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;line-height:1.4}
 .dl-txt small{margin-left:8px;font-size:11px;color:var(--ocre-claro);letter-spacing:.12em}
 .dl-flecha{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#fff;color:var(--negro);flex:none}
-@media (max-width:520px){.informe-dl{gap:12px;padding:14px}.dl-txt{font-size:11.5px}.dl-txt small{display:block;margin:2px 0 0}}
+@media (max-width:520px){.informe-dl{gap:12px;padding:20px 16px;min-height:84px}.dl-txt{font-size:11.5px}.dl-txt small{display:block;margin:2px 0 0}}
 @media (max-width:860px){.planes{grid-template-columns:1fr}.plan.dest{transform:none}}
 
 /* 8 FAQ */
