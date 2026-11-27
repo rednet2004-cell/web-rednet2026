@@ -65,6 +65,22 @@
 </div>
 </section>
 
+<!-- 2b VIDEO: así sale una campaña (25 s, no parte solo; se pausa fuera de pantalla) -->
+<section class="video-sec" aria-labelledby="vMailTit">
+<div class="wrap">
+<figure class="video-marco">
+<h2 class="sr" id="vMailTit">Así sale una campaña de Mailing</h2>
+<video id="vMail" playsinline preload="none" width="1280" height="720" poster="video/mailing-poster.jpg" aria-describedby="vMailDesc"><source src="video/mailing-video.webm" type="video/webm"><source src="video/mailing-video.mp4" type="video/mp4"></video>
+<figcaption id="vMailDesc">Animación de ejemplo con datos ficticios, con música: una planilla de clientes se ordena, sale un correo con link de baja y llegan las respuestas.</figcaption>
+<button type="button" class="video-ver" id="vMailVer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z"/></svg><span>Ver video</span></button>
+<div class="video-ctl" hidden>
+<button type="button" class="vbtn" id="vMailSonido" aria-pressed="false"><svg class="i-mudo" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5zM16 9.5l5 5M21 9.5l-5 5"/></svg><svg class="i-sonido" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5zM15.5 9a4.2 4.2 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11"/></svg><span>Activar sonido</span></button>
+<button type="button" class="vbtn" id="vMailPausa" aria-pressed="false"><svg class="i-pausa" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z"/></svg><span>Pausar animación</span></button>
+</div>
+</figure>
+</div>
+</section>
+
 <!-- 3 CÓMO FUNCIONA: de la lista al informe, con el scroll -->
 <section class="flujo-sec" id="funciona">
 <div class="flujo-track" id="flujoTrack">
@@ -233,6 +249,7 @@
 <div class="plan med"><small>Plan mensual</small><div class="precio">$[—]<span class="per">/mes</span></div><p class="pd">Para escribirles a tus clientes todos los meses.</p><ul><li>[2] campañas al mes</li><li>Mensajes por tipo de cliente</li><li>Lista siempre al día</li><li>Informe mensual</li></ul><a class="btn" href="#contacto" data-plan="Plan mensual">Quiero el plan mensual</a></div>
 </div>
 <p class="letra">Precios en pesos chilenos por confirmar. Solo trabajamos con contactos propios de tu negocio, nunca con bases compradas.</p>
+<a class="informe-dl" href="rednet-mailing-informe.pdf" download><span class="dl-doc" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7zM14 3v5h5M10 13h6M10 17h6"/></svg></span><span class="dl-txt">Descargar ejemplo de informe de campaña <small>PDF</small></span><span class="dl-flecha" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v11M7 12l5 5 5-5M5 20h14"/></svg></span></a>
 </div>
 </section>
 
@@ -278,8 +295,8 @@
 <!-- 13 RELACIONADOS -->
 <section class="otros-sec">
 <div class="wrap">
-<h2 class="otros-t">Funciona mejor junto a</h2>
-<div class="otros"><a class="otro" href="../tienda-online/"><small>Ventas online</small><b translate="no">Tienda Online</b><span>Tu tienda, y un correo cada vez que llega algo nuevo.</span></a><a class="otro" href="../asistente-virtual-pulido/"><small>IA y automatización</small><b translate="no">Asistente Virtual</b><span>Responde en tu sitio y suma contactos a tu lista.</span></a><a class="otro" href="../rrss-pulido/"><small>Contenido</small><b translate="no">Publicador Web/RRSS</b><span>Las mismas novedades, en tu sitio y en tus redes.</span></a></div>
+<h2 class="otros-t">Súmalo a tu sitio Rednet</h2>
+<div class="otros"><a class="otro" href="../tienda-online/"><picture class="otro-foto"><source srcset="img/hero-ecommerce.webp" type="image/webp"><img src="img/hero-ecommerce.jpg" alt="" width="640" height="360" loading="lazy" decoding="async"></picture><small>Ventas online</small><b translate="no">Tienda Online</b><span>Tu tienda vende; Mailing avisa a quienes ya compraron cuando llega algo nuevo.</span></a><a class="otro" href="../diseno-web-pulido/"><picture class="otro-foto"><source srcset="img/hero-diseno-web.webp" type="image/webp"><img src="img/hero-diseno-web.jpg" alt="" width="640" height="360" loading="lazy" decoding="async"></picture><small>Sitios web</small><b translate="no">Sitio/Web Pro</b><span>Un sitio con formulario de contacto: cada persona que escribe puede sumarse a tu lista.</span></a><a class="otro" href="../hosting-pulido/"><picture class="otro-foto"><source srcset="img/hero-hosting.webp" type="image/webp"><img src="img/hero-hosting.jpg" alt="" width="640" height="360" loading="lazy" decoding="async"></picture><small>Infraestructura</small><b translate="no">Hosting</b><span>Incluye correo @tuempresa.cl: desde ahí pueden salir tus campañas.</span></a></div>
 </div>
 </section>
 </main>
