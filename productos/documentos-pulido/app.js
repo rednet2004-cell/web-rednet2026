@@ -158,6 +158,29 @@ if (e.key === 'End'){ e.preventDefault(); elegir(tabs[tabs.length - 1], true); }
 });
 });
 
+/* Video del producto: no arranca solo; se reproduce (con sonido) al pulsar "Ver video". Pausa al salir de pantalla */
+const vD = $('vDoc'), vDp = $('vDocPausa'), vDs = $('vDocSonido'), vDver = $('vDocVer'), vDctl = document.querySelector('.video-ctl');
+let vDpausado = false, vDvisible = true, vDini = false;
+function vDestado(){
+  if (!vDini) return;
+  if (vDvisible && !vDpausado) vD.play().catch(() => {}); else vD.pause();
+  vDp.setAttribute('aria-pressed', vDpausado);
+  vDp.querySelector('span').textContent = vDpausado ? 'Reproducir video' : 'Pausar video';
+}
+function vDsonido(){
+  vDs.setAttribute('aria-pressed', !vD.muted);
+  vDs.querySelector('span').textContent = vD.muted ? 'Activar sonido' : 'Silenciar';
+}
+vDver.addEventListener('click', () => {
+  vDini = true; vDpausado = false; vD.muted = false; vD.preload = 'auto';
+  if (vD.ended) vD.currentTime = 0;
+  vDver.hidden = true; vDctl.hidden = false; vDsonido(); vDestado();
+});
+vD.addEventListener('ended', () => { vDini = false; vDver.querySelector('span').textContent = 'Ver de nuevo'; vDver.hidden = false; vDctl.hidden = true; });
+vDp.addEventListener('click', () => { vDpausado = !vDpausado; vDestado(); });
+vDs.addEventListener('click', () => { vD.muted = !vD.muted; vDsonido(); });
+new IntersectionObserver(([en]) => { vDvisible = en.isIntersecting; vDestado(); }, {threshold:.25}).observe(vD);
+
 /* Video de fondo del contacto: solo escritorio, sin ahorro de datos ni reducir movimiento; se pausa fuera de pantalla */
 const vCta = $('vCta');
 const sinVideo = reduce || !escritorio.matches || (navigator.connection && navigator.connection.saveData);
