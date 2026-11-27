@@ -44,6 +44,21 @@
 </div>
 </section>
 
+<!-- 1b VIDEO: así trabaja Soporte (liviano, no parte solo, sin música por ahora) -->
+<section class="video-sec" aria-labelledby="vSopTit">
+<div class="wrap">
+<figure class="video-marco">
+<h2 class="sr" id="vSopTit">Así trabaja Soporte cuando algo falla</h2>
+<video id="vSop" playsinline preload="none" width="1280" height="720" poster="video/soporte-poster.jpg" aria-describedby="vSopDesc"><source src="video/soporte-loop.webm" type="video/webm"><source src="video/soporte-loop.mp4" type="video/mp4"></video>
+<figcaption id="vSopDesc">Animación de ejemplo, sin sonido: un problema llega, una persona del equipo lo toma y lo resuelve.</figcaption>
+<button type="button" class="video-ver" id="vSopVer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z"/></svg><span>Ver video</span></button>
+<div class="video-ctl" hidden>
+<button type="button" class="pausa" id="vSopPausa" aria-pressed="false"><svg class="i-pausa" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z"/></svg><span>Pausar animación</span></button>
+</div>
+</figure>
+</div>
+</section>
+
 <!-- 2 ¿QUÉ TE PASA?: el visitante elige un problema y ve cómo se resuelve -->
 <section id="problema">
 <div class="wrap">
@@ -120,6 +135,7 @@
 <div class="plan med"><small>Empresa</small><div class="precio">Hablemos</div><p class="pd">Para oficinas, colegios u hoteles con varios equipos y usuarios.</p><ul><li>Soporte a todo tu equipo</li><li>Equipos, correo, wifi e impresoras</li><li>Varios sitios y usuarios</li><li>Registro de lo hecho en cada caso</li></ul><a class="btn" href="#contacto" data-plan="Plan Empresa">Cotizar para mi empresa</a></div>
 </div>
 <p class="letra">Precios en pesos chilenos por confirmar. Los horarios y tiempos de atención quedan escritos en tu contrato.</p>
+<a class="informe-dl" href="rednet-soporte-informe.pdf" download><span class="dl-doc" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7zM14 3v5h5M10 13h6M10 17h6"/></svg></span><span class="dl-txt">Descargar ejemplo de informe de atención <small>PDF</small></span><span class="dl-flecha" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v11M7 12l5 5 5-5M5 20h14"/></svg></span></a>
 </div>
 </section>
 
@@ -164,7 +180,7 @@
 <section class="otros-sec">
 <div class="wrap">
 <h2 class="otros-t">Para que falle menos</h2>
-<div class="otros"><a class="otro" href="../respaldo-pulido/"><small>Suma a tu soporte</small><b>Respaldo de Datos Seguro</b><span>Tus archivos copiados solos cada día, por si mañana falla el equipo.</span></a><a class="otro" href="../documentos/"><small>Suma a tu soporte</small><b>Nube Documental</b><span>Una carpeta para toda la oficina, con permisos, que no se va con las personas.</span></a><a class="otro" href="../webguardian-pulido/"><small>Suma a tu soporte</small><b><span translate="no">WebGuardian</span> Sitio Seguro</b><span>Revisa tu sitio cada día para que no te enteres por un cliente.</span></a></div>
+<div class="otros"><a class="otro" href="../respaldo-pulido/"><picture class="otro-foto"><source srcset="img/respaldo.webp" type="image/webp"><img src="img/respaldo.jpg" alt="" width="640" height="360" loading="lazy" decoding="async"></picture><small>Suma a tu soporte</small><b>Respaldo de Datos Seguro</b><span>Tus archivos copiados solos cada día, por si mañana falla el equipo.</span></a><a class="otro" href="../documentos-pulido/"><picture class="otro-foto"><source srcset="img/nube.webp" type="image/webp"><img src="img/nube.jpg" alt="" width="640" height="360" loading="lazy" decoding="async"></picture><small>Suma a tu soporte</small><b>Nube Documental</b><span>Una carpeta para toda la oficina, con permisos, que no se va con las personas.</span></a><a class="otro" href="../webguardian-pulido/"><picture class="otro-foto"><source srcset="img/guardian.webp" type="image/webp"><img src="img/guardian.jpg" alt="" width="640" height="360" loading="lazy" decoding="async"></picture><small>Suma a tu soporte</small><b><span translate="no">WebGuardian</span> Sitio Seguro</b><span>Revisa tu sitio cada día para que no te enteres por un cliente.</span></a></div>
 </div>
 </section>
 </main>
