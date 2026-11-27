@@ -59,13 +59,17 @@
 </div>
 </section>
 
-<!-- 2b VIDEO del producto (Three.js, 18 s, sin audio) -->
-<section class="video-sec sin-top" aria-label="Video: Hosting en 18 segundos">
+<!-- 2b VIDEO del producto (Three.js, 18 s, sin audio por ahora): no parte solo, se ve con "Ver video" -->
+<section class="video-sec sin-top" aria-labelledby="vProdTit">
 <div class="wrap">
 <figure class="video-marco" id="videoMarco">
-<video id="vProd" muted playsinline loop preload="none" poster="video/hosting-poster.jpg" width="1280" height="720" aria-describedby="vDesc"><source src="video/hosting-video.webm" type="video/webm"><source src="video/hosting-video.mp4" type="video/mp4"></video>
-<button class="video-btn" id="vBtn" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-play" d="M8 5.5v13l11-6.5z"/><path class="i-pausa" d="M8 5v14M16 5v14"/></svg><span>Ver video</span></button>
-<figcaption id="vDesc"><span>Migra, acelera, protege y escala tu sitio, con alguien que responde.</span><span class="dur">0:18 · sin audio</span></figcaption>
+<h2 class="sr" id="vProdTit">Hosting en 18 segundos</h2>
+<video id="vProd" playsinline preload="none" poster="video/hosting-poster.jpg" width="1280" height="720" aria-describedby="vDesc"><source src="video/hosting-video.webm" type="video/webm"><source src="video/hosting-video.mp4" type="video/mp4"></video>
+<figcaption id="vDesc">Animación de ejemplo, sin audio: migra, acelera, protege y escala tu sitio, con alguien que responde.</figcaption>
+<button type="button" class="video-ver" id="vProdVer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z"/></svg><span>Ver video</span></button>
+<div class="video-ctl" hidden>
+<button type="button" class="pausa" id="vProdPausa" aria-pressed="false"><svg class="i-pausa" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z"/></svg><span>Pausar video</span></button>
+</div>
 </figure>
 </div>
 </section>
@@ -156,6 +160,7 @@
 <div class="plan med"><small>Tienda</small><div class="precio">$[—]<span class="per">/mes</span></div><p class="pd">Para tiendas online que no pueden detenerse.</p><ul><li>Todo lo de Negocio</li><li>Servidor con recursos solo para ti</li><li>Monitoreo prioritario <span class="ph-i">[por confirmar]</span></li><li>Pensado para ventas online</li></ul><a class="btn" href="#contacto" data-plan="Plan Tienda">Cotizar Tienda</a></div>
 </div>
 <p class="letra">En cualquier plan: migración sin costo y primer mes gratis. Sin permanencia. Precios en pesos chilenos por confirmar.</p>
+<a class="informe-dl" href="rednet-hosting-informe.pdf" download><span class="dl-doc" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7zM14 3v5h5M10 13h6M10 17h6"/></svg></span><span class="dl-txt">Descargar ejemplo de informe de hosting <small>PDF</small></span><span class="dl-flecha" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v11M7 12l5 5 5-5M5 20h14"/></svg></span></a>
 </div>
 </section>
 
@@ -200,8 +205,8 @@
 <!-- 10 RELACIONADOS -->
 <section class="otros-sec">
 <div class="wrap">
-<h2 class="otros-t">Cuando quieras, suma a tu hosting</h2>
-<div class="otros"><a class="otro" href="../webguardian-pulido/"><small>P05 · Seguridad</small><b translate="no">WebGuardian Sitio Seguro</b><span>Alguien mira tu sitio aunque tú no.</span></a><a class="otro" href="../respaldo-pulido/"><small>P06 · Respaldo</small><b translate="no">Respaldo de Datos Seguro</b><span>Existe una copia y se puede volver atrás.</span></a><a class="otro" href="../mantencion-pulido/"><small>P16 · Mantención</small><b translate="no">Mantención Web</b><span>Pides un cambio por WhatsApp y lo hacemos.</span></a></div>
+<h2 class="otros-t">Súmalo a tu hosting</h2>
+<div class="otros"><a class="otro" href="../webguardian-pulido/"><picture class="otro-foto"><source srcset="img/hero-ecommerce.webp" type="image/webp"><img src="img/hero-ecommerce.jpg" alt="" width="640" height="360" loading="lazy" decoding="async"></picture><small>P05 · Seguridad</small><b translate="no">WebGuardian Sitio Seguro</b><span>Alguien mira tu sitio aunque tú no.</span></a><a class="otro" href="../respaldo-pulido/"><picture class="otro-foto"><source srcset="img/hero-hosting.webp" type="image/webp"><img src="img/hero-hosting.jpg" alt="" width="640" height="360" loading="lazy" decoding="async"></picture><small>P06 · Respaldo</small><b translate="no">Respaldo de Datos Seguro</b><span>Existe una copia y se puede volver atrás.</span></a><a class="otro" href="../mantencion-pulido/"><picture class="otro-foto"><source srcset="img/hero-diseno-web.webp" type="image/webp"><img src="img/hero-diseno-web.jpg" alt="" width="640" height="360" loading="lazy" decoding="async"></picture><small>P16 · Mantención</small><b translate="no">Mantención Web</b><span>Pides un cambio por WhatsApp y lo hacemos.</span></a></div>
 </div>
 </section>
 </main>
