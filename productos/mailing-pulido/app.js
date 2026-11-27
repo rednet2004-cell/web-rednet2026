@@ -111,6 +111,32 @@ bAsunto.textContent = m === 'spam' ? 'TU NEGOCIO · ¡¡ÚLTIMO DÍA!! 50% EN TO
 bPrev.textContent = m === 'spam' ? 'Ofertas, ofertas, ofertas. Si no quieres recibir más correos…' : 'Como vuelves seguido, te avisamos primero.';
 }));
 
+/* Animación de Mailing: no arranca sola; se reproduce (con sonido) al pulsar "Ver video". Pausa al salir de pantalla */
+const vM = document.getElementById('vMail'), vMp = document.getElementById('vMailPausa'), vMs = document.getElementById('vMailSonido');
+const vMver = document.getElementById('vMailVer'), vMctl = document.querySelector('.video-ctl');
+let vMpausado = false, vMvisible = true, vMini = false;
+function vMestado(){
+  if (!vMini) return;
+  if (vMvisible && !vMpausado) vM.play().catch(() => {}); else vM.pause();
+  vMp.setAttribute('aria-pressed', vMpausado);
+  vMp.querySelector('span').textContent = vMpausado ? 'Reproducir animación' : 'Pausar animación';
+}
+function vMsonido(){
+  vMs.setAttribute('aria-pressed', !vM.muted);
+  vMs.querySelector('span').textContent = vM.muted ? 'Activar sonido' : 'Silenciar';
+}
+vMver.addEventListener('click', () => {
+  vMini = true; vMpausado = false; vM.muted = false; vM.preload = 'auto';
+  if (vM.ended) vM.currentTime = 0;
+  vMver.hidden = true; vMctl.hidden = false; vMsonido(); vMestado();
+});
+vM.addEventListener('ended', () => {
+  vMini = false; vMver.querySelector('span').textContent = 'Ver de nuevo'; vMver.hidden = false; vMctl.hidden = true;
+});
+vMp.addEventListener('click', () => { vMpausado = !vMpausado; vMestado(); });
+vMs.addEventListener('click', () => { vM.muted = !vM.muted; vMsonido(); });
+new IntersectionObserver(([en]) => { vMvisible = en.isIntersecting; vMestado(); }, {threshold:.25}).observe(vM);
+
 /* Video de fondo del contacto: solo escritorio, sin ahorro de datos ni reducir movimiento; se pausa fuera de pantalla */
 const vCta = $('vCta');
 const sinVideo = reduce || !escritorio.matches || (navigator.connection && navigator.connection.saveData);
