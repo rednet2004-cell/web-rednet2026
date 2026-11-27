@@ -96,6 +96,24 @@ const estados = ['Recibido', 'Asignado a [Nombre]', 'En curso', 'Resuelto'];
 function ticket(i){ items.forEach((li, k) => li.classList.toggle('on', k <= i)); tkE.textContent = estados[i]; tkB.style.transform = `scaleX(${(i + 1) * .25})`; }
 ticket(0);
 
+/* Video de Soporte: no arranca solo; se reproduce al pulsar "Ver video". Pausa al salir de pantalla */
+const vS = document.getElementById('vSop'), vSp = document.getElementById('vSopPausa'), vSver = document.getElementById('vSopVer'), vSctl = document.querySelector('.video-ctl');
+let vSpausado = false, vSvisible = true, vSini = false;
+function vSestado(){
+  if (!vSini) return;
+  if (vSvisible && !vSpausado) vS.play().catch(() => {}); else vS.pause();
+  vSp.setAttribute('aria-pressed', vSpausado);
+  vSp.querySelector('span').textContent = vSpausado ? 'Reproducir animación' : 'Pausar animación';
+}
+vSver.addEventListener('click', () => {
+  vSini = true; vSpausado = false; vS.preload = 'auto';
+  if (vS.ended) vS.currentTime = 0;
+  vSver.hidden = true; vSctl.hidden = false; vSestado();
+});
+vS.addEventListener('ended', () => { vSini = false; vSver.querySelector('span').textContent = 'Ver de nuevo'; vSver.hidden = false; vSctl.hidden = true; });
+vSp.addEventListener('click', () => { vSpausado = !vSpausado; vSestado(); });
+new IntersectionObserver(([en]) => { vSvisible = en.isIntersecting; vSestado(); }, {threshold:.25}).observe(vS);
+
 /* Video de fondo del contacto: solo escritorio, sin ahorro de datos ni reducir movimiento; se pausa fuera de pantalla */
 const vCta = document.getElementById('vCta');
 const sinVideo = reduce || !escritorio.matches || (navigator.connection && navigator.connection.saveData);
