@@ -109,6 +109,13 @@ function vGestado(){
   vGp.querySelector('span').textContent = vGpausado ? 'Reproducir animación' : 'Pausar animación';
 }
 vGp.addEventListener('click', () => { vGpausado = !vGpausado; vGestado(); });
+const vGs = document.getElementById('vGuardiaSonido');
+vGs.addEventListener('click', () => {
+  vG.muted = !vG.muted;
+  vGs.setAttribute('aria-pressed', !vG.muted);
+  vGs.querySelector('span').textContent = vG.muted ? 'Activar sonido' : 'Silenciar';
+  if (!vG.muted && vGpausado){ vGpausado = false; vGestado(); }   // activar el sonido también reproduce
+});
 new IntersectionObserver(([en]) => { vGvisible = en.isIntersecting; vGestado(); }, {rootMargin:'200px'}).observe(vG);
 vGestado();
 
