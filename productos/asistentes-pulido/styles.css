@@ -175,7 +175,7 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;gap:2
 .rot{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--gris-noche);padding-top:14px;margin:0}
 .carril.con .rot{color:var(--ocre)}
 .linea{position:relative;height:216px;border-radius:20px;background:rgba(255,255,255,.04);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);list-style:none;margin:0;padding:0}
-.ev{position:absolute;width:min(210px,22vw);padding:10px 12px;border-radius:14px;background:#2c2218;font-size:13.5px;line-height:1.35;opacity:0;transform:scale(.96);transform-origin:0 100%;transition:opacity var(--t-ui) var(--ease-out),transform var(--t-ui) var(--ease-out)}
+.ev{position:absolute;width:min(240px,24vw);padding:10px 12px;border-radius:14px;background:#2c2218;font-size:13.5px;line-height:1.35;opacity:0;transform:scale(.96);transform-origin:0 100%;transition:opacity var(--t-ui) var(--ease-out),transform var(--t-ui) var(--ease-out)}
 .ev.on{opacity:1;transform:none}
 .ev b{display:block;font-family:var(--f-mono);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--gris-noche);margin-bottom:2px}
 .ev.ok{background:var(--ocre);color:var(--negro)}
@@ -188,7 +188,7 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;gap:2
 .ev.tarde.on{opacity:.7}
 .cabezal{position:absolute;top:0;bottom:34px;left:146px;width:2px;background:var(--ocre)}
 .cabezal::before{content:"";position:absolute;top:-6px;left:-5px;width:12px;height:12px;border-radius:50%;background:var(--ocre)}
-.horas{display:flex;justify-content:space-between;margin-left:146px;margin-right:min(210px,22vw);font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;color:var(--gris-noche);font-variant-numeric:tabular-nums}
+.horas{display:flex;justify-content:space-between;margin-left:146px;margin-right:min(240px,24vw);font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;color:var(--gris-noche);font-variant-numeric:tabular-nums}
 @media (max-width:860px){
 .carrera{height:auto}.carrera-fijo{position:static;height:auto;display:block;padding-block:70px}
 .carril{grid-template-columns:1fr}.linea{height:auto;background:none;box-shadow:none;display:flex;flex-direction:column;gap:8px}
@@ -386,3 +386,32 @@ footer{padding-bottom:150px}
 }
 .pa b,.pa p,.dolor b,.otro b,.otro>span,.plan ul li,.inc-lista b,.ev,.tel-chat .m,.flujo .m{overflow-wrap:anywhere}
 .met b,.reloj,.hora-grande{font-variant-numeric:tabular-nums}
+
+/* Demos más grandes: el teléfono del "Pruébalo" y la carrera de la respuesta se leen mejor */
+.prueba-grid{grid-template-columns:.85fr 1.15fr}
+.tel{width:min(100%,460px);height:620px}
+.tel-top b{font-size:16px}
+.tel-top small{font-size:13px}
+.tel-chat{gap:12px;padding:20px}
+.tel-chat .m{font-size:16px;line-height:1.45;padding:13px 16px}
+.trans{font-size:16px}
+.tel-pie{font-size:12px}
+.linea{height:250px}
+.ev{font-size:14.5px}
+.rot{font-size:12px}
+@media (max-width:860px){.prueba-grid{grid-template-columns:1fr}.tel{width:min(100%,420px);height:560px}.linea{height:auto}}
+
+/* Descarga de ejemplo bajo los planes */
+.informe-dl{display:flex;align-items:center;gap:16px;margin-top:26px;padding:26px 28px;min-height:96px;border-radius:var(--r);background:#3a3735;box-shadow:inset 0 1px 0 rgba(255,255,255,.12),inset 0 0 0 1px rgba(255,255,255,.1),0 6px 0 #1d1b1a,0 14px 30px -10px rgba(0,0,0,.6);color:#fff;text-decoration:none;transition:background .25s ease,box-shadow .25s ease,transform .2s ease}
+.informe-dl:hover{background:#47433f;transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.16),inset 0 0 0 1px var(--ocre),0 8px 0 #1d1b1a,0 18px 34px -10px rgba(0,0,0,.6)}.informe-dl:active{transform:translateY(3px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.1),0 2px 0 #1d1b1a}.informe-dl:focus-visible{outline:3px solid var(--ocre);outline-offset:3px}
+.informe-dl svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.dl-doc{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--rojo);flex:none}
+.dl-txt{flex:1;font-family:var(--f-mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;line-height:1.4}
+.dl-txt small{margin-left:8px;font-size:11px;color:var(--ocre-claro);letter-spacing:.12em}
+.dl-flecha{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#fff;color:var(--negro);flex:none}
+@media (max-width:520px){.informe-dl{gap:12px;padding:20px 16px;min-height:84px}.dl-txt{font-size:11.5px}.dl-txt small{display:block;margin:2px 0 0}}
+@media (prefers-reduced-motion:reduce){.informe-dl,.informe-dl:hover,.informe-dl:active{transform:none}}
+
+/* Upsell con foto */
+.otro{overflow:hidden}
+.otro-foto{display:block;margin:-22px -22px 6px;aspect-ratio:16/9;overflow:hidden;background:#0a0909}.otro-foto img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease-out,ease)}.otro:hover .otro-foto img{transform:scale(1.05)}@media (prefers-reduced-motion:reduce){.otro:hover .otro-foto img{transform:none}}
