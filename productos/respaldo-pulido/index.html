@@ -57,6 +57,21 @@
 </div>
 </section>
 
+<!-- 2b VIDEO: así funciona el respaldo (no parte solo; pausa al salir de pantalla) -->
+<section class="video-sec" aria-labelledby="vRespTit">
+<div class="wrap">
+<figure class="video-marco">
+<h2 class="sr" id="vRespTit">Así funciona tu respaldo</h2>
+<video id="vResp" playsinline preload="none" width="1280" height="720" poster="video/respaldo-datos-poster.jpg" aria-describedby="vRespDesc"><source src="video/respaldo-datos.webm" type="video/webm"><source src="video/respaldo-datos.mp4" type="video/mp4"></video>
+<figcaption id="vRespDesc">Animación de ejemplo con datos ficticios: tus archivos se copian solos cada día, algo falla y vuelves a la versión de ayer.</figcaption>
+<button type="button" class="video-ver" id="vRespVer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z"/></svg><span>Ver video</span></button>
+<div class="video-ctl" hidden>
+<button type="button" class="pausa" id="vRespPausa" aria-pressed="false"><svg class="i-pausa" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z"/></svg><span>Pausar animación</span></button>
+</div>
+</figure>
+</div>
+</section>
+
 <!-- 3 PRUEBA: el visitante rompe el sitio y lo vuelve atrás con la línea de tiempo -->
 <section class="prueba-sec" id="prueba">
 <div class="wrap prueba-grid">
@@ -132,6 +147,7 @@
 <div class="plan med"><small>Tienda</small><div class="precio">Hablemos</div><p class="pd">Para tiendas con pedidos todo el día.</p><ul><li>Copias varias veces al día</li><li>Base de datos aparte</li><li>Vigilancia con <span translate="no">WebGuardian</span></li><li>Prioridad en restauración</li></ul><a class="btn" href="#contacto" data-plan="Plan Tienda">Cotizar para mi tienda</a></div>
 </div>
 <p class="letra">Sin permanencia. Precios en pesos chilenos por confirmar. Archivos y equipos que cubre cada plan: [por confirmar].</p>
+<a class="informe-dl" href="rednet-respaldo-informe.pdf" download><span class="dl-doc" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7zM14 3v5h5M10 13h6M10 17h6"/></svg></span><span class="dl-txt">Descargar ejemplo de informe de respaldo <small>PDF</small></span><span class="dl-flecha" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v11M7 12l5 5 5-5M5 20h14"/></svg></span></a>
 </div>
 </section>
 
@@ -178,7 +194,7 @@
 <section class="otros-sec">
 <div class="wrap">
 <h2 class="otros-t">Va bien con tu respaldo</h2>
-<div class="otros"><a class="otro" href="../documentos/"><small>P15 · Archivos</small><b>Nube Documental</b><span>Una carpeta para toda la oficina, con permisos. Tus documentos, ordenados y con copia.</span></a><a class="otro" href="../webguardian-pulido/"><small>P05 · Seguridad</small><b><span translate="no">WebGuardian</span> Sitio Seguro</b><span>Vigila tu sitio cada día para que no llegues a necesitar la copia.</span></a><a class="otro" href="../soporte-pulido/"><small>P07 · Soporte</small><b>Soporte</b><span>Una persona que te ayuda cuando algo no funciona.</span></a></div>
+<div class="otros"><a class="otro" href="../documentos/"><picture class="otro-foto"><source srcset="img/foto-documental.webp" type="image/webp"><img src="img/foto-documental.jpg" alt="" width="640" height="360" loading="lazy" decoding="async"></picture><small>P15 · Archivos</small><b>Nube Documental</b><span>Una carpeta para toda la oficina, con permisos. Tus documentos, ordenados y con copia.</span></a><a class="otro" href="../webguardian-pulido/"><picture class="otro-foto"><source srcset="img/foto-webguardian.webp" type="image/webp"><img src="img/foto-webguardian.jpg" alt="" width="640" height="360" loading="lazy" decoding="async"></picture><small>P05 · Seguridad</small><b><span translate="no">WebGuardian</span> Sitio Seguro</b><span>Vigila tu sitio cada día para que no llegues a necesitar la copia.</span></a><a class="otro" href="../soporte-pulido/"><picture class="otro-foto"><source srcset="img/foto-soporte.webp" type="image/webp"><img src="img/foto-soporte.jpg" alt="" width="640" height="360" loading="lazy" decoding="async"></picture><small>P07 · Soporte</small><b>Soporte</b><span>Una persona que te ayuda cuando algo no funciona.</span></a></div>
 </div>
 </section>
 </main>
