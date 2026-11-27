@@ -62,6 +62,22 @@
 </div>
 </section>
 
+<!-- 2b VIDEO: así se ve una automatización (liviano, no parte solo, se pausa fuera de pantalla) -->
+<section class="video-sec" aria-labelledby="vAutTit">
+<div class="wrap">
+<figure class="video-marco">
+<h2 class="sr" id="vAutTit">Así se ve una automatización</h2>
+<video id="vAut" playsinline preload="none" width="1280" height="720" poster="video/automatizaciones-poster.jpg" aria-describedby="vAutDesc"><source src="video/automatizaciones-loop.webm" type="video/webm"><source src="video/automatizaciones-loop.mp4" type="video/mp4"></video>
+<figcaption id="vAutDesc">Animación de ejemplo con cifras ficticias: un bucle de tareas manuales se convierte en un flujo automático que cruza varios pasos y recupera tiempo.</figcaption>
+<button type="button" class="video-ver" id="vAutVer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z"/></svg><span>Ver video</span></button>
+<div class="video-ctl" hidden>
+<button type="button" class="pausa" id="vAutSonido" aria-pressed="false" hidden><svg class="i-mudo" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5zM16 9.5l5 5M21 9.5l-5 5"/></svg><svg class="i-sonido" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5zM15.5 9a4.2 4.2 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11"/></svg><span>Activar sonido</span></button>
+<button type="button" class="pausa" id="vAutPausa" aria-pressed="false"><svg class="i-pausa" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z"/></svg><span>Pausar animación</span></button>
+</div>
+</figure>
+</div>
+</section>
+
 <!-- 3 CÓMO FUNCIONA: una tarea de punta a punta, con el scroll -->
 <section class="flujo-sec" id="funciona">
 <div class="flujo-track" id="flujoTrack">
@@ -217,6 +233,7 @@
 <div class="plan med"><small>Varias tareas</small><div class="precio">Hablemos</div><p class="pd">Para un proceso completo o varias áreas.</p><ul><li>Mapa de tus tareas repetitivas</li><li>Orden según lo que más pesa</li><li>Flujos conectados entre sí</li><li>Revisión periódica</li></ul><a class="btn" href="#contacto" data-plan="Varias tareas o un proceso completo">Revisar mi proceso</a></div>
 </div>
 <p class="letra">Precios en pesos chilenos por confirmar. Para empezar: evaluación gratis y reunión de 45 minutos sin costo para definir qué tarea conviene automatizar.</p>
+<a class="informe-dl" href="rednet-automatizaciones-informe.pdf" download><span class="dl-doc" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7zM14 3v5h5M10 13h6M10 17h6"/></svg></span><span class="dl-txt">Descargar ejemplo de registro de ejecuciones <small>PDF</small></span><span class="dl-flecha" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v11M7 12l5 5 5-5M5 20h14"/></svg></span></a>
 </div>
 </section>
 
@@ -262,8 +279,8 @@
 <!-- 13 RELACIONADOS -->
 <section class="otros-sec">
 <div class="wrap">
-<h2 class="otros-t">Funciona mejor junto a</h2>
-<div class="otros"><a class="otro" href="../asistente-virtual-pulido/"><small>IA y automatización</small><b translate="no">Asistente Virtual</b><span>Atiende a tus clientes; el flujo anota y avisa lo que el asistente recibe.</span></a><a class="otro" href="../documentos/"><small>Sistemas</small><b translate="no">Nube Documental</b><span>Una carpeta para toda la oficina, donde el flujo deja cada archivo.</span></a><a class="otro" href="../apps-pulido/"><small>Sistemas</small><b translate="no">Apps Móviles</b><span>Tu equipo en terreno registra en el celular y el flujo hace el resto.</span></a></div>
+<h2 class="otros-t">Súmalo a tu sitio Rednet</h2>
+<div class="otros"><a class="otro" href="../asistente-virtual-pulido/"><picture class="otro-foto"><source srcset="img/foto-asistente.webp" type="image/webp"><img src="img/foto-asistente.jpg" alt="" width="800" height="450" loading="lazy" decoding="async"></picture><small>IA y automatización</small><b translate="no">Asistente Virtual</b><span>Atiende a tus clientes; el flujo anota y avisa lo que el asistente recibe.</span></a><a class="otro" href="../documentos/"><picture class="otro-foto"><source srcset="img/foto-documental.webp" type="image/webp"><img src="img/foto-documental.jpg" alt="" width="800" height="450" loading="lazy" decoding="async"></picture><small>Sistemas</small><b translate="no">Nube Documental</b><span>Una carpeta para toda la oficina, donde el flujo deja cada archivo.</span></a><a class="otro" href="../apps-pulido/"><picture class="otro-foto"><source srcset="img/foto-apps.webp" type="image/webp"><img src="img/foto-apps.jpg" alt="" width="800" height="450" loading="lazy" decoding="async"></picture><small>Sistemas</small><b translate="no">Apps Móviles</b><span>Tu equipo en terreno registra en el celular y el flujo hace el resto.</span></a></div>
 </div>
 </section>
 </main>
