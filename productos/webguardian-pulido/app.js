@@ -98,26 +98,31 @@ lis[i].classList.toggle('on', k > 0);
 }
 capas(reduce || !hasG ? 1 : 0);
 
-/* Animación de WebGuardian: solo se reproduce a la vista; con reducir movimiento o ahorro de datos queda el cuadro fijo */
-const vG = document.getElementById('vGuardia'), vGp = document.getElementById('vGuardiaPausa');
-const vGsin = reduce || (navigator.connection && navigator.connection.saveData);
-let vGpausado = !!vGsin, vGvisible = false;
+/* Animación de WebGuardian: no arranca sola; se reproduce (con sonido) al pulsar "Ver video". Pausa al salir de pantalla */
+const vG = document.getElementById('vGuardia'), vGp = document.getElementById('vGuardiaPausa'), vGs = document.getElementById('vGuardiaSonido');
+const vGver = document.getElementById('vGuardiaVer'), vGctl = document.querySelector('.video-ctl');
+let vGpausado = false, vGvisible = true, vGini = false;
 function vGestado(){
-  const corre = vGvisible && !vGpausado;
-  if (corre){ vG.preload = 'auto'; vG.play().catch(() => {}); } else vG.pause();
+  if (!vGini) return;
+  if (vGvisible && !vGpausado) vG.play().catch(() => {}); else vG.pause();
   vGp.setAttribute('aria-pressed', vGpausado);
   vGp.querySelector('span').textContent = vGpausado ? 'Reproducir animación' : 'Pausar animación';
 }
-vGp.addEventListener('click', () => { vGpausado = !vGpausado; vGestado(); });
-const vGs = document.getElementById('vGuardiaSonido');
-vGs.addEventListener('click', () => {
-  vG.muted = !vG.muted;
+function vGsonido(){
   vGs.setAttribute('aria-pressed', !vG.muted);
   vGs.querySelector('span').textContent = vG.muted ? 'Activar sonido' : 'Silenciar';
-  if (!vG.muted && vGpausado){ vGpausado = false; vGestado(); }   // activar el sonido también reproduce
+}
+vGver.addEventListener('click', () => {
+  vGini = true; vGpausado = false; vG.muted = false; vG.preload = 'auto';
+  if (vG.ended) vG.currentTime = 0;
+  vGver.hidden = true; vGctl.hidden = false; vGsonido(); vGestado();
 });
-new IntersectionObserver(([en]) => { vGvisible = en.isIntersecting; vGestado(); }, {rootMargin:'200px'}).observe(vG);
-vGestado();
+vG.addEventListener('ended', () => {
+  vGini = false; vGver.querySelector('span').textContent = 'Ver de nuevo'; vGver.hidden = false; vGctl.hidden = true;
+});
+vGp.addEventListener('click', () => { vGpausado = !vGpausado; vGestado(); });
+vGs.addEventListener('click', () => { vG.muted = !vG.muted; vGsonido(); });
+new IntersectionObserver(([en]) => { vGvisible = en.isIntersecting; vGestado(); }, {threshold:.25}).observe(vG);
 
 /* Video de fondo del contacto: solo escritorio, sin ahorro de datos ni reducir movimiento; se pausa fuera de pantalla */
 const vCta = document.getElementById('vCta');
