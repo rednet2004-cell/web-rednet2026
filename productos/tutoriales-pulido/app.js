@@ -137,9 +137,28 @@ crit.querySelectorAll('b').forEach(v => { v.textContent = m === 'pdf' ? v.datase
 const vCta = $('vCta');
 const sinVideo = reduce || !escritorio.matches || (navigator.connection && navigator.connection.saveData);
 if (!sinVideo) new IntersectionObserver(([en]) => { if (en.isIntersecting){ vCta.preload = 'auto'; vCta.play().catch(() => {}); } else vCta.pause(); }, {rootMargin:'200px'}).observe(vCta);
-/* El video de ejemplo se pausa si sale de pantalla */
-const vEj = document.querySelector('.video-marco video');
-new IntersectionObserver(([en]) => { if (!en.isIntersecting && !vEj.paused) vEj.pause(); }).observe(vEj);
+/* Video de ejemplo: no parte solo; se reproduce (con sonido) al pulsar "Ver video". Pausa al salir de pantalla */
+const vE = $('vEj'), vEp = $('vEjPausa'), vEs = $('vEjSonido'), vEver = $('vEjVer'), vEctl = document.querySelector('.video-ctl');
+let vEpausado = false, vEvisible = true, vEini = false;
+function vEestado(){
+  if (!vEini) return;
+  if (vEvisible && !vEpausado) vE.play().catch(() => {}); else vE.pause();
+  vEp.setAttribute('aria-pressed', vEpausado);
+  vEp.querySelector('span').textContent = vEpausado ? 'Reproducir video' : 'Pausar video';
+}
+function vEsonido(){
+  vEs.setAttribute('aria-pressed', !vE.muted);
+  vEs.querySelector('span').textContent = vE.muted ? 'Activar sonido' : 'Silenciar';
+}
+vEver.addEventListener('click', () => {
+  vEini = true; vEpausado = false; vE.muted = false; vE.preload = 'auto';
+  if (vE.ended) vE.currentTime = 0;
+  vEver.hidden = true; vEctl.hidden = false; vEsonido(); vEestado();
+});
+vE.addEventListener('ended', () => { vEini = false; vEver.querySelector('span').textContent = 'Ver de nuevo'; vEver.hidden = false; vEctl.hidden = true; });
+vEp.addEventListener('click', () => { vEpausado = !vEpausado; vEestado(); });
+vEs.addEventListener('click', () => { vE.muted = !vE.muted; vEsonido(); });
+new IntersectionObserver(([en]) => { vEvisible = en.isIntersecting; vEestado(); }, {threshold:.25}).observe(vE);
 
 /* Los CTA con motivo o plan preseleccionan el formulario */
 const fQue = $('fQue');

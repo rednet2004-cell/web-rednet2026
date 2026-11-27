@@ -378,3 +378,56 @@ h2 .g{color:var(--gris)}
 .in b,.dolor b,.otro b,.tareas b,.hitos b{overflow-wrap:break-word}
 .res li b,.res li small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .res li>div{min-width:0}
+
+/* Video del producto: no parte solo (botón "Ver video"), sin sonido por ahora */
+.video-sec{padding-block:0 clamp(40px,6vw,80px)}
+.video-marco{margin:0;position:relative;border-radius:var(--r);overflow:hidden;background:#0a0909;box-shadow:inset 0 0 0 1px var(--linea),0 30px 80px -30px rgba(122,9,16,.4);aspect-ratio:16/9}
+.video-marco video{display:block;width:100%;height:100%;object-fit:cover}
+.video-marco figcaption{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.video-ver{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:inline-flex;align-items:center;gap:12px;padding:16px 28px;min-height:52px;border:0;border-radius:999px;background:var(--rojo);color:#fff;font:600 1.05rem/1 inherit;font-family:inherit;cursor:pointer;box-shadow:0 12px 40px -8px rgba(227,6,19,.7),0 0 0 8px rgba(227,6,19,.18);transition:transform .2s var(--ease-out),box-shadow .2s var(--ease-out)}
+.video-ver svg{width:22px;height:22px;fill:currentColor}
+.video-ver:hover{transform:translate(-50%,-50%) scale(1.04)}
+.video-ver:active{transform:translate(-50%,-50%) scale(.97)}
+.video-ver:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.video-ver[hidden],.video-ctl[hidden]{display:none}
+.video-ctl{position:absolute;right:14px;bottom:14px;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.video-marco .pausa{position:static;background:rgba(14,13,12,.72);backdrop-filter:blur(8px);color:#fff}
+.video-ctl .i-play{display:none}
+#vSeoPausa[aria-pressed="true"] .i-pausa{display:none}
+#vSeoPausa[aria-pressed="true"] .i-play{display:block}
+.video-ctl svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.video-ctl .i-play{fill:currentColor;stroke:none}
+@media (max-width:520px){.video-marco{aspect-ratio:auto}.video-marco video{height:auto;aspect-ratio:16/9}.video-ctl{position:static;justify-content:center;padding:10px 12px 12px}.video-marco .pausa{background:var(--negro)}.video-ver{top:calc(50% - 30px)}}
+.manifiesto{padding-bottom:clamp(40px,6vw,80px)}
+
+/* Botón de descarga bajo los planes */
+.informe-dl{display:flex;align-items:center;gap:16px;margin-top:26px;padding:26px 28px;min-height:96px;border-radius:var(--r);background:#3a3735;box-shadow:inset 0 1px 0 rgba(255,255,255,.12),inset 0 0 0 1px rgba(255,255,255,.1),0 6px 0 #1d1b1a,0 14px 30px -10px rgba(0,0,0,.6);color:#fff;text-decoration:none;transition:background-color .25s ease,box-shadow .25s ease,transform .2s ease}
+.informe-dl:hover{background:#47433f;transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.16),inset 0 0 0 1px var(--ocre),0 8px 0 #1d1b1a,0 18px 34px -10px rgba(0,0,0,.6)}
+.informe-dl:active{transform:translateY(3px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.1),0 2px 0 #1d1b1a}
+.informe-dl:focus-visible{outline:3px solid var(--tinta);outline-offset:3px}
+.informe-dl svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.dl-doc{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--rojo);flex:none}
+.dl-txt{flex:1;font-family:var(--f-mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;line-height:1.4}
+.dl-txt small{margin-left:8px;font-size:11px;color:var(--ocre-claro);letter-spacing:.12em}
+.dl-flecha{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#fff;color:var(--negro);flex:none}
+@media (max-width:520px){.informe-dl{gap:12px;padding:20px 16px;min-height:84px}.dl-txt{font-size:11.5px}.dl-txt small{display:block;margin:2px 0 0}}
+
+/* Demos más grandes: la conversación con la IA y la escalera */
+.geo-grid{grid-template-columns:.8fr 1.2fr}
+.chat-ia{min-height:500px;padding:clamp(22px,2.4vw,34px);gap:18px}
+.ci-top b{font-size:16px}
+.ci-q{font-size:16.5px}
+.ci-a{font-size:17.5px;line-height:1.6;min-height:200px}
+.ci-fuentes span{font-size:12.5px;padding:8px 12px}
+.sube-grid{grid-template-columns:.9fr 1.1fr}
+.escalera{height:min(76vh,640px)}
+.peldanos i::after{font-size:12.5px}
+.pos span{font-size:12.5px}
+@media (max-width:860px){.geo-grid,.sube-grid{grid-template-columns:1fr}.chat-ia{min-height:0}.ci-a{min-height:150px;font-size:16.5px}.escalera{height:440px}}
+
+/* Súmalo a tu sitio Rednet: foto arriba de cada tarjeta */
+.otro{overflow:hidden}
+.otro-foto{display:block;margin:-22px -22px 6px;aspect-ratio:16/9;overflow:hidden;background:var(--piedra)}
+.otro-foto img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease-out)}
+.otro:hover .otro-foto img{transform:scale(1.05)}
+@media (prefers-reduced-motion:reduce){.otro:hover .otro-foto img{transform:none}}

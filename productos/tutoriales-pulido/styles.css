@@ -228,7 +228,6 @@ section[id]{scroll-margin-top:88px}
 .ico-ok{display:inline-grid;vertical-align:-3px;margin-right:6px}
 .ico-ok svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 .linea-t input{height:44px}
-.video-marco video{cursor:pointer}
 .cab{align-items:flex-end}
 .aviso{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ocre-texto);margin:14px 0 0}
 .hero-grid{grid-template-columns:1.05fr 1fr}
@@ -304,8 +303,16 @@ section[id]{scroll-margin-top:88px}
 @media (max-width:480px){.tut{aspect-ratio:auto;height:330px}.app{font-size:11px;grid-template-columns:30% 1fr}.app-side span{padding:5px 4px}.manual{inset:4% 4% 0}.mn-busca{right:0}.pl-top #capTxt{display:none}}
 
 /* 4 Video de ejemplo */
-.video-marco{border-radius:var(--r);overflow:hidden;background:var(--tn);box-shadow:0 50px 90px -50px rgba(14,13,12,.6)}
-.video-marco video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:var(--tn)}
+.video-marco{margin:0;position:relative;border-radius:var(--r);overflow:hidden;background:var(--tn);box-shadow:0 50px 90px -50px rgba(14,13,12,.6);aspect-ratio:16/9}
+.video-marco video{display:block;width:100%;height:100%;object-fit:cover;background:var(--tn)}
+.video-marco figcaption{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.video-ver{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:inline-flex;align-items:center;gap:12px;padding:16px 28px;border:0;border-radius:999px;background:var(--rojo,#E30613);color:#fff;font:600 1.05rem/1 inherit;font-family:inherit;cursor:pointer;box-shadow:0 12px 40px -8px rgba(227,6,19,.7),0 0 0 8px rgba(227,6,19,.18);transition:transform .2s,box-shadow .2s}.video-ver svg{width:22px;height:22px;fill:currentColor}.video-ver:hover{transform:translate(-50%,-50%) scale(1.04)}.video-ver:focus-visible{outline:3px solid #fff;outline-offset:3px}.video-ver[hidden],.video-ctl[hidden]{display:none}.video-ctl{position:absolute;right:14px;bottom:14px;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.video-marco .pausa{background:rgba(14,13,12,.72);backdrop-filter:blur(8px)}
+.video-ctl .i-sonido{display:none}
+#vEjSonido[aria-pressed="true"] .i-mudo{display:none}
+#vEjSonido[aria-pressed="true"] .i-sonido{display:block}
+@media (max-width:520px){.video-marco{aspect-ratio:auto}.video-marco video{height:auto;aspect-ratio:16/9}.video-ctl{position:static;justify-content:center;padding:10px 12px 12px}.video-marco .pausa{background:transparent}}
+
 
 /* 5 Cómo funciona */
 .flujo-sec{padding-block:0}
@@ -496,3 +503,44 @@ section[id]{scroll-margin-top:88px}
 
 /* Selector de versiones y barra móvil sobre el contenido */
 .mesa .mp{will-change:auto}
+
+/* Descarga bajo los planes */
+.informe-dl{display:flex;align-items:center;gap:16px;margin-top:26px;padding:26px 28px;min-height:96px;border-radius:var(--r);background:#3a3735;box-shadow:inset 0 1px 0 rgba(255,255,255,.12),inset 0 0 0 1px rgba(255,255,255,.1),0 6px 0 #1d1b1a,0 14px 30px -10px rgba(0,0,0,.6);color:#fff;text-decoration:none;transition:background .25s ease,box-shadow .25s ease,transform .2s ease}
+.informe-dl:hover{background:#47433f;transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.16),inset 0 0 0 1px var(--ocre),0 8px 0 #1d1b1a,0 18px 34px -10px rgba(0,0,0,.6)}.informe-dl:active{transform:translateY(3px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.1),0 2px 0 #1d1b1a}.informe-dl:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.informe-dl svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.dl-doc{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--rojo);flex:none}
+.dl-txt{flex:1;font-family:var(--f-mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;line-height:1.4}
+.dl-txt small{margin-left:8px;font-size:11px;color:var(--ocre-claro);letter-spacing:.12em}
+.dl-flecha{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#fff;color:var(--negro);flex:none}
+@media (max-width:520px){.informe-dl{gap:12px;padding:20px 16px;min-height:84px}.dl-txt{font-size:11.5px}.dl-txt small{display:block;margin:2px 0 0}}
+
+/* Upsell con foto */
+.otro{overflow:hidden}
+.otro-foto{display:block;margin:-22px -22px 6px;aspect-ratio:16/9;overflow:hidden;background:#0a0909}.otro-foto img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease-out,ease)}.otro:hover .otro-foto img{transform:scale(1.05)}@media (prefers-reduced-motion:reduce){.otro:hover .otro-foto img{transform:none}}
+
+/* Demos más grandes: el cuadro manda, el texto cede */
+.flujo-grid{grid-template-columns:.8fr 1.2fr}
+.mesa{height:min(540px,68vh);min-height:420px}
+.mp{padding:30px;gap:16px}
+.mp-etq{font-size:12.5px}
+.fu b,.guion b,.caps b{font-size:17px}
+.fu small,.obj{font-size:14.5px}
+.guion li,.caps li{padding:14px 16px}
+.mini-cc{font-size:16px}
+.viva-grid{grid-template-columns:.75fr 1.25fr}
+.la-b span{font-size:12.5px}
+.la-n{font-size:17px}
+.la-c{font-size:15.5px}
+.sub-l{font-size:16px}
+.arma-grid{grid-template-columns:.7fr 1.3fr}
+.ft-caps li{font-size:17px;padding:14px 0}
+.ft-cab b{font-size:clamp(24px,2.8vw,34px)}
+@media (max-width:860px){.flujo-grid,.viva-grid,.arma-grid{grid-template-columns:1fr}.mesa{height:440px;min-height:0}}
+.video-ctl .pausa{width:auto;height:auto;min-height:40px;padding:10px 16px;border-radius:999px;display:inline-flex;align-items:center;gap:8px;font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.video-ctl .pausa svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.video-ctl .pausa .i-play{display:none}
+.video-ctl .pausa[aria-pressed="true"] .i-play{display:block}
+.video-ctl .pausa[aria-pressed="true"] .i-pausa{display:none}
+.video-ctl .pausa[aria-pressed="true"] .i-play{fill:currentColor;stroke:none}
+@media (max-width:520px){.video-marco .pausa{background:rgba(255,255,255,.14)}}
+.viva-grid h2{font-size:clamp(30px,3.4vw,46px)}
