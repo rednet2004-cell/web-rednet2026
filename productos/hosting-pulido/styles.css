@@ -381,3 +381,30 @@ button,a,summary,.btn,select{touch-action:manipulation}
 .cel.roja small,.plan.dest small,.plan.dest .pd,.plan.dest .ph-i,.d-rojo small{color:#fff}
 .ph-i{opacity:1}
 .plan.dest .precio span{opacity:1}
+
+/* ===== mejoras estándar de landing (guía mejoras-landing-producto) ===== */
+/* Botón de descarga bajo los planes */
+.informe-dl{display:flex;align-items:center;gap:16px;margin-top:26px;padding:26px 28px;min-height:96px;border-radius:var(--r);background:#3a3735;box-shadow:inset 0 1px 0 rgba(255,255,255,.12),inset 0 0 0 1px rgba(255,255,255,.1),0 6px 0 #1d1b1a,0 14px 30px -10px rgba(0,0,0,.6);color:#fff;text-decoration:none;transition:background .25s ease,box-shadow .25s ease,transform .2s ease}
+.informe-dl:hover{background:#47433f;transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.16),inset 0 0 0 1px var(--ocre),0 8px 0 #1d1b1a,0 18px 34px -10px rgba(0,0,0,.6)}
+.informe-dl:active{transform:translateY(3px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.1),0 2px 0 #1d1b1a}
+.informe-dl:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.informe-dl svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.dl-doc{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--rojo);flex:none}
+.dl-txt{flex:1;font-family:var(--f-mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;line-height:1.4}
+.dl-txt small{margin-left:8px;font-size:11px;color:var(--ocre-claro);letter-spacing:.12em}
+.dl-flecha{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#fff;color:var(--negro);flex:none}
+@media (max-width:520px){.informe-dl{gap:12px;padding:20px 16px;min-height:84px}.dl-txt{font-size:11.5px}.dl-txt small{display:block;margin:2px 0 0}}
+/* Demo más grande: el ticket de soporte gana ancho y texto */
+.compara-grid{grid-template-columns:.8fr 1.2fr}
+.ticket{padding:clamp(24px,3vw,36px);gap:16px}
+.ticket .t-cab{font-size:13px}
+.ticket .t-msg{font-size:clamp(16px,1.5vw,18.5px);padding:16px 18px;line-height:1.5;max-width:92%}
+.ticket .t-msg.rn b{font-size:12.5px}
+.ticket .t-pie{font-size:12.5px}
+@media (max-width:860px){.compara-grid{grid-template-columns:1fr}}
+/* Upsell con foto */
+.otro{overflow:hidden}
+.otro-foto{display:block;margin:-22px -22px 6px;aspect-ratio:16/9;overflow:hidden;background:#0a0909}
+.otro-foto img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease-out)}
+@media (hover:hover) and (pointer:fine){.otro:hover .otro-foto img{transform:scale(1.05)}}
+.otro{min-height:0}

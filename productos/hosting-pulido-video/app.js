@@ -85,17 +85,23 @@ const vCta = document.getElementById('vCta');
 const sinVideo = reduce || !escritorio.matches || (navigator.connection && navigator.connection.saveData);
 if (!sinVideo) new IntersectionObserver(([en]) => { if (en.isIntersecting){ vCta.preload = 'auto'; vCta.play().catch(() => {}); } else vCta.pause(); }, {rootMargin:'200px'}).observe(vCta);
 
-/* Video del producto: en escritorio se reproduce solo (sin audio) mientras está en pantalla; en el celular, con ahorro de datos
-o con reducir movimiento queda el póster y se reproduce al tocar "Ver video". El botón siempre pausa. */
-const vProd = document.getElementById('vProd'), vBtn = document.getElementById('vBtn'), vMarco = document.getElementById('videoMarco');
-let vPausadoPorUsuario = false;
-const vEstado = () => { const on = !vProd.paused; vBtn.setAttribute('aria-pressed', on); vBtn.querySelector('span').textContent = on ? 'Pausar' : 'Ver video'; vMarco.classList.toggle('corriendo', on); };
-vProd.addEventListener('play', vEstado); vProd.addEventListener('pause', vEstado);
-vBtn.addEventListener('click', () => { if (vProd.paused){ vPausadoPorUsuario = false; vProd.preload = 'auto'; vProd.play().catch(() => {}); } else { vPausadoPorUsuario = true; vProd.pause(); } });
-new IntersectionObserver(([en]) => {
-if (!en.isIntersecting){ vProd.pause(); return; }
-if (!sinVideo && !vPausadoPorUsuario){ vProd.preload = 'auto'; vProd.play().catch(() => {}); }
-}, {threshold:.35}).observe(vProd);
+/* Video del producto: no arranca solo; se reproduce al pulsar "Ver video". Se pausa si sale de pantalla. Hoy sin audio. */
+const vP = document.getElementById('vProd'), vPp = document.getElementById('vProdPausa'), vPver = document.getElementById('vProdVer'), vPctl = document.querySelector('.video-ctl');
+let vPpausado = false, vPvisible = true, vPini = false;
+function vPestado(){
+  if (!vPini) return;
+  if (vPvisible && !vPpausado) vP.play().catch(() => {}); else vP.pause();
+  vPp.setAttribute('aria-pressed', vPpausado);
+  vPp.querySelector('span').textContent = vPpausado ? 'Reproducir video' : 'Pausar video';
+}
+vPver.addEventListener('click', () => {
+  vPini = true; vPpausado = false; vP.preload = 'auto';
+  if (vP.ended) vP.currentTime = 0;
+  vPver.hidden = true; vPctl.hidden = false; vPestado();
+});
+vP.addEventListener('ended', () => { vPini = false; vPver.querySelector('span').textContent = 'Ver de nuevo'; vPver.hidden = false; vPctl.hidden = true; });
+vPp.addEventListener('click', () => { vPpausado = !vPpausado; vPestado(); });
+new IntersectionObserver(([en]) => { vPvisible = en.isIntersecting; vPestado(); }, {threshold:.25}).observe(vP);
 /* Los CTA con motivo o plan preseleccionan el formulario */
 const fQue = document.getElementById('fQue');
 document.querySelectorAll('[data-plan]').forEach(a => a.addEventListener('click', () => { fQue.value = a.dataset.plan; setTimeout(() => document.getElementById('fNombre').focus({preventScroll:true}), 600); }));
