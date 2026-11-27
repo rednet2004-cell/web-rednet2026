@@ -74,9 +74,9 @@
 <section class="video-sec" id="video">
 <div class="wrap">
 <figure class="vid" id="vid">
-<video id="vProd" muted playsinline loop preload="none" poster="../webmotion/video/portada.jpg" width="1280" height="720"><source src="../webmotion/video/webmotion.mp4" type="video/mp4"></video>
-<figcaption><span>Así se ve un video WebMotion: <span translate="no">18 s</span>, con música propia y sin grabar nada.</span><span class="vid-ctrl"><button class="vbtn" id="vPlay" type="button" aria-pressed="false"><svg class="pz" viewBox="0 0 24 24" aria-hidden="true"><path class="rell" d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg><svg class="play" viewBox="0 0 24 24" aria-hidden="true"><path class="rell" d="M8 5v14l11-7z"/></svg><span id="vPlayTxt">Ver video</span></button><button class="vbtn" id="vSon" type="button" aria-pressed="false" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16.5 9a4 4 0 0 1 0 6"/></svg><span id="vSonTxt">Activar sonido</span></button></span></figcaption>
-
+<video id="vProd" playsinline preload="none" poster="video/portada.jpg" width="1280" height="720"><source src="video/webmotion.mp4" type="video/mp4"></video>
+<button class="video-ver" id="vVer" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="rell" d="M8 5v14l11-7z"/></svg><span id="vVerTxt">Ver video</span></button>
+<figcaption><span>Así se ve un video WebMotion: <span translate="no">18 s</span>, con música propia y sin grabar nada.</span><span class="vid-ctrl" id="vCtl" hidden><button class="vbtn" id="vSon" type="button" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16.5 9a4 4 0 0 1 0 6"/></svg><span id="vSonTxt">Silenciar</span></button><button class="vbtn" id="vPlay" type="button" aria-pressed="true"><svg class="pz" viewBox="0 0 24 24" aria-hidden="true"><path class="rell" d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg><svg class="play" viewBox="0 0 24 24" aria-hidden="true"><path class="rell" d="M8 5v14l11-7z"/></svg><span id="vPlayTxt">Pausar</span></button></span></figcaption>
 </figure>
 </div>
 </section>
@@ -241,6 +241,7 @@
 <div class="plan med"><small>Plan mensual</small><div class="precio">$[—]<span class="per">/mes</span></div><p class="pd">Para tener algo nuevo que publicar todos los meses.</p><ul><li>[4] videos al mes</li><li>Los tres formatos</li><li>Desde lo nuevo de tu web</li><li>Música con derechos</li></ul><a class="btn" href="#contacto" data-plan="Plan mensual de videos">Quiero el plan mensual</a></div>
 </div>
 <p class="letra">Precios en pesos chilenos por confirmar. Usamos solo imágenes de tu web o con licencia, y música con derechos de uso.</p>
+<a class="informe-dl" href="rednet-webmotion-guion.pdf" download><span class="idl-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></span><span class="idl-txt">Descargar ejemplo de guion de video <em>PDF</em></span><span class="idl-flecha"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg></span></a>
 </div>
 </section>
 
@@ -288,7 +289,7 @@
 <section class="otros-sec">
 <div class="wrap">
 <h2 class="otros-t">Funciona mejor junto a</h2>
-<div class="otros"><a class="otro" href="../rrss-pulido/"><small>Contenido</small><b translate="no">Publicador Web/RRSS</b><span>Tus videos, publicados en tu sitio y en tus redes.</span></a><a class="otro" href="../mantencion-rrss-pulido/"><small>Redes sociales</small><b translate="no">Mantención RRSS</b><span>Un perfil ordenado donde tus videos se luzcan.</span></a><a class="otro" href="../diseno-web-pulido/"><small>Sitios web</small><b translate="no">Sitio/Web Pro</b><span>Una web con buenas fotos y textos, lista para animar.</span></a></div>
+<div class="otros"><a class="otro" href="../diseno-web-pulido/"><picture class="otro-foto"><source srcset="img/hero-diseno-web.webp" type="image/webp"><img src="img/hero-diseno-web.jpg" alt="" width="640" height="360" loading="lazy" decoding="async"></picture><small>Sitios web</small><b translate="no">Sitio/Web Pro</b><span>Una web con buenas fotos y textos, lista para animar.</span></a><a class="otro" href="../tienda-online-pulido/"><picture class="otro-foto"><source srcset="img/hero-ecommerce.webp" type="image/webp"><img src="img/hero-ecommerce.jpg" alt="" width="640" height="360" loading="lazy" decoding="async"></picture><small>Ventas online</small><b translate="no">Tienda Online</b><span>Un video corto para cada producto estrella de tu tienda.</span></a><a class="otro" href="../hosting-pulido/"><picture class="otro-foto"><source srcset="img/hero-hosting.webp" type="image/webp"><img src="img/hero-hosting.jpg" alt="" width="640" height="360" loading="lazy" decoding="async"></picture><small>Infraestructura</small><b translate="no">Hosting</b><span>Tus videos y tu sitio, cargando rápido.</span></a></div>
 </div>
 </section>
 </main>
