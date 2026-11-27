@@ -104,6 +104,24 @@ if (stEt && escritorio.matches) scrollTo({top:stEt.start + (stEt.end - stEt.star
 }));
 etapa(0);
 
+/* Video del producto: no arranca solo; se reproduce al pulsar "Ver video" y se pausa al salir de pantalla */
+const vA = document.getElementById('vApps'), vAver = document.getElementById('vAppsVer'), vAp = document.getElementById('vAppsPausa'), vActl = document.querySelector('.video-ctl');
+let vApausado = false, vAvisible = true, vAini = false;
+function vAestado(){
+if (!vAini) return;
+if (vAvisible && !vApausado) vA.play().catch(() => {}); else vA.pause();
+vAp.setAttribute('aria-pressed', vApausado);
+vAp.querySelector('span').textContent = vApausado ? 'Reproducir animación' : 'Pausar animación';
+}
+vAver.addEventListener('click', () => {
+vAini = true; vApausado = false; vA.preload = 'auto';
+if (vA.ended) vA.currentTime = 0;
+vAver.hidden = true; vActl.hidden = false; vAestado();
+});
+vA.addEventListener('ended', () => { vAini = false; vAver.querySelector('span').textContent = 'Ver de nuevo'; vAver.hidden = false; vActl.hidden = true; });
+vAp.addEventListener('click', () => { vApausado = !vApausado; vAestado(); });
+new IntersectionObserver(([en]) => { vAvisible = en.isIntersecting; vAestado(); }, {threshold:.25}).observe(vA);
+
 /* Video de fondo del contacto: solo escritorio, sin ahorro de datos ni reducir movimiento; se pausa fuera de pantalla */
 const vCta = document.getElementById('vCta');
 const sinVideo = reduce || !escritorio.matches || (navigator.connection && navigator.connection.saveData);
