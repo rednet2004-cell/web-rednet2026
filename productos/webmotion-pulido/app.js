@@ -70,25 +70,23 @@ new IntersectionObserver(([en]) => { visible = en.isIntersecting; if (visible) s
 setTimeout(seguir, 600);
 }
 
-/* 3 Video del producto: en escritorio parte silenciado al verse; en celular, póster y botón. Se pausa fuera de pantalla. */
-const v = $('vProd'), vPlay = $('vPlay'), vPlayTxt = $('vPlayTxt'), vSon = $('vSon');
+/* 3 Video del producto: no parte solo. Botón "Ver video" sobre el póster; al tocarlo parte con sonido, con Silenciar y Pausar.
+   Al terminar vuelve "Ver de nuevo". Se pausa si sale de pantalla. */
 const auto = !reduce && escritorio.matches && !(navigator.connection && navigator.connection.saveData);
+const v = $('vProd'), vVer = $('vVer'), vVerTxt = $('vVerTxt'), vCtl = $('vCtl'), vSon = $('vSon'), vPlay = $('vPlay');
 const syncV = () => {
-const on = !v.paused; vPlayTxt.textContent = on ? 'Pausar' : 'Ver video';
-vPlay.setAttribute('aria-pressed', on);
-if (vSon){ vSon.hidden = !on && v.currentTime === 0; $('vSonTxt').textContent = v.muted ? 'Activar sonido' : 'Silenciar'; vSon.setAttribute('aria-pressed', !v.muted); }
+vSon.setAttribute('aria-pressed', !v.muted); $('vSonTxt').textContent = v.muted ? 'Activar sonido' : 'Silenciar';
+vPlay.setAttribute('aria-pressed', !v.paused); $('vPlayTxt').textContent = v.paused ? 'Seguir' : 'Pausar';
 };
-let vUsuario = false;
-vPlay.addEventListener('click', () => {
-vUsuario = true;
-if (v.paused){ if (!vSon) v.muted = false; v.preload = 'auto'; v.play().catch(() => {}); } else v.pause();
+vVer.addEventListener('click', () => {
+v.muted = false; v.preload = 'auto'; if (v.ended) v.currentTime = 0;
+v.play().catch(() => {}); vVer.hidden = true; vCtl.hidden = false; syncV();
 });
-if (vSon) vSon.addEventListener('click', () => { v.muted = !v.muted; syncV(); });
-v.addEventListener('play', syncV); v.addEventListener('pause', syncV); v.addEventListener('volumechange', syncV);
-new IntersectionObserver(([en]) => {
-if (en.isIntersecting){ if (auto && !vUsuario && v.paused){ v.preload = 'auto'; v.play().catch(() => {}); } }
-else if (!v.paused) v.pause();
-}, {threshold:.35}).observe(v);
+vSon.addEventListener('click', () => { v.muted = !v.muted; syncV(); });
+vPlay.addEventListener('click', () => { if (v.paused) v.play().catch(() => {}); else v.pause(); });
+v.addEventListener('play', syncV); v.addEventListener('pause', syncV);
+v.addEventListener('ended', () => { vVerTxt.textContent = 'Ver de nuevo'; vVer.hidden = false; vCtl.hidden = true; });
+new IntersectionObserver(([en]) => { if (!en.isIntersecting && !v.paused) v.pause(); }, {threshold:.2}).observe(v);
 
 /* 4 Cómo funciona: el paso visible sigue al scroll */
 const mesa = $('mesa'), pasos = [...document.querySelectorAll('#pasos li')];
