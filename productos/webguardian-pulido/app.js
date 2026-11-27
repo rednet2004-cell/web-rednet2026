@@ -98,6 +98,27 @@ lis[i].classList.toggle('on', k > 0);
 }
 capas(reduce || !hasG ? 1 : 0);
 
+/* Animación de WebGuardian: solo se reproduce a la vista; con reducir movimiento o ahorro de datos queda el cuadro fijo */
+const vG = document.getElementById('vGuardia'), vGp = document.getElementById('vGuardiaPausa');
+const vGsin = reduce || (navigator.connection && navigator.connection.saveData);
+let vGpausado = !!vGsin, vGvisible = false;
+function vGestado(){
+  const corre = vGvisible && !vGpausado;
+  if (corre){ vG.preload = 'auto'; vG.play().catch(() => {}); } else vG.pause();
+  vGp.setAttribute('aria-pressed', vGpausado);
+  vGp.querySelector('span').textContent = vGpausado ? 'Reproducir animación' : 'Pausar animación';
+}
+vGp.addEventListener('click', () => { vGpausado = !vGpausado; vGestado(); });
+const vGs = document.getElementById('vGuardiaSonido');
+vGs.addEventListener('click', () => {
+  vG.muted = !vG.muted;
+  vGs.setAttribute('aria-pressed', !vG.muted);
+  vGs.querySelector('span').textContent = vG.muted ? 'Activar sonido' : 'Silenciar';
+  if (!vG.muted && vGpausado){ vGpausado = false; vGestado(); }   // activar el sonido también reproduce
+});
+new IntersectionObserver(([en]) => { vGvisible = en.isIntersecting; vGestado(); }, {rootMargin:'200px'}).observe(vG);
+vGestado();
+
 /* Video de fondo del contacto: solo escritorio, sin ahorro de datos ni reducir movimiento; se pausa fuera de pantalla */
 const vCta = document.getElementById('vCta');
 const sinVideo = reduce || !escritorio.matches || (navigator.connection && navigator.connection.saveData);

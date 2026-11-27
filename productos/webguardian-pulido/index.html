@@ -60,6 +60,21 @@
 </div>
 </section>
 
+<!-- 2b ANIMACIÓN: así vigila WebGuardian (video liviano, se pausa fuera de pantalla) -->
+<section class="video-sec" aria-labelledby="vGuardiaTit">
+<div class="wrap">
+<figure class="video-marco">
+<h2 class="sr" id="vGuardiaTit">Así vigila WebGuardian tu sitio</h2>
+<video id="vGuardia" muted playsinline loop preload="none" width="1280" height="720" poster="video/webguardian-poster.jpg" aria-describedby="vGuardiaDesc"><source src="video/webguardian-loop.webm" type="video/webm"><source src="video/webguardian-loop.mp4" type="video/mp4"></video>
+<figcaption id="vGuardiaDesc">Animación de ejemplo con datos ficticios, con música que se activa con el botón: una cámara vigila tu sitio, bloquea un ataque, actualiza lo pendiente y entrega un informe de estado.</figcaption>
+<div class="video-ctl">
+<button type="button" class="pausa" id="vGuardiaSonido" aria-pressed="false"><svg class="i-mudo" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5zM16 9.5l5 5M21 9.5l-5 5"/></svg><svg class="i-sonido" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5zM15.5 9a4.2 4.2 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11"/></svg><span>Activar sonido</span></button>
+<button type="button" class="pausa" id="vGuardiaPausa" aria-pressed="false"><svg class="i-pausa" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z"/></svg><span>Pausar animación</span></button>
+</div>
+</figure>
+</div>
+</section>
+
 <!-- 3 UNA NOCHE DE GUARDIA: sección fijada, el reloj avanza y aparece el registro -->
 <section class="guardia-sec" id="guardia">
 <div class="wrap guardia-grid">
@@ -141,6 +156,7 @@
 <div class="plan med"><small>Tienda</small><div class="precio">Hablemos</div><p class="pd">Para tiendas online y sitios con pagos.</p><ul><li>Todo lo de Guardia+</li><li>Monitoreo prioritario</li><li>Revisión de pagos</li><li>Soporte con prioridad</li></ul><a class="btn" href="#contacto" data-plan="Plan Tienda">Hablar con <span translate="no">Rednet</span></a></div>
 </div>
 <p class="letra">El primer mes es gratis, con entrega de informe y de las mejoras detectadas. Sin permanencia [por confirmar]. Precios en pesos chilenos por confirmar.</p>
+<a class="informe-dl" href="rednet-webguardian-informe.pdf" download><span class="dl-doc" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7zM14 3v5h5M10 13h6M10 17h6"/></svg></span><span class="dl-txt">Descargar ejemplo de informe mensual <small>PDF</small></span><span class="dl-flecha" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v11M7 12l5 5 5-5M5 20h14"/></svg></span></a>
 </div>
 </section>
 
