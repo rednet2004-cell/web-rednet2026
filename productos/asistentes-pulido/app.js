@@ -109,9 +109,9 @@ new IntersectionObserver((ens, ob) => { if (ens[0].isIntersecting){ ob.disconnec
 
 /* 3 Carrera de la respuesta */
 const carr = document.getElementById('carrera'), evs = [...carr.querySelectorAll('.ev')], cab = document.getElementById('cabezal'), horaG = document.getElementById('horaG');
-carr.querySelectorAll('.linea').forEach(l => [...l.children].forEach((e, i) => { e.style.left = `calc(${+e.dataset.t} * (100% - min(210px, 22vw)))`; e.style.top = (10 + (i % 3) * 68) + 'px'; }));
+carr.querySelectorAll('.linea').forEach(l => [...l.children].forEach((e, i) => { e.style.left = `calc(${+e.dataset.t} * (100% - min(240px, 24vw)))`; e.style.top = (10 + (i % 3) * 78) + 'px'; }));
 function carrera(p){
-const lin = carr.querySelector('.linea'), w = lin.offsetWidth - Math.min(210, innerWidth * .22);
+const lin = carr.querySelector('.linea'), w = lin.offsetWidth - Math.min(240, innerWidth * .24);
 cab.style.transform = `translateX(${p * w}px)`;
 evs.forEach(e => e.classList.toggle('on', p >= +e.dataset.t - .001));
 horaG.textContent = hora(1394 + p * 616);
