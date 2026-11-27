@@ -63,6 +63,27 @@ calN.textContent = n;
 }
 llenar(1);
 
+/* Video: no arranca solo; se reproduce al pulsar "Ver video". Se pausa al salir de pantalla */
+const vR = document.getElementById('vResp'), vRp = document.getElementById('vRespPausa');
+const vRver = document.getElementById('vRespVer'), vRctl = document.querySelector('.video-ctl');
+let vRpausado = false, vRvisible = true, vRini = false;
+function vRestado(){
+  if (!vRini) return;
+  if (vRvisible && !vRpausado) vR.play().catch(() => {}); else vR.pause();
+  vRp.setAttribute('aria-pressed', vRpausado);
+  vRp.querySelector('span').textContent = vRpausado ? 'Reproducir animación' : 'Pausar animación';
+}
+vRver.addEventListener('click', () => {
+  vRini = true; vRpausado = false; vR.preload = 'auto';
+  if (vR.ended) vR.currentTime = 0;
+  vRver.hidden = true; vRctl.hidden = false; vRestado();
+});
+vR.addEventListener('ended', () => {
+  vRini = false; vRver.querySelector('span').textContent = 'Ver de nuevo'; vRver.hidden = false; vRctl.hidden = true;
+});
+vRp.addEventListener('click', () => { vRpausado = !vRpausado; vRestado(); });
+new IntersectionObserver(([en]) => { vRvisible = en.isIntersecting; vRestado(); }, {threshold:.25}).observe(vR);
+
 /* Video de fondo del contacto: solo escritorio, sin ahorro de datos ni reducir movimiento; se pausa fuera de pantalla */
 const vCta = document.getElementById('vCta');
 const sinVideo = reduce || !escritorio.matches || (navigator.connection && navigator.connection.saveData);
