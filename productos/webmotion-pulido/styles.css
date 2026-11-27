@@ -494,3 +494,58 @@ section[id]{scroll-margin-top:88px}
 }
 
 .monitor.quieto *,.sala:has(.monitor.quieto) .lt *{animation-play-state:paused!important}
+
+/* Mejoras estándar de landing de producto */
+/* Video: sin autoplay, botón grande sobre el póster; los controles van bajo el video */
+.video-ver{position:absolute;left:50%;top:calc(50% - 32px);transform:translate(-50%,-50%);display:inline-flex;align-items:center;gap:12px;font-family:var(--f-mono);font-size:14px;letter-spacing:.1em;text-transform:uppercase;border:0;border-radius:999px;padding:20px 32px;background:var(--rojo);color:#fff;cursor:pointer;box-shadow:0 20px 50px -16px rgba(0,0,0,.6);transition:transform var(--t-btn) var(--ease-out),background-color var(--t-btn) var(--ease-out)}
+.video-ver[hidden]{display:none}
+.video-ver svg{width:20px;height:20px;fill:currentColor}
+.video-ver:active{transform:translate(-50%,-50%) scale(.97)}
+.video-ver:focus-visible{outline:3px solid #fff;outline-offset:3px}
+@media (hover:hover) and (pointer:fine){.video-ver:hover{background:var(--rojo-profundo)}}
+@media (max-width:560px){.video-ver{padding:14px 22px;font-size:12px;top:50%}}
+.vid-ctrl[hidden]{display:none}
+/* Descarga bajo los planes */
+.informe-dl{display:flex;align-items:center;gap:20px;min-height:96px;margin-top:22px;padding:26px 28px;border-radius:20px;background:#3a3735;color:#fff;text-decoration:none;box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 6px 0 #1d1b1a,0 14px 24px -10px rgba(0,0,0,.5);transition:transform var(--t-ui) var(--ease-out),box-shadow var(--t-ui) var(--ease-out)}
+.informe-dl svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.idl-ico{display:grid;place-items:center;width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,.08);flex:none}
+.idl-txt{flex:1;min-width:0;font-family:var(--f-display);font-stretch:112%;font-weight:700;font-size:clamp(18px,2.2vw,24px);letter-spacing:-.015em;line-height:1.15}
+.idl-txt em{font-style:normal;font-family:var(--f-mono);font-weight:500;font-size:11.5px;letter-spacing:.1em;background:var(--rojo);border-radius:6px;padding:3px 8px;margin-left:8px;vertical-align:middle;white-space:nowrap}
+.idl-flecha{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--marca);color:var(--sala);flex:none}
+@media (hover:hover) and (pointer:fine){.informe-dl:hover{transform:translateY(-3px);box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 9px 0 #1d1b1a,0 20px 30px -12px rgba(0,0,0,.55)}}
+.informe-dl:active{transform:translateY(5px);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 1px 0 #1d1b1a}
+.informe-dl:focus-visible{outline:3px solid var(--rojo);outline-offset:4px}
+@media (max-width:560px){.informe-dl{padding:20px;gap:14px}.idl-ico{display:none}}
+/* Demos más grandes: texto de la demo más legible, la columna de texto cede espacio */
+.hero-grid{grid-template-columns:.9fr 1.1fr}
+.s-txt b{font-size:clamp(20px,2.3vw,30px)}
+.s-txt span{font-size:14.5px}
+.pista small,.lt-cab{font-size:12.5px}
+.flujo-grid{grid-template-columns:.85fr 1.15fr}
+.mesa{height:min(560px,72vh);min-height:460px}
+.mp{padding:32px}
+.mp-etq{font-size:13px}
+.url-box b{font-size:clamp(16px,2vw,22px)}
+.mp-nota{font-size:17px}
+.k small{font-size:12.5px}
+.k-logo b{font-size:28px}
+.k-txt b{font-size:22px}
+.k-txt span{font-size:15px}
+.cuadro span{font-size:12.5px}
+.cuadro b{font-size:clamp(17px,1.8vw,22px)}
+.f span{font-size:26px}
+.f small{font-size:12.5px}
+.fmt-grid{grid-template-columns:.7fr 1.3fr}
+.escena-fmt{height:clamp(440px,50vw,600px)}
+.l-logo{font-size:17px}
+.l-txt b{font-size:clamp(20px,2.6vw,34px)}
+.l-txt>span{font-size:15px}
+.l-btn{font-size:12.5px!important}
+@media (max-width:860px){.flujo-grid{grid-template-columns:1fr}.fmt-grid{grid-template-columns:1fr}.mesa{height:460px;min-height:0}.mp{padding:24px}}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr}}
+@media (max-width:480px){.s-txt b{font-size:16px}.s-txt span{font-size:12px}.mp{padding:20px}.f span{font-size:18px}.k-logo b{font-size:22px}}
+/* Súmalo a tu sitio: foto relacionada arriba de cada tarjeta */
+.otro{overflow:hidden}
+.otro-foto{display:block;margin:-22px -22px 6px;aspect-ratio:16/9;overflow:hidden;background:#0a0909}
+.otro-foto img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease-out,ease)}
+@media (hover:hover) and (pointer:fine){.otro:hover .otro-foto img{transform:scale(1.05)}}

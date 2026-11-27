@@ -55,6 +55,22 @@
 </div>
 </section>
 
+<!-- 2b VIDEO del producto (25 s): no arranca solo; "Ver video" lo reproduce con sonido -->
+<section class="video-sec" aria-labelledby="vDocTit">
+<div class="wrap">
+<figure class="video-marco">
+<h2 class="sr" id="vDocTit">Así ordena Nube Documental los archivos de tu oficina</h2>
+<video id="vDoc" playsinline preload="none" width="1280" height="720" poster="video/documentos-poster.jpg" aria-describedby="vDocDesc"><source src="video/documentos.webm" type="video/webm"><source src="video/documentos.mp4" type="video/mp4"></video>
+<figcaption id="vDocDesc">Animación de ejemplo, con música: documentos sueltos se ordenan en carpetas, se buscan en segundos y se comparten con permisos.</figcaption>
+<button type="button" class="video-ver" id="vDocVer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z"/></svg><span>Ver video</span></button>
+<div class="video-ctl" hidden>
+<button type="button" class="pausa" id="vDocSonido" aria-pressed="false"><svg class="i-mudo" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5zM16 9.5l5 5M21 9.5l-5 5"/></svg><svg class="i-sonido" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5zM15.5 9a4.2 4.2 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11"/></svg><span>Activar sonido</span></button>
+<button type="button" class="pausa" id="vDocPausa" aria-pressed="false"><svg class="i-pausa" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z"/></svg><span>Pausar video</span></button>
+</div>
+</figure>
+</div>
+</section>
+
 <!-- 3 BUSCA: buscador real sobre archivos de ejemplo -->
 <section class="busca-sec" id="busca">
 <div class="wrap busca-grid">
@@ -208,6 +224,7 @@
 <div class="plan med"><small>A medida</small><div class="precio">Hablemos</div><p class="pd">Para varias sedes o mucho volumen.</p><ul><li>Espacio a medida</li><li>Varias sedes</li><li>Conexión con tus sistemas</li><li>Capacitación al equipo</li></ul><a class="btn" href="#contacto" data-plan="Nube a medida">Hablar con Rednet</a></div>
 </div>
 <p class="letra">Precios en pesos chilenos por confirmar. Copia de seguridad: se suma con <a href="../respaldo-pulido/">Respaldo de Datos Seguro</a> <span class="marca-c">[¿incluida en algún plan? por confirmar]</span></p>
+<a class="informe-dl" href="rednet-nube-documental-informe.pdf" download><span class="dl-doc" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7zM14 3v5h5M10 13h6M10 17h6"/></svg></span><span class="dl-txt">Descargar ejemplo de estructura de carpetas y permisos <small>PDF</small></span><span class="dl-flecha" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v11M7 12l5 5 5-5M5 20h14"/></svg></span></a>
 </div>
 </section>
 
@@ -254,8 +271,8 @@
 <!-- 14 RELACIONADOS -->
 <section class="otros-sec">
 <div class="wrap">
-<h2 class="otros-t">Funciona mejor junto a</h2>
-<div class="otros"><a class="otro" href="../respaldo-pulido/"><small>Una copia en otro lugar</small><b translate="no">Respaldo de Datos Seguro</b><span>Si algo falla, tus documentos vuelven. El complemento natural de tu nube.</span></a><a class="otro" href="../automatizaciones-pulido/"><small>Menos trabajo a mano</small><b translate="no">Automatizaciones de Tareas</b><span>Que las facturas y los formularios lleguen solos a su carpeta.</span></a><a class="otro" href="../soporte-pulido/"><small>Una persona que responde</small><b translate="no">Soporte</b><span>Ayuda a tu equipo con los equipos, el correo y las dudas del día a día.</span></a></div>
+<h2 class="otros-t">Súmalo a tu Nube Documental</h2>
+<div class="otros"><a class="otro" href="../respaldo-pulido/"><picture class="otro-foto"><source srcset="img/hero-hosting.webp" type="image/webp"><img src="img/hero-hosting.jpg" alt="" width="640" height="360" loading="lazy" decoding="async"></picture><small>Una copia en otro lugar</small><b translate="no">Respaldo de Datos Seguro</b><span>Si algo falla, tus documentos vuelven. El complemento natural de tu nube.</span></a><a class="otro" href="../automatizaciones-pulido/"><picture class="otro-foto"><source srcset="img/hero-ecommerce.webp" type="image/webp"><img src="img/hero-ecommerce.jpg" alt="" width="640" height="360" loading="lazy" decoding="async"></picture><small>Menos trabajo a mano</small><b translate="no">Automatizaciones de Tareas</b><span>Que las facturas y los formularios lleguen solos a su carpeta.</span></a><a class="otro" href="../soporte-pulido/"><picture class="otro-foto"><source srcset="img/hero-diseno-web.webp" type="image/webp"><img src="img/hero-diseno-web.jpg" alt="" width="640" height="360" loading="lazy" decoding="async"></picture><small>Una persona que responde</small><b translate="no">Soporte</b><span>Ayuda a tu equipo con los equipos, el correo y las dudas del día a día.</span></a></div>
 </div>
 </section>
 </main>

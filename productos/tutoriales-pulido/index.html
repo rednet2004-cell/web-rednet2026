@@ -79,10 +79,17 @@
 <!-- 4 VIDEO DE EJEMPLO -->
 <section class="video-sec" id="ejemplo">
 <div class="wrap">
-<div class="cab"><h2>Así se ve un tutorial <span class="g">hecho por Rednet</span></h2><p class="nota">25 segundos, con capítulos, subtítulos y música. Dale play.</p></div>
-<div class="video-marco">
-<video controls playsinline preload="none" poster="../tutoriales/video/poster.jpg" width="1280" height="720"><source src="../tutoriales/video/tutoriales-25s.mp4" type="video/mp4"></video>
+<div class="cab"><h2>Así se ve un tutorial <span class="g">hecho por Rednet</span></h2><p class="nota">25 segundos, con capítulos, subtítulos y música. Dale a «Ver video».</p></div>
+<figure class="video-marco">
+<h3 class="sr" id="vEjTit">Ejemplo de tutorial hecho por Rednet</h3>
+<video id="vEj" playsinline preload="none" width="1280" height="720" poster="video/poster.jpg" aria-describedby="vEjDesc"><source src="video/tutoriales-25s.mp4" type="video/mp4"></video>
+<figcaption id="vEjDesc">Tutorial de ejemplo con un sistema ficticio, con música: 48 slides caen como dominó, se arma un paso a paso con recuadros y subtítulos, y termina con los capítulos entregados.</figcaption>
+<button type="button" class="video-ver" id="vEjVer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z"/></svg><span>Ver video</span></button>
+<div class="video-ctl" hidden>
+<button type="button" class="pausa" id="vEjSonido" aria-pressed="false"><svg class="i-mudo" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5zM16 9.5l5 5M21 9.5l-5 5"/></svg><svg class="i-sonido" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5zM15.5 9a4.2 4.2 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11"/></svg><span>Activar sonido</span></button>
+<button type="button" class="pausa" id="vEjPausa" aria-pressed="false"><svg class="i-pausa" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z"/></svg><span>Pausar video</span></button>
 </div>
+</figure>
 </div>
 </section>
 
@@ -255,6 +262,7 @@
 <div class="plan med"><small>Manual animado completo</small><div class="precio">$[—]<span class="per">/proyecto</span></div><p class="pd">Para reemplazar tu manual o tu curso por una serie de capítulos.</p><ul><li>Hasta [—] capítulos</li><li>Slides animadas o deck vivo</li><li>Horizontal y vertical</li><li>Voz en off [por confirmar]</li></ul><a class="btn" href="#contacto" data-plan="Manual animado completo">Quiero el manual completo</a></div>
 </div>
 <p class="letra">Precios en pesos chilenos por confirmar. Plazos de entrega por confirmar según la cantidad de capítulos.</p>
+<a class="informe-dl" href="rednet-tutoriales-informe.pdf" download><span class="dl-doc" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7zM14 3v5h5M10 13h6M10 17h6"/></svg></span><span class="dl-txt">Descargar ejemplo de guion de tutorial <small>PDF</small></span><span class="dl-flecha" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v11M7 12l5 5 5-5M5 20h14"/></svg></span></a>
 </div>
 </section>
 
@@ -301,7 +309,7 @@
 <section class="otros-sec">
 <div class="wrap">
 <h2 class="otros-t">Funciona mejor junto a</h2>
-<div class="otros"><a class="otro" href="../apps-pulido/"><small>Apps</small><b translate="no">Apps Móviles</b><span>Tu app nueva, con un capítulo por función.</span></a><a class="otro" href="../asistente-virtual-pulido/"><small>IA y automatización</small><b translate="no">Asistente Virtual</b><span>Responde la duda y manda al capítulo que la explica.</span></a><a class="otro" href="../webmotion-pulido/"><small>Video</small><b translate="no">WebMotion Cortos Comerciales</b><span>Lo que tu sitio ya muestra, en cortos para vender.</span></a></div>
+<div class="otros"><a class="otro" href="../diseno-web-pulido/"><picture class="otro-foto"><source srcset="img/hero-diseno-web.webp" type="image/webp"><img src="img/hero-diseno-web.jpg" alt="" width="640" height="360" loading="lazy" decoding="async"></picture><small>Sitios web</small><b translate="no">Sitio/Web Pro</b><span>Publica cada capítulo en tu sitio, junto al servicio que explica.</span></a><a class="otro" href="../tienda-online-pulido/"><picture class="otro-foto"><source srcset="img/hero-ecommerce.webp" type="image/webp"><img src="img/hero-ecommerce.jpg" alt="" width="640" height="360" loading="lazy" decoding="async"></picture><small>Ventas online</small><b translate="no">Tienda Online</b><span>Un video de cómo comprar y de cómo usar cada producto.</span></a><a class="otro" href="../webmotion-pulido/"><picture class="otro-foto"><img src="img/webmotion.jpg" alt="" width="640" height="360" loading="lazy" decoding="async"></picture><small>Video</small><b translate="no">WebMotion Cortos Comerciales</b><span>Lo que tu sitio ya muestra, en cortos para vender.</span></a></div>
 </div>
 </section>
 </main>
