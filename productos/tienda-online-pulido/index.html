@@ -54,6 +54,21 @@
 </div>
 </section>
 
+<!-- 2b VIDEO: así viaja un pedido (no arranca solo; se pausa fuera de pantalla) -->
+<section class="video-sec" aria-labelledby="vTiendaTit">
+<div class="wrap">
+<figure class="video-marco">
+<h2 class="sr" id="vTiendaTit">Así viaja un pedido en tu Tienda Online</h2>
+<video id="vTienda" playsinline preload="none" width="1280" height="720" poster="video/tienda-online-poster.jpg" aria-describedby="vTiendaDesc"><source src="video/tienda-online.webm" type="video/webm"><source src="video/tienda-online.mp4" type="video/mp4"></video>
+<figcaption id="vTiendaDesc">Animación de ejemplo con datos ficticios: un cliente paga con Webpay, la bodega descuenta el stock y sale la etiqueta de despacho con el aviso al cliente.</figcaption>
+<button type="button" class="video-ver" id="vTiendaVer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z"/></svg><span>Ver video</span></button>
+<div class="video-ctl" hidden>
+<button type="button" class="vbtn" id="vTiendaPausa" aria-pressed="false"><svg class="i-pausa" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z"/></svg><span>Pausar animación</span></button>
+</div>
+</figure>
+</div>
+</section>
+
 <!-- 3 VEINTE MENSAJES: el chat de siempre frente a la tienda -->
 <section id="mensajes">
 <div class="wrap msj-grid">
@@ -214,6 +229,7 @@
 <div class="plan med"><small>A medida</small><div class="precio">Hablemos</div><p class="pd">Para conectar tu sistema, tu bodega o tus clientes empresa.</p><ul><li>Conexión con tu sistema o bodega</li><li>Cotizaciones para empresas</li><li>Asistente Virtual para Ecommerce</li><li>Automatizaciones de tareas</li></ul><a class="btn" href="#contacto" data-plan="Tienda a medida">Hablar con Rednet</a></div>
 </div>
 <p class="letra">Precios en pesos chilenos por confirmar, incluido si hay un pago inicial de implementación. [¿Sin permanencia? por confirmar]</p>
+<a class="informe-dl" href="rednet-tienda-online-resumen.pdf" download><span class="dl-doc" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7zM14 3v5h5M10 13h6M10 17h6"/></svg></span><span class="dl-txt">Descargar ejemplo de resumen de pedidos <small>PDF</small></span><span class="dl-flecha" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v11M7 12l5 5 5-5M5 20h14"/></svg></span></a>
 </div>
 </section>
 
@@ -260,8 +276,8 @@
 <!-- 14 RELACIONADOS -->
 <section class="otros-sec">
 <div class="wrap">
-<h2 class="otros-t">Funciona mejor junto a</h2>
-<div class="otros"><a class="otro" href="../asistentes-pulido/"><small>IA para tu tienda</small><b translate="no">Asistente Virtual para Ecommerce</b><span>Responde precios y stock dentro de tu tienda y sugiere alternativas.</span></a><a class="otro" href="../webguardian-pulido/"><small>Seguridad</small><b translate="no">WebGuardian Sitio Seguro</b><span>Si tu tienda se cae, te enteras antes que tus clientes.</span></a><a class="otro" href="../mailing-pulido/"><small>Clientes que vuelven</small><b translate="no">Mailing a Contactos</b><span>Ya tienes la tienda. Ahora avísales cuando llega algo nuevo.</span></a></div>
+<h2 class="otros-t">Súmalo a tu tienda</h2>
+<div class="otros"><a class="otro" href="../asistentes-pulido/"><picture class="otro-foto"><source srcset="img/hero-ecommerce.webp" type="image/webp"><img src="img/hero-ecommerce.jpg" alt="" width="640" height="477" loading="lazy" decoding="async"></picture><small>IA para tu tienda</small><b translate="no">Asistente Virtual para Ecommerce</b><span>Responde precios y stock dentro de tu tienda y sugiere alternativas.</span></a><a class="otro" href="../webguardian-pulido/"><picture class="otro-foto"><source srcset="img/hero-hosting.webp" type="image/webp"><img src="img/hero-hosting.jpg" alt="" width="640" height="960" loading="lazy" decoding="async"></picture><small>Seguridad</small><b translate="no">WebGuardian Sitio Seguro</b><span>Si tu tienda se cae, te enteras antes que tus clientes.</span></a><a class="otro" href="../mailing-pulido/"><picture class="otro-foto"><source srcset="img/hero-diseno-web.webp" type="image/webp"><img src="img/hero-diseno-web.jpg" alt="" width="640" height="488" loading="lazy" decoding="async"></picture><small>Clientes que vuelven</small><b translate="no">Mailing a Contactos</b><span>Ya tienes la tienda. Ahora avísales cuando llega algo nuevo.</span></a></div>
 </div>
 </section>
 </main>
