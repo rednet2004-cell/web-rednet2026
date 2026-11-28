@@ -554,3 +554,9 @@ nav.abierto{overscroll-behavior:contain;overflow-y:auto}
 .video-ver:active{transform:translate(-50%,-50%) scale(.97)}
 .vbtn:active{transform:scale(.97)}
 @media (max-width:520px){.video-marco{aspect-ratio:auto}.video-marco video{height:auto;aspect-ratio:16/9}.video-ctl{position:static;justify-content:center;padding:10px 12px 12px}.video-ver{top:calc((100vw - 32px) * 9 / 32)}}
+
+/* Foto del servicio arriba del panel abierto del acordeón */
+.pan-foto{position:absolute;top:12px;left:12px;width:calc(var(--ancho-abierto,600px) - 24px);height:200px;border-radius:calc(var(--r) - 8px);overflow:hidden;opacity:0;transform:translateY(-10px);transition:opacity .35s .2s var(--ease-out),transform .5s .2s var(--ease-out);pointer-events:none}
+.pan-foto img{display:block;width:100%;height:100%;object-fit:cover}
+.pan.on .pan-foto{opacity:1;transform:none}
+@media (max-width:860px){.pan-foto{top:56px;left:12px;right:12px;width:auto;height:170px}.pan.on{min-height:560px}}
