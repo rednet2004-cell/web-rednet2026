@@ -431,3 +431,7 @@ h2 .g{color:var(--gris)}
 .otro-foto img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease-out)}
 .otro:hover .otro-foto img{transform:scale(1.05)}
 @media (prefers-reduced-motion:reduce){.otro:hover .otro-foto img{transform:none}}
+.video-ctl .i-sonido{display:none}
+#vSeoSonido[aria-pressed="true"] .i-mudo{display:none}
+#vSeoSonido[aria-pressed="true"] .i-sonido{display:block}
+.pausa[aria-pressed="true"]{color:var(--ocre-claro,#edcb93);border-color:rgba(237,203,147,.4)}
