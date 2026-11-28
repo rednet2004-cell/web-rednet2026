@@ -459,6 +459,9 @@ footer{padding-bottom:150px}
 .vbtn .i-play{display:none;fill:currentColor;stroke:none}
 .vbtn[aria-pressed="true"] .i-pausa{display:none}
 .vbtn[aria-pressed="true"] .i-play{display:block}
+.vbtn .i-sonido{display:none}
+#vTiendaSonido[aria-pressed="true"] .i-mudo{display:none}
+#vTiendaSonido[aria-pressed="true"] .i-sonido{display:block}
 @media (hover:hover) and (pointer:fine){.video-ver:hover{transform:translate(-50%,-50%) scale(1.04)}}
 .video-ver:active{transform:translate(-50%,-50%) scale(.97)}
 @media (max-width:520px){.video-marco{aspect-ratio:auto}.video-marco video{height:auto;aspect-ratio:16/9}.video-ctl{position:static;justify-content:center;padding:10px 12px 12px}.vbtn{background:rgba(255,255,255,.12)}}
