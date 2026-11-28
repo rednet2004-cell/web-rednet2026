@@ -31,9 +31,9 @@ const consultas = ['reparación de notebooks cerca de mí', 'pastelería para cu
 const caja = document.getElementById('buscadorCaja'), res = document.getElementById('res'), bqTxt = document.getElementById('bqTxt'), bqPos = document.getElementById('bqPos'), chip = caja.querySelector('.ia-chip');
 const tu = res.querySelector('.tu'), alto = 66, btnPausa = document.getElementById('pausa');
 let orden = ['a', 'b', 'c', 'd', 'tu'];
-const pintar = () => { orden.forEach((id, i) => res.querySelector(`[data-id="${id}"]`).style.transform = `translateY(${i * alto}px)`); const k = orden.indexOf('tu') + 1; bqPos.textContent = 'Tu negocio · #' + k; tu.classList.toggle('arriba', k === 1); };
+const pintar = () => { orden.forEach((id, i) => res.querySelector(`[data-id="${id}"]`).style.transform = `translateY(${i * alto}px)`); const k = orden.indexOf('tu') + 1; bqPos.textContent = 'Tu negocio · #' + k; tu.classList.toggle('arriba', k <= 3); };
 const subir = a => { const i = orden.indexOf('tu'); orden.splice(i, 1); orden.splice(a, 0, 'tu'); pintar(); };
-const finalQuieto = () => { orden = ['a', 'b', 'c', 'd', 'tu']; bqTxt.textContent = consultas[0]; subir(0); chip.classList.add('on'); };
+const finalQuieto = () => { orden = ['a', 'b', 'c', 'd', 'tu']; bqTxt.textContent = consultas[0]; subir(2); chip.classList.add('on'); };
 let pausaUsuario = false, visible = true, q = 0, paso = 0, timer = 0;
 /* El ciclo es una lista de pasos con su espera; pausar solo detiene el reloj, retomar sigue donde iba */
 const pasos = [];
@@ -42,7 +42,7 @@ pasos.length = 0;
 const t = consultas[q++ % consultas.length];
 pasos.push([() => { orden = ['a', 'b', 'c', 'd', 'tu']; pintar(); chip.classList.remove('on'); bqTxt.textContent = ''; }, 200]);
 for (const c of t) pasos.push([() => { bqTxt.textContent += c; }, 45]);
-pasos.push([() => {}, 700], [() => subir(2), 1100], [() => subir(0), 700], [() => chip.classList.add('on'), 3400]);
+pasos.push([() => {}, 700], [() => subir(3), 1100], [() => subir(2), 700], [() => chip.classList.add('on'), 3400]);
 paso = 0;
 }
 function tic(){
@@ -102,12 +102,12 @@ const semanas = p => { const n = Math.round(p * 52); sB.forEach((d, k) => d.clas
 
 /* 3 Escalera */
 const posN = document.getElementById('posN'), posPag = document.getElementById('posPag'), pel = [...document.getElementById('peldanos').children], hitos = [...document.getElementById('hitos').children], tarjeta = document.getElementById('tarjetaTu');
-const marcas = [38, 27, 14, 6, 3, 1];
+const marcas = [38, 27, 14, 8];
 function escalera(p){
 const f = p * (marcas.length - 1), k = Math.min(marcas.length - 2, Math.floor(f)), r = f - k;
 const pos = Math.max(1, Math.round(marcas[k] + (marcas[k + 1] - marcas[k]) * r));
 posN.textContent = '#' + pos;
-posPag.textContent = pos > 30 ? 'Página 4' : pos > 20 ? 'Página 3' : pos > 10 ? 'Página 2' : pos > 3 ? 'Página 1' : pos > 1 ? 'Top 3' : 'Primer lugar';
+posPag.textContent = pos > 30 ? 'Página 4' : pos > 20 ? 'Página 3' : pos > 10 ? 'Página 2' : 'Página 1';
 const nivel = Math.round(f);
 pel.forEach((e, i) => e.classList.toggle('on', i <= nivel));
 hitos.forEach((h, i) => h.classList.toggle('on', i === Math.min(3, Math.floor(p * 4))));
