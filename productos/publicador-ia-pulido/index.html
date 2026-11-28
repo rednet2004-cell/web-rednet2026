@@ -61,6 +61,22 @@
 </div>
 </section>
 
+<!-- VIDEO: del tema al artículo publicado (no parte solo, se pausa fuera de pantalla) -->
+<section class="video-sec" aria-labelledby="vPubTit">
+<div class="wrap">
+<figure class="video-marco">
+<h2 class="sr" id="vPubTit">Así funciona el Publicador Inteligente</h2>
+<video id="vPub" playsinline preload="none" width="1280" height="720" poster="video/publicador-ia-poster.jpg" aria-describedby="vPubDesc"><source src="video/publicador-ia.webm" type="video/webm"><source src="video/publicador-ia.mp4" type="video/mp4"></video>
+<figcaption id="vPubDesc">Animación de ejemplo con datos ficticios, con música: un blog con la última publicación de hace 14 meses. Se arma la lista de temas, se redacta un borrador en el tono de la marca con datos revisados, tú lo apruebas desde el celular y se publica en el sitio, en la app y en el sistema que ya usas. Dos artículos al mes, con constancia y sin prometer posiciones.</figcaption>
+<button type="button" class="video-ver" id="vPubVer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z"/></svg><span>Ver video</span></button>
+<div class="video-ctl" hidden>
+<button type="button" class="vbtn" id="vPubSonido" aria-pressed="false"><svg class="i-mudo" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5zM16 9.5l5 5M21 9.5l-5 5"/></svg><svg class="i-sonido" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5zM15.5 9a4.2 4.2 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11"/></svg><span>Activar sonido</span></button>
+<button type="button" class="vbtn" id="vPubPausa" aria-pressed="false"><svg class="i-pausa" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z"/></svg><span>Pausar animación</span></button>
+</div>
+</figure>
+</div>
+</section>
+
 <!-- 3 CÓMO FUNCIONA: la mesa de redacción avanza con el scroll -->
 <section class="flujo-sec" id="funciona">
 <div class="flujo-track" id="flujoTrack">
