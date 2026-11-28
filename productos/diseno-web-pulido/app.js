@@ -72,6 +72,7 @@ Object.entries(marcos).forEach(([d, m]) => m.classList.toggle('on', d === b.data
 }));
 
 /* Video de la landing: no arranca solo; se reproduce al pulsar "Ver video" y se pausa al salir de pantalla */
+const vDwS = document.getElementById('vDwSonido');
 const vDw = document.getElementById('vDw'), vDwP = document.getElementById('vDwPausa'), vDwVer = document.getElementById('vDwVer'), vDwCtl = document.querySelector('.video-ctl');
 let vDwPausado = false, vDwVisible = true, vDwIni = false;
 function vDwEstado(){
@@ -80,12 +81,17 @@ function vDwEstado(){
   vDwP.setAttribute('aria-pressed', vDwPausado);
   vDwP.querySelector('span').textContent = vDwPausado ? 'Reproducir animación' : 'Pausar animación';
 }
+function vDwSonido(){
+  vDwS.setAttribute('aria-pressed', !vDw.muted);
+  vDwS.querySelector('span').textContent = vDw.muted ? 'Activar sonido' : 'Silenciar';
+}
 vDwVer.addEventListener('click', () => {
-  vDwIni = true; vDwPausado = false; vDw.preload = 'auto';
+  vDwIni = true; vDwPausado = false; vDw.muted = false; vDw.preload = 'auto'; vDwSonido();
   if (vDw.ended) vDw.currentTime = 0;
   vDwVer.hidden = true; vDwCtl.hidden = false; vDwEstado();
 });
 vDw.addEventListener('ended', () => { vDwIni = false; vDwVer.querySelector('span').textContent = 'Ver de nuevo'; vDwVer.hidden = false; vDwCtl.hidden = true; });
+vDwS.addEventListener('click', () => { vDw.muted = !vDw.muted; vDwSonido(); });
 vDwP.addEventListener('click', () => { vDwPausado = !vDwPausado; vDwEstado(); });
 new IntersectionObserver(([en]) => { vDwVisible = en.isIntersecting; vDwEstado(); }, {threshold:.25}).observe(vDw);
 

@@ -451,3 +451,7 @@ footer{padding-bottom:150px}
 .mk-logo{font-size:12.5px}
 .mk-cards span{height:84px}
 @media (max-width:860px){.boceto-grid{grid-template-columns:1fr}.mk-hero{min-height:0}}
+.video-ctl .i-sonido{display:none}
+#vDwSonido[aria-pressed="true"] .i-mudo{display:none}
+#vDwSonido[aria-pressed="true"] .i-sonido{display:block}
+@media (max-width:520px){.video-ctl{flex-wrap:wrap}}
