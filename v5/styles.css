@@ -527,3 +527,29 @@ nav.abierto{overscroll-behavior:contain;overflow-y:auto}
 .pro::before{z-index:1}
 .pro::after{z-index:1}
 .pro > *:not(.pro-img){z-index:2}
+
+/* Video Rednet en 25 segundos */
+.video-sec{padding-block:clamp(24px,4vw,56px) clamp(40px,6vw,80px)}
+.video-cab{margin-bottom:22px}
+.video-cab h2{margin:0}
+.video-marco{margin:0;position:relative;border-radius:var(--r);overflow:hidden;background:var(--grafito);box-shadow:inset 0 0 0 1px var(--linea),0 30px 80px -40px rgba(122,9,16,.55);aspect-ratio:16/9}
+.video-marco video{display:block;width:100%;height:100%;object-fit:cover}
+.video-marco figcaption{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.video-ver{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:inline-flex;align-items:center;gap:12px;padding:16px 28px;border:0;border-radius:999px;background:var(--rojo);color:#fff;font:600 1.05rem/1 var(--f-body);cursor:pointer;box-shadow:0 12px 40px -8px rgba(227,6,19,.7),0 0 0 8px rgba(255,255,255,.28);transition:transform .2s ease}
+.video-ver svg{width:22px;height:22px;fill:currentColor}
+.video-ver:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.video-ver[hidden],.video-ctl[hidden]{display:none}
+.video-ctl{position:absolute;right:14px;bottom:14px;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.vbtn{display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;background:rgba(29,27,26,.8);color:#fff;backdrop-filter:blur(8px);font-family:var(--f-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;border-radius:999px;padding:9px 14px;transition:background-color .2s ease,transform .2s ease}
+.vbtn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.vbtn .i-play{fill:currentColor;stroke:none}
+.vbtn:focus-visible{outline:3px solid var(--ocre-claro);outline-offset:2px}
+.vbtn .i-play,.vbtn .i-sonido{display:none}
+.vbtn[aria-pressed="true"] .i-play{display:inline}
+.vbtn[aria-pressed="true"] .i-pausa{display:none}
+#vRedSonido[aria-pressed="true"] .i-mudo{display:none}
+#vRedSonido[aria-pressed="true"] .i-sonido{display:inline}
+@media (hover:hover) and (pointer:fine){.video-ver:hover{transform:translate(-50%,-50%) scale(1.04)}.vbtn:hover{background:rgba(122,9,16,.92)}}
+.video-ver:active{transform:translate(-50%,-50%) scale(.97)}
+.vbtn:active{transform:scale(.97)}
+@media (max-width:520px){.video-marco{aspect-ratio:auto}.video-marco video{height:auto;aspect-ratio:16/9}.video-ctl{position:static;justify-content:center;padding:10px 12px 12px}.video-ver{top:calc((100vw - 32px) * 9 / 32)}}

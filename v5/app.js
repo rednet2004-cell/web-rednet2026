@@ -309,3 +309,26 @@ if (!mesaMovil.matches) gsap.from(res, {y:-24, opacity:0, scale:.97, duration:.5
 /* 11 CTA se expande */
 gsap.fromTo('#cta', {scale:.96}, {scale:1, ease:'none', scrollTrigger:{trigger:'#cta', start:'top 95%', end:'top 40%', scrub:true}});
 })();
+
+/* Video Rednet: no arranca solo; se reproduce (con sonido) al pulsar "Ver video". Se pausa al salir de pantalla */
+(function(){
+const v = document.getElementById('vRed'); if (!v) return;
+const bP = document.getElementById('vRedPausa'), bS = document.getElementById('vRedSonido'), bV = document.getElementById('vRedVer'), ctl = v.parentNode.querySelector('.video-ctl');
+let pausado = false, visible = true, ini = false;
+const sonido = () => { bS.setAttribute('aria-pressed', !v.muted); bS.querySelector('span').textContent = v.muted ? 'Activar sonido' : 'Silenciar'; };
+const estado = () => {
+  if (!ini) return;
+  if (visible && !pausado) v.play().catch(() => {}); else v.pause();
+  bP.setAttribute('aria-pressed', pausado);
+  bP.querySelector('span').textContent = pausado ? 'Reproducir' : 'Pausar';
+};
+bV.addEventListener('click', () => {
+  ini = true; pausado = false; v.muted = false; v.preload = 'auto';
+  if (v.ended) v.currentTime = 0;
+  bV.hidden = true; ctl.hidden = false; sonido(); estado();
+});
+v.addEventListener('ended', () => { ini = false; bV.querySelector('span').textContent = 'Ver de nuevo'; bV.hidden = false; ctl.hidden = true; });
+bP.addEventListener('click', () => { pausado = !pausado; estado(); });
+bS.addEventListener('click', () => { v.muted = !v.muted; sonido(); });
+new IntersectionObserver(([en]) => { visible = en.isIntersecting; estado(); }, {threshold:.25}).observe(v);
+})();
