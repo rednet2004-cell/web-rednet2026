@@ -125,7 +125,7 @@ ver.className = 'veredicto' + v[0]; ver.querySelector('b').textContent = v[1]; v
 }));
 
 /* Video del producto: no arranca solo; se reproduce al pulsar "Ver video" y se pausa al salir de pantalla.
-   El botón de sonido queda oculto mientras el video no tenga música (quitar `hidden` en #vAutSonido cuando se agregue). */
+   Lleva música del catálogo de HeyGen: arranca con sonido al pulsar "Ver video" y el botón #vAutSonido permite silenciarla. */
 const vA = $('vAut'), vAp = $('vAutPausa'), vAs = $('vAutSonido'), vAver = $('vAutVer'), vActl = document.querySelector('.video-ctl');
 let vApausado = false, vAvisible = true, vAini = false;
 function vAestado(){
