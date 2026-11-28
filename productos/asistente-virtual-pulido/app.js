@@ -127,7 +127,7 @@ dv.querySelector('.barra i').style.transform = `scaleX(${m === 'antes' ? dv.data
 const heroEl = document.querySelector('.p-hero');
 new IntersectionObserver(([en]) => heroEl.classList.toggle('quieta', !en.isIntersecting)).observe(heroEl);
 /* Video del asistente: no arranca solo; se reproduce al pulsar "Ver video". Se pausa al salir de pantalla */
-const vA = document.getElementById('vAsist'), vAp = document.getElementById('vAsistPausa'), vAver = document.getElementById('vAsistVer'), vActl = document.querySelector('.video-ctl');
+const vA = document.getElementById('vAsist'), vAs = document.getElementById('vAsistSonido'), vAp = document.getElementById('vAsistPausa'), vAver = document.getElementById('vAsistVer'), vActl = document.querySelector('.video-ctl');
 let vApausado = false, vAvisible = true, vAini = false;
 function vAestado(){
   if (!vAini) return;
@@ -135,13 +135,18 @@ function vAestado(){
   vAp.setAttribute('aria-pressed', vApausado);
   vAp.querySelector('span').textContent = vApausado ? 'Reproducir animación' : 'Pausar animación';
 }
+function vAsonido(){
+  vAs.setAttribute('aria-pressed', !vA.muted);
+  vAs.querySelector('span').textContent = vA.muted ? 'Activar sonido' : 'Silenciar';
+}
 vAver.addEventListener('click', () => {
-  vAini = true; vApausado = false; vA.preload = 'auto';
+  vAini = true; vApausado = false; vA.muted = false; vA.preload = 'auto';
   if (vA.ended) vA.currentTime = 0;
-  vAver.hidden = true; vActl.hidden = false; vAestado();
+  vAver.hidden = true; vActl.hidden = false; vAsonido(); vAestado();
 });
 vA.addEventListener('ended', () => { vAini = false; vAver.querySelector('span').textContent = 'Ver de nuevo'; vAver.hidden = false; vActl.hidden = true; });
 vAp.addEventListener('click', () => { vApausado = !vApausado; vAestado(); });
+vAs.addEventListener('click', () => { vA.muted = !vA.muted; vAsonido(); });
 new IntersectionObserver(([en]) => { vAvisible = en.isIntersecting; vAestado(); }, {threshold:.25}).observe(vA);
 
 /* Video de fondo del contacto: solo escritorio, sin ahorro de datos ni reducir movimiento; se pausa fuera de pantalla */
