@@ -166,3 +166,27 @@ gsap.to(s, {p:1, ease:'none', onUpdate:() => semanas(s.p), scrollTrigger:{trigge
 ScrollTrigger.create({trigger:'#ticket', start:'top 80%', once:true, onEnter:() => { if (!tocado) pedir(0); }});
 gsap.from('#ticket', {y:24, opacity:0, duration:.55, ease:'power3.out', scrollTrigger:{trigger:'#ticket', start:'top 88%'}});
 })();
+
+/* Video: no arranca solo; se reproduce (con sonido) al pulsar "Ver video". Se pausa al salir de pantalla */
+(function(){
+const v = document.getElementById('vMant'); if (!v) return;
+const bP = document.getElementById('vMantPausa'), bS = document.getElementById('vMantSonido'), bV = document.getElementById('vMantVer'), ctl = v.parentNode.querySelector('.video-ctl');
+let pausado = false, visible = true, ini = false;
+const sonido = () => { bS.setAttribute('aria-pressed', !v.muted); bS.querySelector('span').textContent = v.muted ? 'Activar sonido' : 'Silenciar'; };
+const estado = () => {
+  if (!ini) return;
+  if (visible && !pausado) v.play().catch(() => {}); else v.pause();
+  bP.setAttribute('aria-pressed', pausado);
+  bP.querySelector('span').textContent = pausado ? 'Reproducir animación' : 'Pausar animación';
+};
+bV.addEventListener('click', () => {
+  ini = true; pausado = false; v.muted = false; v.preload = 'auto';
+  if (v.ended) v.currentTime = 0;
+  bV.hidden = true; ctl.hidden = false; sonido(); estado();
+});
+v.addEventListener('ended', () => { ini = false; bV.querySelector('span').textContent = 'Ver de nuevo'; bV.hidden = false; ctl.hidden = true; });
+bP.addEventListener('click', () => { pausado = !pausado; estado(); });
+bS.addEventListener('click', () => { v.muted = !v.muted; sonido(); });
+new IntersectionObserver(([en]) => { visible = en.isIntersecting; estado(); }, {threshold:.25}).observe(v);
+})();
+
