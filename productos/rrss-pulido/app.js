@@ -102,9 +102,13 @@ const rbs = [...document.querySelectorAll('#cRubro button')];
 rbs.forEach((b, i) => b.addEventListener('click', () => { rbs.forEach(x => x.setAttribute('aria-pressed', x === b)); rubro(i, true); }));
 rubro(0, false);
 
-/* Animación: no arranca sola; se reproduce al pulsar "Ver video". Se pausa al salir de pantalla */
-const vR = document.getElementById('vRrss'), vRp = document.getElementById('vRrssPausa'), vRver = document.getElementById('vRrssVer'), vRctl = document.querySelector('.video-ctl');
+/* Animación: no arranca sola; se reproduce (con sonido) al pulsar "Ver video". Se pausa al salir de pantalla */
+const vR = document.getElementById('vRrss'), vRp = document.getElementById('vRrssPausa'), vRs = document.getElementById('vRrssSonido'), vRver = document.getElementById('vRrssVer'), vRctl = document.querySelector('.video-ctl');
 let vRpausado = false, vRvisible = true, vRini = false;
+function vRsonido(){
+  vRs.setAttribute('aria-pressed', !vR.muted);
+  vRs.querySelector('span').textContent = vR.muted ? 'Activar sonido' : 'Silenciar';
+}
 function vRestado(){
   if (!vRini) return;
   if (vRvisible && !vRpausado) vR.play().catch(() => {}); else vR.pause();
@@ -112,12 +116,13 @@ function vRestado(){
   vRp.querySelector('span').textContent = vRpausado ? 'Reproducir animación' : 'Pausar animación';
 }
 vRver.addEventListener('click', () => {
-  vRini = true; vRpausado = false; vR.preload = 'auto';
+  vRini = true; vRpausado = false; vR.muted = false; vR.preload = 'auto';
   if (vR.ended) vR.currentTime = 0;
-  vRver.hidden = true; vRctl.hidden = false; vRestado();
+  vRver.hidden = true; vRctl.hidden = false; vRsonido(); vRestado();
 });
 vR.addEventListener('ended', () => { vRini = false; vRver.querySelector('span').textContent = 'Ver de nuevo'; vRver.hidden = false; vRctl.hidden = true; });
 vRp.addEventListener('click', () => { vRpausado = !vRpausado; vRestado(); });
+vRs.addEventListener('click', () => { vR.muted = !vR.muted; vRsonido(); });
 new IntersectionObserver(([en]) => { vRvisible = en.isIntersecting; vRestado(); }, {threshold:.25}).observe(vR);
 
 /* Video de fondo del contacto: solo escritorio, sin ahorro de datos ni reducir movimiento; se pausa fuera de pantalla */
