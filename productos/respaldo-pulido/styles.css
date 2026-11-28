@@ -405,3 +405,7 @@ footer{padding-bottom:150px}
 .otro-foto img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease-out)}
 @media (hover:hover) and (pointer:fine){.otro:hover .otro-foto img{transform:scale(1.05)}}
 @media (prefers-reduced-motion:reduce){.otro:hover .otro-foto img{transform:none}.video-ver{transition:none}}
+.video-ctl .i-sonido{display:none}
+#vRespSonido[aria-pressed="true"] .i-mudo{display:none}
+#vRespSonido[aria-pressed="true"] .i-sonido{display:block}
+.pausa[aria-pressed="true"]{color:var(--ocre-claro);border-color:rgba(237,203,147,.4)}
