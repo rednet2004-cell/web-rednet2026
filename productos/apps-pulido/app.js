@@ -105,7 +105,7 @@ if (stEt && escritorio.matches) scrollTo({top:stEt.start + (stEt.end - stEt.star
 etapa(0);
 
 /* Video del producto: no arranca solo; se reproduce al pulsar "Ver video" y se pausa al salir de pantalla */
-const vA = document.getElementById('vApps'), vAver = document.getElementById('vAppsVer'), vAp = document.getElementById('vAppsPausa'), vActl = document.querySelector('.video-ctl');
+const vA = document.getElementById('vApps'), vAs = document.getElementById('vAppsSonido'), vAver = document.getElementById('vAppsVer'), vAp = document.getElementById('vAppsPausa'), vActl = document.querySelector('.video-ctl');
 let vApausado = false, vAvisible = true, vAini = false;
 function vAestado(){
 if (!vAini) return;
@@ -113,8 +113,13 @@ if (vAvisible && !vApausado) vA.play().catch(() => {}); else vA.pause();
 vAp.setAttribute('aria-pressed', vApausado);
 vAp.querySelector('span').textContent = vApausado ? 'Reproducir animación' : 'Pausar animación';
 }
+function vAsonido(){
+vAs.setAttribute('aria-pressed', !vA.muted);
+vAs.querySelector('span').textContent = vA.muted ? 'Activar sonido' : 'Silenciar';
+}
+vAs.addEventListener('click', () => { vA.muted = !vA.muted; vAsonido(); });
 vAver.addEventListener('click', () => {
-vAini = true; vApausado = false; vA.preload = 'auto';
+vAini = true; vApausado = false; vA.muted = false; vA.preload = 'auto'; vAsonido();
 if (vA.ended) vA.currentTime = 0;
 vAver.hidden = true; vActl.hidden = false; vAestado();
 });
