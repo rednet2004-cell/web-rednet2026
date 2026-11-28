@@ -99,8 +99,9 @@ c.addEventListener('pointerleave', () => { c.style.transform = ''; });
 }
 
 /* Video del producto: no arranca solo; se reproduce al pulsar "Ver video" y se pausa al salir de pantalla */
-const vT = $('vTienda'), vTver = $('vTiendaVer'), vTp = $('vTiendaPausa'), vTctl = document.querySelector('.video-ctl');
+const vT = $('vTienda'), vTver = $('vTiendaVer'), vTp = $('vTiendaPausa'), vTs = $('vTiendaSonido'), vTctl = document.querySelector('.video-ctl');
 let vTpausado = false, vTvisible = true, vTini = false;
+const vTson = () => { vTs.setAttribute('aria-pressed', !vT.muted); vTs.querySelector('span').textContent = vT.muted ? 'Activar sonido' : 'Silenciar'; };
 function vTestado(){
 if (!vTini) return;
 if (vTvisible && !vTpausado) vT.play().catch(() => {}); else vT.pause();
@@ -108,12 +109,13 @@ vTp.setAttribute('aria-pressed', vTpausado);
 vTp.querySelector('span').textContent = vTpausado ? 'Reproducir animación' : 'Pausar animación';
 }
 vTver.addEventListener('click', () => {
-vTini = true; vTpausado = false; vT.preload = 'auto';
+vTini = true; vTpausado = false; vT.muted = false; vT.preload = 'auto';
 if (vT.ended) vT.currentTime = 0;
-vTver.hidden = true; vTctl.hidden = false; vTestado();
+vTver.hidden = true; vTctl.hidden = false; vTson(); vTestado();
 });
 vT.addEventListener('ended', () => { vTini = false; vTver.querySelector('span').textContent = 'Ver de nuevo'; vTver.hidden = false; vTctl.hidden = true; });
 vTp.addEventListener('click', () => { vTpausado = !vTpausado; vTestado(); });
+vTs.addEventListener('click', () => { vT.muted = !vT.muted; vTson(); });
 new IntersectionObserver(([en]) => { vTvisible = en.isIntersecting; vTestado(); }, {threshold:.25}).observe(vT);
 
 /* Video de fondo del contacto: solo escritorio, sin ahorro de datos ni reducir movimiento; se pausa fuera de pantalla */
