@@ -346,7 +346,9 @@ footer{padding-bottom:150px}
 .video-ctl{position:absolute;right:14px;bottom:14px;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
 .video-marco .pausa{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border:1px solid rgba(255,255,255,.25);border-radius:999px;background:rgba(14,13,12,.72);backdrop-filter:blur(8px);color:#fff;font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
 .video-marco .pausa svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.video-marco .pausa .i-play{display:none}
+.video-marco .pausa .i-play,.video-ctl .i-sonido{display:none}
+#vSopSonido[aria-pressed="true"] .i-mudo{display:none}
+#vSopSonido[aria-pressed="true"] .i-sonido{display:block}
 .video-marco .pausa[aria-pressed="true"] .i-pausa{display:none}
 .video-marco .pausa[aria-pressed="true"] .i-play{display:block}
 @media (max-width:520px){.video-marco{aspect-ratio:auto}.video-marco video{height:auto;aspect-ratio:16/9}.video-ctl{position:static;justify-content:center;padding:10px 12px 12px}.video-marco .pausa{background:transparent}}
