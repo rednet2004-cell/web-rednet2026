@@ -85,6 +85,31 @@ const vCta = document.getElementById('vCta');
 const sinVideo = reduce || !escritorio.matches || (navigator.connection && navigator.connection.saveData);
 if (!sinVideo) new IntersectionObserver(([en]) => { if (en.isIntersecting){ vCta.preload = 'auto'; vCta.play().catch(() => {}); } else vCta.pause(); }, {rootMargin:'200px'}).observe(vCta);
 
+/* Video del producto: no arranca solo; se reproduce al pulsar "Ver video". Se pausa si sale de pantalla. Hoy sin audio (data-audio="no" en el HTML hasta mezclar la música). */
+const vP = document.getElementById('vProd'), vPp = document.getElementById('vProdPausa'), vPver = document.getElementById('vProdVer'), vPctl = document.querySelector('.video-ctl'), vPs = document.getElementById('vProdSonido');
+const vPaudio = vP.dataset.audio === 'si';   // el botón de sonido solo aparece cuando el video lleva música
+if (vPaudio) vPs.hidden = false; else vP.muted = true;
+let vPpausado = false, vPvisible = true, vPini = false;
+function vPestado(){
+  if (!vPini) return;
+  if (vPvisible && !vPpausado) vP.play().catch(() => {}); else vP.pause();
+  vPp.setAttribute('aria-pressed', vPpausado);
+  vPp.querySelector('span').textContent = vPpausado ? 'Reproducir video' : 'Pausar video';
+}
+function vPsonido(){
+  if (!vPaudio) return;
+  vPs.setAttribute('aria-pressed', !vP.muted);
+  vPs.querySelector('span').textContent = vP.muted ? 'Activar sonido' : 'Silenciar';
+}
+vPs.addEventListener('click', () => { vP.muted = !vP.muted; vPsonido(); });
+vPver.addEventListener('click', () => {
+  vPini = true; vPpausado = false; vP.preload = 'auto'; if (vPaudio) vP.muted = false;
+  if (vP.ended) vP.currentTime = 0;
+  vPver.hidden = true; vPctl.hidden = false; vPsonido(); vPestado();
+});
+vP.addEventListener('ended', () => { vPini = false; vPver.querySelector('span').textContent = 'Ver de nuevo'; vPver.hidden = false; vPctl.hidden = true; });
+vPp.addEventListener('click', () => { vPpausado = !vPpausado; vPestado(); });
+new IntersectionObserver(([en]) => { vPvisible = en.isIntersecting; vPestado(); }, {threshold:.25}).observe(vP);
 /* Los CTA con motivo o plan preseleccionan el formulario */
 const fQue = document.getElementById('fQue');
 document.querySelectorAll('[data-plan]').forEach(a => a.addEventListener('click', () => { fQue.value = a.dataset.plan; setTimeout(() => document.getElementById('fNombre').focus({preventScroll:true}), 600); }));
